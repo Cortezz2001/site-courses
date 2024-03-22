@@ -6,7 +6,6 @@ export default function Main() {
       <div className={style.container}>
         <p>Hello</p>
       </div>
-      ;
     </Layout>
   );
 }
