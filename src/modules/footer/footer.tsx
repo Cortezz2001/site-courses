@@ -1,9 +1,5 @@
-import style from "./style.module.css"
+import style from "./style.module.css";
 
-export default function Footer(){
-    return (
-        <div className={style.container}>
-            Footer
-        </div>
-    )
+export default function Footer() {
+    return <div className={style.container}>Footer</div>;
 }
