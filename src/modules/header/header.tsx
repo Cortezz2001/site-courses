@@ -13,7 +13,11 @@ import {
 } from "@/UI/SUI";
 const Header = () => {
     return (
-        <Container name="header" fluid>
+        <Container
+            name="header"
+            fluid
+            style={{ position: "sticky", top: "0", zIndex: "1000" }}
+        >
             <Menu name="mainheader" borderless attached="top" inverted>
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem position="left" name="logo">
@@ -33,7 +37,7 @@ const Header = () => {
                     </MenuItem>
                 </Container>
             </Menu>
-            <Menu name="navbar" attached="bottom" secondary>
+            <Menu name="navbar" attached="bottom">
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem name="professions">Профессии</MenuItem>
 
