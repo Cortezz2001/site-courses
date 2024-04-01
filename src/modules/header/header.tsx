@@ -23,13 +23,11 @@ const Header = () => {
                     </MenuItem>
                     <MenuItem position="right">+77711739922</MenuItem>
                     <MenuItem>
-                        <Button basic inverted>
-                            EN
-                        </Button>
-                        <Button basic inverted style={{ marginLeft: "10px" }}>
+                        <Button inverted>EN</Button>
+                        <Button inverted style={{ marginLeft: "10px" }}>
                             USD
                         </Button>
-                        <Button basic inverted style={{ marginLeft: "20px" }}>
+                        <Button inverted style={{ marginLeft: "20px" }}>
                             Личный кабинет
                         </Button>
                     </MenuItem>
