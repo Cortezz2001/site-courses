@@ -1,9 +1,140 @@
+import Link from "next/link";
 import style from "./style.module.css";
-import { Container } from "@/UI/SUI";
+import {
+    Button,
+    Container,
+    Form,
+    FormField,
+    Grid,
+    GridColumn,
+    GridRow,
+    Header,
+    Input,
+    List,
+    ListItem,
+    Segment,
+    Image,
+    Checkbox,
+    FormCheckbox,
+    Divider,
+} from "@/UI/SUI";
 export default function Footer() {
     return (
-        <Container fluid style={{ backgroundColor: "red" }}>
-            123
+        <Container name="footer" fluid>
+            <Segment inverted vertical style={{ padding: "5em 0" }}>
+                <Container style={{ width: "1330px", margin: "auto" }}>
+                    <Grid divided inverted stackable>
+                        <GridRow>
+                            <GridColumn width={4}>
+                                <Link href="/">
+                                    <Image
+                                        src="/logo.svg"
+                                        size="tiny"
+                                        alt=""
+                                        style={{ marginBottom: "10px" }}
+                                    />
+                                </Link>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="telegram plane"
+                                ></Button>
+                                <Button circular inverted icon="vk"></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="youtube"
+                                ></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="pinterest"
+                                ></Button>
+                            </GridColumn>
+                            <GridColumn
+                                width={4}
+                                style={{ paddingLeft: "20px" }}
+                            >
+                                <List link inverted>
+                                    <ListItem as="a">Link 1</ListItem>
+                                    <ListItem as="a">Link 2</ListItem>
+                                    <ListItem as="a">Link 3</ListItem>
+                                </List>
+                            </GridColumn>
+                            <GridColumn
+                                width={4}
+                                style={{ paddingLeft: "20px" }}
+                            >
+                                <List link inverted>
+                                    <ListItem as="a">Link 4</ListItem>
+                                    <ListItem as="a">Link 5</ListItem>
+                                    <ListItem as="a">Link 6</ListItem>
+                                </List>
+                            </GridColumn>
+                            <GridColumn width={4}>
+                                <Header inverted as="h4" content="Subscribe" />
+                                <p>Get updates in your inbox</p>
+                                <Form inverted>
+                                    <FormField>
+                                        <Input placeholder="Enter your email" />
+                                    </FormField>
+                                    <Button inverted type="submit">
+                                        Subscribe
+                                    </Button>
+                                    <FormCheckbox
+                                        label="I agree to the Terms and Conditions"
+                                        style={{
+                                            marginTop: "10px",
+                                            fontSize: "12px",
+                                        }}
+                                    />
+                                </Form>
+                            </GridColumn>
+                        </GridRow>
+                        <Divider inverted />
+                        <GridRow columns={3} textAlign="center">
+                            <GridColumn>
+                                <Header
+                                    inverted
+                                    as={"p"}
+                                    style={{
+                                        fontSize: "14px",
+                                        fontWeight: "normal",
+                                    }}
+                                >
+                                    © Ineu, 2023-2024
+                                </Header>
+                            </GridColumn>
+                            <GridColumn>
+                                <Header
+                                    inverted
+                                    as={"a"}
+                                    href="/"
+                                    style={{
+                                        fontSize: "14px",
+                                        fontWeight: "normal",
+                                    }}
+                                >
+                                    Пользовательское соглашение
+                                </Header>
+                            </GridColumn>
+                            <GridColumn>
+                                <Header
+                                    inverted
+                                    as={"a"}
+                                    href="/"
+                                    style={{
+                                        fontSize: "14px",
+                                        fontWeight: "normal",
+                                    }}
+                                >
+                                    Договор оферты
+                                </Header>
+                            </GridColumn>
+                        </GridRow>
+                    </Grid>
+                </Container>
+            </Segment>
         </Container>
     );
 }
