@@ -26,7 +26,10 @@ const Header = () => {
                                 src="/logo.png"
                                 size="mini"
                                 alt=""
-                                style={{ transform: "scale(1.5)" }}
+                                style={{
+                                    transform: "scale(1.5)",
+                                    marginLeft: "20px",
+                                }}
                             />
                         </Link>
                     </MenuItem>
