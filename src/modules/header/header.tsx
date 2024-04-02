@@ -90,7 +90,7 @@ const Header = () => {
                             labelPosition="left"
                             style={{ marginLeft: "20px" }}
                         >
-                            <Icon name="cart" />
+                            <Icon name="cart" style={{ padding: "10px" }} />
                             Корзина
                         </Button>
                     </MenuItem>
