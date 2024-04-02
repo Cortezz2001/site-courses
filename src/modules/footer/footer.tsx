@@ -25,13 +25,16 @@ export default function Footer() {
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <Grid divided inverted stackable>
                         <GridRow>
-                            <GridColumn width={4}>
+                            <GridColumn width={4} textAlign="center">
                                 <Link href="/">
                                     <Image
-                                        src="/logo.svg"
+                                        src="/logo.png"
                                         size="tiny"
                                         alt=""
-                                        style={{ marginBottom: "10px" }}
+                                        style={{
+                                            display: "block",
+                                            margin: "0 auto 10px",
+                                        }}
                                     />
                                 </Link>
                                 <Button

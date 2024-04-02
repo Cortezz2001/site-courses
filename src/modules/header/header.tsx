@@ -22,7 +22,12 @@ const Header = () => {
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem position="left" name="logo">
                         <Link href="/">
-                            <Image src="/logo.png" size="tiny" alt="" />
+                            <Image
+                                src="/logo.png"
+                                size="mini"
+                                alt=""
+                                style={{ transform: "scale(1.5)" }}
+                            />
                         </Link>
                     </MenuItem>
                     <MenuItem position="right">+77711739922</MenuItem>
