@@ -22,7 +22,7 @@ const Header = () => {
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem position="left" name="logo">
                         <Link href="/">
-                            <Image src="/logo.svg" size="tiny" alt="" />
+                            <Image src="/logo.png" size="tiny" alt="" />
                         </Link>
                     </MenuItem>
                     <MenuItem position="right">+77711739922</MenuItem>
@@ -37,7 +37,7 @@ const Header = () => {
                     </MenuItem>
                 </Container>
             </Menu>
-            <Menu name="navbar" attached="bottom">
+            <Menu name="navbar" attached="bottom" borderless>
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem name="professions">Профессии</MenuItem>
 
