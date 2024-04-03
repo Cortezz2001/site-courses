@@ -77,7 +77,12 @@ export default function Footer() {
                             <GridColumn width={4}>
                                 <Header inverted as="h4" content="Subscribe" />
                                 <p>Get updates in your inbox</p>
-                                <Form inverted>
+                                <Form
+                                    inverted
+                                    style={{
+                                        width: "fit-content",
+                                    }}
+                                >
                                     <FormField>
                                         <Input placeholder="Enter your email" />
                                     </FormField>
