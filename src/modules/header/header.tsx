@@ -47,17 +47,75 @@ const Header = () => {
             </Menu>
             <Menu name="navbar" attached="bottom" borderless>
                 <Container style={{ width: "1330px", margin: "auto" }}>
-                    <MenuItem name="professions">Профессии</MenuItem>
+                    <MenuItem name="intensive">
+                        <Link
+                            href="/"
+                            style={{
+                                color: "inherit",
+                            }}
+                        >
+                            Летние интенсивы 2024
+                        </Link>
+                    </MenuItem>
 
-                    <MenuItem name="curators">Кураторы</MenuItem>
+                    <MenuItem name="trainers">
+                        <Link
+                            href="/"
+                            style={{
+                                color: "inherit",
+                            }}
+                        >
+                            Наши тренеры
+                        </Link>
+                    </MenuItem>
 
-                    <MenuItem name="tostudents">Студентам</MenuItem>
-
-                    <Dropdown text="dropdown" pointing className="link item">
+                    <Dropdown text="Обучающимся" pointing className="link item">
                         <DropdownMenu>
-                            <DropdownItem>Вкладка 1</DropdownItem>
-                            <DropdownItem>Вкладка 2</DropdownItem>
-                            <DropdownItem>Вкладка 3</DropdownItem>
+                            <DropdownItem>
+                                <Link
+                                    href="/"
+                                    style={{
+                                        color: "inherit",
+                                    }}
+                                >
+                                    Выбор курса
+                                </Link>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <Link
+                                    href="/"
+                                    style={{
+                                        color: "inherit",
+                                    }}
+                                >
+                                    Вопросы и ответы
+                                </Link>
+                            </DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+
+                    <Dropdown text="О нас" pointing className="link item">
+                        <DropdownMenu>
+                            <DropdownItem>
+                                <Link
+                                    href="/"
+                                    style={{
+                                        color: "inherit",
+                                    }}
+                                >
+                                    Анонсы
+                                </Link>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <Link
+                                    href="/"
+                                    style={{
+                                        color: "inherit",
+                                    }}
+                                >
+                                    О нашей школе
+                                </Link>
+                            </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
 
