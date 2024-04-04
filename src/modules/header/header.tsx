@@ -33,7 +33,7 @@ const Header = () => {
                             />
                         </Link>
                     </MenuItem>
-                    <MenuItem position="right">+77711739922</MenuItem>
+                    <MenuItem position="right">+77051400124</MenuItem>
                     <MenuItem>
                         <Button inverted>EN</Button>
                         <Button inverted style={{ marginLeft: "10px" }}>
