@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import style from "./style.module.css";
 import {
@@ -11,7 +12,31 @@ import {
     Button,
     Icon,
 } from "@/UI/SUI";
+import { useState } from "react";
+
 const Header = () => {
+    const [language, setLanguage] = useState("RU");
+    const [currency, setCurrency] = useState("KZT");
+
+    const languageOptions = [
+        { key: "RU", text: "RU", value: "RU", flag: "ru" },
+        { key: "KZ", text: "KZ", value: "KZ", flag: "kz" },
+        { key: "EN", text: "EN", value: "EN", flag: "us" },
+    ];
+
+    const currencyOptions = [
+        { key: "KZT", text: "KZT", value: "KZT" },
+        { key: "RUB", text: "RUB", value: "RUB" },
+        { key: "USD", text: "USD", value: "USD" },
+    ];
+    const handleLanguageChange = (data: any) => {
+        setLanguage(data.value as string);
+    };
+
+    const handleCurrencyChange = (data: any) => {
+        setCurrency(data.value as string);
+    };
+
     return (
         <Container
             name="header"
@@ -34,12 +59,44 @@ const Header = () => {
                         </Link>
                     </MenuItem>
                     <MenuItem position="right">+77051400124</MenuItem>
+                    <MenuItem style={{ paddingRight: "10px" }}>
+                        <Dropdown
+                            style={{
+                                border: "1px solid #ccc",
+                                borderRadius: "5px",
+                                padding: "10px",
+                                margin: "auto",
+                            }}
+                            inline
+                            options={languageOptions}
+                            value={language}
+                            onChange={handleLanguageChange}
+                        />
+                    </MenuItem>
+                    <MenuItem style={{ paddingLeft: "10px" }}>
+                        <Dropdown
+                            style={{
+                                border: "1px solid #ccc",
+                                borderRadius: "5px",
+                                padding: "10px",
+                                margin: "auto",
+                            }}
+                            inline
+                            options={currencyOptions}
+                            value={currency}
+                            onChange={handleCurrencyChange}
+                        />
+                    </MenuItem>
                     <MenuItem>
-                        <Button inverted>EN</Button>
-                        <Button inverted style={{ marginLeft: "10px" }}>
-                            USD
-                        </Button>
-                        <Button inverted style={{ marginLeft: "20px" }}>
+                        <Button
+                            color="black"
+                            style={{
+                                border: "1px solid #ccc",
+                                borderRadius: "5px",
+                                padding: "10px 20px",
+                                margin: "auto",
+                            }}
+                        >
                             Личный кабинет
                         </Button>
                     </MenuItem>
