@@ -1,7 +1,6 @@
 import { Card, Button, CardProps } from "@/UI/SUI";
-import Image from "next/image";
 
-interface CardPropsTemplate extends CardProps {
+interface CardPropsCoach extends CardProps {
     image: React.ReactNode; //string
     header: string;
     description: string;
@@ -10,7 +9,7 @@ interface CardPropsTemplate extends CardProps {
 
 const extra = <Button fluid>Подробнее</Button>;
 
-export const CardTemplate: React.FC<CardPropsTemplate> = ({
+export const CoachCard: React.FC<CardPropsCoach> = ({
     image,
     header,
     description,
@@ -25,18 +24,3 @@ export const CardTemplate: React.FC<CardPropsTemplate> = ({
         />
     );
 };
-{
-    /* <Image
-src={"/" + image}
-alt=""
-width={500}
-height={500}
-quality={100}
-style={{
-    width: "100%",
-    height: "400px",
-    objectFit: "cover",
-    objectPosition: "top",
-}}
-/> */
-}

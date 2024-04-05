@@ -1,16 +1,16 @@
-import { CardTemplate } from "@/modules/card/card";
+import { CoachCard } from "@/modules/coachCard/coachCard";
 import { ICoachCardInfoGroup } from "@/service/types";
 import { Grid, GridColumn, GridRow } from "@/UI/SUI";
 import Image from "next/image";
 
-
-export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({ coachesInfo }) => {
-
+export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({
+    coachesInfo,
+}) => {
     const groupedCoaches = [];
     for (let i = 0; i < coachesInfo.length; i += 4) {
         groupedCoaches.push(coachesInfo.slice(i, i + 4));
     }
-    
+
     return (
         <>
             {groupedCoaches.map((group, index) => (
@@ -18,7 +18,7 @@ export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({ coachesInfo }
                     <GridRow>
                         {group.map((coach) => (
                             <GridColumn key={coach.id}>
-                                <CardTemplate
+                                <CoachCard
                                     image={
                                         <Image
                                             src={"/" + coach.img}
@@ -44,4 +44,4 @@ export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({ coachesInfo }
             ))}
         </>
     );
-}
+};
