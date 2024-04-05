@@ -1,3 +1,8 @@
-.container {
-    background-color: red;
+/* Изменение цвета фона и текста у раскрывающихся списков языка и валюты */
+.ui.dropdown .menu {
+    background-color: #1b1c1d !important;
+}
+
+.ui.dropdown .menu .item .text {
+    color: white;
 }
