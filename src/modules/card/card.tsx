@@ -1,6 +1,6 @@
 import { Card, Button, CardProps } from "@/UI/SUI";
 
-interface CourseCardProps extends CardProps {
+interface CardPropsTemplate extends CardProps {
     image: string;
     header: string;
     description: string;
@@ -9,7 +9,7 @@ interface CourseCardProps extends CardProps {
 
 const extra = <Button fluid>Подробнее</Button>;
 
-export const CourseCard: React.FC<CourseCardProps> = ({
+export const CardTemplate: React.FC<CardPropsTemplate> = ({
     image,
     header,
     description,
