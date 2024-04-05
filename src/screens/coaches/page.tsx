@@ -1,7 +1,7 @@
 import { Layout } from "@/layouts/layout";
 import { Container, Header } from "@/UI/SUI";
 import { GroupCoachesCards } from "./components/groupCoaches/groupCoaches";
-import { ICoachCardInfoGroup } from "@/service/types";
+import { ICoachCardInfoGroup } from "@/service/coachesService/types";
 
 export const Coaches: React.FC<ICoachCardInfoGroup> = ({ coachesInfo }) => {
     return (

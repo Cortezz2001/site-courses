@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import style from "./style.module.css";
 import {
     Container,
     Menu,
@@ -41,9 +40,14 @@ const Header = () => {
         <Container
             name="header"
             fluid
-            style={{ position: "sticky", top: "0", zIndex: "1000" }}
+            style=
+            {{ 
+                position: "sticky", 
+                top: "0", 
+                zIndex: "1000"
+            }}
         >
-            <Menu name="mainheader" borderless attached="top" inverted>
+            <Menu name="mainheader" borderless attached="top" inverted style={{ borderRadius: 0}}>
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem position="left" name="logo">
                         <Link href="/">
