@@ -1,5 +1,6 @@
 import { Card, Button, CardProps } from "@/UI/SUI";
 import Image from "next/image";
+
 interface CardPropsTemplate extends CardProps {
     image: React.ReactNode; //string
     header: string;
