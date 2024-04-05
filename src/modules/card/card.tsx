@@ -1,7 +1,7 @@
 import { Card, Button, CardProps } from "@/UI/SUI";
-
+import Image from "next/image";
 interface CardPropsTemplate extends CardProps {
-    image: string;
+    image: React.ReactNode; //string
     header: string;
     description: string;
     extra?: React.ReactNode;
@@ -24,3 +24,18 @@ export const CardTemplate: React.FC<CardPropsTemplate> = ({
         />
     );
 };
+{
+    /* <Image
+src={"/" + image}
+alt=""
+width={500}
+height={500}
+quality={100}
+style={{
+    width: "100%",
+    height: "400px",
+    objectFit: "cover",
+    objectPosition: "top",
+}}
+/> */
+}

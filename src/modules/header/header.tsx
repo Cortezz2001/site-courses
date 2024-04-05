@@ -117,7 +117,7 @@ const Header = () => {
 
                     <MenuItem name="trainers">
                         <Link
-                            href="/"
+                            href="/coaches"
                             style={{
                                 color: "inherit",
                             }}
