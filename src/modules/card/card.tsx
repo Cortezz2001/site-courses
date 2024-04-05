@@ -9,7 +9,11 @@ interface CourseCardProps extends CardProps {
 
 const extra = <Button fluid>Подробнее</Button>;
 
-const CourseCard: React.FC<CourseCardProps> = ({ image, header, description }) => {
+export const CourseCard: React.FC<CourseCardProps> = ({
+    image,
+    header,
+    description,
+}) => {
     return (
         <Card
             link
@@ -19,6 +23,4 @@ const CourseCard: React.FC<CourseCardProps> = ({ image, header, description }) =
             extra={extra}
         />
     );
-}
-
-export default CourseCard
+};
