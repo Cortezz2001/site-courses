@@ -16,7 +16,11 @@ interface CardPropsCourse extends CardProps {
     extra?: React.ReactNode;
 }
 
-const extra = <Button fluid>Подробнее</Button>;
+const extra = (
+    <Button fluid style={{ backgroundColor: "#007397", color: "white" }}>
+        Подробнее
+    </Button>
+);
 
 export const CourseCard: React.FC<CardPropsCourse> = ({
     image,
@@ -24,7 +28,12 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
     description,
 }) => {
     return (
-        <Card link>
+        <Card
+            link
+            style={{
+                border: "1px solid #007397",
+            }}
+        >
             <Image
                 src={image}
                 alt=""
@@ -33,15 +42,17 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
                 quality={100}
                 style={{
                     width: "100%",
-                    height: "300px",
+                    height: "400px",
                     objectFit: "cover",
                     objectPosition: "top",
                 }}
             />
             <CardContent>
                 <CardHeader>{header}</CardHeader>
-                <CardDescription>{description}</CardDescription>
-                <CardMeta>{extra}</CardMeta>
+                <CardDescription style={{ fontweight: "bold" }}>
+                    {description}
+                </CardDescription>
+                <CardMeta style={{ marginTop: "15px" }}>{extra}</CardMeta>
             </CardContent>
         </Card>
     );

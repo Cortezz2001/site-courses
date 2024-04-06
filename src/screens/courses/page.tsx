@@ -1,17 +1,44 @@
+import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
+import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
 import { CourseCard } from "@/modules/courseCard/courseCard";
 import { Container, Header } from "@/UI/SUI";
-export default function Courses() {
+import { GroupCoursesCards } from "./components/groupCourses";
+import { ICourseCardInfoGroup } from "@/service/coursesService/types";
+
+const BreadcrumbProps: Array<IBreadCrumb> = [
+    {
+        key: "Home",
+        content: "Главная",
+        isLink: true,
+        isActive: false,
+        url: "/",
+    },
+    {
+        key: "Courses",
+        content: "Курсы",
+        isLink: true,
+        isActive: true,
+        url: "/courses",
+    },
+];
+
+export const Courses: React.FC<ICourseCardInfoGroup> = ({ coursesInfo }) => {
     return (
         <Layout>
             <Container>
-                <Header as="h2">Header</Header>
-                <CourseCard
+                <BreadcrumbComponent sections={BreadcrumbProps} />
+                <Header as="h1" style={{ marginBottom: "30px" }}>
+                    Курсы
+                </Header>
+                <GroupCoursesCards coursesInfo={coursesInfo} />
+
+                {/* <CourseCard
                     image={"/example-course-photo.jpg"}
-                    header={"123"}
-                    description={"123"}
-                />
+                    header={"Python для начинающих"}
+                    description={"50000 тг"}
+                /> */}
             </Container>
         </Layout>
     );
-}
+};
