@@ -32,6 +32,7 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
             link
             style={{
                 border: "1px solid #007397",
+                height: "100%",
             }}
         >
             <Image
@@ -42,17 +43,25 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
                 quality={100}
                 style={{
                     width: "100%",
-                    height: "400px",
+                    height: "250px",
                     objectFit: "cover",
                     objectPosition: "top",
                 }}
             />
-            <CardContent>
+            <CardContent
+                style={{
+                    marginTop: "5px",
+                    display: "flex",
+                    flexDirection: "column",
+                }}
+            >
                 <CardHeader>{header}</CardHeader>
-                <CardDescription style={{ fontweight: "bold" }}>
+                <CardDescription
+                    style={{ fontweight: "bold", marginBottom: "15px" }}
+                >
                     {description}
                 </CardDescription>
-                <CardMeta style={{ marginTop: "15px" }}>{extra}</CardMeta>
+                <CardMeta style={{ marginTop: "auto" }}>{extra}</CardMeta>
             </CardContent>
         </Card>
     );
