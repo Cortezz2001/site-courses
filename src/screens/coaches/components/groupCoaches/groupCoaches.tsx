@@ -19,23 +19,9 @@ export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({
                         {group.map((coach) => (
                             <GridColumn key={coach.id}>
                                 <CoachCard
-                                    image={
-                                        <Image
-                                            src={coach.img}
-                                            alt=""
-                                            width={500}
-                                            height={500}
-                                            quality={100}
-                                            style={{
-                                                width: "100%",
-                                                height: "400px",
-                                                objectFit: "cover",
-                                                objectPosition: "top",
-                                            }}
-                                        />
-                                    }
+                                    image={coach.img}
                                     header={coach.name}
-                                    description={coach.exp}
+                                    description={"Стаж: " + coach.exp}
                                 />
                             </GridColumn>
                         ))}

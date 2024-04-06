@@ -1,13 +1,17 @@
-import { Card, CardProps } from "@/UI/SUI";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    Image,
+    CardProps,
+} from "@/UI/SUI";
 
 interface CardPropsCoach extends CardProps {
-    image: React.ReactNode; //string
+    image: React.ReactNode;
     header: string;
     description: string;
-    extra?: React.ReactNode;
 }
-
-//const extra = <Button fluid>Подробнее</Button>;
 
 export const CoachCard: React.FC<CardPropsCoach> = ({
     image,
@@ -15,12 +19,24 @@ export const CoachCard: React.FC<CardPropsCoach> = ({
     description,
 }) => {
     return (
-        <Card
-            link
-            image={image}
-            header={header}
-            meta={description}
-            //extra={extra}
-        />
+        <Card link>
+            <Image
+                src={image}
+                alt=""
+                width={500}
+                height={500}
+                quality={100}
+                style={{
+                    width: "100%",
+                    height: "400px",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                }}
+            />
+            <CardContent>
+                <CardHeader>{header}</CardHeader>
+                <CardDescription>{description}</CardDescription>
+            </CardContent>
+        </Card>
     );
 };
