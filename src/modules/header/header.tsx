@@ -40,14 +40,19 @@ const Header = () => {
         <Container
             name="header"
             fluid
-            style=
-            {{ 
-                position: "sticky", 
-                top: "0", 
-                zIndex: "1000"
+            style={{
+                position: "sticky",
+                top: "0",
+                zIndex: "1000",
             }}
         >
-            <Menu name="mainheader" borderless attached="top" inverted style={{ borderRadius: 0}}>
+            <Menu
+                name="mainheader"
+                borderless
+                attached="top"
+                inverted
+                style={{ borderRadius: 0 }}
+            >
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem position="left" name="logo">
                         <Link href="/">
@@ -132,51 +137,43 @@ const Header = () => {
 
                     <Dropdown text="Обучающимся" pointing className="link item">
                         <DropdownMenu>
-                            <DropdownItem>
-                                <Link
-                                    href="/"
-                                    style={{
-                                        color: "inherit",
-                                    }}
-                                >
-                                    Выбор курса
-                                </Link>
-                            </DropdownItem>
-                            <DropdownItem>
-                                <Link
-                                    href="/"
-                                    style={{
-                                        color: "inherit",
-                                    }}
-                                >
-                                    Вопросы и ответы
-                                </Link>
-                            </DropdownItem>
+                            <Link
+                                href="/courses"
+                                style={{
+                                    color: "inherit",
+                                }}
+                            >
+                                <DropdownItem>Выбор курса</DropdownItem>
+                            </Link>
+                            <Link
+                                href="/"
+                                style={{
+                                    color: "inherit",
+                                }}
+                            >
+                                <DropdownItem>Вопросы и ответы</DropdownItem>
+                            </Link>
                         </DropdownMenu>
                     </Dropdown>
 
                     <Dropdown text="О нас" pointing className="link item">
                         <DropdownMenu>
-                            <DropdownItem>
-                                <Link
-                                    href="/"
-                                    style={{
-                                        color: "inherit",
-                                    }}
-                                >
-                                    Анонсы
-                                </Link>
-                            </DropdownItem>
-                            <DropdownItem>
-                                <Link
-                                    href="/"
-                                    style={{
-                                        color: "inherit",
-                                    }}
-                                >
-                                    О нашей школе
-                                </Link>
-                            </DropdownItem>
+                            <Link
+                                href="/"
+                                style={{
+                                    color: "inherit",
+                                }}
+                            >
+                                <DropdownItem>Анонсы</DropdownItem>
+                            </Link>
+                            <Link
+                                href="/"
+                                style={{
+                                    color: "inherit",
+                                }}
+                            >
+                                <DropdownItem>О нашей школе</DropdownItem>
+                            </Link>
                         </DropdownMenu>
                     </Dropdown>
 
