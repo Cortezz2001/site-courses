@@ -5,6 +5,7 @@ import { CourseCard } from "@/modules/courseCard/courseCard";
 import { Container, Header } from "@/UI/SUI";
 import { GroupCoursesCards } from "./components/groupCourses";
 import { ICourseCardInfoGroup } from "@/service/coursesService/types";
+import InfoBlock from "./components/infoBlock";
 
 const BreadcrumbProps: Array<IBreadCrumb> = [
     {
@@ -32,12 +33,7 @@ export const Courses: React.FC<ICourseCardInfoGroup> = ({ coursesInfo }) => {
                     Курсы
                 </Header>
                 <GroupCoursesCards coursesInfo={coursesInfo} />
-
-                {/* <CourseCard
-                    image={"/example-course-photo.jpg"}
-                    header={"Python для начинающих"}
-                    description={"50000 тг"}
-                /> */}
+                <InfoBlock />
             </Container>
         </Layout>
     );

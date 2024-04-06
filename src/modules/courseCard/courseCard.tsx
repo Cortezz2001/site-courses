@@ -7,6 +7,7 @@ import {
     CardHeader,
     CardDescription,
     CardMeta,
+    Header,
 } from "@/UI/SUI";
 
 interface CardPropsCourse extends CardProps {
@@ -59,7 +60,8 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
                 <CardDescription
                     style={{ fontweight: "bold", marginBottom: "15px" }}
                 >
-                    {description}
+                    <Header sub>Цена</Header>
+                    <span>{description}</span>
                 </CardDescription>
                 <CardMeta style={{ marginTop: "auto" }}>{extra}</CardMeta>
             </CardContent>

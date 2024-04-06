@@ -21,7 +21,7 @@ export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
                                 <CourseCard
                                     image={course.img}
                                     header={course.title}
-                                    description={"Цена: " + course.price}
+                                    description={course.price + " тг"}
                                 />
                             </GridColumn>
                         ))}
