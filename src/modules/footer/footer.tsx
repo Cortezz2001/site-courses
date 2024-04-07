@@ -75,8 +75,10 @@ export default function Footer() {
                                 </List>
                             </GridColumn>
                             <GridColumn width={4}>
-                                <Header inverted as="h4" content="Subscribe" />
-                                <p>Get updates in your inbox</p>
+                                <p>
+                                    Оставьте почту, или останетесь без крутых
+                                    писем от Lion IT-School
+                                </p>
                                 <Form
                                     inverted
                                     style={{
@@ -84,13 +86,13 @@ export default function Footer() {
                                     }}
                                 >
                                     <FormField>
-                                        <Input placeholder="Enter your email" />
+                                        <Input placeholder="E-mail" />
                                     </FormField>
-                                    <Button inverted type="submit">
-                                        Subscribe
+                                    <Button fluid inverted type="submit">
+                                        Отправить
                                     </Button>
                                     <FormCheckbox
-                                        label="I agree to the Terms and Conditions"
+                                        label="Я согласен с Политикой обработки персональных данных"
                                         style={{
                                             marginTop: "10px",
                                             fontSize: "12px",
