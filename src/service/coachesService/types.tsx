@@ -1,10 +1,10 @@
 export interface ICoachCardInfo {
-    id: number
-    img: string
-    name: string
-    exp: string
+    id: number;
+    img: string;
+    name: string;
+    role: string;
 }
 
-export interface ICoachCardInfoGroup{
-    coachesInfo: Array<ICoachCardInfo>
+export interface ICoachCardInfoGroup {
+    coachesInfo: Array<ICoachCardInfo>;
 }

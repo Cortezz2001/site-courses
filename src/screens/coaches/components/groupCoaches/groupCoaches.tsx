@@ -1,7 +1,6 @@
 import { CoachCard } from "@/modules/coachCard/coachCard";
 import { ICoachCardInfoGroup } from "@/service/coachesService/types";
 import { Grid, GridColumn, GridRow } from "@/UI/SUI";
-import Image from "next/image";
 
 export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({
     coachesInfo,
@@ -21,7 +20,7 @@ export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({
                                 <CoachCard
                                     image={coach.img}
                                     header={coach.name}
-                                    description={"Стаж: " + coach.exp}
+                                    description={coach.role}
                                 />
                             </GridColumn>
                         ))}
