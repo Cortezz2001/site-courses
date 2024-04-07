@@ -115,7 +115,7 @@ const Header = () => {
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem name="intensive">
                         <Link
-                            href="/"
+                            href="/intensives"
                             style={{
                                 color: "inherit",
                             }}
