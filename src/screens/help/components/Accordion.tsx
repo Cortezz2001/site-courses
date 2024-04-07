@@ -26,7 +26,14 @@ export default function MyAccordion({
                     border: "1px solid #007397",
                 }}
             >
-                <AccordionTitle active>Общая информация</AccordionTitle>
+                <AccordionTitle
+                    style={{
+                        borderBottom: "1px solid #007397",
+                    }}
+                    active
+                >
+                    Общая информация
+                </AccordionTitle>
                 <AccordionTitle
                     active={activeIndex === 0}
                     index={0}
@@ -146,7 +153,14 @@ export default function MyAccordion({
                 styled
                 style={{ marginTop: "30px", border: "1px solid #007397" }}
             >
-                <AccordionTitle active>Вопросы по обучению</AccordionTitle>
+                <AccordionTitle
+                    style={{
+                        borderBottom: "1px solid #007397",
+                    }}
+                    active
+                >
+                    Вопросы по обучению
+                </AccordionTitle>
                 <AccordionTitle
                     active={activeIndex === 4}
                     index={4}
