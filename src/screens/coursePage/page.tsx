@@ -82,7 +82,17 @@ export async function CourseDetailsPage({
                 <Header as="h1" style={{ marginBottom: "30px" }}>
                     {courseInfo.title}
                 </Header>
-                <Image src={courseInfo.img} alt="course image" centered />
+                <Image
+                    rounded
+                    src={courseInfo.img}
+                    alt="course image"
+                    centered
+                    style={{
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "600px",
+                    }}
+                />
                 <Grid style={{ marginTop: "30px" }}>
                     <GridRow>
                         <GridColumn width={10}>
@@ -96,12 +106,13 @@ export async function CourseDetailsPage({
                                 meta={`Курс: ${courseInfo.format} обучение`}
                                 description={`Курс: ${courseInfo.timeline} недель`}
                                 extra={extra}
-                                style={{ marginLeft: "auto" }}
+                                fluid
+                                style={{ margin: "auto" }}
                             />
                         </GridColumn>
                     </GridRow>
                 </Grid>
-                <Grid style={{ marginTop: "30px" }}>
+                <Grid>
                     <GridRow>
                         <GridColumn width={8}>
                             <Segment raised style={{ fontSize: "large" }}>
@@ -123,10 +134,19 @@ export async function CourseDetailsPage({
                             </Segment>
                         </GridColumn>
                         <GridColumn width={8}>
-                            <Header as="h2" style={{ marginBottom: "30px" }}>
+                            <Header
+                                textAlign="center"
+                                as={"h2"}
+                                style={{ marginBottom: "30px" }}
+                            >
                                 Цель изучения дисциплины
                             </Header>
-                            <Container style={{ fontSize: "x-large" }}>
+                            <Container
+                                style={{
+                                    fontSize: "x-large",
+                                    paddingLeft: "10px",
+                                }}
+                            >
                                 <p>{courseInfo.goal}</p>
                             </Container>
                         </GridColumn>
@@ -137,7 +157,11 @@ export async function CourseDetailsPage({
                 </Header>
 
                 {courseInfo.challenges.map((challenge, index) => (
-                    <List key={index} as="ul" style={{ fontSize: "large" }}>
+                    <List
+                        key={index}
+                        as="ul"
+                        style={{ fontSize: "large", textAlign: "justify" }}
+                    >
                         <ListItem as="li">{challenge.text}</ListItem>
                     </List>
                 ))}
