@@ -23,12 +23,12 @@ export default function MyAccordion({
                 fluid
                 styled
                 style={{
-                    border: "1px solid #007397",
+                    border: "2px solid #007397",
                 }}
             >
                 <AccordionTitle
                     style={{
-                        borderBottom: "1px solid #007397",
+                        borderBottom: "2px solid #007397",
                     }}
                     active
                 >
@@ -151,11 +151,11 @@ export default function MyAccordion({
             <Accordion
                 fluid
                 styled
-                style={{ marginTop: "30px", border: "1px solid #007397" }}
+                style={{ marginTop: "30px", border: "2px solid #007397" }}
             >
                 <AccordionTitle
                     style={{
-                        borderBottom: "1px solid #007397",
+                        borderBottom: "2px solid #007397",
                     }}
                     active
                 >
