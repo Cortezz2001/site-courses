@@ -21,13 +21,25 @@ const images = [
     { src: slideImage_5, alt: "slideImage_5" },
 ];
 
-export default function SwiperSlider() {
+export default function BannerCarousel() {
     return (
         <>
             <Swiper
-                navigation
-                pagination={{ clickable: true }}
+                style={
+                    {
+                        "--swiper-pagination-color": "white",
+                        "--swiper-pagination-bullet-inactive-color": "white",
+                        "--swiper-pagination-bullet-inactive-opacity": "0.35",
+                        "--swiper-pagination-bullet-size": "16px",
+                        "--swiper-pagination-bullet-horizontal-gap": "6px",
+                    } as any
+                }
                 modules={[Navigation, Pagination]}
+                pagination={{ clickable: true }}
+                navigation={{
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                }}
             >
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
@@ -40,6 +52,15 @@ export default function SwiperSlider() {
                         />
                     </SwiperSlide>
                 ))}
+                <div
+                    className="swiper-button-prev"
+                    style={{ color: "white" }}
+                ></div>
+                <div
+                    className="swiper-button-next"
+                    style={{ color: "white" }}
+                ></div>
+                <div className="swiper-pagination"></div>
             </Swiper>
         </>
     );
