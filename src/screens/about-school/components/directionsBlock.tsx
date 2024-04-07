@@ -16,7 +16,7 @@ const DirectionsBlock: React.FC = () => {
                 as="h2"
                 icon
                 textAlign="center"
-                style={{ marginBottom: "30px" }}
+                style={{ marginBottom: "50px" }}
             >
                 <Icon name="graduation cap" style={{ color: "#007397" }} />
                 Направления курсов
