@@ -17,6 +17,7 @@ import {
     ListContent,
     Icon,
     List,
+    CardGroup
 } from "@/UI/SUI";
 
 const BreadcrumbProps: Array<IBreadCrumb> = [
@@ -42,37 +43,43 @@ const extra = (
     </Button>
 );
 
+const cardItems = [
+    {
+      header: 'Новичкам в программировании',
+      description:
+        'Для новичков в программировании, курс может стать отличным стартовым пунктом. Он предоставляет базовые знания и основные концепции, которые необходимы для начала изучения программирования. Это помогает новичкам понять основные принципы кодирования, структуры данных и алгоритмов, что делает их более уверенными в своих способностях и помогает им избежать распространенных ошибок на ранних этапах своего обучения.'
+    },
+    {
+      header: 'Начинающим разработчикам',
+      description:
+        'Начинающим разработчикам курс программирования может предложить дополнительные навыки и технологии, которые могут быть важными для их карьерного роста. Например, он может включать в себя обучение работы с популярными фреймворками или инструментами, которые широко используются в отрасли. Это помогает начинающим разработчикам расширить свой набор навыков и быть более конкурентоспособными на рынке труда.'
+    },
+    {
+      header: 'Опытным программистам',
+      description:
+        'Для опытных программистов курсы программирования могут предложить возможность изучения новых технологий или обновления их существующих навыков. Быстро развивающаяся природа сферы информационных технологий требует от программистов постоянного обновления знаний и умений. Участие в курсе позволяет опытным программистам оставаться в курсе последних тенденций и инноваций в своей области, что помогает им оставаться востребованными на рынке труда и развиваться профессионально.'
+    },
+  ]
+
 const CourseDetailsPage: React.FC = () => {
     return (
         <Layout>
             <Container>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h1" style={{ marginBottom: "30px" }}>
-                    Python-разработчик
+                    {/*title*/}
                 </Header>
-                <Image
-                    src="/example-course-photo.jpg"
-                    alt="course image"
-                    centered
-                />
+                <Image src={/*img*/} alt="course image" centered />
                 <Grid style={{ marginTop: "30px" }}>
                     <GridRow>
                         <GridColumn width={10}>
-                            <p style={{ fontSize: "large" }}>
-                                Курс дает возможность познакомиться с основными
-                                понятиями и особенностями языка и системы
-                                Python. Рассматриваются основные конструкции
-                                языка и встроенные функции, создание модулей и
-                                пакетов, инструменты функционального
-                                программирования, основные библиотеки Python для
-                                работы с данными.
-                            </p>
+                            <p style={{ fontSize: "large" }}>{/*desc*/}</p>
                         </GridColumn>
                         <GridColumn width={6}>
                             <Card
-                                header="600 000 тг."
-                                meta="Оффлайн / онлайн обучение"
-                                description="Курс: 26 недель"
+                                header={`${/*price*/} тг.`}
+                                meta={`Курс: ${/*format*/} обучение`}
+                                description={`Курс: ${/*timeline*/} недель`}
                                 extra={extra}
                                 style={{ marginLeft: "auto" }}
                             />
@@ -83,71 +90,16 @@ const CourseDetailsPage: React.FC = () => {
                     <GridRow>
                         <GridColumn width={8}>
                             <Segment raised style={{ fontSize: "large" }}>
+                                {/* map 'features'*/}
                                 <List>
                                     <ListItem as="a">
                                         <Icon name="check square outline" />
                                         <ListContent>
                                             <ListHeader>
-                                                Форма обучения
+                                                {/*features.title*/}
                                             </ListHeader>
                                             <ListDescription>
-                                                – гибрид; оффлайн; онлайн
-                                            </ListDescription>
-                                        </ListContent>
-                                    </ListItem>
-                                    <ListItem as="a">
-                                        <Icon name="check square outline" />
-                                        <ListContent>
-                                            <ListHeader>
-                                                Язык обучения
-                                            </ListHeader>
-                                            <ListDescription>
-                                                русский
-                                            </ListDescription>
-                                        </ListContent>
-                                    </ListItem>
-                                    <ListItem as="a">
-                                        <Icon name="check square outline" />
-                                        <ListContent>
-                                            <ListHeader>
-                                                Количество недель
-                                            </ListHeader>
-                                            <ListDescription>
-                                                26
-                                            </ListDescription>
-                                        </ListContent>
-                                    </ListItem>
-                                    <ListItem as="a">
-                                        <Icon name="check square outline" />
-                                        <ListContent>
-                                            <ListHeader>
-                                                Возраст обучающихся
-                                            </ListHeader>
-                                            <ListDescription>
-                                                – 18-45 лет
-                                            </ListDescription>
-                                        </ListContent>
-                                    </ListItem>
-                                    <ListItem as="a">
-                                        <Icon name="check square outline" />
-                                        <ListContent>
-                                            <ListHeader>
-                                                Количество занятий и учебных
-                                                часов в неделю
-                                            </ListHeader>
-                                            <ListDescription>
-                                                4 часа
-                                            </ListDescription>
-                                        </ListContent>
-                                    </ListItem>
-                                    <ListItem as="a">
-                                        <Icon name="check square outline" />
-                                        <ListContent>
-                                            <ListHeader>
-                                                Количество учебных часов за год
-                                            </ListHeader>
-                                            <ListDescription>
-                                                104 часа
+                                                {/*features.feature*/}
                                             </ListDescription>
                                         </ListContent>
                                     </ListItem>
@@ -160,18 +112,21 @@ const CourseDetailsPage: React.FC = () => {
                             </Header>
                             <Container style={{ fontSize: "x-large" }}>
                                 <p>
-                                    Изучить основы алгоритмизации вычислительных
-                                    процессов и возможности языка
-                                    программирования Python при решении
-                                    различных прикладных задач. Каждая работа
-                                    сопровождается пояснениями и контрольными
-                                    вопросами, направленными на повышение
-                                    качества усвоения материала
+                                    {/*goal*/}
                                 </p>
                             </Container>
                         </GridColumn>
                     </GridRow>
                 </Grid>
+                <Header as="h2" style={{ marginBottom: "30px" }}>
+                    Задачи курса
+                </Header>
+                {/* map 'chalenges'*/}
+                <List as="ul" style={{ fontSize: "large" }}>
+                    <ListItem as="li">
+                        {/*chalenges.text*/}
+                    </ListItem>
+                </List>
                 <Header as="h2" style={{ marginBottom: "30px" }}>
                     В результате изучения курса
                 </Header>
@@ -181,24 +136,10 @@ const CourseDetailsPage: React.FC = () => {
                             <Header as="h3" style={{ marginBottom: "30px" }}>
                                 Должен знать:
                             </Header>
+                            {/* map 'knowhows'*/}
                             <List as="ul" style={{ fontSize: "large" }}>
                                 <ListItem as="li">
-                                    тенденции и перспективы развития современных
-                                    инструментальных сред разработки программ
-                                </ListItem>
-                                <ListItem as="li">
-                                    иметь представление о теоретических основах
-                                    алгоритмизации
-                                </ListItem>
-                                <ListItem as="li">
-                                    уметь осуществлять редактирование и отладку
-                                    программ на языке Python
-                                </ListItem>
-                                <ListItem as="li">
-                                    построения структурных схем алгоритмов
-                                    различных задач, в том числе использующих
-                                    линейные, ветвящиеся и циклические алгоритмы
-                                    вычислительных процессов
+                                    {/*knowhows.text*/}
                                 </ListItem>
                             </List>
                         </GridColumn>
@@ -206,25 +147,10 @@ const CourseDetailsPage: React.FC = () => {
                             <Header as="h3" style={{ marginBottom: "30px" }}>
                                 Должен уметь:
                             </Header>
+                            {/* map 'skills'*/}
                             <List as="ul" style={{ fontSize: "large" }}>
                                 <ListItem as="li">
-                                    выбирать и применять базовые типы данных и
-                                    структуры данных языка программирования
-                                    Python для решения прикладных задач
-                                </ListItem>
-                                <ListItem as="li">
-                                    разрабатывать собственные функции на языке
-                                    программирования Python , передавать
-                                    аргументы в функции, возвращать результат из
-                                    функции для решения прикладных задач
-                                </ListItem>
-                                <ListItem as="li">
-                                    писать программный код на языке
-                                    программирования Python
-                                </ListItem>
-                                <ListItem as="li">
-                                    запускать и отлаживать свой код для решения
-                                    прикладных задач.
+                                    {/*skills.text*/}
                                 </ListItem>
                             </List>
                         </GridColumn>
@@ -235,21 +161,14 @@ const CourseDetailsPage: React.FC = () => {
                 </Header>
                 <Container style={{ fontSize: "large" }}>
                     <p>
-                        В результате обучения обучающиеся должны уметь создавать
-                        телеграм-ботов, сайты, приложения, нейросети и
-                        использовать Python для научных исследований — теория и
-                        практика на реальных задачах. При успешной сдаче
-                        экзамена, обучающийся получает квалификацию Junior
-                        разработчик. Должен демонстрировать способность и
-                        готовность применять полученные знания в практической
-                        деятельности.
+                        {/*result*/}
                     </p>
                 </Container>
                 <Header as="h2" style={{ marginBottom: "30px" }}>
                     Форма контроля
                 </Header>
                 <Container style={{ fontSize: "large" }}>
-                    <p>Экзамен</p>
+                    <p>{/*control*/}</p>
                 </Container>
                 <Header as="h3" style={{ marginBottom: "30px" }}>
                     Образовательные технологии, применяемые при освоении
@@ -280,6 +199,10 @@ const CourseDetailsPage: React.FC = () => {
                         и обучающихся
                     </p>
                 </Container>
+                <Header as="h2" style={{ marginBottom: "30px" }}>
+                    Кому подойдет этот курс
+                </Header>
+                <CardGroup items={cardItems} />
             </Container>
         </Layout>
     );
