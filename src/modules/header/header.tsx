@@ -167,7 +167,7 @@ const Header = () => {
                                 <DropdownItem>Анонсы</DropdownItem>
                             </Link>
                             <Link
-                                href="/"
+                                href="/about-school"
                                 style={{
                                     color: "inherit",
                                 }}
