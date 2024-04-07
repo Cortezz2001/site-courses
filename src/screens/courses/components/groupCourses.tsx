@@ -1,6 +1,7 @@
 import { CourseCard } from "@/modules/courseCard/courseCard";
 import { ICourseCardInfoGroup } from "@/service/coursesService/types";
 import { Button, Grid, GridColumn, GridRow } from "@/UI/SUI";
+import Link from "next/link";
 import Image from "next/image";
 
 export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
@@ -18,11 +19,13 @@ export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
                     <GridRow>
                         {group.map((course) => (
                             <GridColumn key={course.id}>
-                                <CourseCard
-                                    image={course.img}
-                                    header={course.title}
-                                    description={course.price + " тг"}
-                                />
+                                <Link href={`/courses/${course.id}`}>
+                                    <CourseCard
+                                        image={course.img}
+                                        header={course.title}
+                                        description={course.price + " тг"}
+                                    />
+                                </Link>
                             </GridColumn>
                         ))}
                     </GridRow>
