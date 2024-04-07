@@ -51,7 +51,7 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
             />
             <CardContent
                 style={{
-                    marginTop: "5px",
+                    padding: "15px",
                     display: "grid",
                     gridTemplateColumns: "1fr",
                     gridTemplateRows: "1fr 40px 50px",

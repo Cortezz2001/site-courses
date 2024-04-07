@@ -44,7 +44,7 @@ export const EventCard: React.FC<CardPropsEvent> = ({
             />
             <CardContent
                 style={{
-                    marginTop: "5px",
+                    padding: "15px",
                     display: "grid",
                     gridTemplateColumns: "1fr",
                     gridTemplateRows: "1fr 0 20px",
