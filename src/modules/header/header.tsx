@@ -159,7 +159,7 @@ const Header = () => {
                     <Dropdown text="О нас" pointing className="link item">
                         <DropdownMenu>
                             <Link
-                                href="/"
+                                href="/events"
                                 style={{
                                     color: "inherit",
                                 }}
