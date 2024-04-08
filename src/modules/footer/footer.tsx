@@ -40,17 +40,18 @@ export default function Footer() {
                                     circular
                                     inverted
                                     icon="telegram plane"
+                                    href="https://t.me/+b8klQ4VDBX82Y2Iy"
                                 ></Button>
-                                <Button circular inverted icon="vk"></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="instagram"
+                                    href="https://www.instagram.com/lion.it_school?igsh=MXRhZm12cHB3cGY0cg%3D%3D&utm_source=qr"
+                                ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="youtube"
-                                ></Button>
-                                <Button
-                                    circular
-                                    inverted
-                                    icon="pinterest"
                                 ></Button>
                             </GridColumn>
                             <GridColumn
