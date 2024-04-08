@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -34,7 +34,8 @@ export default function BannerCarousel() {
                         "--swiper-pagination-bullet-horizontal-gap": "6px",
                     } as any
                 }
-                modules={[Navigation, Pagination]}
+                modules={[Navigation, Pagination, Autoplay]}
+                autoplay={{ delay: 10000 }}
                 pagination={{ clickable: true }}
                 navigation={{
                     nextEl: ".swiper-button-next",
