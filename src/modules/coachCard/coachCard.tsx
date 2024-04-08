@@ -19,7 +19,7 @@ export const CoachCard: React.FC<CardPropsCoach> = ({
     description,
 }) => {
     return (
-        <Card link style={{ border: "1px solid #007397" }}>
+        <Card link style={{ border: "1px solid #007397", height: "100%" }}>
             <Image
                 src={image}
                 alt=""
@@ -33,7 +33,15 @@ export const CoachCard: React.FC<CardPropsCoach> = ({
                     objectPosition: "top",
                 }}
             />
-            <CardContent>
+            <CardContent
+                style={{
+                    padding: "15px",
+                    display: "grid",
+                    gridTemplateColumns: "1fr",
+                    gridTemplateRows: "1fr 5px 20px",
+                    gridGap: "6px",
+                }}
+            >
                 <CardHeader>{header}</CardHeader>
                 <CardDescription>{description}</CardDescription>
             </CardContent>
