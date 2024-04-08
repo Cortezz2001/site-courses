@@ -116,7 +116,7 @@ export async function CourseDetailsPage({
                                 fluid
                                 style={{
                                     margin: "auto",
-                                    border: "1px solid #007397",
+                                    boxShadow: "0px 0px 5px 2px #007397",
                                 }}
                             />
                         </GridColumn>
@@ -129,7 +129,7 @@ export async function CourseDetailsPage({
                                 raised
                                 style={{
                                     fontSize: "large",
-                                    border: "1px solid #007397",
+                                    boxShadow: "0px 0px 5px 2px #007397",
                                     height: "100%",
                                     padding: "30px",
                                 }}
@@ -155,7 +155,7 @@ export async function CourseDetailsPage({
                             <Segment
                                 raised
                                 style={{
-                                    border: "1px solid #007397",
+                                    boxShadow: "0px 0px 5px 2px #007397",
                                     height: "100%",
                                     padding: "30px",
                                 }}
@@ -181,7 +181,7 @@ export async function CourseDetailsPage({
                 </Grid>
                 <Container
                     style={{
-                        border: "2px solid #007397",
+                        boxShadow: "0px 0px 5px 2px #007397",
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px ",
@@ -204,7 +204,7 @@ export async function CourseDetailsPage({
 
                 <Container
                     style={{
-                        border: "2px solid #007397",
+                        boxShadow: "0px 0px 5px 2px #007397",
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "auto",
@@ -258,7 +258,7 @@ export async function CourseDetailsPage({
                 </Container>
                 <Container
                     style={{
-                        border: "2px solid #007397",
+                        boxShadow: "0px 0px 5px 2px #007397",
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px auto",
@@ -273,7 +273,7 @@ export async function CourseDetailsPage({
                 </Container>
                 <Container
                     style={{
-                        border: "2px solid #007397",
+                        boxShadow: "0px 0px 5px 2px #007397",
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px auto",
@@ -288,7 +288,7 @@ export async function CourseDetailsPage({
                 </Container>
                 <Container
                     style={{
-                        border: "2px solid #007397",
+                        boxShadow: "0px 0px 5px 2px #007397",
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px auto",
@@ -327,7 +327,7 @@ export async function CourseDetailsPage({
                 </Container>
                 <Container
                     style={{
-                        border: "2px solid #007397",
+                        boxShadow: "0px 0px 5px 2px #007397",
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px auto",

@@ -15,7 +15,7 @@ const DirectionsBlock: React.FC = () => {
             style={{
                 marginTop: "50px",
                 marginBottom: "50px ",
-                border: "2px solid #007397",
+                boxShadow: "0px 0px 5px 2px #007397",
                 padding: "30px",
                 borderRadius: "10px",
             }}

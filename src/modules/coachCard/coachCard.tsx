@@ -19,7 +19,10 @@ export const CoachCard: React.FC<CardPropsCoach> = ({
     description,
 }) => {
     return (
-        <Card link style={{ border: "1px solid #007397", height: "100%" }}>
+        <Card
+            link
+            style={{ boxShadow: "0px 0px 5px 2px #007397", height: "100%" }}
+        >
             <Image
                 src={image}
                 alt=""
