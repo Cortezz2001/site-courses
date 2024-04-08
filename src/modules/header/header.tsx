@@ -191,8 +191,8 @@ const Header = () => {
                             style={{ padding: "8px", margin: "-12px" }}
                             color="black"
                             circular
-                            icon="instagram"
-                            href="https://www.instagram.com/lion.it_school?igsh=MXRhZm12cHB3cGY0cg%3D%3D&utm_source=qr"
+                            icon="whatsapp"
+                            href="https://wa.me/+77051400124"
                         />
                     </MenuItem>
                     <MenuItem>
@@ -200,8 +200,8 @@ const Header = () => {
                             style={{ padding: "8px", margin: "-12px" }}
                             color="black"
                             circular
-                            icon="youtube"
-                            href="https://www.youtube.com/@lionITschool"
+                            icon="facebook"
+                            href=""
                         />
                     </MenuItem>
                     <MenuItem>
@@ -209,8 +209,8 @@ const Header = () => {
                             style={{ padding: "8px", margin: "-12px" }}
                             color="black"
                             circular
-                            icon="tumblr"
-                            href="https://www.tiktok.com/@lionithub?_t=8lMDavWSGDW&_r=1"
+                            icon="twitter"
+                            href=""
                         />
                     </MenuItem>
                     <MenuItem>

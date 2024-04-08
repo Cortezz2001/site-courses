@@ -45,6 +45,12 @@ export default function Footer() {
                                 <Button
                                     circular
                                     inverted
+                                    icon="whatsapp"
+                                    href="https://wa.me/+77051400124"
+                                ></Button>
+                                <Button
+                                    circular
+                                    inverted
                                     icon="instagram"
                                     href="https://www.instagram.com/lion.it_school?igsh=MXRhZm12cHB3cGY0cg%3D%3D&utm_source=qr"
                                 ></Button>
@@ -63,8 +69,14 @@ export default function Footer() {
                                 <Button
                                     circular
                                     inverted
-                                    icon="mail"
-                                    href="mailto:lion.hub@mail.ru"
+                                    icon="facebook"
+                                    href=""
+                                ></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="twitter"
+                                    href=""
                                 ></Button>
                             </GridColumn>
                             <GridColumn
