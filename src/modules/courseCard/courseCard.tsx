@@ -18,7 +18,13 @@ interface CardPropsCourse extends CardProps {
 }
 
 const extra = (
-    <Button fluid style={{ backgroundColor: "#007397", color: "white" }}>
+    <Button
+        style={{
+            backgroundColor: "#007397",
+            color: "white",
+            width: "-webkit-fill-available",
+        }}
+    >
         Подробнее
     </Button>
 );
