@@ -7,6 +7,7 @@ import AdvantagesBlock from "./components/advantagesBlock";
 import DirectionsBlock from "./components/directionsBlock";
 import GoalsBlock from "./components/goalsBlock";
 import DirectorBlock from "./components/directorBlock";
+import CoachesDecsBlock from "./components/coachesDescBlock";
 
 export default function AboutSchool() {
     const BreadcrumbProps: Array<IBreadCrumb> = [
@@ -33,6 +34,7 @@ export default function AboutSchool() {
                 <GoalsBlock />
                 <AdvantagesBlock />
                 <DirectorBlock />
+                <CoachesDecsBlock />
                 <DirectionsBlock />
             </Container>
         </Layout>
