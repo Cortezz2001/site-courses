@@ -1,5 +1,4 @@
 import Link from "next/link";
-import style from "./style.module.css";
 import {
     Button,
     Container,
@@ -41,37 +40,65 @@ export default function Footer() {
                                     circular
                                     inverted
                                     icon="telegram plane"
+                                    href="https://t.me/+b8klQ4VDBX82Y2Iy"
                                 ></Button>
-                                <Button circular inverted icon="vk"></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="instagram"
+                                    href="https://www.instagram.com/lion.it_school?igsh=MXRhZm12cHB3cGY0cg%3D%3D&utm_source=qr"
+                                ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="youtube"
-                                ></Button>
-                                <Button
-                                    circular
-                                    inverted
-                                    icon="pinterest"
                                 ></Button>
                             </GridColumn>
                             <GridColumn
                                 width={4}
                                 style={{ paddingLeft: "20px" }}
                             >
-                                <List link inverted>
-                                    <ListItem as="a">Link 1</ListItem>
-                                    <ListItem as="a">Link 2</ListItem>
-                                    <ListItem as="a">Link 3</ListItem>
+                                <List
+                                    link
+                                    inverted
+                                    style={{ textAlign: "center" }}
+                                >
+                                    <ListItem>
+                                        <Link href={"/about-school"}>
+                                            О НАШЕЙ ШКОЛЕ
+                                        </Link>
+                                    </ListItem>
+
+                                    <ListItem>
+                                        <Link href={"/events"}>АНОНСЫ</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/help"}>
+                                            ВОПРОСЫ И ОТВЕТЫ
+                                        </Link>
+                                    </ListItem>
                                 </List>
                             </GridColumn>
                             <GridColumn
                                 width={4}
                                 style={{ paddingLeft: "20px" }}
                             >
-                                <List link inverted>
-                                    <ListItem as="a">Link 4</ListItem>
-                                    <ListItem as="a">Link 5</ListItem>
-                                    <ListItem as="a">Link 6</ListItem>
+                                <List
+                                    link
+                                    inverted
+                                    style={{ textAlign: "center" }}
+                                >
+                                    <ListItem>
+                                        <Link href={"/courses"}>КУРСЫ</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/coaches"}>ТРЕНЕРЫ</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/intensives"}>
+                                            ИНТЕНСИВЫ
+                                        </Link>
+                                    </ListItem>
                                 </List>
                             </GridColumn>
                             <GridColumn width={4}>
@@ -112,7 +139,7 @@ export default function Footer() {
                                         fontWeight: "normal",
                                     }}
                                 >
-                                    © Ineu, 2023-2024
+                                    © LION IT-SCHOOL, 2023-2024
                                 </Header>
                             </GridColumn>
                             <GridColumn>

@@ -11,12 +11,20 @@ import {
 
 const DirectionsBlock: React.FC = () => {
     return (
-        <Container style={{ marginTop: "50px", marginBottom: "50px " }}>
+        <Container
+            style={{
+                marginTop: "50px",
+                marginBottom: "50px ",
+                boxShadow: "0px 0px 5px 2px #007397",
+                padding: "30px",
+                borderRadius: "10px",
+            }}
+        >
             <Header
                 as="h2"
                 icon
                 textAlign="center"
-                style={{ marginBottom: "50px" }}
+                style={{ marginBottom: "30px" }}
             >
                 <Icon name="graduation cap" style={{ color: "#007397" }} />
                 Направления курсов

@@ -183,6 +183,7 @@ const Header = () => {
                             color="black"
                             circular
                             icon="telegram plane"
+                            href="https://t.me/+b8klQ4VDBX82Y2Iy"
                         />
                     </MenuItem>
                     <MenuItem>
@@ -190,7 +191,8 @@ const Header = () => {
                             style={{ padding: "8px", margin: "-12px" }}
                             color="black"
                             circular
-                            icon="vk"
+                            icon="instagram"
+                            href="https://www.instagram.com/lion.it_school?igsh=MXRhZm12cHB3cGY0cg%3D%3D&utm_source=qr"
                         />
                     </MenuItem>
                     <MenuItem>
