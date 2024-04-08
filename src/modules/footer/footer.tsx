@@ -138,7 +138,7 @@ export default function Footer() {
                                         fontWeight: "normal",
                                     }}
                                 >
-                                    © Ineu, 2023-2024
+                                    © LION IT-SCHOOL, 2023-2024
                                 </Header>
                             </GridColumn>
                             <GridColumn>
