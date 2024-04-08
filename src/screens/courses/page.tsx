@@ -6,6 +6,8 @@ import { Container, Header } from "@/UI/SUI";
 import { GroupCoursesCards } from "./components/groupCourses";
 import { ICourseCardInfoGroup } from "@/service/coursesService/types";
 import InfoBlock from "./components/infoBlock";
+import { Suspense } from "react";
+import Loading from "@/app/courses/loading";
 
 const BreadcrumbProps: Array<IBreadCrumb> = [
     {
