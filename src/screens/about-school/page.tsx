@@ -3,10 +3,10 @@ import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
 import { Container, Header, Image } from "@/UI/SUI";
 import ImageBlock from "./components/imageBlock";
-import Goals from "./components/goalsBlock";
 import AdvantagesBlock from "./components/advantagesBlock";
 import DirectionsBlock from "./components/directionsBlock";
 import GoalsBlock from "./components/goalsBlock";
+import DirectorBlock from "./components/directorBlock";
 
 export default function AboutSchool() {
     const BreadcrumbProps: Array<IBreadCrumb> = [
@@ -32,6 +32,7 @@ export default function AboutSchool() {
                 <ImageBlock />
                 <GoalsBlock />
                 <AdvantagesBlock />
+                <DirectorBlock />
                 <DirectionsBlock />
             </Container>
         </Layout>
