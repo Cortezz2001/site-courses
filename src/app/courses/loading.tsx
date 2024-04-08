@@ -32,7 +32,9 @@ export default function Loading() {
                 <Grid columns={4}>
                     <GridRow>
                         {[...Array(4)].map((_, index) => (
-                            <GridColumn key={index}></GridColumn>
+                            <GridColumn key={index}>
+                                <CourseCardSkeleton />
+                            </GridColumn>
                         ))}
                     </GridRow>
                     <GridRow>
