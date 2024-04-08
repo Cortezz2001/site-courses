@@ -29,7 +29,13 @@ const ActionBlock: React.FC = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Button animated="vertical">
+                                <Button
+                                    animated="vertical"
+                                    style={{
+                                        backgroundColor: "#007397",
+                                        color: "white",
+                                    }}
+                                >
                                     <ButtonContent visible>
                                         Ждём тебя!
                                     </ButtonContent>

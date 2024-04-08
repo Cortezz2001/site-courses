@@ -54,15 +54,15 @@ export async function CourseDetailsPage({
 }: ICourseDetailPageProps) {
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
-            key: "Courses",
-            content: "Курсы",
+            key: "Home",
+            content: "Главная",
             isLink: true,
             isActive: false,
-            url: "/courses",
+            url: "/",
         },
         {
-            key: "Course",
-            content: "Курс",
+            key: "Courses",
+            content: "Курсы",
             isLink: true,
             isActive: false,
             url: "/courses",

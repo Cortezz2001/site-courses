@@ -18,6 +18,7 @@ export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
                     paddingTop: "20px",
                     paddingLeft: "5px",
                     paddingRight: "8px",
+                    paddingBottom: "20px",
                 }}
                 spaceBetween={20}
                 slidesPerView={4}
@@ -28,7 +29,7 @@ export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
                 }}
             >
                 {coachesInfo.map((coach) => (
-                    <SwiperSlide key={coach.id}>
+                    <SwiperSlide key={coach.id} style={{ height: "auto" }}>
                         <CoachCard
                             image={coach.img}
                             header={coach.name}

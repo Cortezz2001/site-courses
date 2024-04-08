@@ -18,6 +18,7 @@ export const EventsCarousel: React.FC<IEventCardInfoGroup> = ({
                     paddingTop: "20px",
                     paddingLeft: "5px",
                     paddingRight: "8px",
+                    paddingBottom: "20px",
                 }}
                 spaceBetween={20}
                 slidesPerView={4}
@@ -28,7 +29,7 @@ export const EventsCarousel: React.FC<IEventCardInfoGroup> = ({
                 }}
             >
                 {eventsInfo.map((event) => (
-                    <SwiperSlide key={event.id}>
+                    <SwiperSlide key={event.id} style={{ height: "auto" }}>
                         <EventCard
                             image={event.img}
                             header={event.title}
