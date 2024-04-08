@@ -201,6 +201,25 @@ const Header = () => {
                             color="black"
                             circular
                             icon="youtube"
+                            href="https://www.youtube.com/@lionITschool"
+                        />
+                    </MenuItem>
+                    <MenuItem>
+                        <Button
+                            style={{ padding: "8px", margin: "-12px" }}
+                            color="black"
+                            circular
+                            icon="tumblr"
+                            href="https://www.tiktok.com/@lionithub?_t=8lMDavWSGDW&_r=1"
+                        />
+                    </MenuItem>
+                    <MenuItem>
+                        <Button
+                            style={{ padding: "8px", margin: "-12px" }}
+                            color="black"
+                            circular
+                            icon="mail"
+                            href="mailto:lion.hub@mail.ru"
                         />
                     </MenuItem>
                     <MenuItem>

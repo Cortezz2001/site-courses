@@ -52,6 +52,19 @@ export default function Footer() {
                                     circular
                                     inverted
                                     icon="youtube"
+                                    href="https://www.youtube.com/@lionITschool"
+                                ></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="tumblr"
+                                    href="https://www.tiktok.com/@lionithub?_t=8lMDavWSGDW&_r=1"
+                                ></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="mail"
+                                    href="mailto:lion.hub@mail.ru"
                                 ></Button>
                             </GridColumn>
                             <GridColumn
