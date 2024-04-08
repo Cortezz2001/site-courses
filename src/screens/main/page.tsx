@@ -6,6 +6,7 @@ import BannerCarousel from "./components/bannerCarousel";
 import { CoachesCarousel } from "./components/coachesCarousel";
 import { CoursesCarousel } from "./components/coursesCarousel";
 import { EventsCarousel } from "./components/eventsCarousel";
+import InfoBlock from "./components/infoBlock";
 import { Container, Header } from "@/UI/SUI";
 
 interface MainProps {
@@ -29,6 +30,7 @@ export const Main: React.FC<MainProps> = ({
                 <CoachesCarousel coachesInfo={coachesInfo} />
                 <Header as="h2">Анонсы наших мероприятий</Header>
                 <EventsCarousel eventsInfo={eventsInfo} />
+                <InfoBlock />
             </Container>
         </Layout>
     );
