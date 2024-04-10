@@ -54,7 +54,11 @@ const Header = () => {
                 style={{ borderRadius: 0 }}
             >
                 <Container style={{ width: "1330px", margin: "auto" }}>
-                    <MenuItem position="left" name="logo">
+                    <MenuItem
+                        position="left"
+                        name="logo"
+                        style={{ paddingLeft: "7px" }}
+                    >
                         <Link href="/">
                             <Image
                                 src="/logo.png"
@@ -62,7 +66,6 @@ const Header = () => {
                                 alt=""
                                 style={{
                                     transform: "scale(1.5)",
-                                    marginLeft: "20px",
                                 }}
                             />
                         </Link>
@@ -96,7 +99,7 @@ const Header = () => {
                             onChange={handleCurrencyChange}
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem style={{ paddingRight: "0" }}>
                         <Button
                             color="black"
                             style={{
@@ -113,7 +116,7 @@ const Header = () => {
             </Menu>
             <Menu name="navbar" attached="bottom" borderless>
                 <Container style={{ width: "1330px", margin: "auto" }}>
-                    <MenuItem name="intensive">
+                    <MenuItem name="intensive" style={{ paddingLeft: "0" }}>
                         <Link
                             href="/intensives"
                             style={{
@@ -191,8 +194,8 @@ const Header = () => {
                             style={{ padding: "8px", margin: "-12px" }}
                             color="black"
                             circular
-                            icon="instagram"
-                            href="https://www.instagram.com/lion.it_school?igsh=MXRhZm12cHB3cGY0cg%3D%3D&utm_source=qr"
+                            icon="whatsapp"
+                            href="https://wa.me/+77051400124"
                         />
                     </MenuItem>
                     <MenuItem>
@@ -200,10 +203,29 @@ const Header = () => {
                             style={{ padding: "8px", margin: "-12px" }}
                             color="black"
                             circular
-                            icon="youtube"
+                            icon="facebook"
+                            href=""
                         />
                     </MenuItem>
                     <MenuItem>
+                        <Button
+                            style={{ padding: "8px", margin: "-12px" }}
+                            color="black"
+                            circular
+                            icon="twitter"
+                            href=""
+                        />
+                    </MenuItem>
+                    <MenuItem>
+                        <Button
+                            style={{ padding: "8px", margin: "-12px" }}
+                            color="black"
+                            circular
+                            icon="mail"
+                            href="mailto:lion.hub@mail.ru"
+                        />
+                    </MenuItem>
+                    <MenuItem style={{ paddingRight: "0" }}>
                         <Button
                             color="black"
                             circular

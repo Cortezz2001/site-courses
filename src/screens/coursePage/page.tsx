@@ -77,7 +77,7 @@ export async function CourseDetailsPage({
     ];
     return (
         <Layout>
-            <Container>
+            <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h1" style={{ marginBottom: "30px" }}>
                     {courseInfo.title}
@@ -409,7 +409,7 @@ export async function CourseDetailsPage({
                         </GridRow>
                     </Grid>
                 </Container>
-            </Container>
+            </>
         </Layout>
     );
 }

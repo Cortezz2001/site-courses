@@ -11,25 +11,34 @@ import {
 
 const DirectionsBlock: React.FC = () => {
     return (
-        <Container
-            style={{
-                marginTop: "50px",
-                marginBottom: "50px ",
-                boxShadow: "0px 0px 5px 2px #007397",
-                padding: "30px",
-                borderRadius: "10px",
-            }}
-        >
-            <Header
-                as="h2"
-                icon
-                textAlign="center"
-                style={{ marginBottom: "30px" }}
+        <>
+            <Grid
+                columns={3}
+                stackable
+                style={{
+                    marginTop: "50px",
+                    marginBottom: "50px ",
+                    boxShadow: "0px 0px 5px 2px #007397",
+                    padding: "30px",
+                    borderRadius: "10px",
+                    marginLeft: "0",
+                    marginRight: "0",
+                }}
             >
-                <Icon name="graduation cap" style={{ color: "#007397" }} />
-                Направления курсов
-            </Header>
-            <Grid columns={3} stackable>
+                <GridRow>
+                    <Header
+                        as="h2"
+                        icon
+                        textAlign="center"
+                        style={{ marginBottom: "30px" }}
+                    >
+                        <Icon
+                            name="graduation cap"
+                            style={{ color: "#007397" }}
+                        />
+                        Направления курсов
+                    </Header>
+                </GridRow>
                 <GridRow centered>
                     <GridColumn verticalAlign="middle">
                         <Header as="h3" textAlign="center">
@@ -106,7 +115,7 @@ const DirectionsBlock: React.FC = () => {
                     </GridColumn>
                 </GridRow>
             </Grid>
-        </Container>
+        </>
     );
 };
 

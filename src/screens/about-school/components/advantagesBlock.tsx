@@ -10,8 +10,8 @@ import {
 
 const AdvantagesBlock: React.FC = () => {
     return (
-        <Container style={{ marginTop: "30px" }}>
-            <Grid columns={2} divided>
+        <>
+            <Grid columns={2} divided style={{ marginTop: "30px" }}>
                 <GridRow>
                     <GridColumn
                         style={{
@@ -51,7 +51,7 @@ const AdvantagesBlock: React.FC = () => {
                     </GridColumn>
                 </GridRow>
             </Grid>
-        </Container>
+        </>
     );
 };
 

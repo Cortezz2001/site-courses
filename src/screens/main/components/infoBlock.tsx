@@ -2,8 +2,8 @@ import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
 
 const InfoBlock: React.FC = () => {
     return (
-        <Container style={{ marginTop: "30px" }}>
-            <Header as="h2" style={{ marginBottom: "30px" }}>
+        <>
+            <Header as="h2" style={{ marginTop: "45px", marginBottom: "30px" }}>
                 Практика на реальных примерах и задачах
             </Header>
             <Grid columns={2} divided>
@@ -12,7 +12,10 @@ const InfoBlock: React.FC = () => {
                         <Image rounded alt="" src="/programmer-stock.jpg" />
                     </GridColumn>
                     <GridColumn verticalAlign="middle">
-                        <Container textAlign="justified">
+                        <Container
+                            textAlign="justified"
+                            style={{ fontSize: "large" }}
+                        >
                             <p>
                                 В LION IT-SCHOOL любой может начать с нуля и
                                 освоить программирование, получить новую
@@ -41,7 +44,7 @@ const InfoBlock: React.FC = () => {
                     </GridColumn>
                 </GridRow>
             </Grid>
-        </Container>
+        </>
     );
 };
 

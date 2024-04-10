@@ -17,8 +17,9 @@ export const EventsCarousel: React.FC<IEventCardInfoGroup> = ({
                 style={{
                     paddingTop: "20px",
                     paddingLeft: "5px",
-                    paddingRight: "8px",
                     paddingBottom: "20px",
+                    marginLeft: "-5px",
+                    marginRight: "-5px",
                 }}
                 spaceBetween={20}
                 slidesPerView={4}

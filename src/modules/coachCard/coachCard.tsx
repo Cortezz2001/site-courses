@@ -21,7 +21,12 @@ export const CoachCard: React.FC<CardPropsCoach> = ({
     return (
         <Card
             link
-            style={{ boxShadow: "0px 0px 5px 1px #007397", height: "100%" }}
+            style={{
+                boxShadow: "0px 0px 5px 1px #007397",
+                width: "auto",
+                maxWidth: "314.25px",
+                height: "100%",
+            }}
         >
             <Image
                 src={image}
@@ -30,7 +35,6 @@ export const CoachCard: React.FC<CardPropsCoach> = ({
                 height={500}
                 quality={100}
                 style={{
-                    width: "100%",
                     height: "400px",
                     objectFit: "cover",
                     objectPosition: "top",

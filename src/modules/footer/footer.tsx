@@ -45,6 +45,12 @@ export default function Footer() {
                                 <Button
                                     circular
                                     inverted
+                                    icon="whatsapp"
+                                    href="https://wa.me/+77051400124"
+                                ></Button>
+                                <Button
+                                    circular
+                                    inverted
                                     icon="instagram"
                                     href="https://www.instagram.com/lion.it_school?igsh=MXRhZm12cHB3cGY0cg%3D%3D&utm_source=qr"
                                 ></Button>
@@ -52,6 +58,25 @@ export default function Footer() {
                                     circular
                                     inverted
                                     icon="youtube"
+                                    href="https://www.youtube.com/@lionITschool"
+                                ></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="tumblr"
+                                    href="https://www.tiktok.com/@lionithub?_t=8lMDavWSGDW&_r=1"
+                                ></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="facebook"
+                                    href=""
+                                ></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="twitter"
+                                    href=""
                                 ></Button>
                             </GridColumn>
                             <GridColumn

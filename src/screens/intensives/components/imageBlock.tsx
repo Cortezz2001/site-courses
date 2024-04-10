@@ -2,7 +2,7 @@ import { Container, Grid, GridColumn, GridRow, Image } from "@/UI/SUI";
 
 const ImageBlock = () => {
     return (
-        <Container>
+        <>
             <Grid divided style={{ paddingBottom: "30px" }}>
                 <GridRow centered>
                     <GridColumn centered>
@@ -46,7 +46,7 @@ const ImageBlock = () => {
                     </GridColumn>
                 </GridRow>
             </Grid>
-        </Container>
+        </>
     );
 };
 

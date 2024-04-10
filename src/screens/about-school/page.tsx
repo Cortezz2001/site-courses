@@ -28,7 +28,7 @@ export default function AboutSchool() {
     ];
     return (
         <Layout>
-            <Container>
+            <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <ImageBlock />
                 <GoalsBlock />
@@ -36,7 +36,7 @@ export default function AboutSchool() {
                 <DirectorBlock />
                 <CoachesDecsBlock />
                 <DirectionsBlock />
-            </Container>
+            </>
         </Layout>
     );
 }

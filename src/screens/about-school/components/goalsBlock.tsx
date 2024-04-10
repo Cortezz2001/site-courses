@@ -2,16 +2,21 @@ import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
 
 const GoalsBlock: React.FC = () => {
     return (
-        <Container style={{ marginTop: "30px" }}>
-            <Grid columns={2} divided>
+        <>
+            <Grid columns={2} divided style={{ marginTop: "30px" }}>
                 <GridRow>
                     <GridColumn verticalAlign="middle">
-                        <Header as="h2">
+                        <Header
+                            as="h2"
+                            style={{
+                                paddingLeft: "20px",
+                            }}
+                        >
                             Цель проекта школы «Lion IT-SCHOOL»
                         </Header>
                         <ul
                             style={{
-                                paddingLeft: "20px",
+                                paddingLeft: "40px",
                             }}
                         >
                             <li>
@@ -42,7 +47,7 @@ const GoalsBlock: React.FC = () => {
                     </GridColumn>
                 </GridRow>
             </Grid>
-        </Container>
+        </>
     );
 };
 

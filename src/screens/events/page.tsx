@@ -25,13 +25,13 @@ const BreadcrumbProps: Array<IBreadCrumb> = [
 export const Events: React.FC<IEventCardInfoGroup> = ({ eventsInfo }) => {
     return (
         <Layout>
-            <Container>
+            <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h1" style={{ marginBottom: "30px" }}>
                     Мероприятия
                 </Header>
                 <GroupEventsCards eventsInfo={eventsInfo} />
-            </Container>
+            </>
         </Layout>
     );
 };

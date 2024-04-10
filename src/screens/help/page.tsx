@@ -38,7 +38,7 @@ export default function Help() {
     ];
     return (
         <Layout>
-            <Container>
+            <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h2" style={{ marginBottom: "30px" }}>
                     Вопросы и ответы
@@ -47,7 +47,7 @@ export default function Help() {
                     activeIndex={activeIndex}
                     handleClick={handleClick}
                 />
-            </Container>
+            </>
         </Layout>
     );
 }
