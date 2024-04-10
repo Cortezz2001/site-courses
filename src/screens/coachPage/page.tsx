@@ -89,7 +89,7 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
                                     src={coachInfo.img}
                                     style={{
                                         width: "400px",
-                                        height: "500px",
+                                        height: "600px",
                                         objectFit: "cover",
                                         filter: "drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px)",
                                     }}
