@@ -3,6 +3,7 @@ import { CoachCard } from "@/modules/coachCard/coachCard";
 import { ICoachCardInfoGroup } from "@/service/coachesService/types";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,10 +16,6 @@ export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
         <>
             <Swiper
                 style={{
-                    /*paddingTop: "20px",
-                    paddingLeft: "5px",
-                    paddingRight: "8px",
-                    paddingBottom: "20px",*/
                     paddingTop: "20px",
                     paddingLeft: "5px",
                     paddingBottom: "20px",
@@ -35,11 +32,13 @@ export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
             >
                 {coachesInfo.map((coach) => (
                     <SwiperSlide key={coach.id} style={{ height: "auto" }}>
-                        <CoachCard
-                            image={coach.img}
-                            header={coach.name}
-                            description={coach.role}
-                        />
+                        <Link href={`/coaches/${coach.id}`}>
+                            <CoachCard
+                                image={coach.img}
+                                header={coach.name}
+                                description={coach.role}
+                            />
+                        </Link>
                     </SwiperSlide>
                 ))}
 
