@@ -21,6 +21,8 @@ const DirectionsBlock: React.FC = () => {
                     boxShadow: "0px 0px 5px 2px #007397",
                     padding: "30px",
                     borderRadius: "10px",
+                    marginLeft: "0",
+                    marginRight: "0",
                 }}
             >
                 <GridRow>

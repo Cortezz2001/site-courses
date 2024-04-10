@@ -25,7 +25,7 @@ export default function Intensives() {
     ];
     return (
         <Layout>
-            <Container>
+            <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h1" style={{ marginBottom: "30px" }}>
                     Летние интенсивы
@@ -33,7 +33,7 @@ export default function Intensives() {
                 <ImageBlock />
                 <LearningPath />
                 <ContactForm />
-            </Container>
+            </>
         </Layout>
     );
 }

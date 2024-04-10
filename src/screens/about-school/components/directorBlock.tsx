@@ -9,6 +9,7 @@ const DirectorBlock: React.FC = () => {
                         <Container
                             style={{
                                 paddingRight: "30px",
+                                paddingLeft: "20px",
                             }}
                         >
                             <Header as="h2">Директор «Lion IT-SCHOOL»</Header>

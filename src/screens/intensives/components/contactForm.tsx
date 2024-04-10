@@ -18,7 +18,7 @@ const ContactForm = () => {
     ];
 
     return (
-        <Container style={{ marginTop: "30px" }}>
+        <>
             <Grid
                 columns={2}
                 centered
@@ -29,6 +29,9 @@ const ContactForm = () => {
                     borderRadius: "10px",
                     padding: "20px",
                     margin: "auto",
+                    marginLeft: "0",
+                    marginRight: "0",
+                    marginTop: "30px",
                 }}
             >
                 <GridColumn verticalAlign="middle">
@@ -94,7 +97,7 @@ const ContactForm = () => {
                     </Form>
                 </GridColumn>
             </Grid>
-        </Container>
+        </>
     );
 };
 
