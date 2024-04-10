@@ -2,12 +2,23 @@ import { Container, Grid, GridColumn, GridRow, Header } from "@/UI/SUI";
 
 const LearningPath = () => {
     return (
-        <Container>
+        <>
             <Header as="h2" style={{ marginBottom: "30px" }}>
                 КАК ПРОХОДИТ ОБУЧЕНИЕ
             </Header>
-            <Grid columns={3} centered stackable>
-                <GridRow>
+            <Grid
+                columns={3}
+                centered
+                stackable
+                style={{ marginLeft: "0", marginRight: "0" }}
+            >
+                <GridRow
+                    style={{
+                        display: "flex",
+                        justifyContent: "start",
+                        gap: "21px",
+                    }}
+                >
                     <GridColumn
                         textAlign="center"
                         width={5}
@@ -16,6 +27,7 @@ const LearningPath = () => {
                             borderRadius: "10px",
                             padding: "20px",
                             margin: "10px",
+                            marginLeft: "0",
                         }}
                     >
                         <p>
@@ -46,6 +58,7 @@ const LearningPath = () => {
                             borderRadius: "10px",
                             padding: "20px",
                             margin: "10px",
+                            marginRight: "0",
                         }}
                     >
                         <p>
@@ -55,7 +68,7 @@ const LearningPath = () => {
                     </GridColumn>
                 </GridRow>
             </Grid>
-        </Container>
+        </>
     );
 };
 

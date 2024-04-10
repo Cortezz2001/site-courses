@@ -6,12 +6,17 @@ const GoalsBlock: React.FC = () => {
             <Grid columns={2} divided style={{ marginTop: "30px" }}>
                 <GridRow>
                     <GridColumn verticalAlign="middle">
-                        <Header as="h2">
+                        <Header
+                            as="h2"
+                            style={{
+                                paddingLeft: "20px",
+                            }}
+                        >
                             Цель проекта школы «Lion IT-SCHOOL»
                         </Header>
                         <ul
                             style={{
-                                paddingLeft: "20px",
+                                paddingLeft: "40px",
                             }}
                         >
                             <li>

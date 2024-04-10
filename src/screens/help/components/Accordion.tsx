@@ -18,7 +18,7 @@ export default function MyAccordion({
     handleClick,
 }: MyAccordionProps) {
     return (
-        <Container>
+        <>
             <Accordion
                 fluid
                 styled
@@ -241,6 +241,6 @@ export default function MyAccordion({
                     </p>
                 </AccordionContent>
             </Accordion>
-        </Container>
+        </>
     );
 }

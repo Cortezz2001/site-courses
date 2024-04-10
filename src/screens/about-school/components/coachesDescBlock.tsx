@@ -10,6 +10,8 @@ const CoachesDecsBlock: React.FC = () => {
                     padding: "30px",
                     borderRadius: "10px",
                     marginTop: "30px",
+                    marginLeft: "0",
+                    marginRight: "0",
                 }}
             >
                 <GridRow centered>
