@@ -49,10 +49,12 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
     ];
     return (
         <Layout>
-            <Container>
+            <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
-                <Grid columns={2} divided>
-                    <GridRow>
+                <Grid columns={2} divided style={{ marginTop: "14px" }}>
+                    <GridRow
+                        style={{ width: "auto !important", paddingTop: "0" }}
+                    >
                         <GridColumn
                             width={5}
                             style={{
@@ -89,7 +91,11 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
                                 />
                             </Segment>
                         </GridColumn>
-                        <GridColumn verticalAlign="middle" width={11}>
+                        <GridColumn
+                            verticalAlign="middle"
+                            width={11}
+                            style={{ paddingLeft: "30px" }}
+                        >
                             <Container
                                 style={{
                                     paddingRight: "30px",
@@ -159,7 +165,7 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
                         </GridColumn>
                     </GridRow>
                 </Grid>
-            </Container>
+            </>
         </Layout>
     );
 }
