@@ -19,6 +19,8 @@ import {
     Segment,
 } from "@/UI/SUI";
 
+import style from "./style.module.css";
+
 interface ICoachDetailPageProps {
     coachInfo: ICoachDetailPageInfo;
 }
@@ -69,14 +71,14 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
                                 }}
                             >
                                 <Label
-                                    as="a"
-                                    color="teal"
+                                    className={style.ribbon}
                                     ribbon
                                     style={{
                                         position: "absolute",
                                         zIndex: "1",
                                         top: "-15px",
                                         left: "-15px",
+                                        color: "white",
                                     }}
                                 >
                                     {coachInfo.role}
