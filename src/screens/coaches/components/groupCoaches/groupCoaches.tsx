@@ -13,10 +13,24 @@ export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({
     return (
         <>
             {groupedCoaches.map((group, index) => (
-                <Grid key={index} columns={4}>
-                    <GridRow>
+                <Grid
+                    key={index}
+                    columns={4}
+                    style={{ marginLeft: "0", marginRight: "0" }}
+                >
+                    <GridRow
+                        style={{
+                            minWidth: "100%",
+                            display: "flex",
+                            justifyContent: "start",
+                            gap: "56px",
+                        }}
+                    >
                         {group.map((coach) => (
-                            <GridColumn key={coach.id}>
+                            <GridColumn
+                                key={coach.id}
+                                style={{ width: "max-content", padding: "0" }}
+                            >
                                 <CoachCard
                                     image={coach.img}
                                     header={coach.name}

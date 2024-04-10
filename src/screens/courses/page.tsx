@@ -29,14 +29,14 @@ const BreadcrumbProps: Array<IBreadCrumb> = [
 export const Courses: React.FC<ICourseCardInfoGroup> = ({ coursesInfo }) => {
     return (
         <Layout>
-            <Container>
+            <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h1" style={{ marginBottom: "30px" }}>
                     Курсы
                 </Header>
                 <GroupCoursesCards coursesInfo={coursesInfo} />
                 <InfoBlock />
-            </Container>
+            </>
         </Layout>
     );
 };

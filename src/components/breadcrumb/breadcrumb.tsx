@@ -16,30 +16,28 @@ export const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
     sections,
 }) => {
     return (
-        <Container style={{ display: "flex", flexDirection: "row" }}>
-            <Breadcrumb>
-                {sections.map((section, index) => (
-                    <React.Fragment key={index}>
-                        <BreadcrumbSection
-                            link={section.isActive ? false : section.isLink}
-                            href={section.isActive ? undefined : section.url}
-                            style={{
-                                color: section.isActive ? "#1b1c1d" : "#007397",
-                            }}
-                            active={section.isActive}
-                        >
-                            {section.content}
-                        </BreadcrumbSection>
-                        {section.isActive ? null : (
-                            <BreadcrumbDivider
-                                key={`divider-${index}`}
-                                icon="right angle"
-                            />
-                        )}
-                    </React.Fragment>
-                ))}
-            </Breadcrumb>
-        </Container>
+        <Breadcrumb style={{ display: "flex", flexDirection: "row" }}>
+            {sections.map((section, index) => (
+                <React.Fragment key={index}>
+                    <BreadcrumbSection
+                        link={section.isActive ? false : section.isLink}
+                        href={section.isActive ? undefined : section.url}
+                        style={{
+                            color: section.isActive ? "#1b1c1d" : "#007397",
+                        }}
+                        active={section.isActive}
+                    >
+                        {section.content}
+                    </BreadcrumbSection>
+                    {section.isActive ? null : (
+                        <BreadcrumbDivider
+                            key={`divider-${index}`}
+                            icon="right angle"
+                        />
+                    )}
+                </React.Fragment>
+            ))}
+        </Breadcrumb>
     );
 };
 

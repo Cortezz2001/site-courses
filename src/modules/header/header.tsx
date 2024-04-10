@@ -54,7 +54,11 @@ const Header = () => {
                 style={{ borderRadius: 0 }}
             >
                 <Container style={{ width: "1330px", margin: "auto" }}>
-                    <MenuItem position="left" name="logo">
+                    <MenuItem
+                        position="left"
+                        name="logo"
+                        style={{ paddingLeft: "7px" }}
+                    >
                         <Link href="/">
                             <Image
                                 src="/logo.png"
@@ -62,7 +66,6 @@ const Header = () => {
                                 alt=""
                                 style={{
                                     transform: "scale(1.5)",
-                                    marginLeft: "20px",
                                 }}
                             />
                         </Link>
@@ -96,7 +99,7 @@ const Header = () => {
                             onChange={handleCurrencyChange}
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem style={{ paddingRight: "0" }}>
                         <Button
                             color="black"
                             style={{
@@ -113,7 +116,7 @@ const Header = () => {
             </Menu>
             <Menu name="navbar" attached="bottom" borderless>
                 <Container style={{ width: "1330px", margin: "auto" }}>
-                    <MenuItem name="intensive">
+                    <MenuItem name="intensive" style={{ paddingLeft: "0" }}>
                         <Link
                             href="/intensives"
                             style={{
@@ -222,7 +225,7 @@ const Header = () => {
                             href="mailto:lion.hub@mail.ru"
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem style={{ paddingRight: "0" }}>
                         <Button
                             color="black"
                             circular

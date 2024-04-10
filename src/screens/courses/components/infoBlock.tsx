@@ -2,8 +2,8 @@ import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
 
 const InfoBlock: React.FC = () => {
     return (
-        <Container style={{ marginTop: "30px" }}>
-            <Header as="h2" style={{ marginBottom: "30px" }}>
+        <>
+            <Header as="h2" style={{ marginBottom: "30px", marginTop: "30px" }}>
                 Обучение программированию
             </Header>
             <Grid columns={2} divided>
@@ -45,7 +45,7 @@ const InfoBlock: React.FC = () => {
                     </GridColumn>
                 </GridRow>
             </Grid>
-        </Container>
+        </>
     );
 };
 
