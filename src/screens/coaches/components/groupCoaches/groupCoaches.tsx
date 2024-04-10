@@ -24,7 +24,7 @@ export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({
                             minWidth: "100%",
                             display: "flex",
                             justifyContent: "start",
-                            gap: "56px",
+                            gap: "24px",
                         }}
                     >
                         {group.map((coach) => (
