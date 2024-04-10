@@ -149,6 +149,8 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
                     style={{
                         boxShadow: "0px 0px 5px 2px #007397",
                         borderRadius: ".28571429rem",
+                        margin: "0",
+                        padding: "20px",
                     }}
                 >
                     <GridRow
