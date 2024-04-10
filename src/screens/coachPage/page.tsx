@@ -142,32 +142,33 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
                     </GridRow>
                 </Grid>
                 <Header as="h2">Преподаваемые дисциплины</Header>
-                <Grid>
-                    <GridRow>
-                        <GridColumn width={8}>
-                            <Segment
-                                raised
-                                style={{
-                                    fontSize: "large",
-                                    boxShadow: "0px 0px 5px 2px #007397",
-                                    height: "100%",
-                                    padding: "30px",
-                                }}
+                <Grid
+                    columns={3}
+                    stackable
+                    raised
+                    style={{
+                        boxShadow: "0px 0px 5px 2px #007397",
+                        borderRadius: ".28571429rem",
+                    }}
+                >
+                    <GridRow
+                        style={{
+                            rowGap: "15px",
+                            fontSize: "large",
+                        }}
+                    >
+                        {coachInfo.courses.map((course) => (
+                            <GridColumn
+                                key={course.id}
+                                style={{ display: "flex", gap: "10px" }}
                             >
-                                {coachInfo.courses.map((course) => (
-                                    <List key={course.id}>
-                                        <ListItem as="a">
-                                            <Icon name="check square outline" />
-                                            <ListContent>
-                                                <ListHeader>
-                                                    {course.title}
-                                                </ListHeader>
-                                            </ListContent>
-                                        </ListItem>
-                                    </List>
-                                ))}
-                            </Segment>
-                        </GridColumn>
+                                <Icon
+                                    name="graduation cap"
+                                    style={{ color: "#007397" }}
+                                />
+                                <p>{course.title}</p>
+                            </GridColumn>
+                        ))}
                     </GridRow>
                 </Grid>
             </>
