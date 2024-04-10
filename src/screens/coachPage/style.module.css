@@ -1,0 +1,7 @@
+.ribbon {
+    background-color: #007397 !important;
+}
+
+.ribbon:after {
+    border-right-color: #01465c !important;
+}
