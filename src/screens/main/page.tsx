@@ -8,7 +8,7 @@ import { CoursesCarousel } from "./components/coursesCarousel";
 import { EventsCarousel } from "./components/eventsCarousel";
 import InfoBlock from "./components/infoBlock";
 import ActionBlock from "./components/actionBlock";
-import { Container, Header } from "@/UI/SUI";
+import { Header } from "@/UI/SUI";
 
 interface MainProps {
     coachesInfo: ICoachCardInfo[];
@@ -23,7 +23,7 @@ export const Main: React.FC<MainProps> = ({
 }) => {
     return (
         <Layout>
-            <Container>
+            <>
                 <BannerCarousel />
                 <Header as="h2">Курсы</Header>
                 <CoursesCarousel coursesInfo={coursesInfo} />
@@ -33,7 +33,7 @@ export const Main: React.FC<MainProps> = ({
                 <Header as="h2">Анонсы наших мероприятий</Header>
                 <EventsCarousel eventsInfo={eventsInfo} />
                 <InfoBlock />
-            </Container>
+            </>
         </Layout>
     );
 };
