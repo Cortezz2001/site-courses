@@ -32,6 +32,8 @@ export default function BannerCarousel() {
                         "--swiper-pagination-bullet-inactive-opacity": "0.35",
                         "--swiper-pagination-bullet-size": "16px",
                         "--swiper-pagination-bullet-horizontal-gap": "6px",
+                        borderRadius: ".28571429rem",
+                        lineHeight: "0",
                     } as any
                 }
                 modules={[Navigation, Pagination, Autoplay]}
@@ -45,8 +47,8 @@ export default function BannerCarousel() {
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
                         <Image
-                            width={1127}
-                            height={527}
+                            width={1330}
+                            height={600}
                             src={image.src}
                             alt={image.alt}
                             style={{ objectFit: "cover" }}
