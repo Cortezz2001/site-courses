@@ -51,7 +51,10 @@ const Header = () => {
                 borderless
                 attached="top"
                 inverted
-                style={{ borderRadius: 0, backgroundColor: "#007397" }}
+                style={{
+                    borderRadius: 0,
+                    backgroundColor: "#007397",
+                }}
             >
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem
@@ -66,7 +69,7 @@ const Header = () => {
                                 alt=""
                                 style={{
                                     transform: "scale(1.5)",
-                                    boxShadow: "0px 0px 5px 1px white",
+                                    boxShadow: "0px 0px 3px 1px white",
                                     borderRadius: "50%",
                                 }}
                             />

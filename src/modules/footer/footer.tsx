@@ -36,7 +36,7 @@ export default function Footer() {
                                         style={{
                                             display: "block",
                                             margin: "0 auto 10px",
-                                            boxShadow: "0px 0px 5px 1px white",
+                                            boxShadow: "0px 0px 3px 1px white",
                                             borderRadius: "50%",
                                         }}
                                     />
