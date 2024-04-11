@@ -20,7 +20,10 @@ import {
 export default function Footer() {
     return (
         <Container name="footer" fluid>
-            <Segment inverted vertical style={{ padding: "5em 0" }}>
+            <Segment
+                vertical
+                style={{ padding: "5em 0", backgroundColor: "#007397" }}
+            >
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <Grid divided inverted stackable>
                         <GridRow>
@@ -33,6 +36,8 @@ export default function Footer() {
                                         style={{
                                             display: "block",
                                             margin: "0 auto 10px",
+                                            boxShadow: "0px 0px 5px 1px white",
+                                            borderRadius: "50%",
                                         }}
                                     />
                                 </Link>
@@ -127,7 +132,7 @@ export default function Footer() {
                                 </List>
                             </GridColumn>
                             <GridColumn width={4}>
-                                <p>
+                                <p style={{ color: "white" }}>
                                     Оставьте почту, или останетесь без крутых
                                     писем от Lion IT-School
                                 </p>
