@@ -1,5 +1,5 @@
 import { Card, CardContent, Container, Image } from "@/UI/SUI";
-import style from "@/modules/courseCard/style.module.css";
+import style from "@/UI/skeletons/style.module.css";
 const CourseCardSkeleton = () => {
     return (
         <Card
@@ -13,7 +13,7 @@ const CourseCardSkeleton = () => {
                 style={{
                     backgroundColor: "#e0e0e0",
                     width: "100%",
-                    height: "250px",
+                    height: "400px",
                 }}
             />
             <CardContent
@@ -29,7 +29,7 @@ const CourseCardSkeleton = () => {
                     style={{
                         backgroundColor: "#e0e0e0",
                         width: "100%",
-                        height: "30px",
+                        height: "25px",
                         borderRadius: "5px",
                     }}
                 />
@@ -38,16 +38,7 @@ const CourseCardSkeleton = () => {
                     style={{
                         backgroundColor: "#e0e0e0",
                         width: "100%",
-                        height: "30px",
-                        borderRadius: "5px",
-                    }}
-                />
-
-                <Container
-                    style={{
-                        backgroundColor: "#e0e0e0",
-                        width: "100%",
-                        height: "40px",
+                        height: "25px",
                         borderRadius: "5px",
                     }}
                 />

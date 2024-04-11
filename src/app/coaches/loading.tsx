@@ -2,7 +2,7 @@ import { Container, Header, Grid, GridRow, GridColumn } from "@/UI/SUI";
 import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
 import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
-import CourseCardSkeleton from "@/UI/skeletons/courseCardSkeleton";
+import CoachCardSkeleton from "@/UI/skeletons/coachCardSkeleton";
 
 export default function Loading() {
     const BreadcrumbProps: Array<IBreadCrumb> = [
@@ -14,11 +14,11 @@ export default function Loading() {
             url: "/",
         },
         {
-            key: "Courses",
-            content: "Курсы",
+            key: "Coaches",
+            content: "Наши тренеры",
             isLink: true,
             isActive: true,
-            url: "/courses",
+            url: "/coaches",
         },
     ];
 
@@ -27,20 +27,20 @@ export default function Loading() {
             <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h1" style={{ marginBottom: "30px" }}>
-                    Курсы
+                    Тренеры
                 </Header>
                 <Grid columns={4}>
                     <GridRow>
                         {[...Array(4)].map((_, index) => (
                             <GridColumn key={index}>
-                                <CourseCardSkeleton />
+                                <CoachCardSkeleton />
                             </GridColumn>
                         ))}
                     </GridRow>
                     <GridRow>
                         {[...Array(4)].map((_, index) => (
                             <GridColumn key={index}>
-                                <CourseCardSkeleton />
+                                <CoachCardSkeleton />
                             </GridColumn>
                         ))}
                     </GridRow>
