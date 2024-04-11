@@ -169,7 +169,7 @@ export async function CourseDetailsPage({
                                 </Header>
                                 <Container
                                     style={{
-                                        fontSize: "x-large",
+                                        fontSize: "large",
                                         paddingLeft: "10px",
                                     }}
                                 >
@@ -185,6 +185,7 @@ export async function CourseDetailsPage({
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px ",
+                        width: "auto",
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
@@ -208,6 +209,7 @@ export async function CourseDetailsPage({
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "auto",
+                        width: "auto",
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
@@ -262,14 +264,14 @@ export async function CourseDetailsPage({
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px auto",
+                        width: "auto",
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
                         Результат обучения
                     </Header>
-                    <Container style={{ fontSize: "large" }}>
-                        <p>{courseInfo.result}</p>
-                    </Container>
+
+                    <p style={{ fontSize: "large" }}>{courseInfo.result}</p>
                 </Container>
                 <Container
                     style={{
@@ -277,14 +279,14 @@ export async function CourseDetailsPage({
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px auto",
+                        width: "auto",
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
                         Форма контроля
                     </Header>
-                    <Container style={{ fontSize: "large" }}>
-                        <p>{courseInfo.control}</p>
-                    </Container>
+
+                    <p style={{ fontSize: "large" }}>{courseInfo.control}</p>
                 </Container>
                 <Container
                     style={{
@@ -292,38 +294,38 @@ export async function CourseDetailsPage({
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px auto",
+                        width: "auto",
                     }}
                 >
                     <Header as="h3" style={{ marginBottom: "30px" }}>
                         Образовательные технологии, применяемые при освоении
                         дисциплины
                     </Header>
-                    <Container>
-                        <p>
-                            При проведении учебных занятий предусматривается
-                            использование следующих образовательных технологий:
-                            - интерактивная лекция (проблемная лекция,
-                            дискуссионная лекция, лекция- конференция,
-                            лекция-консультация, лекция «Пресс-конференция»,
-                            лекция «Вопросы-ответы-обсуждение»); - метод
-                            проектов (наработка и преобразование собственного
-                            опыта и компетентности)
-                        </p>
-                    </Container>
+
+                    <p>
+                        При проведении учебных занятий предусматривается
+                        использование следующих образовательных технологий: -
+                        интерактивная лекция (проблемная лекция, дискуссионная
+                        лекция, лекция- конференция, лекция-консультация, лекция
+                        «Пресс-конференция», лекция
+                        «Вопросы-ответы-обсуждение»); - метод проектов
+                        (наработка и преобразование собственного опыта и
+                        компетентности)
+                    </p>
+
                     <Header as="h3" style={{ marginBottom: "30px" }}>
                         Адаптивные образовательные технологии (инклюзивное
                         обучение)
                     </Header>
-                    <Container>
-                        <p>
-                            Для успешного освоения дисциплины при обучении лиц с
-                            ограниченными возможностями здоровья могут
-                            применяться следующие адаптивные Образовательные
-                            технологии: - студентоцентрированное обучение,
-                            основанное на рефлексивном подходе к обучению со
-                            стороны преподавателя и обучающихся
-                        </p>
-                    </Container>
+
+                    <p>
+                        Для успешного освоения дисциплины при обучении лиц с
+                        ограниченными возможностями здоровья могут применяться
+                        следующие адаптивные Образовательные технологии: -
+                        студентоцентрированное обучение, основанное на
+                        рефлексивном подходе к обучению со стороны преподавателя
+                        и обучающихся
+                    </p>
                 </Container>
                 <Container
                     style={{
@@ -331,6 +333,7 @@ export async function CourseDetailsPage({
                         borderRadius: "10px",
                         padding: "30px",
                         margin: "30px auto",
+                        width: "auto",
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
