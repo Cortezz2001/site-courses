@@ -6,6 +6,7 @@ const CourseCardSkeleton = () => {
             className={style.shimmer}
             style={{
                 height: "100%",
+                width: "auto",
             }}
         >
             <Container
