@@ -201,6 +201,7 @@ const Header = () => {
                             circular
                             icon="telegram plane"
                             href="https://t.me/+b8klQ4VDBX82Y2Iy"
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem>
@@ -214,6 +215,7 @@ const Header = () => {
                             circular
                             icon="whatsapp"
                             href="https://wa.me/+77051400124"
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem>
@@ -227,6 +229,7 @@ const Header = () => {
                             circular
                             icon="facebook"
                             href=""
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem>
@@ -240,6 +243,7 @@ const Header = () => {
                             circular
                             icon="twitter"
                             href=""
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem>
@@ -253,6 +257,7 @@ const Header = () => {
                             circular
                             icon="mail"
                             href="mailto:lion.hub@mail.ru"
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>

@@ -46,42 +46,49 @@ export default function Footer() {
                                     inverted
                                     icon="telegram plane"
                                     href="https://t.me/+b8klQ4VDBX82Y2Iy"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="whatsapp"
                                     href="https://wa.me/+77051400124"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="instagram"
                                     href="https://www.instagram.com/lion.it_school?igsh=MXRhZm12cHB3cGY0cg%3D%3D&utm_source=qr"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="youtube"
                                     href="https://www.youtube.com/@lionITschool"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="tumblr"
                                     href="https://www.tiktok.com/@lionithub?_t=8lMDavWSGDW&_r=1"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="facebook"
                                     href=""
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="twitter"
                                     href=""
+                                    target="_blank"
                                 ></Button>
                             </GridColumn>
                             <GridColumn
