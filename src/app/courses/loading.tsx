@@ -24,7 +24,7 @@ export default function Loading() {
 
     return (
         <Layout>
-            <Container>
+            <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h1" style={{ marginBottom: "30px" }}>
                     Курсы
@@ -45,7 +45,7 @@ export default function Loading() {
                         ))}
                     </GridRow>
                 </Grid>
-            </Container>
+            </>
         </Layout>
     );
 }

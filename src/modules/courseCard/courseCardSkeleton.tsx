@@ -1,23 +1,18 @@
-import { Card, CardContent, Image } from "@/UI/SUI";
-
+import { Card, CardContent, Container, Image } from "@/UI/SUI";
+import style from "@/modules/courseCard/style.module.css";
 const CourseCardSkeleton = () => {
     return (
         <Card
+            className={style.shimmer}
             style={{
                 height: "100%",
             }}
         >
-            <Image
-                src="https://react.semantic-ui.com/images/wireframe/image.png"
-                alt=""
-                width={500}
-                height={500}
-                quality={100}
+            <Container
                 style={{
+                    backgroundColor: "#e0e0e0",
                     width: "100%",
                     height: "250px",
-                    objectFit: "cover",
-                    objectPosition: "top",
                 }}
             />
             <CardContent
@@ -25,15 +20,35 @@ const CourseCardSkeleton = () => {
                     paddingTop: "15px",
                     display: "grid",
                     gridTemplateColumns: "1fr",
-                    gridTemplateRows: "180px ",
-                    gridGap: "6px",
+                    gridTemplateRows: "repeat(3, auto)",
+                    gridGap: "15px",
                 }}
             >
-                <Image
-                    alt=""
-                    size="medium"
-                    src="https://react.semantic-ui.com/images/wireframe/paragraph.png"
-                    style={{ alignSelf: "center" }}
+                <Container
+                    style={{
+                        backgroundColor: "#e0e0e0",
+                        width: "100%",
+                        height: "30px",
+                        borderRadius: "5px",
+                    }}
+                />
+
+                <Container
+                    style={{
+                        backgroundColor: "#e0e0e0",
+                        width: "100%",
+                        height: "30px",
+                        borderRadius: "5px",
+                    }}
+                />
+
+                <Container
+                    style={{
+                        backgroundColor: "#e0e0e0",
+                        width: "100%",
+                        height: "40px",
+                        borderRadius: "5px",
+                    }}
                 />
             </CardContent>
         </Card>
