@@ -20,6 +20,7 @@ export const SearchBlock: React.FC<{ onSearch: (query: string) => void }> = ({
             placeholder="Поиск..."
             style={{
                 marginBottom: "30px",
+                boxShadow: "0px 0px 5px 1px #e0e0e0",
             }}
         />
     );
