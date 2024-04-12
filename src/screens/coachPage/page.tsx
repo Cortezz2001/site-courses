@@ -36,7 +36,7 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
         },
         {
             key: "Coaches",
-            content: "Тренеры",
+            content: "Наши тренеры",
             isLink: true,
             isActive: false,
             url: "/coaches",
