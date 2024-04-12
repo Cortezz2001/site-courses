@@ -51,7 +51,10 @@ const Header = () => {
                 borderless
                 attached="top"
                 inverted
-                style={{ borderRadius: 0 }}
+                style={{
+                    borderRadius: 0,
+                    backgroundColor: "#007397",
+                }}
             >
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem
@@ -66,6 +69,8 @@ const Header = () => {
                                 alt=""
                                 style={{
                                     transform: "scale(1.5)",
+                                    boxShadow: "0px 0px 3px 1px white",
+                                    borderRadius: "50%",
                                 }}
                             />
                         </Link>
@@ -78,6 +83,8 @@ const Header = () => {
                                 borderRadius: "5px",
                                 padding: "10px",
                                 margin: "auto",
+                                backgroundColor: "white",
+                                color: "#007397",
                             }}
                             inline
                             options={languageOptions}
@@ -92,6 +99,8 @@ const Header = () => {
                                 borderRadius: "5px",
                                 padding: "10px",
                                 margin: "auto",
+                                backgroundColor: "white",
+                                color: "#007397",
                             }}
                             inline
                             options={currencyOptions}
@@ -101,12 +110,13 @@ const Header = () => {
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
                         <Button
-                            color="black"
                             style={{
                                 border: "1px solid #ccc",
                                 borderRadius: "5px",
                                 padding: "10px 20px",
                                 margin: "auto",
+                                backgroundColor: "white",
+                                color: "#007397",
                             }}
                         >
                             Личный кабинет
@@ -182,47 +192,72 @@ const Header = () => {
 
                     <MenuItem position="right">
                         <Button
-                            style={{ padding: "8px", margin: "-12px" }}
+                            style={{
+                                padding: "8px",
+                                margin: "-12px",
+                                backgroundColor: "#007397",
+                            }}
                             color="black"
                             circular
                             icon="telegram plane"
                             href="https://t.me/+b8klQ4VDBX82Y2Iy"
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem>
                         <Button
-                            style={{ padding: "8px", margin: "-12px" }}
+                            style={{
+                                padding: "8px",
+                                margin: "-12px",
+                                backgroundColor: "#007397",
+                            }}
                             color="black"
                             circular
                             icon="whatsapp"
                             href="https://wa.me/+77051400124"
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem>
                         <Button
-                            style={{ padding: "8px", margin: "-12px" }}
+                            style={{
+                                padding: "8px",
+                                margin: "-12px",
+                                backgroundColor: "#007397",
+                            }}
                             color="black"
                             circular
                             icon="facebook"
                             href=""
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem>
                         <Button
-                            style={{ padding: "8px", margin: "-12px" }}
+                            style={{
+                                padding: "8px",
+                                margin: "-12px",
+                                backgroundColor: "#007397",
+                            }}
                             color="black"
                             circular
                             icon="twitter"
                             href=""
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem>
                         <Button
-                            style={{ padding: "8px", margin: "-12px" }}
+                            style={{
+                                padding: "8px",
+                                margin: "-12px",
+                                backgroundColor: "#007397",
+                            }}
                             color="black"
                             circular
                             icon="mail"
                             href="mailto:lion.hub@mail.ru"
+                            target="_blank"
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
@@ -231,9 +266,18 @@ const Header = () => {
                             circular
                             icon
                             labelPosition="left"
-                            style={{ marginLeft: "20px" }}
+                            style={{
+                                marginLeft: "20px",
+                                backgroundColor: "#007397",
+                                color: "white",
+                            }}
                         >
-                            <Icon name="cart" style={{ padding: "10px" }} />
+                            <Icon
+                                name="cart"
+                                style={{
+                                    padding: "10px",
+                                }}
+                            />
                             Корзина
                         </Button>
                     </MenuItem>

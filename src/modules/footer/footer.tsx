@@ -20,7 +20,10 @@ import {
 export default function Footer() {
     return (
         <Container name="footer" fluid>
-            <Segment inverted vertical style={{ padding: "5em 0" }}>
+            <Segment
+                vertical
+                style={{ padding: "5em 0", backgroundColor: "#007397" }}
+            >
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <Grid divided inverted stackable>
                         <GridRow>
@@ -33,6 +36,8 @@ export default function Footer() {
                                         style={{
                                             display: "block",
                                             margin: "0 auto 10px",
+                                            boxShadow: "0px 0px 3px 1px white",
+                                            borderRadius: "50%",
                                         }}
                                     />
                                 </Link>
@@ -41,42 +46,49 @@ export default function Footer() {
                                     inverted
                                     icon="telegram plane"
                                     href="https://t.me/+b8klQ4VDBX82Y2Iy"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="whatsapp"
                                     href="https://wa.me/+77051400124"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="instagram"
                                     href="https://www.instagram.com/lion.it_school?igsh=MXRhZm12cHB3cGY0cg%3D%3D&utm_source=qr"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="youtube"
                                     href="https://www.youtube.com/@lionITschool"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="tumblr"
                                     href="https://www.tiktok.com/@lionithub?_t=8lMDavWSGDW&_r=1"
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="facebook"
                                     href=""
+                                    target="_blank"
                                 ></Button>
                                 <Button
                                     circular
                                     inverted
                                     icon="twitter"
                                     href=""
+                                    target="_blank"
                                 ></Button>
                             </GridColumn>
                             <GridColumn
@@ -127,7 +139,7 @@ export default function Footer() {
                                 </List>
                             </GridColumn>
                             <GridColumn width={4}>
-                                <p>
+                                <p style={{ color: "white" }}>
                                     Оставьте почту, или останетесь без крутых
                                     писем от Lion IT-School
                                 </p>
