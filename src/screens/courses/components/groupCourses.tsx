@@ -14,23 +14,27 @@ export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
 
     return (
         <>
-            {groupedCourses.map((group, index) => (
-                <Grid key={index} columns={4}>
-                    <GridRow>
-                        {group.map((course) => (
-                            <GridColumn key={course.id}>
-                                <Link href={`/courses/${course.id}`}>
-                                    <CourseCard
-                                        image={course.img}
-                                        header={course.title}
-                                        description={course.price + " тг"}
-                                    />
-                                </Link>
-                            </GridColumn>
-                        ))}
-                    </GridRow>
-                </Grid>
-            ))}
+            {groupedCourses.length === 0 ? (
+                <p>Результаты не найдены</p>
+            ) : (
+                groupedCourses.map((group, index) => (
+                    <Grid key={index} columns={4}>
+                        <GridRow>
+                            {group.map((course) => (
+                                <GridColumn key={course.id}>
+                                    <Link href={`/courses/${course.id}`}>
+                                        <CourseCard
+                                            image={course.img}
+                                            header={course.title}
+                                            description={course.price + " тг"}
+                                        />
+                                    </Link>
+                                </GridColumn>
+                            ))}
+                        </GridRow>
+                    </Grid>
+                ))
+            )}
         </>
     );
 };
