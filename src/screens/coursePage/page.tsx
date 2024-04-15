@@ -5,7 +5,6 @@ import { ICourseDetailPageInfo } from "@/service/courseDetailPageService/types";
 import {
     Button,
     Card,
-    CardGroup,
     Container,
     Grid,
     GridColumn,
@@ -26,24 +25,6 @@ const extra = (
         Записаться
     </Button>
 );
-
-const cardItems = [
-    {
-        header: "Новичкам в программировании",
-        description:
-            "Для новичков в программировании, курс может стать отличным стартовым пунктом. Он предоставляет базовые знания и основные концепции, которые необходимы для начала изучения программирования. Это помогает новичкам понять основные принципы кодирования, структуры данных и алгоритмов, что делает их более уверенными в своих способностях и помогает им избежать распространенных ошибок на ранних этапах своего обучения.",
-    },
-    {
-        header: "Начинающим разработчикам",
-        description:
-            "Начинающим разработчикам курс программирования может предложить дополнительные навыки и технологии, которые могут быть важными для их карьерного роста. Например, он может включать в себя обучение работы с популярными фреймворками или инструментами, которые широко используются в отрасли. Это помогает начинающим разработчикам расширить свой набор навыков и быть более конкурентоспособными на рынке труда.",
-    },
-    {
-        header: "Опытным программистам",
-        description:
-            "Для опытных программистов курсы программирования могут предложить возможность изучения новых технологий или обновления их существующих навыков. Быстро развивающаяся природа сферы информационных технологий требует от программистов постоянного обновления знаний и умений. Участие в курсе позволяет опытным программистам оставаться в курсе последних тенденций и инноваций в своей области, что помогает им оставаться востребованными на рынке труда и развиваться профессионально.",
-    },
-];
 
 interface ICourseDetailPageProps {
     courseInfo: ICourseDetailPageInfo;
@@ -288,6 +269,118 @@ export async function CourseDetailsPage({
 
                     <p style={{ fontSize: "large" }}>{courseInfo.control}</p>
                 </Container>
+                <Grid>
+                    <GridRow>
+                        <GridColumn width={8}>
+                            <Segment
+                                raised
+                                style={{
+                                    fontSize: "large",
+                                    boxShadow: "0px 0px 5px 2px #007397",
+                                    height: "100%",
+                                    padding: "30px",
+                                }}
+                            >
+                                <Header
+                                    as="h2"
+                                    style={{ marginBottom: "30px" }}
+                                >
+                                    Критерии отбора студентов
+                                </Header>
+                                <List
+                                    style={{
+                                        fontSize: "large",
+                                    }}
+                                >
+                                    <ListItem as="a">
+                                        <Icon name="check square outline" />
+                                        <ListContent>
+                                            <ListHeader>
+                                                Мотивационное письмо
+                                            </ListHeader>
+                                        </ListContent>
+                                    </ListItem>
+                                    <ListItem as="a">
+                                        <Icon name="check square outline" />
+                                        <ListContent>
+                                            <ListHeader>
+                                                Тестирование на знание основ IT
+                                            </ListHeader>
+                                        </ListContent>
+                                    </ListItem>
+                                    <ListItem as="a">
+                                        <Icon name="check square outline" />
+                                        <ListContent>
+                                            <ListHeader>
+                                                Тестирование на знание
+                                                английского языка
+                                            </ListHeader>
+                                        </ListContent>
+                                    </ListItem>
+                                    <ListItem as="a">
+                                        <Icon name="check square outline" />
+                                        <ListContent>
+                                            <ListHeader>Интервью</ListHeader>
+                                        </ListContent>
+                                    </ListItem>
+                                </List>
+                            </Segment>
+                        </GridColumn>
+                        <GridColumn width={8}>
+                            <Segment
+                                raised
+                                style={{
+                                    fontSize: "large",
+                                    boxShadow: "0px 0px 5px 2px #007397",
+                                    height: "100%",
+                                    padding: "30px",
+                                }}
+                            >
+                                <Header textAlign="center" as={"h2"}>
+                                    Особые условия
+                                </Header>
+                                <Header
+                                    textAlign="center"
+                                    as={"h3"}
+                                    style={{ marginBottom: "30px" }}
+                                >
+                                    Гарантийный взнос в размере 60000 тг.
+                                </Header>
+                                <Container
+                                    style={{
+                                        paddingLeft: "10px",
+                                    }}
+                                >
+                                    <p>
+                                        Для возврата обязательного Гарантийного
+                                        взноса, поступившему студенту необходимо
+                                        выполнение следующих совокупных условий:
+                                    </p>
+                                    <List as="ol" style={{}}>
+                                        <ListItem as="li">
+                                            Подписание Договора оказания услуг
+                                            по обучению в «Lion IT-school»
+                                        </ListItem>
+                                        <ListItem as="li">
+                                            Успешное окончание выбранного курса
+                                        </ListItem>
+                                    </List>
+                                    <p>
+                                        В случае невыполнения вышеуказанных
+                                        условий, гарантийный{" "}
+                                        <span
+                                            style={{
+                                                textDecoration: "underline",
+                                            }}
+                                        >
+                                            взнос не возвращается
+                                        </span>
+                                    </p>
+                                </Container>
+                            </Segment>
+                        </GridColumn>
+                    </GridRow>
+                </Grid>
                 <Container
                     style={{
                         boxShadow: "0px 0px 5px 2px #007397",
