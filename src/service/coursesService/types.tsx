@@ -3,6 +3,7 @@ export interface ICourseCardInfo {
     img: string;
     title: string;
     price: string;
+    bid: string;
 }
 
 export interface ICourseCardInfoGroup {
