@@ -27,6 +27,7 @@ export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
                                             image={course.img}
                                             header={course.title}
                                             description={course.price + " тг"}
+                                            program={course.bid}
                                         />
                                     </Link>
                                 </GridColumn>

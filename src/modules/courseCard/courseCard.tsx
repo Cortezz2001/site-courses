@@ -33,6 +33,7 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
     image,
     header,
     description,
+    program,
 }) => {
     return (
         <Card
@@ -67,6 +68,9 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
                 }}
             >
                 <CardHeader>{header}</CardHeader>
+                <CardMeta>
+                    {program?.length > 0 && <span>{program}</span>}
+                </CardMeta>
                 <CardDescription
                     style={{ fontweight: "bold", marginBottom: "15px" }}
                 >

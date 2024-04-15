@@ -37,6 +37,7 @@ export const CoursesCarousel: React.FC<ICourseCardInfoGroup> = ({
                                 image={course.img}
                                 header={course.title}
                                 description={course.price + " тг"}
+                                program={course.bid}
                             />
                         </Link>
                     </SwiperSlide>
