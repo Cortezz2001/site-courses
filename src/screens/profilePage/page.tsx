@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
 import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
-import { TabPane, Tab } from "@/UI/SUI";
+import { TabPane, Tab, MenuItem, Label, Icon } from "@/UI/SUI";
 
 interface TabContent {
-    menuItem: string;
+    menuItem: JSX.Element;
     render: () => JSX.Element;
 }
 
@@ -34,15 +34,63 @@ export const Profile = () => {
     useEffect(() => {
         setTabContent([
             {
-                menuItem: "Профиль",
-                render: () => <TabPane as="div">Профиль</TabPane>,
+                menuItem: (
+                    <MenuItem
+                        key="profile"
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "start",
+                            gap: "1em",
+                        }}
+                    >
+                        <Icon
+                            name="user circle outline"
+                            style={{ margin: "0", color: "#007397" }}
+                        />
+                        Мои данные
+                    </MenuItem>
+                ),
+                render: () => <TabPane as="div">Мои данные</TabPane>,
             },
             {
-                menuItem: "Заказы",
+                menuItem: (
+                    <MenuItem
+                        key="orders"
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "start",
+                            gap: "1em",
+                        }}
+                    >
+                        <Icon
+                            name="check circle outline"
+                            style={{ margin: "0", color: "#007397" }}
+                        />
+                        Заказы
+                    </MenuItem>
+                ),
                 render: () => <TabPane as="div">Заказы</TabPane>,
             },
             {
-                menuItem: "Настройки",
+                menuItem: (
+                    <MenuItem
+                        key="settings"
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "start",
+                            gap: "1em",
+                        }}
+                    >
+                        <Icon
+                            name="setting"
+                            style={{ margin: "0", color: "#007397" }}
+                        />
+                        Настройки
+                    </MenuItem>
+                ),
                 render: () => <TabPane as="div">Настройки</TabPane>,
             },
         ]);
