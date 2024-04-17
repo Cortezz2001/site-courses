@@ -6,7 +6,43 @@ import {
     TableBody,
     Table,
     Label,
+    SemanticCOLORS,
 } from "@/UI/SUI";
+
+const tableData = [
+    {
+        orderTitle: "Python - разработчик",
+        orderDate: new Date().toLocaleDateString(),
+        orderStatusColor: "green",
+        orderStatus: "Оплачен",
+        orderPrice: "600 000",
+        orderDeposit: "60 000",
+    },
+    {
+        orderTitle: "Web - разработчик",
+        orderDate: new Date().toLocaleDateString(),
+        orderStatusColor: "yellow",
+        orderStatus: "Ожидаем взнос",
+        orderPrice: "600 000",
+        orderDeposit: "60 000",
+    },
+    {
+        orderTitle: "Разработчик мобильных приложений (iOS, Android)",
+        orderDate: new Date().toLocaleDateString(),
+        orderStatusColor: "green",
+        orderStatus: "Оплачен",
+        orderPrice: "600 000",
+        orderDeposit: "60 000",
+    },
+    {
+        orderTitle: "Java - разработчик",
+        orderDate: new Date().toLocaleDateString(),
+        orderStatusColor: "red",
+        orderStatus: "Отменен",
+        orderPrice: "600 000",
+        orderDeposit: "60 000",
+    },
+];
 
 const OrdersPane: React.FC = () => {
     return (
@@ -22,44 +58,30 @@ const OrdersPane: React.FC = () => {
             </TableHeader>
 
             <TableBody>
-                <TableRow>
-                    <TableCell>Python - разработчик</TableCell>
-                    <TableCell>{new Date().toLocaleDateString()}</TableCell>
-                    <TableCell>
-                        <Label color="green">Оплачен</Label>
-                    </TableCell>
-                    <TableCell>600 000</TableCell>
-                    <TableCell>60 000</TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>Web - разработчик</TableCell>
-                    <TableCell>{new Date().toLocaleDateString()}</TableCell>
-                    <TableCell>
-                        <Label color="yellow">Ожидаем взнос</Label>
-                    </TableCell>
-                    <TableCell>600 000</TableCell>
-                    <TableCell>60 000</TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>
-                        Разработчик мобильных приложений (iOS, Android)
-                    </TableCell>
-                    <TableCell>{new Date().toLocaleDateString()}</TableCell>
-                    <TableCell>
-                        <Label color="green">Оплачен</Label>
-                    </TableCell>
-                    <TableCell>600 000</TableCell>
-                    <TableCell>60 000</TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>Java - разработчик</TableCell>
-                    <TableCell>{new Date().toLocaleDateString()}</TableCell>
-                    <TableCell>
-                        <Label color="red">Отменен</Label>
-                    </TableCell>
-                    <TableCell>600 000</TableCell>
-                    <TableCell>60 000</TableCell>
-                </TableRow>
+                {tableData.map(
+                    ({
+                        orderTitle,
+                        orderDate,
+                        orderStatusColor,
+                        orderStatus,
+                        orderPrice,
+                        orderDeposit,
+                    }) => (
+                        <TableRow key={orderTitle}>
+                            <TableCell>{orderTitle}</TableCell>
+                            <TableCell>{orderDate}</TableCell>
+                            <TableCell>
+                                <Label
+                                    color={orderStatusColor as SemanticCOLORS}
+                                >
+                                    {orderStatus}
+                                </Label>
+                            </TableCell>
+                            <TableCell>{orderPrice}</TableCell>
+                            <TableCell>{orderDeposit}</TableCell>
+                        </TableRow>
+                    )
+                )}
             </TableBody>
         </Table>
     );
