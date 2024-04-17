@@ -6,6 +6,7 @@ import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
 import { TabPane, Tab, MenuItem, Label, Icon } from "@/UI/SUI";
 import ProfilePane from "./components/profilePane";
+import OrdersPane from "./components/ordersPane";
 
 interface TabContent {
     menuItem: JSX.Element;
@@ -76,7 +77,11 @@ export const Profile = () => {
                         Заказы
                     </MenuItem>
                 ),
-                render: () => <TabPane as="div">Заказы</TabPane>,
+                render: () => (
+                    <TabPane as="div">
+                        <OrdersPane />
+                    </TabPane>
+                ),
             },
             {
                 menuItem: (
