@@ -7,6 +7,7 @@ import { Layout } from "@/layouts/layout";
 import { TabPane, Tab, MenuItem, Label, Icon } from "@/UI/SUI";
 import ProfilePane from "./components/profilePane";
 import OrdersPane from "./components/ordersPane";
+import SettingsPane from "./components/settingsPane";
 
 interface TabContent {
     menuItem: JSX.Element;
@@ -101,7 +102,11 @@ export const Profile = () => {
                         Настройки
                     </MenuItem>
                 ),
-                render: () => <TabPane as="div">Настройки</TabPane>,
+                render: () => (
+                    <TabPane as="div">
+                        <SettingsPane />
+                    </TabPane>
+                ),
             },
         ]);
     }, []);
