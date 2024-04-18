@@ -1,7 +1,14 @@
 import { CoachDetailsPage } from "@/screens/coachPage/page";
 import { CoachDetailPageService } from "@/service/coachDetailPageService/service";
 import { ICoachDetailPageInfo } from "@/service/coachDetailPageService/types";
+import { Metadata } from "next";
 import "semantic-ui-css/semantic.min.css";
+
+export const metadata: Metadata = {
+    title: "",
+    description: "",
+    keywords: [],
+};
 
 export default async function Home({ params }: { params: { id: number } }) {
     const coachInfo_ = await CoachDetailPageService.getCoaches();
@@ -13,13 +20,17 @@ export default async function Home({ params }: { params: { id: number } }) {
         education: "",
         exp: "",
         desc: "",
-        courses: []
+        courses: [],
     };
     coachInfo_.forEach((coachinfo) => {
         if (coachinfo.id === Number(params.id)) {
             activePage = coachinfo;
         }
     });
+
+    metadata.title = activePage.name;
+    metadata.description = activePage.desc;
+    metadata.keywords = [activePage.name, activePage.role];
 
     return <CoachDetailsPage coachInfo={activePage} />;
 }
