@@ -37,7 +37,7 @@ export default async function Home({ params }: { params: { id: number } }) {
     });
     metadata.title = activePage.title;
     metadata.description = activePage.desc;
-    metadata.keywords = [activePage.title, activePage.format, activePage.bid];
+    metadata.keywords = [activePage.title, activePage.format];
 
     return <CourseDetailsPage courseInfo={activePage} />;
 }
