@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
+import { UserService } from "@/service/authService/auth";
 
 interface LoginFormProps {
     onRegistrationClick: () => void;
@@ -17,15 +18,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
         setPassword(e.target.value);
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        const formData = {
-            email: email,
-            password: password,
-        };
-        console.log(formData);
-    };
+    const submitHandler = () => {
+        const res = UserService.userAuth(password, email)
+        res.then(res => console.log(res))
+    }
 
     return (
         <Container
@@ -39,7 +35,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
             <Header as="h3" textAlign="center">
                 Вход
             </Header>
-            <Form onSubmit={handleSubmit}>
+            <Form>
                 <FormField>
                     <label>Email</label>
                     <Input
@@ -76,6 +72,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
                         color: "white",
                         marginTop: "20px",
                     }}
+                    onClick={() => { submitHandler() }}
                 >
                     Войти
                 </Button>

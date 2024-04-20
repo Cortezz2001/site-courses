@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
+import { UserService } from "@/service/authService/auth";
 
 interface RegistrationFormProps {
     onLoginClick: () => void;
@@ -16,7 +17,10 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
     const [email, setEmail] = React.useState<string>("")
     const [password, setPassword] = React.useState<string>("")
 
-    
+    const submitHandler = () => {
+        const res = UserService.userRegistration(firstname, lastname, password, email)
+        res.then(res => console.log(res))
+    }
 
     return (
 
@@ -76,6 +80,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
                         color: "white",
                         marginTop: "20px",
                     }}
+                    onClick={() => { submitHandler() }}
                 >
                     Зарегистрироваться
                 </Button>
