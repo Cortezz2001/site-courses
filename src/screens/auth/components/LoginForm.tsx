@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
 
 interface LoginFormProps {
@@ -6,6 +6,27 @@ interface LoginFormProps {
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+    };
+
+    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPassword(e.target.value);
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const formData = {
+            email: email,
+            password: password,
+        };
+        console.log(formData);
+    };
+
     return (
         <Container
             style={{
@@ -18,14 +39,23 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
             <Header as="h3" textAlign="center">
                 Вход
             </Header>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <FormField>
                     <label>Email</label>
-                    <Input placeholder="Введите вашу почту" />
+                    <Input
+                        placeholder="Введите вашу почту"
+                        value={email}
+                        onChange={handleEmailChange}
+                    />
                 </FormField>
                 <FormField>
                     <label>Пароль</label>
-                    <Input placeholder="Введите ваш пароль" type="password" />
+                    <Input
+                        placeholder="Введите ваш пароль"
+                        type="password"
+                        value={password}
+                        onChange={handlePasswordChange}
+                    />
                 </FormField>
                 <Container
                     style={{
