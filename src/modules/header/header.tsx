@@ -118,6 +118,7 @@ const Header = () => {
                                 backgroundColor: "white",
                                 color: "#007397",
                             }}
+                            href="/auth"
                         >
                             Личный кабинет
                         </Button>
