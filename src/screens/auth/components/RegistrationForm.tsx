@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
 
@@ -8,7 +10,16 @@ interface RegistrationFormProps {
 const RegistrationForm: React.FC<RegistrationFormProps> = ({
     onLoginClick,
 }) => {
+
+    const [firstname, setFirstname] = React.useState<string>("")
+    const [lastname, setLastname] = React.useState<string>("")
+    const [email, setEmail] = React.useState<string>("")
+    const [password, setPassword] = React.useState<string>("")
+
+    
+
     return (
+
         <Container
             style={{
                 boxShadow: "0px 0px 5px 2px #007397",
@@ -23,19 +34,32 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
             <Form>
                 <FormField>
                     <label>Имя</label>
-                    <Input placeholder="Введите ваше имя" />
+                    <Input
+                        placeholder="Введите ваше имя"
+                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => { setFirstname(event.target.value) }}
+                    />
                 </FormField>
                 <FormField>
                     <label>Фамилия</label>
-                    <Input placeholder="Введите вашу фамилию" />
+                    <Input
+                        placeholder="Введите вашу фамилию"
+                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => { setLastname(event.target.value) }}
+                    />
                 </FormField>
                 <FormField>
                     <label>Email</label>
-                    <Input placeholder="Введите вашу почту" />
+                    <Input
+                        placeholder="Введите вашу почту"
+                        type="email"
+                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => { setEmail(event.target.value) }}
+                    />
                 </FormField>
                 <FormField>
                     <label>Пароль</label>
-                    <Input placeholder="Введите ваш пароль" type="password" />
+                    <Input
+                        placeholder="Введите ваш пароль"
+                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => { setPassword(event.target.value) }}
+                        type="password" />
                 </FormField>
                 <FormField>
                     <label>Подтверждение пароля</label>
