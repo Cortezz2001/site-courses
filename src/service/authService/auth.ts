@@ -20,6 +20,7 @@ export const UserService = {
         }
         return await res.json() as Promise<Ires>
     },
+    
     async userAuth(password: string, email: string) {
         let userData = {
             password,

@@ -1,6 +1,9 @@
+"use client";
+
 import React, { useState } from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
 import { UserService } from "@/service/authService/auth";
+import { useRouter } from "next/navigation";
 
 interface LoginFormProps {
     onRegistrationClick: () => void;
@@ -9,6 +12,7 @@ interface LoginFormProps {
 const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const router = useRouter()
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -20,7 +24,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
 
     const submitHandler = () => {
         const res = UserService.userAuth(password, email)
-        res.then(res => console.log(res))
+        res.then(res => {
+            console.log(res)
+            if (res.status === "succesfully") {
+                localStorage.setItem("email", email)
+                router.push("/profile")
+            }
+        })
     }
 
     return (

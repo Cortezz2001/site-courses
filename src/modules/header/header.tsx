@@ -12,6 +12,7 @@ import {
     Icon,
 } from "@/UI/SUI";
 import { useState } from "react";
+import ProfileButton from "./components/profileButton/button";
 
 const Header = () => {
     const [language, setLanguage] = useState("RU");
@@ -109,19 +110,7 @@ const Header = () => {
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
-                        <Button
-                            style={{
-                                border: "1px solid #ccc",
-                                borderRadius: "5px",
-                                padding: "10px 20px",
-                                margin: "auto",
-                                backgroundColor: "white",
-                                color: "#007397",
-                            }}
-                            href="/auth"
-                        >
-                            Личный кабинет
-                        </Button>
+                        <ProfileButton />
                     </MenuItem>
                 </Container>
             </Menu>
