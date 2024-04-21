@@ -7,12 +7,16 @@ import { useRouter } from "next/navigation";
 
 interface LoginFormProps {
     onRegistrationClick: () => void;
+    onLostPasswordClick: () => void;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
+const LoginForm: React.FC<LoginFormProps> = ({
+    onRegistrationClick,
+    onLostPasswordClick,
+}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const router = useRouter()
+    const router = useRouter();
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -23,15 +27,15 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
     };
 
     const submitHandler = () => {
-        const res = UserService.userAuth(password, email)
-        res.then(res => {
-            console.log(res)
+        const res = UserService.userAuth(password, email);
+        res.then((res) => {
+            console.log(res);
             if (res.status === "succesfully") {
-                localStorage.setItem("email", email)
-                router.push("/profile")
+                localStorage.setItem("email", email);
+                router.push("/profile");
             }
-        })
-    }
+        });
+    };
 
     return (
         <Container
@@ -70,7 +74,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
                         textAlign: "left",
                     }}
                 >
-                    <a style={{ cursor: "pointer", color: "#007397" }}>
+                    <a
+                        style={{ cursor: "pointer", color: "#007397" }}
+                        onClick={onLostPasswordClick}
+                    >
                         Забыли пароль?
                     </a>
                 </Container>
@@ -82,7 +89,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegistrationClick }) => {
                         color: "white",
                         marginTop: "20px",
                     }}
-                    onClick={() => { submitHandler() }}
+                    onClick={() => {
+                        submitHandler();
+                    }}
                 >
                     Войти
                 </Button>
