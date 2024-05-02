@@ -25,7 +25,9 @@ export const EventCard: React.FC<CardPropsEvent> = ({
         <Card
             link
             style={{
-                boxShadow: "0px 0px 5px 1px #007397",
+                webkitBoxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
+                mozBoxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
+                boxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
                 width: "auto",
                 maxWidth: "314.25px",
                 height: "100%",

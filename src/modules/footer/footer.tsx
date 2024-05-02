@@ -90,6 +90,15 @@ export default function Footer() {
                                     href=""
                                     target="_blank"
                                 ></Button>
+                                <p
+                                    style={{
+                                        textAlign: "center",
+                                        paddingTop: "20px",
+                                        color: "white",
+                                    }}
+                                >
+                                    Казахстан, г.Павлодар, ул.Ломова 45
+                                </p>
                             </GridColumn>
                             <GridColumn
                                 width={4}

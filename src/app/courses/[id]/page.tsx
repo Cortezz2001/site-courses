@@ -1,7 +1,14 @@
 import { CourseDetailsPage } from "@/screens/coursePage/page";
 import { CourseDetailPageService } from "@/service/courseDetailPageService/service";
 import { ICourseDetailPageInfo } from "@/service/courseDetailPageService/types";
+import { Metadata } from "next";
 import "semantic-ui-css/semantic.min.css";
+
+export const metadata: Metadata = {
+    title: "",
+    description: "",
+    keywords: [],
+};
 
 export default async function Home({ params }: { params: { id: number } }) {
     const courseInfo_ = await CourseDetailPageService.getCourses();
@@ -28,6 +35,9 @@ export default async function Home({ params }: { params: { id: number } }) {
             activePage = courseinfo;
         }
     });
+    metadata.title = activePage.title;
+    metadata.description = activePage.desc;
+    metadata.keywords = [activePage.title, activePage.format];
 
     return <CourseDetailsPage courseInfo={activePage} />;
 }
