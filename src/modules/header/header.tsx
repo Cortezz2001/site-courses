@@ -60,18 +60,17 @@ const Header = () => {
                     <MenuItem
                         position="left"
                         name="logo"
-                        style={{ paddingLeft: "7px" }}
+                        style={{
+                            paddingLeft: "0px",
+                            paddingTop: "10px",
+                            paddingBottom: "10px",
+                        }}
                     >
                         <Link href="/">
                             <Image
-                                src="/logo.png"
-                                size="mini"
+                                src="/logo_with_title.png"
+                                size="small"
                                 alt=""
-                                style={{
-                                    transform: "scale(1.5)",
-                                    boxShadow: "0px 0px 3px 1px white",
-                                    borderRadius: "50%",
-                                }}
                             />
                         </Link>
                     </MenuItem>
