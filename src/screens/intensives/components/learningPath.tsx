@@ -23,7 +23,7 @@ const LearningPath = () => {
                         textAlign="center"
                         width={5}
                         style={{
-                            boxShadow: "0px 0px 5px 2px #007397",
+                            boxShadow: "1px 1px 20px 10px #e0e0e0",
                             borderRadius: "10px",
                             padding: "20px",
                             margin: "10px",
@@ -39,7 +39,7 @@ const LearningPath = () => {
                         textAlign="center"
                         width={5}
                         style={{
-                            boxShadow: "0px 0px 5px 2px #007397",
+                            boxShadow: "1px 1px 20px 10px #e0e0e0",
                             borderRadius: "10px",
                             padding: "20px",
                             margin: "10px",
@@ -54,7 +54,7 @@ const LearningPath = () => {
                         textAlign="center"
                         width={5}
                         style={{
-                            boxShadow: "0px 0px 5px 2px #007397",
+                            boxShadow: "1px 1px 20px 10px #e0e0e0",
                             borderRadius: "10px",
                             padding: "20px",
                             margin: "10px",

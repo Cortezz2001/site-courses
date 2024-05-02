@@ -6,7 +6,7 @@ const CoachesDecsBlock: React.FC = () => {
             <Grid
                 divided
                 style={{
-                    boxShadow: "0px 0px 5px 2px #007397",
+                    boxShadow: "1px 1px 20px 10px #e0e0e0",
                     padding: "30px",
                     borderRadius: "10px",
                     marginTop: "30px",

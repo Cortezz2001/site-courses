@@ -31,7 +31,12 @@ export const CoursesCarousel: React.FC<ICourseCardInfoGroup> = ({
                 }}
             >
                 {coursesInfo.map((course) => (
-                    <SwiperSlide key={course.id} style={{ height: "auto" }}>
+                    <SwiperSlide
+                        key={course.id}
+                        style={{
+                            height: "auto",
+                        }}
+                    >
                         <Link href={`/courses/${course.id}`}>
                             <CourseCard
                                 image={course.img}

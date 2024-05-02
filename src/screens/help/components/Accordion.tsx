@@ -23,12 +23,14 @@ export default function MyAccordion({
                 fluid
                 styled
                 style={{
-                    boxShadow: "0px 0px 5px 1px #007397",
+                    webkitBoxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
+                    mozBoxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
+                    boxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
                 }}
             >
                 <AccordionTitle
                     style={{
-                        boxShadow: "0px 1px 5px 0px #007397",
+                        boxShadow: "0px 1px 10px 0px rgba(34, 60, 80, 0.2)",
                     }}
                     active
                 >
@@ -153,12 +155,14 @@ export default function MyAccordion({
                 styled
                 style={{
                     marginTop: "30px",
-                    boxShadow: "0px 0px 5px 1px #007397",
+                    webkitBoxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
+                    mozBoxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
+                    boxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
                 }}
             >
                 <AccordionTitle
                     style={{
-                        boxShadow: "0px 1px 5px 0px #007397",
+                        boxShadow: "0px 1px 10px 0px rgba(34, 60, 80, 0.2)",
                     }}
                     active
                 >
