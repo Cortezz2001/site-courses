@@ -3,26 +3,39 @@ import { useState } from "react";
 import { Layout } from "@/layouts/layout";
 import LoginForm from "@/screens/auth/components/LoginForm";
 import RegistrationForm from "@/screens/auth/components/RegistrationForm";
+import LostPasswordForm from "@/screens/auth/components/LostPasswordForm";
+import { Container } from "semantic-ui-react";
+
+enum AuthForms {
+    LOGIN,
+    REGISTRATION,
+    LOST_PASSWORD,
+}
 
 export default function Auth() {
-    const [showLogin, setShowLogin] = useState(true);
+    const [activeForm, setActiveForm] = useState(AuthForms.LOGIN);
 
-    const handleLoginClick = () => {
-        setShowLogin(true);
-    };
-
-    const handleRegistrationClick = () => {
-        setShowLogin(false);
-    };
+    const switchToLogin = () => setActiveForm(AuthForms.LOGIN);
+    const switchToRegistration = () => setActiveForm(AuthForms.REGISTRATION);
+    const switchToLostPassword = () => setActiveForm(AuthForms.LOST_PASSWORD);
 
     return (
         <Layout>
             <>
-                {showLogin ? (
-                    <LoginForm onRegistrationClick={handleRegistrationClick} />
-                ) : (
-                    <RegistrationForm onLoginClick={handleLoginClick} />
-                )}
+                <Container style={{ marginTop: "30px" }}>
+                    {activeForm === AuthForms.LOGIN && (
+                        <LoginForm
+                            onRegistrationClick={switchToRegistration}
+                            onLostPasswordClick={switchToLostPassword}
+                        />
+                    )}
+                    {activeForm === AuthForms.REGISTRATION && (
+                        <RegistrationForm onLoginClick={switchToLogin} />
+                    )}
+                    {activeForm === AuthForms.LOST_PASSWORD && (
+                        <LostPasswordForm onCancelClick={switchToLogin} />
+                    )}
+                </Container>
             </>
         </Layout>
     );
