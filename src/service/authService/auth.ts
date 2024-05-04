@@ -49,4 +49,17 @@ export const UserService = {
         }
         return await res.json() as Promise<Ires>
     },
+    async userLogout(email: string) {
+        let userData = {
+            email,
+        }
+        const res = await fetch("http://127.0.0.1:8000/" + "api/v1/auth/user_logout", {
+            method: 'POST',
+            body: JSON.stringify(userData)
+        })
+        if (!res.ok) {
+            throw new Error('Failed to fetch data')
+        }
+        return await res.json() as Promise<Ires>
+    },
 }
