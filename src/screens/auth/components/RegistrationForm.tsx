@@ -3,6 +3,7 @@
 import React from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
 import { UserService } from "@/service/authService/auth";
+import { useRouter } from "next/navigation";
 
 interface RegistrationFormProps {
     onLoginClick: () => void;
@@ -12,6 +13,8 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
     onLoginClick,
 }) => {
 
+    const router = useRouter()
+
     const [firstname, setFirstname] = React.useState<string>("")
     const [lastname, setLastname] = React.useState<string>("")
     const [email, setEmail] = React.useState<string>("")
@@ -19,7 +22,18 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
 
     const submitHandler = () => {
         const res = UserService.userRegistration(firstname, lastname, password, email)
-        res.then(res => console.log(res))
+        res.then(res => {
+            console.log(res)
+            if (res.status === "succesfully") {
+                localStorage.setItem("firstname", firstname)
+                localStorage.setItem("lastname", lastname)
+                localStorage.setItem("email", email)
+                router.push("/auth")
+            }
+            else{
+                alert(res.errors)
+            }
+        })
     }
 
     return (

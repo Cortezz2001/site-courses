@@ -32,7 +32,11 @@ const LoginForm: React.FC<LoginFormProps> = ({
             console.log(res);
             if (res.status === "succesfully") {
                 localStorage.setItem("email", email);
+                localStorage.setItem("isAuth", JSON.stringify(true));
                 router.push("/profile");
+            }
+            else{
+                alert(res.errors)
             }
         });
     };

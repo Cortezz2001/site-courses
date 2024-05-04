@@ -13,17 +13,27 @@ const ProfileButton = () => {
 
     const AuthCheck = () => {
         const email_ = localStorage.getItem("email") as string
+        const isAuth_ = localStorage.getItem("isAuth") as string
+
+        if (isAuth_ === null) localStorage.setItem("isAuth", JSON.stringify(false))
         if (email_ === null) router.push("/auth")
         if (email_ == "") return false
-        const res = UserService.userAuthCheck(email_)
-        res.then(res => {
-            if (res.status == "succesfully") {
-                router.push("/profile")
-            }
-            else {
-                router.push("/auth")
-            }
-        })
+
+        if (JSON.parse(isAuth_) === false) {
+            router.push("/auth")
+            // const res = UserService.userAuthCheck(email_)
+            // res.then(res => {
+            //     if (res.status == "succesfully") {
+            //         router.push("/profile")
+            //     }
+            //     else {
+            //         router.push("/auth")
+            //     }
+            // })
+        }
+        else {
+            router.push("/profile")
+        }
     }
 
     return (
