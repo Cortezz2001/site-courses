@@ -16,6 +16,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
 }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,6 +28,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
     };
 
     const submitHandler = () => {
+        setLoading(true);
         const res = UserService.userAuth(password, email);
         res.then((res) => {
             console.log(res);
@@ -34,9 +36,10 @@ const LoginForm: React.FC<LoginFormProps> = ({
                 localStorage.setItem("email", email);
                 localStorage.setItem("isAuth", JSON.stringify(true));
                 router.push("/profile");
-            }
-            else{
-                alert(res.errors)
+                setLoading(false);
+            } else {
+                alert(res.errors);
+                setLoading(false);
             }
         });
     };
@@ -86,6 +89,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                     </a>
                 </Container>
                 <Button
+                    disabled={loading}
                     type="submit"
                     fluid
                     style={{
@@ -96,6 +100,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                     onClick={() => {
                         submitHandler();
                     }}
+                    loading={loading}
                 >
                     Войти
                 </Button>

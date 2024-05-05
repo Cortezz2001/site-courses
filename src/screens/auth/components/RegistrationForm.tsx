@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
 import { UserService } from "@/service/authService/auth";
 import { useRouter } from "next/navigation";
@@ -12,32 +12,38 @@ interface RegistrationFormProps {
 const RegistrationForm: React.FC<RegistrationFormProps> = ({
     onLoginClick,
 }) => {
+    const router = useRouter();
 
-    const router = useRouter()
-
-    const [firstname, setFirstname] = React.useState<string>("")
-    const [lastname, setLastname] = React.useState<string>("")
-    const [email, setEmail] = React.useState<string>("")
-    const [password, setPassword] = React.useState<string>("")
+    const [firstname, setFirstname] = React.useState<string>("");
+    const [lastname, setLastname] = React.useState<string>("");
+    const [email, setEmail] = React.useState<string>("");
+    const [password, setPassword] = React.useState<string>("");
+    const [loading, setLoading] = useState(false);
 
     const submitHandler = () => {
-        const res = UserService.userRegistration(firstname, lastname, password, email)
-        res.then(res => {
-            console.log(res)
+        setLoading(true);
+        const res = UserService.userRegistration(
+            firstname,
+            lastname,
+            password,
+            email
+        );
+        res.then((res) => {
+            console.log(res);
             if (res.status === "succesfully") {
-                localStorage.setItem("firstname", firstname)
-                localStorage.setItem("lastname", lastname)
-                localStorage.setItem("email", email)
-                router.push("/auth")
+                localStorage.setItem("firstname", firstname);
+                localStorage.setItem("lastname", lastname);
+                localStorage.setItem("email", email);
+                router.push("/auth");
+                setLoading(false);
+            } else {
+                alert(res.errors);
+                setLoading(false);
             }
-            else{
-                alert(res.errors)
-            }
-        })
-    }
+        });
+    };
 
     return (
-
         <Container
             style={{
                 boxShadow: "0px 0px 5px 2px #007397",
@@ -54,14 +60,22 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     <label>Имя</label>
                     <Input
                         placeholder="Введите ваше имя"
-                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => { setFirstname(event.target.value) }}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => {
+                            setFirstname(event.target.value);
+                        }}
                     />
                 </FormField>
                 <FormField>
                     <label>Фамилия</label>
                     <Input
                         placeholder="Введите вашу фамилию"
-                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => { setLastname(event.target.value) }}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => {
+                            setLastname(event.target.value);
+                        }}
                     />
                 </FormField>
                 <FormField>
@@ -69,15 +83,24 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     <Input
                         placeholder="Введите вашу почту"
                         type="email"
-                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => { setEmail(event.target.value) }}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => {
+                            setEmail(event.target.value);
+                        }}
                     />
                 </FormField>
                 <FormField>
                     <label>Пароль</label>
                     <Input
                         placeholder="Введите ваш пароль"
-                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => { setPassword(event.target.value) }}
-                        type="password" />
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => {
+                            setPassword(event.target.value);
+                        }}
+                        type="password"
+                    />
                 </FormField>
                 <FormField>
                     <label>Подтверждение пароля</label>
@@ -94,7 +117,10 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
                         color: "white",
                         marginTop: "20px",
                     }}
-                    onClick={() => { submitHandler() }}
+                    onClick={() => {
+                        submitHandler();
+                    }}
+                    loading={loading}
                 >
                     Зарегистрироваться
                 </Button>

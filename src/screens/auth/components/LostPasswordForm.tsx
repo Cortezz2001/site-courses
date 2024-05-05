@@ -10,12 +10,14 @@ const LostPasswordForm: React.FC<LostPasswordFormProps> = ({
     onCancelClick,
 }) => {
     const [email, setEmail] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
     };
 
     const submitHandler = () => {
+        setLoading(true);
         // const res = UserService.userLostPass(email);
         // res.then((res) => {
         //     console.log(res);
@@ -24,6 +26,7 @@ const LostPasswordForm: React.FC<LostPasswordFormProps> = ({
         //         router.push("/profile");
         //     }
         // });
+        setLoading(false);
     };
 
     return (
@@ -57,6 +60,7 @@ const LostPasswordForm: React.FC<LostPasswordFormProps> = ({
                         marginTop: "20px",
                     }}
                     onClick={submitHandler}
+                    loading={loading}
                 >
                     Сбросить пароль
                 </Button>
