@@ -265,6 +265,7 @@ const Header = () => {
                             <Icon
                                 name="cart"
                                 style={{
+                                    backgroundColor: "#007397",
                                     padding: "10px",
                                 }}
                             />
