@@ -13,8 +13,10 @@ import {
 } from "@/UI/SUI";
 import { useState } from "react";
 import ProfileButton from "./components/profileButton/button";
+import CartButton from "./components/cartButton/button";
+import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
 
-const Header = () => {
+const Header: React.FC<ISelectedCoursesInfoGroup> = ({ selectedCourses }) => {
     const [language, setLanguage] = useState("RU");
     const [currency, setCurrency] = useState("KZT");
 
@@ -29,6 +31,7 @@ const Header = () => {
         { key: "RUB", text: "RUB", value: "RUB" },
         { key: "USD", text: "USD", value: "USD" },
     ];
+
     const handleLanguageChange = (data: any) => {
         setLanguage(data.value as string);
     };
@@ -251,25 +254,7 @@ const Header = () => {
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
-                        <Button
-                            color="black"
-                            circular
-                            icon
-                            labelPosition="left"
-                            style={{
-                                marginLeft: "20px",
-                                backgroundColor: "#007397",
-                                color: "white",
-                            }}
-                        >
-                            <Icon
-                                name="cart"
-                                style={{
-                                    padding: "10px",
-                                }}
-                            />
-                            Корзина
-                        </Button>
+                        <CartButton selectedCourses={selectedCourses} />
                     </MenuItem>
                 </Container>
             </Menu>

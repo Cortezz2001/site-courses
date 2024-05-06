@@ -16,6 +16,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
 }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,13 +28,16 @@ const LoginForm: React.FC<LoginFormProps> = ({
     };
 
     const submitHandler = () => {
+        setLoading(true);
         UserService.userAuth(email, password).then(
             res => {
                 if (res.status === "ok") {
                     localStorage.setItem("token", res.data.token)
                     console.log(res)
                     router.push("/profile")
+                    setLoading(false);
                 }
+                setLoading(false);
             })
     };
 
@@ -82,6 +86,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                     </a>
                 </Container>
                 <Button
+                    disabled={loading}
                     type="submit"
                     fluid
                     style={{
@@ -92,6 +97,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                     onClick={() => {
                         submitHandler();
                     }}
+                    loading={loading}
                 >
                     Войти
                 </Button>
