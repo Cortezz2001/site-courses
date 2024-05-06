@@ -2,27 +2,38 @@
 import { Card, Button, Icon } from "@/UI/SUI";
 import { UserService } from "@/service/authService/auth";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 
 
 const ProfilePane: React.FC = () => {
     const router = useRouter()
 
+    React.useEffect(() => {
+        const token = localStorage.getItem("token") as string
+
+        if (token === null) router.push("/auth")
+
+        const res = UserService.userAuthCheck(token)
+        res.then(res => {
+            if (res.status !== "ok") {
+                router.push("/auth")
+            }
+        })
+    }, [])
+
     const ClickHandler = () => {
-        const email = localStorage.getItem("email")
-        if (email) {
-            const res = UserService.userLogout(email)
-            res.then(res => {
-                console.log(res)
-                if (res.status === "succesfully") {
-                    localStorage.setItem("isAuth", JSON.stringify(false))
-                    router.push("/")
-                }
-            })
-        }
-        else{
-            throw new Error("Email not found in LocalStorage")
-        }
+        const token = localStorage.getItem("token") as string
+
+        if (token === null) router.push("/auth")
+
+        const res = UserService.userLogout(token)
+        res.then(res => {
+            if (res.status === "ok") {
+                localStorage.removeItem("token")
+                router.push("/auth")
+            }
+        })
     }
 
     const logoutButton = (

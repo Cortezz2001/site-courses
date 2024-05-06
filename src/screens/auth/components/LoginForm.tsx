@@ -27,18 +27,14 @@ const LoginForm: React.FC<LoginFormProps> = ({
     };
 
     const submitHandler = () => {
-        const res = UserService.userAuth(password, email);
-        res.then((res) => {
-            console.log(res);
-            if (res.status === "succesfully") {
-                localStorage.setItem("email", email);
-                localStorage.setItem("isAuth", JSON.stringify(true));
-                router.push("/profile");
-            }
-            else{
-                alert(res.errors)
-            }
-        });
+        UserService.userAuth(email, password).then(
+            res => {
+                if (res.status === "ok") {
+                    localStorage.setItem("token", res.data.token)
+                    console.log(res)
+                    router.push("/profile")
+                }
+            })
     };
 
     return (

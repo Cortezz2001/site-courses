@@ -1,85 +1,126 @@
-interface Ires {
-    status: string;
-    errors: string;
+import { headers } from "next/headers";
+
+const axios = require('axios');
+const FormData = require('form-data');
+
+interface IUserReegistrationRequest {
+    username: string,
+    email: string
+    id: number
 }
+
+interface IUserAuthRequest {
+    token: string
+}
+
 
 export const UserService = {
     async userRegistration(
-        firstname: string,
-        lastname: string,
-        password: string,
-        email: string
+        username: string,
+        email: string,
+        password: string
     ) {
-        let userData = {
-            firstname,
-            lastname,
-            password,
-            email,
+        let data = new FormData();
+        data.append('username', email);
+        data.append('password', password);
+        data.append('email', email);
+
+        const requestOptions = {
+            method: "POST",
+            body: data,
         };
-        const res = await fetch(
-            "http://127.0.0.1:8000/" + "api/v1/auth/user_registration",
-            {
-                method: "POST",
-                body: JSON.stringify(userData),
-            }
-        );
-        if (!res.ok) {
-            throw new Error("Failed to fetch data");
+
+        let res = {
+            data: {},
+            status: "bad"
         }
-        return (await res.json()) as Promise<Ires>;
+
+        await fetch("http://127.0.0.1:8000/api/auth/users/", requestOptions)
+            .then((response) => response.text())
+            .then((result) => {
+                res.data = JSON.parse(result)
+                res.status = "ok"
+            }
+            )
+            .catch((error) => { throw new Error(error) });
+        return res as { data: IUserReegistrationRequest, status: string };
     },
 
-    async userAuth(password: string, email: string) {
-        let userData = {
-            password,
-            email,
+    async userAuth(email: string, password: string) {
+        const formdata = new FormData();
+        formdata.append("username", email);
+        formdata.append("password", password);
+
+        const requestOptions = {
+            method: "POST",
+            body: formdata,
         };
-        const res = await fetch(
-            "http://127.0.0.1:8000/" + "api/v1/auth/user_authentification",
-            {
-                method: "POST",
-                body: JSON.stringify(userData),
-            }
-        );
-        if (!res.ok) {
-            throw new Error("Failed to fetch data");
+
+        var res = {
+            data: {},
+            status: ""
         }
-        return (await res.json()) as Promise<Ires>;
+
+        await fetch("http://127.0.0.1:8000/api/auth/token", requestOptions)
+            .then((response) => response.text())
+            .then((result) => {
+                res.data = JSON.parse(result)
+                res.status = "ok"
+            }
+            )
+            .catch((error) => { throw new Error(error) });
+
+        return res as { data: IUserAuthRequest, status: string };
     },
 
-    async userAuthCheck(email: string) {
-        let userData = {
-            email,
-        };
-        const res = await fetch(
-            "http://127.0.0.1:8000/" +
-                "api/v1/auth/check_user_authentification",
-            {
-                method: "POST",
-                body: JSON.stringify(userData),
+    async userAuthCheck(token: string) {
+
+        const requestOptions = {
+            method: "POST",
+            headers: {
+                token: "Token " + token
             }
-        );
-        if (!res.ok) {
-            throw new Error("Failed to fetch data");
+        };
+
+        var res = {
+            data: {},
+            status: ""
         }
-        return (await res.json()) as Promise<Ires>;
+
+        await fetch("http://127.0.0.1:8000/api/auth/checkAuth", requestOptions)
+            .then((response) => response.text())
+            .then((result) => {
+                res.data = JSON.parse(result)
+                res.status = "ok"
+            }
+            )
+            .catch((error) => { throw new Error(error) });
+
+        return res as { data: { status: string }, status: string };
     },
-    async userLogout(email: string) {
-        let userData = {
-            email,
-        };
-        const res = await fetch(
-            "http://127.0.0.1:8000/" +
-                "api/v1/auth/user_logout",
-            {
-                method: "POST",
-                body: JSON.stringify(userData),
+    async userLogout(token: string) {
+
+        const requestOptions = {
+            method: "GET",
+            headers: {
+                token: "Token " + token
             }
-        );
-        if (!res.ok) {
-            throw new Error("Failed to fetch data");
+        };
+
+        var res = {
+            data: {},
+            status: ""
         }
-        return (await res.json()) as Promise<Ires>;
+
+        await fetch("http://127.0.0.1:8000/api/auth/logout", requestOptions)
+            .then((response) => response.text())
+            .then((result) => {
+                res.data = JSON.parse(result)
+                res.status = "ok"
+            }
+            )
+            .catch((error) => { throw new Error(error) });
+
+        return res as { data: { status: string }, status: string };
     },
 }
-

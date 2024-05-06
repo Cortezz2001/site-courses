@@ -21,19 +21,13 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
     const [password, setPassword] = React.useState<string>("")
 
     const submitHandler = () => {
-        const res = UserService.userRegistration(firstname, lastname, password, email)
-        res.then(res => {
-            console.log(res)
-            if (res.status === "succesfully") {
-                localStorage.setItem("firstname", firstname)
-                localStorage.setItem("lastname", lastname)
-                localStorage.setItem("email", email)
-                router.push("/auth")
-            }
-            else{
-                alert(res.errors)
-            }
-        })
+        const res = UserService.userRegistration(email, email, password).then(
+            res => {
+                console.log(res)
+                if (res.status === "ok") {
+                    router.push("/auth")
+                }
+            })
     }
 
     return (
