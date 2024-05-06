@@ -16,7 +16,6 @@ export const Layout: React.FC<ILayoutProps> = ({ children }) => {
                 style={{
                     paddingTop: "50px",
                     paddingBottom: "50px",
-                    width: "1330px",
                 }}
             >
                 {children}

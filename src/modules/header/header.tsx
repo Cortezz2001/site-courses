@@ -56,7 +56,7 @@ const Header = () => {
                     backgroundColor: "#007397",
                 }}
             >
-                <Container style={{ width: "1330px", margin: "auto" }}>
+                <Container>
                     <MenuItem
                         position="left"
                         name="logo"
@@ -124,7 +124,7 @@ const Header = () => {
                 </Container>
             </Menu>
             <Menu name="navbar" attached="bottom" borderless>
-                <Container style={{ width: "1330px", margin: "auto" }}>
+                <Container>
                     <MenuItem name="intensive" style={{ paddingLeft: "0" }}>
                         <Link
                             href="/intensives"
