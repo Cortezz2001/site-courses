@@ -21,7 +21,6 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
     const [loading, setLoading] = useState(false);
 
     const submitHandler = () => {
-        
         setLoading(false);
         UserService.userRegistration(email, email, password).then(
             res => {
@@ -31,7 +30,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     router.push("/auth")
                 }
             })
-            setLoading(false);
+        setLoading(false);
     }
 
     return (
