@@ -13,6 +13,7 @@ import {
 } from "@/UI/SUI";
 import { useState } from "react";
 import ProfileButton from "./components/profileButton/button";
+import CartButton from "./components/cartButton/button";
 
 const Header = () => {
     const [language, setLanguage] = useState("RU");
@@ -251,26 +252,7 @@ const Header = () => {
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
-                        <Button
-                            color="black"
-                            circular
-                            icon
-                            labelPosition="left"
-                            style={{
-                                marginLeft: "20px",
-                                backgroundColor: "#007397",
-                                color: "white",
-                            }}
-                        >
-                            <Icon
-                                name="cart"
-                                style={{
-                                    backgroundColor: "#007397",
-                                    padding: "10px",
-                                }}
-                            />
-                            Корзина
-                        </Button>
+                        <CartButton />
                     </MenuItem>
                 </Container>
             </Menu>
