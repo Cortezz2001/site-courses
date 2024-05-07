@@ -9,17 +9,20 @@ import React from "react";
 const ProfilePane: React.FC = () => {
     const router = useRouter()
 
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
         const token = localStorage.getItem("token") as string
 
-        if (token === null) router.push("/auth")
-
-        const res = UserService.userAuthCheck(token)
-        res.then(res => {
-            if (res.status !== "ok") {
-                router.push("/auth")
-            }
-        })
+        if (token === null) {
+            router.push("/auth")
+        }
+        else {
+            const res = UserService.userAuthCheck(token)
+            res.then(res => {
+                if (res.status !== "ok") {
+                    router.push("/auth")
+                }
+            })
+        }
     }, [])
 
     const ClickHandler = () => {
