@@ -16,15 +16,17 @@ const ProfileButton = () => {
 
         if (token === null) router.push("/auth")
 
-        const res = UserService.userAuthCheck(token)
-        res.then(res => {
-            if (res.status === "ok") {
-                router.push("/profile")
-            }
-            else {
-                router.push("/auth")
-            }
-        })
+        if (token !== null) {
+            const res = UserService.userAuthCheck(token)
+            res.then(res => {
+                if (res.status === "ok") {
+                    router.push("/profile")
+                }
+                else {
+                    router.push("/auth")
+                }
+            })
+        }
     }
 
     return (

@@ -1,6 +1,3 @@
-import { headers } from "next/headers";
-
-const axios = require('axios');
 const FormData = require('form-data');
 
 interface IUserReegistrationRequest {
@@ -12,6 +9,8 @@ interface IUserReegistrationRequest {
 interface IUserAuthRequest {
     token: string
 }
+
+export const AUTH_API_URL = "http://127.0.0.1:8000/api/v1/auth/";
 
 
 export const UserService = {
@@ -35,7 +34,7 @@ export const UserService = {
             status: "bad"
         }
 
-        await fetch("http://127.0.0.1:8000/api/auth/users/", requestOptions)
+        await fetch(AUTH_API_URL + "users/", requestOptions)
             .then((response) => response.text())
             .then((result) => {
                 res.data = JSON.parse(result)
@@ -61,7 +60,7 @@ export const UserService = {
             status: ""
         }
 
-        await fetch("http://127.0.0.1:8000/api/auth/token", requestOptions)
+        await fetch(AUTH_API_URL + "token", requestOptions)
             .then((response) => response.text())
             .then((result) => {
                 res.data = JSON.parse(result)
@@ -76,9 +75,9 @@ export const UserService = {
     async userAuthCheck(token: string) {
 
         const requestOptions = {
-            method: "POST",
+            method: "GET",
             headers: {
-                token: "Token " + token
+                "Authorization": "Token " + token
             }
         };
 
@@ -87,7 +86,7 @@ export const UserService = {
             status: ""
         }
 
-        await fetch("http://127.0.0.1:8000/api/auth/checkAuth", requestOptions)
+        await fetch(AUTH_API_URL + "checkAuth", requestOptions)
             .then((response) => response.text())
             .then((result) => {
                 res.data = JSON.parse(result)
@@ -103,7 +102,7 @@ export const UserService = {
         const requestOptions = {
             method: "GET",
             headers: {
-                token: "Token " + token
+                "Authorization": "Token " + token
             }
         };
 
@@ -112,7 +111,7 @@ export const UserService = {
             status: ""
         }
 
-        await fetch("http://127.0.0.1:8000/api/auth/logout", requestOptions)
+        await fetch(AUTH_API_URL + "logout", requestOptions)
             .then((response) => response.text())
             .then((result) => {
                 res.data = JSON.parse(result)

@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import {
     Container,
@@ -15,8 +16,11 @@ import { useState } from "react";
 import ProfileButton from "./components/profileButton/button";
 import CartButton from "./components/cartButton/button";
 import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
+import { SelectedCoursesInfoService } from "@/service/cartService/service";
+import React from "react";
 
-const Header: React.FC<ISelectedCoursesInfoGroup> = ({ selectedCourses }) => {
+const Header: React.FC = () => {
+    const [data, setData] = useState<ISelectedCoursesInfoGroup | null>(null);
     const [language, setLanguage] = useState("RU");
     const [currency, setCurrency] = useState("KZT");
 
@@ -31,6 +35,10 @@ const Header: React.FC<ISelectedCoursesInfoGroup> = ({ selectedCourses }) => {
         { key: "RUB", text: "RUB", value: "RUB" },
         { key: "USD", text: "USD", value: "USD" },
     ];
+
+    React.useEffect(() => {
+        SelectedCoursesInfoService.getSelectedCourses().then(res => setData(res))
+    }, [])
 
     const handleLanguageChange = (data: any) => {
         setLanguage(data.value as string);
@@ -254,7 +262,7 @@ const Header: React.FC<ISelectedCoursesInfoGroup> = ({ selectedCourses }) => {
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
-                        <CartButton selectedCourses={selectedCourses} />
+                        <CartButton selectedCourses={data ? data.selectedCourses : []} />
                     </MenuItem>
                 </Container>
             </Menu>
