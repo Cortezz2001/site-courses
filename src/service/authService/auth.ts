@@ -1,13 +1,20 @@
 const FormData = require('form-data');
 
-interface IUserReegistrationRequest {
-    username: string,
-    email: string
-    id: number
+export enum STATUS {
+    OK,
+    BAD
 }
 
-interface IUserAuthRequest {
-    token: string
+interface IResponseHandler {
+    status: STATUS
+    data: any
+}
+
+async function responseHandler(response: Response): Promise<IResponseHandler> {
+    return {
+        status: response.ok ? STATUS.OK : STATUS.BAD,
+        data: await response.json()
+    }
 }
 
 export const AUTH_API_URL = "http://127.0.0.1:8000/api/v1/auth/";
@@ -29,24 +36,9 @@ export const UserService = {
             body: data,
         };
 
-        let res = {
-            status: "",
-            data: {}
-        }
-
         const response = await fetch(AUTH_API_URL + "users/", requestOptions)
-
-        if (response.ok) {
-            let json = await response.json();
-            res.status = "ok"
-            res.data = json
-        }
-        else {
-            let data = await response.json();
-            res.status = "bad"
-            res.data = data
-        }
-        return res as { status: string, data: any }
+        let res = await responseHandler(response)
+        return res
     },
 
     async userAuth(email: string, password: string) {
@@ -59,27 +51,13 @@ export const UserService = {
             body: formdata,
         };
 
-        var res = {
-            status: "",
-            data: {},
-        }
-
         let response = await fetch(AUTH_API_URL + "token", requestOptions)
-        if (response.ok) {
-            let json = await response.json();
-            res.status = "ok"
-            res.data = json
-        }
-        else {
-            let data = await response.json();
-            res.status = "bad"
-            res.data = data
-        }
-        return res as { status: string, data: any }
+        let res = await responseHandler(response)
+        return res
 
     },
 
-    async userAuthCheck(token: string) {
+    async userAuthCheck(token: string): Promise<boolean> {
 
         const requestOptions = {
             method: "GET",
@@ -88,23 +66,9 @@ export const UserService = {
             }
         };
 
-        var res = {
-            data: {},
-            status: ""
-        }
-
         let response = await fetch(AUTH_API_URL + "checkAuth", requestOptions)
-        if (response.ok) {
-            let json = await response.json();
-            res.status = "ok"
-            res.data = json
-        }
-        else {
-            let data = await response.json();
-            res.status = "bad"
-            res.data = data
-        }
-        return res as { status: string, data: any }
+        let res = await responseHandler(response)
+        return res.status === STATUS.OK
     },
     async userLogout(token: string) {
 
@@ -115,23 +79,9 @@ export const UserService = {
             }
         };
 
-        var res = {
-            data: {},
-            status: ""
-        }
-
         let response = await fetch(AUTH_API_URL + "logout", requestOptions)
-        if (response.ok) {
-            let json = await response.json();
-            res.status = "ok"
-            res.data = json
-        }
-        else {
-            let data = await response.json();
-            res.status = "bad"
-            res.data = data
-        }
-        return res as { status: string, data: any }
+        let res = await responseHandler(response)
+        return res
 
     },
 }

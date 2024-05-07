@@ -15,9 +15,7 @@ const ProfileButton = () => {
 
         if (token) {
             const res = await UserService.userAuthCheck(token)
-            console.log(res)
-            if (res.status === "ok") {
-                console.log("succesfully")
+            if (res) {
                 router.push("/profile")
             }
             else {

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
-import { UserService } from "@/service/authService/auth";
+import { STATUS, UserService } from "@/service/authService/auth";
 import { useRouter } from "next/navigation";
 
 interface LoginFormProps {
@@ -31,7 +31,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
         setLoading(true);
         const res = await UserService.userAuth(email, password)
         console.log(res)
-        if (res.status === "ok") {
+        if (res.status === STATUS.OK) {
             console.log("succesfully")
             localStorage.setItem("token", res.data.token)
             router.push("/profile")

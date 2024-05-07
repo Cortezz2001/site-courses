@@ -1,6 +1,6 @@
 "use client"
 import { Card, Button, Icon } from "@/UI/SUI";
-import { UserService } from "@/service/authService/auth";
+import { STATUS, UserService } from "@/service/authService/auth";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -13,10 +13,9 @@ const ProfilePane: React.FC = () => {
         const token = localStorage.getItem("token")
 
         if (token) {
-            const res = UserService.userAuthCheck(token).then(
+            UserService.userAuthCheck(token).then(
                 (res => {
-                    console.log(res)
-                    if (res.status === "ok") {
+                    if (res) {
                         console.log("succesfully")
                         router.push("/profile")
                     }
@@ -37,7 +36,7 @@ const ProfilePane: React.FC = () => {
 
         if (token) {
             const res = await UserService.userLogout(token)
-            if (res.status === "ok") {
+            if (res.status === STATUS.OK) {
                 localStorage.removeItem("token")
                 router.push("/auth")
             }

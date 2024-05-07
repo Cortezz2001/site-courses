@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
-import { UserService } from "@/service/authService/auth";
+import { STATUS, UserService } from "@/service/authService/auth";
 import { useRouter } from "next/navigation";
 
 interface RegistrationFormProps {
@@ -24,7 +24,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
         setLoading(true);
         const res = await UserService.userRegistration(email, email, password)
         console.log(res)
-        if (res.status === "ok") {
+        if (res.status === STATUS.OK) {
             console.log("succesfully")
         }
         else {
