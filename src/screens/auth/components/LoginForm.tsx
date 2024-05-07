@@ -27,19 +27,23 @@ const LoginForm: React.FC<LoginFormProps> = ({
         setPassword(e.target.value);
     };
 
-    const submitHandler = () => {
+    async function submitHandler() {
         setLoading(true);
-        UserService.userAuth(email, password).then(
-            res => {
-                if (res.status === "ok") {
-                    localStorage.setItem("token", res.data.token)
-                    console.log(res)
-                    router.push("/profile")
-                    setLoading(false);
-                }
-                setLoading(false);
-            })
-    };
+        const res = await UserService.userAuth(email, password)
+        console.log(res)
+        if (res.status === "ok") {
+            console.log("succesfully")
+            localStorage.setItem("token", res.data.token)
+            router.push("/profile")
+            setLoading(false);
+        }
+        else {
+            for (let key in res.data) {
+                res.data[key].map((message: string) => alert(message))
+            }
+        }
+        setLoading(false);
+    }
 
     return (
         <Container

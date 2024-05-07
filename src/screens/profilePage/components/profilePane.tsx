@@ -10,33 +10,38 @@ const ProfilePane: React.FC = () => {
     const router = useRouter()
 
     React.useLayoutEffect(() => {
-        const token = localStorage.getItem("token") as string
+        const token = localStorage.getItem("token")
 
-        if (token === null) {
-            router.push("/auth")
+        if (token) {
+            const res = UserService.userAuthCheck(token).then(
+                (res => {
+                    console.log(res)
+                    if (res.status === "ok") {
+                        console.log("succesfully")
+                        router.push("/profile")
+                    }
+                    else {
+                        localStorage.removeItem("token")
+                        router.push("/auth")
+                    }
+                })
+            )
         }
         else {
-            const res = UserService.userAuthCheck(token)
-            res.then(res => {
-                if (res.status !== "ok") {
-                    router.push("/auth")
-                }
-            })
+            router.push("/auth")
         }
     }, [])
 
-    const ClickHandler = () => {
-        const token = localStorage.getItem("token") as string
+    async function ClickHandler() {
+        const token = localStorage.getItem("token")
 
-        if (token === null) router.push("/auth")
-
-        const res = UserService.userLogout(token)
-        res.then(res => {
+        if (token) {
+            const res = await UserService.userLogout(token)
             if (res.status === "ok") {
                 localStorage.removeItem("token")
                 router.push("/auth")
             }
-        })
+        }
     }
 
     const logoutButton = (

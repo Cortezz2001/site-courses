@@ -30,19 +30,23 @@ export const UserService = {
         };
 
         let res = {
-            data: {},
-            status: "bad"
+            status: "",
+            data: {}
         }
 
-        await fetch(AUTH_API_URL + "users/", requestOptions)
-            .then((response) => response.text())
-            .then((result) => {
-                res.data = JSON.parse(result)
-                res.status = "ok"
-            }
-            )
-            .catch((error) => { throw new Error(error) });
-        return res as { data: IUserReegistrationRequest, status: string };
+        const response = await fetch(AUTH_API_URL + "users/", requestOptions)
+
+        if (response.ok) {
+            let json = await response.json();
+            res.status = "ok"
+            res.data = json
+        }
+        else {
+            let data = await response.json();
+            res.status = "bad"
+            res.data = data
+        }
+        return res as { status: string, data: any }
     },
 
     async userAuth(email: string, password: string) {
@@ -56,20 +60,23 @@ export const UserService = {
         };
 
         var res = {
+            status: "",
             data: {},
-            status: ""
         }
 
-        await fetch(AUTH_API_URL + "token", requestOptions)
-            .then((response) => response.text())
-            .then((result) => {
-                res.data = JSON.parse(result)
-                res.status = "ok"
-            }
-            )
-            .catch((error) => { throw new Error(error) });
+        let response = await fetch(AUTH_API_URL + "token", requestOptions)
+        if (response.ok) {
+            let json = await response.json();
+            res.status = "ok"
+            res.data = json
+        }
+        else {
+            let data = await response.json();
+            res.status = "bad"
+            res.data = data
+        }
+        return res as { status: string, data: any }
 
-        return res as { data: IUserAuthRequest, status: string };
     },
 
     async userAuthCheck(token: string) {
@@ -86,16 +93,18 @@ export const UserService = {
             status: ""
         }
 
-        await fetch(AUTH_API_URL + "checkAuth", requestOptions)
-            .then((response) => response.text())
-            .then((result) => {
-                res.data = JSON.parse(result)
-                res.status = "ok"
-            }
-            )
-            .catch((error) => { throw new Error(error) });
-
-        return res as { data: { status: string }, status: string };
+        let response = await fetch(AUTH_API_URL + "checkAuth", requestOptions)
+        if (response.ok) {
+            let json = await response.json();
+            res.status = "ok"
+            res.data = json
+        }
+        else {
+            let data = await response.json();
+            res.status = "bad"
+            res.data = data
+        }
+        return res as { status: string, data: any }
     },
     async userLogout(token: string) {
 
@@ -111,15 +120,18 @@ export const UserService = {
             status: ""
         }
 
-        await fetch(AUTH_API_URL + "logout", requestOptions)
-            .then((response) => response.text())
-            .then((result) => {
-                res.data = JSON.parse(result)
-                res.status = "ok"
-            }
-            )
-            .catch((error) => { throw new Error(error) });
+        let response = await fetch(AUTH_API_URL + "logout", requestOptions)
+        if (response.ok) {
+            let json = await response.json();
+            res.status = "ok"
+            res.data = json
+        }
+        else {
+            let data = await response.json();
+            res.status = "bad"
+            res.data = data
+        }
+        return res as { status: string, data: any }
 
-        return res as { data: { status: string }, status: string };
     },
 }

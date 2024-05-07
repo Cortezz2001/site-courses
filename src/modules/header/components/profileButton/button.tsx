@@ -10,23 +10,25 @@ import React from "react";
 const ProfileButton = () => {
     const router = useRouter()
 
+    async function AuthCheck() {
+        const token = localStorage.getItem("token")
 
-    const AuthCheck = () => {
-        const token = localStorage.getItem("token") as string
-
-        if (token === null) router.push("/auth")
-
-        if (token !== null) {
-            const res = UserService.userAuthCheck(token)
-            res.then(res => {
-                if (res.status === "ok") {
-                    router.push("/profile")
-                }
-                else {
-                    router.push("/auth")
-                }
-            })
+        if (token) {
+            const res = await UserService.userAuthCheck(token)
+            console.log(res)
+            if (res.status === "ok") {
+                console.log("succesfully")
+                router.push("/profile")
+            }
+            else {
+                localStorage.removeItem("token")
+                router.push("/auth")
+            }
         }
+        else {
+            router.push("/auth")
+        }
+
     }
 
     return (

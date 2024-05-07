@@ -20,16 +20,18 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
     const [password, setPassword] = React.useState<string>("");
     const [loading, setLoading] = useState(false);
 
-    const submitHandler = () => {
-        setLoading(false);
-        UserService.userRegistration(email, email, password).then(
-            res => {
-                console.log(res)
-                if (res.status === "ok") {
-                    setLoading(false);
-                    router.push("/auth")
-                }
-            })
+    async function submitHandler() {
+        setLoading(true);
+        const res = await UserService.userRegistration(email, email, password)
+        console.log(res)
+        if (res.status === "ok") {
+            console.log("succesfully")
+        }
+        else {
+            for (let key in res.data) {
+                res.data[key].map((message: string) => alert(message))
+            }
+        }
         setLoading(false);
     }
 
