@@ -1,6 +1,7 @@
 import { Grid, GridColumn, GridRow } from "@/UI/SUI";
 import { EventCard } from "@/modules/eventCard/eventCard";
 import { IEventCardInfoGroup } from "@/service/eventsService/types";
+import Link from "next/link";
 
 export const GroupEventsCards: React.FC<IEventCardInfoGroup> = ({
     eventsInfo,
@@ -17,13 +18,17 @@ export const GroupEventsCards: React.FC<IEventCardInfoGroup> = ({
                     <GridRow>
                         {group.map((event) => (
                             <GridColumn key={event.id}>
-                                <EventCard
-                                    image={event.img}
-                                    header={event.title}
-                                    description={
-                                        event.startDate + ", " + event.startTime
-                                    }
-                                />
+                                <Link href={`/events/${event.id}`}>
+                                    <EventCard
+                                        image={event.img}
+                                        header={event.title}
+                                        description={
+                                            event.startDate +
+                                            ", " +
+                                            event.startTime
+                                        }
+                                    />
+                                </Link>
                             </GridColumn>
                         ))}
                     </GridRow>
