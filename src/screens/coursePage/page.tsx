@@ -98,6 +98,7 @@ export async function CourseDetailsPage({
                                 style={{
                                     margin: "auto",
                                     boxShadow: "1px 1px 20px 10px #e0e0e0",
+                                    borderRadius: "10px",
                                 }}
                             />
                         </GridColumn>
@@ -113,6 +114,7 @@ export async function CourseDetailsPage({
                                     boxShadow: "1px 1px 20px 10px #e0e0e0",
                                     height: "100%",
                                     padding: "30px",
+                                    borderRadius: "10px",
                                 }}
                             >
                                 {courseInfo.features.map((feature, index) => (
@@ -139,6 +141,7 @@ export async function CourseDetailsPage({
                                     boxShadow: "1px 1px 20px 10px #e0e0e0",
                                     height: "100%",
                                     padding: "30px",
+                                    borderRadius: "10px",
                                 }}
                             >
                                 <Header
@@ -279,6 +282,7 @@ export async function CourseDetailsPage({
                                     boxShadow: "1px 1px 20px 10px #e0e0e0",
                                     height: "100%",
                                     padding: "30px",
+                                    borderRadius: "10px",
                                 }}
                             >
                                 <Header
@@ -334,6 +338,7 @@ export async function CourseDetailsPage({
                                     boxShadow: "1px 1px 20px 10px #e0e0e0",
                                     height: "100%",
                                     padding: "30px",
+                                    borderRadius: "10px",
                                 }}
                             >
                                 <Header textAlign="center" as={"h2"}>

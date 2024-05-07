@@ -148,7 +148,7 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
                     raised
                     style={{
                         boxShadow: "1px 1px 20px 10px #e0e0e0",
-                        borderRadius: ".28571429rem",
+                        borderRadius: "10px",
                         margin: "0",
                         padding: "20px",
                     }}
