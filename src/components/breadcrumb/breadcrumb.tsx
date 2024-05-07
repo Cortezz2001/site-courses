@@ -20,7 +20,7 @@ export const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
             {sections.map((section, index) => (
                 <React.Fragment key={index}>
                     <BreadcrumbSection
-                        link={section.isActive ? false : section.isLink}
+                        as={section.isActive ? "span" : "a"}
                         href={section.isActive ? undefined : section.url}
                         style={{
                             color: section.isActive ? "#1b1c1d" : "#007397",
