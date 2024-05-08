@@ -1,7 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
+import {
+    Form,
+    FormField,
+    Input,
+    Button,
+    Container,
+    Header,
+    Message,
+    MessageContent,
+} from "@/UI/SUI";
 import { STATUS, UserService } from "@/service/authService/auth";
 import { useRouter } from "next/navigation";
 
@@ -19,17 +28,17 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
     const [email, setEmail] = React.useState<string>("");
     const [password, setPassword] = React.useState<string>("");
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string>("");
 
     async function submitHandler() {
         setLoading(true);
-        const res = await UserService.userRegistration(email, email, password)
-        console.log(res)
+        const res = await UserService.userRegistration(email, email, password);
+        console.log(res);
         if (res.status === STATUS.OK) {
-            console.log("succesfully")
-        }
-        else {
+            console.log("succesfully");
+        } else {
             for (let key in res.data) {
-                res.data[key].map((message: string) => alert(message))
+                res.data[key].map((message: string) => setError(message));
             }
         }
         setLoading(false);
@@ -101,6 +110,11 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
                         type="password"
                     />
                 </FormField>
+                {error && (
+                    <Container style={{ color: "red", textAlign: "center" }}>
+                        {error}
+                    </Container>
+                )}
                 <Button
                     type="submit"
                     fluid

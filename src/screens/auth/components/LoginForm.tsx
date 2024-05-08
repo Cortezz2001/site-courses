@@ -18,7 +18,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const router = useRouter();
-
+    const [error, setError] = useState<string>("");
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
     };
@@ -29,17 +29,16 @@ const LoginForm: React.FC<LoginFormProps> = ({
 
     async function submitHandler() {
         setLoading(true);
-        const res = await UserService.userAuth(email, password)
-        console.log(res)
+        const res = await UserService.userAuth(email, password);
+        console.log(res);
         if (res.status === STATUS.OK) {
-            console.log("succesfully")
-            localStorage.setItem("token", res.data.token)
-            router.push("/profile")
+            console.log("succesfully");
+            localStorage.setItem("token", res.data.token);
+            router.push("/profile");
             setLoading(false);
-        }
-        else {
+        } else {
             for (let key in res.data) {
-                res.data[key].map((message: string) => alert(message))
+                res.data[key].map((message: string) => setError(message));
             }
         }
         setLoading(false);
@@ -89,6 +88,17 @@ const LoginForm: React.FC<LoginFormProps> = ({
                         Забыли пароль?
                     </a>
                 </Container>
+                {error && (
+                    <Container
+                        style={{
+                            color: "red",
+                            textAlign: "center",
+                            marginTop: "10px",
+                        }}
+                    >
+                        {error}
+                    </Container>
+                )}
                 <Button
                     disabled={loading}
                     type="submit"
