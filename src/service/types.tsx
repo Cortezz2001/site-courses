@@ -91,7 +91,7 @@ interface Event {
 
 interface EventDetail {
     id: number;
-    mentors: EventsMentor[];
+    mentors: Mentor[];
     title: string;
     desc: string;
     img: string;
@@ -99,12 +99,6 @@ interface EventDetail {
     startDate: string;
     startTime: string;
     createdAt: string;
-}
-
-interface EventsMentor {
-    id: number;
-    name: string;
-    event: number;
 }
 
 //Ментор
