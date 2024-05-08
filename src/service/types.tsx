@@ -18,7 +18,7 @@ interface CourseDetail {
     id: number;
     skills: Skill[];
     controls: Control[];
-    mentors: CourseMentor[];
+    mentors: Mentor[];
     themes: Theme[];
     features: Feature[];
     knowhows: Knowhow[];
@@ -44,14 +44,6 @@ interface Skill {
 interface Control {
     id: number;
     item: string;
-    course: number;
-}
-
-interface CourseMentor {
-    id: number;
-    name: string;
-    exp: string;
-    img: string;
     course: number;
 }
 
