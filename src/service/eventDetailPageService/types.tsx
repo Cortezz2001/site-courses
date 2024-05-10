@@ -6,7 +6,7 @@ export interface IEventDetailPageInfo {
     format: string;
     startDate: string;
     startTime: string;
-    mentors: Array<IMentors>;
+    active_mentors: Array<IMentors>;
 }
 
 export interface IEventDetailPageInfoGroup {

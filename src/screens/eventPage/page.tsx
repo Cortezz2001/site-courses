@@ -46,6 +46,7 @@ export async function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
             url: "",
         },
     ];
+    console.log(eventInfo);
     return (
         <Layout>
             <>
@@ -130,23 +131,25 @@ export async function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                 >
                                     Ответственные тренеры:
                                 </Header>
-                                {eventInfo.mentors.map((mentor, index) => (
-                                    <List key={index}>
-                                        <ListItem as="a">
-                                            <ListIcon
-                                                name="user"
-                                                style={{
-                                                    color: "#007397",
-                                                }}
-                                            />
-                                            <ListContent>
-                                                <ListHeader>
-                                                    {mentor.name}
-                                                </ListHeader>
-                                            </ListContent>
-                                        </ListItem>
-                                    </List>
-                                ))}
+                                {eventInfo.active_mentors.map(
+                                    (active_mentor, index) => (
+                                        <List key={index}>
+                                            <ListItem as="a">
+                                                <ListIcon
+                                                    name="user"
+                                                    style={{
+                                                        color: "#007397",
+                                                    }}
+                                                />
+                                                <ListContent>
+                                                    <ListHeader>
+                                                        {active_mentor.name}
+                                                    </ListHeader>
+                                                </ListContent>
+                                            </ListItem>
+                                        </List>
+                                    )
+                                )}
                             </Segment>
                         </GridColumn>
                     </GridRow>
