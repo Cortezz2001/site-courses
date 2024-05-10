@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import {
     Container,
@@ -12,8 +13,14 @@ import {
     Icon,
 } from "@/UI/SUI";
 import { useState } from "react";
+import ProfileButton from "./components/profileButton/button";
+import CartButton from "./components/cartButton/button";
+import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
+import { SelectedCoursesInfoService } from "@/service/cartService/service";
+import React from "react";
 
-const Header = () => {
+const Header: React.FC = () => {
+    const [data, setData] = useState<ISelectedCoursesInfoGroup | null>(null);
     const [language, setLanguage] = useState("RU");
     const [currency, setCurrency] = useState("KZT");
 
@@ -28,6 +35,11 @@ const Header = () => {
         { key: "RUB", text: "RUB", value: "RUB" },
         { key: "USD", text: "USD", value: "USD" },
     ];
+
+    React.useEffect(() => {
+        SelectedCoursesInfoService.getSelectedCourses().then(res => setData(res))
+    }, [])
+
     const handleLanguageChange = (data: any) => {
         setLanguage(data.value as string);
     };
@@ -108,18 +120,7 @@ const Header = () => {
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
-                        <Button
-                            style={{
-                                border: "1px solid #ccc",
-                                borderRadius: "5px",
-                                padding: "10px 20px",
-                                margin: "auto",
-                                backgroundColor: "white",
-                                color: "#007397",
-                            }}
-                        >
-                            Личный кабинет
-                        </Button>
+                        <ProfileButton />
                     </MenuItem>
                 </Container>
             </Menu>
@@ -260,25 +261,7 @@ const Header = () => {
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
-                        <Button
-                            color="black"
-                            circular
-                            icon
-                            labelPosition="left"
-                            style={{
-                                marginLeft: "20px",
-                                backgroundColor: "#007397",
-                                color: "white",
-                            }}
-                        >
-                            <Icon
-                                name="cart"
-                                style={{
-                                    padding: "10px",
-                                }}
-                            />
-                            Корзина
-                        </Button>
+                        <CartButton selectedCourses={data ? data.selectedCourses : []} />
                     </MenuItem>
                 </Container>
             </Menu>
