@@ -47,7 +47,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
     return (
         <Container
             style={{
-                boxShadow: "0px 0px 5px 2px #007397",
+                boxShadow: "0px 0px 5px 2px #e0e0e0",
                 borderRadius: "10px",
                 padding: "30px",
                 width: "400px",

@@ -13,7 +13,7 @@ const SettingsPane: React.FC = () => {
         <>
             <Segment
                 style={{
-                    boxShadow: "0px 0px 5px 2px #007397",
+                    boxShadow: "0px 0px 5px 2px #e0e0e0",
                     marginBottom: "30px",
                 }}
             >
@@ -54,7 +54,7 @@ const SettingsPane: React.FC = () => {
                     </Button>
                 </Form>
             </Segment>
-            <Segment style={{ boxShadow: "0px 0px 5px 2px #007397" }}>
+            <Segment style={{ boxShadow: "0px 0px 5px 2px #e0e0e0" }}>
                 <Form>
                     <Header as="h3">Смена пароля</Header>
                     <FormGroup widths={2}>
