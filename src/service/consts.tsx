@@ -7,4 +7,5 @@ export const URLS = {
     getCoaches: "/api/v1/mentors/",
     getCourses: "/api/v1/courses/",
     getEvents: "/api/v1/events/",
+    getBanners: "/api/v1/banners/",
 };

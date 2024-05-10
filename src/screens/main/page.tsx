@@ -1,8 +1,9 @@
 import { ICoachCardInfo } from "@/service/coachesService/types";
 import { ICourseCardInfo } from "@/service/coursesService/types";
 import { IEventCardInfo } from "@/service/eventsService/types";
+import { IBannerInfo } from "@/service/bannersService/types";
 import { Layout } from "@/layouts/layout";
-import BannerCarousel from "./components/bannerCarousel";
+import { BannerCarousel } from "./components/bannerCarousel";
 import { CoachesCarousel } from "./components/coachesCarousel";
 import { CoursesCarousel } from "./components/coursesCarousel";
 import { EventsCarousel } from "./components/eventsCarousel";
@@ -14,17 +15,19 @@ interface MainProps {
     coachesInfo: ICoachCardInfo[];
     coursesInfo: ICourseCardInfo[];
     eventsInfo: IEventCardInfo[];
+    bannersInfo: IBannerInfo[];
 }
 
 export const Main: React.FC<MainProps> = ({
     coachesInfo,
     coursesInfo,
     eventsInfo,
+    bannersInfo,
 }) => {
     return (
         <Layout>
             <>
-                <BannerCarousel />
+                <BannerCarousel bannersInfo={bannersInfo} />
                 <Header as="h2">Курсы</Header>
                 <CoursesCarousel coursesInfo={coursesInfo} />
                 <Header as="h2">Наши тренеры</Header>
