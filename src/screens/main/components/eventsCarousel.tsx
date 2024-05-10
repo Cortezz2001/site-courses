@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 export const EventsCarousel: React.FC<IEventCardInfoGroup> = ({
     eventsInfo,
@@ -31,13 +32,15 @@ export const EventsCarousel: React.FC<IEventCardInfoGroup> = ({
             >
                 {eventsInfo.map((event) => (
                     <SwiperSlide key={event.id} style={{ height: "auto" }}>
-                        <EventCard
-                            image={event.img}
-                            header={event.title}
-                            description={
-                                event.startDate + ", " + event.startTime
-                            }
-                        />
+                        <Link href={`/events/${event.id}`}>
+                            <EventCard
+                                image={event.img}
+                                header={event.title}
+                                description={
+                                    event.startDate + ", " + event.startTime
+                                }
+                            />
+                        </Link>
                     </SwiperSlide>
                 ))}
 
