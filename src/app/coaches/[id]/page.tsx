@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Home({ params }: { params: { id: number } }) {
-    const coachInfo_ = await CoachDetailPageService.getCoaches();
     let activePage: ICoachDetailPageInfo = {
         id: 0,
         img: "",
@@ -22,15 +21,11 @@ export default async function Home({ params }: { params: { id: number } }) {
         desc: "",
         courses: [],
     };
-    coachInfo_.forEach((coachinfo) => {
-        if (coachinfo.id === Number(params.id)) {
-            activePage = coachinfo;
-        }
-    });
+    const coachInfo = await CoachDetailPageService.getCoaches(params.id);
 
     metadata.title = activePage.name;
     metadata.description = activePage.desc;
     metadata.keywords = [activePage.name, activePage.role];
 
-    return <CoachDetailsPage coachInfo={activePage} />;
+    return <CoachDetailsPage coachInfo={coachInfo} />;
 }
