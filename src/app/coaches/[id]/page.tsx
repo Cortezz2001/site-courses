@@ -11,21 +11,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Home({ params }: { params: { id: number } }) {
-    let activePage: ICoachDetailPageInfo = {
-        id: 0,
-        img: "",
-        name: "",
-        role: "",
-        education: "",
-        exp: "",
-        desc: "",
-        courses: [],
-    };
     const coachInfo = await CoachDetailPageService.getCoaches(params.id);
 
-    metadata.title = activePage.name;
-    metadata.description = activePage.desc;
-    metadata.keywords = [activePage.name, activePage.role];
+    metadata.title = coachInfo.name;
+    metadata.description = coachInfo.desc;
+    metadata.keywords = [coachInfo.name, coachInfo.role];
 
     return <CoachDetailsPage coachInfo={coachInfo} />;
 }

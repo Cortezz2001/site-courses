@@ -11,28 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Home({ params }: { params: { id: number } }) {
-    let activePage: ICourseDetailPageInfo = {
-        id: 0,
-        img: "",
-        title: "",
-        price: "",
-        desc: "",
-        goal: "",
-        format: "",
-        timeline: "",
-        result: "",
-        control: "",
-        mentors: [],
-        program: [],
-        challenges: [],
-        skills: [],
-        features: [],
-        knowhows: [],
-    };
     const courseInfo = await CourseDetailPageService.getCourses(params.id);
-    metadata.title = activePage.title;
-    metadata.description = activePage.desc;
-    metadata.keywords = [activePage.title, activePage.format];
+    metadata.title = courseInfo.title;
+    metadata.description = courseInfo.desc;
+    metadata.keywords = [courseInfo.title, courseInfo.format];
 
     return <CourseDetailsPage courseInfo={courseInfo} />;
 }

@@ -11,20 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Home({ params }: { params: { id: number } }) {
-    let activePage: IEventDetailPageInfo = {
-        id: 0,
-        img: "",
-        desc: "",
-        title: "",
-        format: "",
-        startDate: "",
-        startTime: "",
-        mentors: [],
-    };
     const eventInfo = await EventDetailPageService.getEvents(params.id);
-    metadata.title = activePage.title;
-    metadata.description = activePage.desc;
-    metadata.keywords = [activePage.title, activePage.format];
+    metadata.title = eventInfo.title;
+    metadata.description = eventInfo.desc;
+    metadata.keywords = [eventInfo.title, eventInfo.format];
 
     return <EventDetailsPage eventInfo={eventInfo} />;
 }
