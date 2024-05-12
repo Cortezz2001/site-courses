@@ -38,7 +38,12 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
             setLoading(false);
             return;
         }
-        const res = await UserService.userRegistration(email, email, password);
+        const res = await UserService.userRegistration(
+            email,
+            password,
+            firstname,
+            lastname
+        );
         console.log(res);
         if (res.status === STATUS.OK) {
             console.log("succesfully");
