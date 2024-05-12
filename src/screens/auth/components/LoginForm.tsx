@@ -56,24 +56,27 @@ const LoginForm: React.FC<LoginFormProps> = ({
             <Header as="h3" textAlign="center">
                 Вход
             </Header>
-            <Form>
-                <FormField>
-                    <label>Email</label>
-                    <Input
-                        placeholder="Введите вашу почту"
-                        value={email}
-                        onChange={handleEmailChange}
-                    />
-                </FormField>
-                <FormField>
-                    <label>Пароль</label>
-                    <Input
-                        placeholder="Введите ваш пароль"
-                        type="password"
-                        value={password}
-                        onChange={handlePasswordChange}
-                    />
-                </FormField>
+            <Form onSubmit={submitHandler}>
+                <FormField
+                    required
+                    label="Email"
+                    type="email"
+                    control={Input}
+                    placeholder="Введите вашу почту"
+                    value={email}
+                    onChange={handleEmailChange}
+                />
+
+                <FormField
+                    required
+                    label="Пароль"
+                    control={Input}
+                    placeholder="Введите ваш пароль"
+                    type="password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                />
+
                 <Container
                     style={{
                         fontSize: "12px",
@@ -101,15 +104,11 @@ const LoginForm: React.FC<LoginFormProps> = ({
                 )}
                 <Button
                     disabled={loading}
-                    type="submit"
                     fluid
                     style={{
                         backgroundColor: "#007397",
                         color: "white",
                         marginTop: "20px",
-                    }}
-                    onClick={() => {
-                        submitHandler();
                     }}
                     loading={loading}
                 >

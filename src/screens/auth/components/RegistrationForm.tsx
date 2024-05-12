@@ -27,11 +27,17 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
     const [lastname, setLastname] = React.useState<string>("");
     const [email, setEmail] = React.useState<string>("");
     const [password, setPassword] = React.useState<string>("");
+    const [confirmPassword, setConfirmPassword] = useState<string>("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string>("");
 
     async function submitHandler() {
         setLoading(true);
+        if (password !== confirmPassword) {
+            setError("Пароли не совпадают");
+            setLoading(false);
+            return;
+        }
         const res = await UserService.userRegistration(email, email, password);
         console.log(res);
         if (res.status === STATUS.OK) {
@@ -56,75 +62,69 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
             <Header as="h3" textAlign="center">
                 Регистрация
             </Header>
-            <Form>
-                <FormField>
-                    <label>Имя</label>
-                    <Input
-                        placeholder="Введите ваше имя"
-                        onChange={(
-                            event: React.ChangeEvent<HTMLInputElement>
-                        ) => {
-                            setFirstname(event.target.value);
-                        }}
-                    />
-                </FormField>
-                <FormField>
-                    <label>Фамилия</label>
-                    <Input
-                        placeholder="Введите вашу фамилию"
-                        onChange={(
-                            event: React.ChangeEvent<HTMLInputElement>
-                        ) => {
-                            setLastname(event.target.value);
-                        }}
-                    />
-                </FormField>
-                <FormField>
-                    <label>Email</label>
-                    <Input
-                        placeholder="Введите вашу почту"
-                        type="email"
-                        onChange={(
-                            event: React.ChangeEvent<HTMLInputElement>
-                        ) => {
-                            setEmail(event.target.value);
-                        }}
-                    />
-                </FormField>
-                <FormField>
-                    <label>Пароль</label>
-                    <Input
-                        placeholder="Введите ваш пароль"
-                        onChange={(
-                            event: React.ChangeEvent<HTMLInputElement>
-                        ) => {
-                            setPassword(event.target.value);
-                        }}
-                        type="password"
-                    />
-                </FormField>
-                <FormField>
-                    <label>Подтверждение пароля</label>
-                    <Input
-                        placeholder="Подтвердите ваш пароль"
-                        type="password"
-                    />
-                </FormField>
+            <Form onSubmit={submitHandler}>
+                <FormField
+                    required
+                    label="Имя"
+                    type="text"
+                    control={Input}
+                    placeholder="Введите ваше имя"
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setFirstname(event.target.value);
+                    }}
+                />
+                <FormField
+                    required
+                    label="Фамилия"
+                    type="text"
+                    control={Input}
+                    placeholder="Введите вашу фамилию"
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setLastname(event.target.value);
+                    }}
+                />
+                <FormField
+                    required
+                    label="Почта"
+                    type="email"
+                    control={Input}
+                    placeholder="Введите вашу почту"
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setEmail(event.target.value);
+                    }}
+                />
+                <FormField
+                    required
+                    label="Пароль"
+                    type="password"
+                    control={Input}
+                    placeholder="Введите ваш пароль"
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setPassword(event.target.value);
+                    }}
+                />
+                <FormField
+                    required
+                    label="Подтверждение пароля"
+                    type="password"
+                    control={Input}
+                    placeholder="Подтвердите ваш пароль"
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                        setConfirmPassword(event.target.value);
+                    }}
+                />
+
                 {error && (
                     <Container style={{ color: "red", textAlign: "center" }}>
                         {error}
                     </Container>
                 )}
                 <Button
-                    type="submit"
                     fluid
                     style={{
                         backgroundColor: "#007397",
                         color: "white",
                         marginTop: "20px",
-                    }}
-                    onClick={() => {
-                        submitHandler();
                     }}
                     loading={loading}
                 >

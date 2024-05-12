@@ -41,25 +41,23 @@ const LostPasswordForm: React.FC<LostPasswordFormProps> = ({
             <Header as="h3" textAlign="center">
                 Восстановление пароля
             </Header>
-            <Form>
-                <FormField>
-                    <label>Email</label>
-                    <Input
-                        placeholder="Введите вашу почту"
-                        type="email"
-                        value={email}
-                        onChange={handleEmailChange}
-                    />
-                </FormField>
+            <Form onSubmit={submitHandler}>
+                <FormField
+                    required
+                    label="Email"
+                    placeholder="Введите вашу почту"
+                    control={Input}
+                    type="email"
+                    value={email}
+                    onChange={handleEmailChange}
+                />
                 <Button
-                    type="submit"
                     fluid
                     style={{
                         backgroundColor: "#007397",
                         color: "white",
                         marginTop: "20px",
                     }}
-                    onClick={submitHandler}
                     loading={loading}
                 >
                     Сбросить пароль
