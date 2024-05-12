@@ -17,6 +17,8 @@ import {
     FormCheckbox,
     Divider,
 } from "@/UI/SUI";
+import MessageForm from "./components/emailForm/form";
+import React from "react";
 export default function Footer() {
     return (
         <Container name="footer" fluid>
@@ -148,30 +150,7 @@ export default function Footer() {
                                 </List>
                             </GridColumn>
                             <GridColumn width={4}>
-                                <p style={{ color: "white" }}>
-                                    Оставьте почту, или останетесь без крутых
-                                    писем от Lion IT-School
-                                </p>
-                                <Form
-                                    inverted
-                                    style={{
-                                        width: "fit-content",
-                                    }}
-                                >
-                                    <FormField>
-                                        <Input placeholder="E-mail" />
-                                    </FormField>
-                                    <Button fluid inverted type="submit">
-                                        Отправить
-                                    </Button>
-                                    <FormCheckbox
-                                        label="Я согласен с Политикой обработки персональных данных"
-                                        style={{
-                                            marginTop: "10px",
-                                            fontSize: "12px",
-                                        }}
-                                    />
-                                </Form>
+                                <MessageForm />
                             </GridColumn>
                         </GridRow>
                         <Divider inverted />

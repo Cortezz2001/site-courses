@@ -1,7 +1,7 @@
+"use client";
 import {
     Button,
     Checkbox,
-    Container,
     Form,
     FormField,
     Grid,
@@ -10,13 +10,62 @@ import {
     Input,
     Select,
 } from "@/UI/SUI";
+import MessageModal from "@/modules/footer/components/emailForm/modal";
+import { MessagesService } from "@/service/postMessageService/service";
+import { useState } from "react";
 
 const ContactForm = () => {
     const options = [
         { key: "telegram", text: "Telegram", value: "telegram" },
         { key: "whatsapp", text: "WhatsApp", value: "whatsapp" },
     ];
+    const [name, setName] = useState("");
+    const [number, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [messenger, setMessenger] = useState("");
+    const [messenger_username, setUsername] = useState("");
+    const [isChecked, setIsChecked] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+    const [modalOpen, setModalOpen] = useState(false);
 
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            if (
+                !name ||
+                !number ||
+                !email ||
+                !messenger ||
+                !messenger_username
+            ) {
+                setErrorMessage("Пожалуйста, заполните все поля формы.");
+            } else if (!isChecked) {
+                setErrorMessage(
+                    "Пожалуйста, подтвердите согласие на обработку персональных данных."
+                );
+            } else {
+                await MessagesService.sendMessage({
+                    name,
+                    number,
+                    email,
+                    messenger,
+                    messenger_username,
+                });
+                console.log("Сообщение отправлено");
+                setModalOpen(true);
+                setName("");
+                setPhone("");
+                setEmail("");
+                setMessenger("");
+                setUsername("");
+                setIsChecked(false);
+                setErrorMessage("");
+            }
+        } catch (error) {
+            console.error("Ошибка отправки", error);
+            setErrorMessage("Ошибка отправки. Попробуйте еще раз");
+        }
+    };
     return (
         <>
             <Grid
@@ -49,40 +98,72 @@ const ContactForm = () => {
                     </p>
                 </GridColumn>
                 <GridColumn>
-                    <Form style={{ margin: "20px" }}>
+                    <Form style={{ margin: "20px" }} onSubmit={handleSubmit}>
                         <FormField
                             required
+                            type="text"
                             control={Input}
                             label="Имя"
                             placeholder="Введите ваше имя..."
+                            value={name}
+                            onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                            ) => setName(e.target.value)}
                         />
                         <FormField
                             required
+                            type="tel"
                             control={Input}
                             label="Номер телефона"
                             placeholder="Введите ваш номер телефона..."
+                            value={number}
+                            onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                            ) => setPhone(e.target.value)}
                         />
                         <FormField
                             required
+                            type="email"
                             control={Input}
                             label="Электронная почта"
                             placeholder="Введите вашу электронную почту..."
+                            value={email}
+                            onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                            ) => setEmail(e.target.value)}
                         />
                         <FormField
                             required
                             control={Select}
+                            type="text"
                             label="Предпочитаемый мессенджер"
                             options={options}
                             placeholder="Выберите мессенджер..."
+                            value={messenger}
+                            onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>,
+                                data: any
+                            ) => setMessenger(data.value as string)}
                         />
                         <FormField
                             required
                             control={Input}
+                            type="text"
                             label="@username"
                             placeholder="Введите ваш username..."
+                            value={messenger_username}
+                            onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                            ) => setUsername(e.target.value)}
                         />
                         <FormField>
-                            <Checkbox label="Нажимая на кнопку, я соглашаюсь на обработку персональных данных" />
+                            <Checkbox
+                                label="Нажимая на кнопку, я соглашаюсь на обработку персональных данных"
+                                checked={isChecked}
+                                onChange={(e, data) =>
+                                    setIsChecked(data.checked || false)
+                                }
+                            />
                         </FormField>
                         <Button
                             type="submit"
@@ -95,6 +176,15 @@ const ContactForm = () => {
                             Отправить
                         </Button>
                     </Form>
+                    {errorMessage && (
+                        <p style={{ color: "red", textAlign: "center" }}>
+                            {errorMessage}
+                        </p>
+                    )}
+                    <MessageModal
+                        open={modalOpen}
+                        onClose={() => setModalOpen(false)}
+                    />
                 </GridColumn>
             </Grid>
         </>
