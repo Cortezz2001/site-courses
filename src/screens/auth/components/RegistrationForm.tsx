@@ -53,6 +53,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
             }
         }
         setLoading(false);
+        onLoginClick();
     }
 
     return (
