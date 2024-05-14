@@ -26,7 +26,7 @@ export default function Footer() {
                 vertical
                 style={{ padding: "5em 0", backgroundColor: "#007397" }}
             >
-                <Container style={{ width: "1330px", margin: "auto" }}>
+                <Container>
                     <Grid divided inverted stackable>
                         <GridRow>
                             <GridColumn width={4} textAlign="center">
