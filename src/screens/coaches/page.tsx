@@ -26,16 +26,7 @@ const BreadcrumbProps: Array<IBreadCrumb> = [
     },
 ];
 
-export const Coaches: React.FC = () => {
-    const [coachesInfo, setCoachesInfo] = React.useState<ICoachCardInfo[]>([])
-    React.useLayoutEffect(() => {
-        const language = localStorage.getItem("language")
-        if (language) {
-            let lang = JSON.parse(language) as LANGUAGES
-            CoachesService.getCoaches(lang).then(res => setCoachesInfo(res))
-        }
-
-    }, [])
+export const Coaches: React.FC<ICoachCardInfoGroup> = (coachesInfo) => {
     return (
         <Layout>
             <>
@@ -44,7 +35,7 @@ export const Coaches: React.FC = () => {
                     Тренеры
                 </Header>
 
-                <GroupCoachesCards coachesInfo={coachesInfo} />
+                <GroupCoachesCards coachesInfo={coachesInfo.coachesInfo} />
             </>
         </Layout>
     );

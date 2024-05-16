@@ -1,6 +1,9 @@
 import { Coaches } from "@/screens/coaches/page";
 import { CoachesService } from "@/service/coachesService/service";
+import { ICoachCardInfo } from "@/service/coachesService/types";
+import { LANGUAGES } from "@/service/consts";
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import "semantic-ui-css/semantic.min.css";
 
 export const metadata: Metadata = {
@@ -18,5 +21,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-    return <Coaches/>;
+    const cookieStore = cookies()
+    const languageCookie = cookieStore.get("language");
+    const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;
+    const coachesInfo_: ICoachCardInfo[] = await CoachesService.getCoaches(language)
+    return <Coaches coachesInfo={coachesInfo_} />;
 }

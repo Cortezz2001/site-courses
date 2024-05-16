@@ -19,9 +19,11 @@ const LanguageDropdown = () => {
             const savedLanguage = JSON.parse(localStorage.getItem("language")!);
             if (savedLanguage !== null) {
                 setLanguage(savedLanguage);
+                document.cookie = "language=" + savedLanguage
             } else {
                 localStorage.setItem("language", JSON.stringify(LANGUAGES.RU));
                 setLanguage(LANGUAGES.RU);
+                document.cookie = "language=" + "ru"
             }
         } catch (error) {
 
@@ -40,6 +42,7 @@ const LanguageDropdown = () => {
     ) => {
         setLanguage(value as string);
         localStorage.setItem("language", JSON.stringify(value));
+        document.cookie = "language=" + value
         window.location.reload();
 
     };
