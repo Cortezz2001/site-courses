@@ -5,10 +5,12 @@ import {
     DropdownProps,
 } from "@/UI/SUI";
 import { LANGUAGES } from "@/service/consts";
+import { useRouter } from "next/navigation";
 
 import React, { useLayoutEffect, useState } from "react";
 
 const LanguageDropdown = () => {
+    const router = useRouter()
     const [language, setLanguage] = useState<string>(() => {
         const savedLanguage = JSON.parse(localStorage.getItem("language")!);
         return savedLanguage !== null ? savedLanguage : "RU";
@@ -43,7 +45,7 @@ const LanguageDropdown = () => {
         setLanguage(value as string);
         localStorage.setItem("language", JSON.stringify(value));
         document.cookie = "language=" + value
-        window.location.reload();
+        router.refresh()
 
     };
 
