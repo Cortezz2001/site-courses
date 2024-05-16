@@ -18,17 +18,11 @@ import CartButton from "./components/cartButton/button";
 import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
 import { SelectedCoursesInfoService } from "@/service/cartService/service";
 import React from "react";
+import LanguageDropdown from "./components/languageDropdown/dropdown";
 
 const Header: React.FC = () => {
     const [data, setData] = useState<ISelectedCoursesInfoGroup | null>(null);
-    const [language, setLanguage] = useState("RU");
     const [currency, setCurrency] = useState("KZT");
-
-    const languageOptions = [
-        { key: "RU", text: "RU", value: "RU", flag: "ru" },
-        { key: "KZ", text: "KZ", value: "KZ", flag: "kz" },
-        { key: "EN", text: "EN", value: "EN", flag: "us" },
-    ];
 
     const currencyOptions = [
         { key: "KZT", text: "KZT", value: "KZT" },
@@ -40,9 +34,6 @@ const Header: React.FC = () => {
         SelectedCoursesInfoService.getSelectedCourses().then(res => setData(res))
     }, [])
 
-    const handleLanguageChange = (data: any) => {
-        setLanguage(data.value as string);
-    };
 
     const handleCurrencyChange = (data: any) => {
         setCurrency(data.value as string);
@@ -88,20 +79,7 @@ const Header: React.FC = () => {
                     </MenuItem>
                     <MenuItem position="right">+77051400124</MenuItem>
                     <MenuItem style={{ paddingRight: "10px" }}>
-                        <Dropdown
-                            style={{
-                                border: "1px solid #ccc",
-                                borderRadius: "5px",
-                                padding: "10px",
-                                margin: "auto",
-                                backgroundColor: "white",
-                                color: "#007397",
-                            }}
-                            inline
-                            options={languageOptions}
-                            value={language}
-                            onChange={handleLanguageChange}
-                        />
+                        <LanguageDropdown/>
                     </MenuItem>
                     <MenuItem style={{ paddingLeft: "10px" }}>
                         <Dropdown

@@ -47,13 +47,14 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
         console.log(res);
         if (res.status === STATUS.OK) {
             console.log("succesfully");
+            onLoginClick();
         } else {
             for (let key in res.data) {
                 res.data[key].map((message: string) => setError(message));
             }
         }
         setLoading(false);
-        onLoginClick();
+        
     }
 
     return (
