@@ -9,3 +9,9 @@ export const URLS = {
     getEvents: "/api/v1/events/",
     getBanners: "/api/v1/banners/",
 };
+
+export enum LANGUAGES {
+    RU = "ru",
+    EN = "en",
+    KZ = "kz"
+}
