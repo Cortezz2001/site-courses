@@ -6,3 +6,27 @@
 .ui.dropdown .menu .item .text {
     color: white;
 }
+
+.navbar_mobile {
+    display: none !important;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar_container {
+        align-items: center !important;
+    }
+
+    .navbar_mobile {
+        display: block !important;
+        color: #007397;
+    }
+
+    .navbar_mobile::after {
+        content: "Меню сайта";
+        color: initial;
+    }
+
+    .navbar_item_desktop {
+        display: none !important;
+    }
+}
