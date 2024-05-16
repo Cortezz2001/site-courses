@@ -18,6 +18,7 @@ import CartButton from "./components/cartButton/button";
 import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
 import { SelectedCoursesInfoService } from "@/service/cartService/service";
 import React from "react";
+import style from "./style.module.css";
 
 const Header: React.FC = () => {
     const [data, setData] = useState<ISelectedCoursesInfoGroup | null>(null);
@@ -37,8 +38,10 @@ const Header: React.FC = () => {
     ];
 
     React.useEffect(() => {
-        SelectedCoursesInfoService.getSelectedCourses().then(res => setData(res))
-    }, [])
+        SelectedCoursesInfoService.getSelectedCourses().then((res) =>
+            setData(res)
+        );
+    }, []);
 
     const handleLanguageChange = (data: any) => {
         setLanguage(data.value as string);
@@ -124,9 +127,81 @@ const Header: React.FC = () => {
                     </MenuItem>
                 </Container>
             </Menu>
-            <Menu name="navbar" attached="bottom" borderless>
-                <Container>
-                    <MenuItem name="intensive" style={{ paddingLeft: "0" }}>
+            <Menu name="navbar" attached="bottom" borderless stackable>
+                <Container className={style.navbar_container}>
+                    <Dropdown icon="sidebar" className={style.navbar_mobile}>
+                        <DropdownMenu>
+                            <DropdownItem name="intensive">
+                                <Link
+                                    href="/intensives"
+                                    style={{
+                                        color: "inherit",
+                                    }}
+                                >
+                                    Летние интенсивы 2024
+                                </Link>
+                            </DropdownItem>
+                            <DropdownItem name="trainers">
+                                <Link
+                                    href="/coaches"
+                                    style={{
+                                        color: "inherit",
+                                    }}
+                                >
+                                    Наши тренеры
+                                </Link>
+                            </DropdownItem>
+                            <Dropdown text="Обучающимся" className="link item">
+                                <DropdownMenu>
+                                    <Link
+                                        href="/courses"
+                                        style={{
+                                            color: "inherit",
+                                        }}
+                                    >
+                                        <DropdownItem>Выбор курса</DropdownItem>
+                                    </Link>
+                                    <Link
+                                        href="/help"
+                                        style={{
+                                            color: "inherit",
+                                        }}
+                                    >
+                                        <DropdownItem>
+                                            Вопросы и ответы
+                                        </DropdownItem>
+                                    </Link>
+                                </DropdownMenu>
+                            </Dropdown>
+                            <Dropdown text="О нас" className="link item">
+                                <DropdownMenu>
+                                    <Link
+                                        href="/events"
+                                        style={{
+                                            color: "inherit",
+                                        }}
+                                    >
+                                        <DropdownItem>Анонсы</DropdownItem>
+                                    </Link>
+                                    <Link
+                                        href="/about-school"
+                                        style={{
+                                            color: "inherit",
+                                        }}
+                                    >
+                                        <DropdownItem>
+                                            О нашей школе
+                                        </DropdownItem>
+                                    </Link>
+                                </DropdownMenu>
+                            </Dropdown>
+                        </DropdownMenu>
+                    </Dropdown>
+                    <MenuItem
+                        name="intensive"
+                        className={style.navbar_item_desktop}
+                        style={{ paddingLeft: "0" }}
+                    >
                         <Link
                             href="/intensives"
                             style={{
@@ -137,7 +212,10 @@ const Header: React.FC = () => {
                         </Link>
                     </MenuItem>
 
-                    <MenuItem name="trainers">
+                    <MenuItem
+                        name="trainers"
+                        className={style.navbar_item_desktop}
+                    >
                         <Link
                             href="/coaches"
                             style={{
@@ -148,7 +226,11 @@ const Header: React.FC = () => {
                         </Link>
                     </MenuItem>
 
-                    <Dropdown text="Обучающимся" pointing className="link item">
+                    <Dropdown
+                        text="Обучающимся"
+                        className={`${style.navbar_item_desktop} link item`}
+                        pointing
+                    >
                         <DropdownMenu>
                             <Link
                                 href="/courses"
@@ -169,7 +251,11 @@ const Header: React.FC = () => {
                         </DropdownMenu>
                     </Dropdown>
 
-                    <Dropdown text="О нас" pointing className="link item">
+                    <Dropdown
+                        text="О нас"
+                        className={`${style.navbar_item_desktop} link item`}
+                        pointing
+                    >
                         <DropdownMenu>
                             <Link
                                 href="/events"
@@ -261,7 +347,9 @@ const Header: React.FC = () => {
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
-                        <CartButton selectedCourses={data ? data.selectedCourses : []} />
+                        <CartButton
+                            selectedCourses={data ? data.selectedCourses : []}
+                        />
                     </MenuItem>
                 </Container>
             </Menu>
