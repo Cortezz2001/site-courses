@@ -6,13 +6,12 @@ import {
 } from "@/UI/SUI";
 import { LANGUAGES } from "@/service/consts";
 import { useRouter } from "next/navigation";
-
 import React, { useLayoutEffect, useState } from "react";
-
+import setLanguage from 'next-translate/setLanguage';
 const LanguageDropdown = () => {
     const router = useRouter()
-    const [language, setLanguage] = useState<string>(() => {
-        const savedLanguage = JSON.parse(localStorage.getItem("language")!);
+    const [language, setLanguageState] = useState<string>(() => {
+        const savedLanguage = JSON.parse(localStorage?.getItem("language")!);
         return savedLanguage !== null ? savedLanguage : "RU";
 
     });
@@ -20,12 +19,14 @@ const LanguageDropdown = () => {
         try {
             const savedLanguage = JSON.parse(localStorage.getItem("language")!);
             if (savedLanguage !== null) {
-                setLanguage(savedLanguage);
+                setLanguageState(savedLanguage);
                 document.cookie = "language=" + savedLanguage
+                async () => await setLanguage(savedLanguage)
             } else {
                 localStorage.setItem("language", JSON.stringify(LANGUAGES.RU));
-                setLanguage(LANGUAGES.RU);
+                setLanguageState(LANGUAGES.RU);
                 document.cookie = "language=" + "ru"
+                async () => await setLanguage('ru')
             }
         } catch (error) {
 
@@ -42,11 +43,12 @@ const LanguageDropdown = () => {
         e: React.SyntheticEvent<HTMLElement>,
         { value }: DropdownProps
     ) => {
-        setLanguage(value as string);
+        setLanguageState(value as string);
         localStorage.setItem("language", JSON.stringify(value));
         document.cookie = "language=" + value
+        async () => await setLanguage(value as string)
         router.refresh()
-
+        
     };
 
     return (
@@ -59,11 +61,11 @@ const LanguageDropdown = () => {
                 backgroundColor: "white",
                 color: "#007397",
             }}
+            defaultValue={language}
             inline
             options={languageOptions}
             value={language}
             onChange={handleLanguageChange}
-
         />
     );
 };

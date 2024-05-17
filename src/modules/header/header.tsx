@@ -19,7 +19,7 @@ import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
 import { SelectedCoursesInfoService } from "@/service/cartService/service";
 import React from "react";
 import LanguageDropdown from "./components/languageDropdown/dropdown";
-
+import useTranslation from 'next-translate/useTranslation';
 const Header: React.FC = () => {
     const [data, setData] = useState<ISelectedCoursesInfoGroup | null>(null);
     const [currency, setCurrency] = useState("KZT");
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
     const handleCurrencyChange = (data: any) => {
         setCurrency(data.value as string);
     };
-
+    const { t } = useTranslation('common');
     return (
         <Container
             name="header"
@@ -111,7 +111,7 @@ const Header: React.FC = () => {
                                 color: "inherit",
                             }}
                         >
-                            Летние интенсивы 2024
+                            {t('headerIntensives')}
                         </Link>
                     </MenuItem>
 
@@ -122,7 +122,7 @@ const Header: React.FC = () => {
                                 color: "inherit",
                             }}
                         >
-                            Наши тренеры
+                            {t('headerOurCoaches')}
                         </Link>
                     </MenuItem>
 
@@ -247,3 +247,5 @@ const Header: React.FC = () => {
     );
 };
 export default Header;
+
+

@@ -1,7 +1,9 @@
 import { CourseDetailsPage } from "@/screens/coursePage/page";
+import { LANGUAGES } from "@/service/consts";
 import { CourseDetailPageService } from "@/service/courseDetailPageService/service";
 import { ICourseDetailPageInfo } from "@/service/courseDetailPageService/types";
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import "semantic-ui-css/semantic.min.css";
 
 export const metadata: Metadata = {
@@ -11,7 +13,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Home({ params }: { params: { id: number } }) {
-    const courseInfo = await CourseDetailPageService.getCourses(params.id);
+    const cookieStore = cookies()
+    const languageCookie = cookieStore.get("language");
+    const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;
+    const courseInfo:ICourseDetailPageInfo = await CourseDetailPageService.getCourses(params.id, language);
     metadata.title = courseInfo.title;
     metadata.description = courseInfo.desc;
     metadata.keywords = [courseInfo.title, courseInfo.format];
