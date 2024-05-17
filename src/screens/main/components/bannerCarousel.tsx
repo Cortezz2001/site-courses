@@ -14,17 +14,7 @@ export const BannerCarousel: React.FC<ISelectedBannersInfoGroup> = ({
     return (
         <>
             <Swiper
-                style={
-                    {
-                        "--swiper-pagination-color": "white",
-                        "--swiper-pagination-bullet-inactive-color": "white",
-                        "--swiper-pagination-bullet-inactive-opacity": "0.35",
-                        "--swiper-pagination-bullet-size": "16px",
-                        "--swiper-pagination-bullet-horizontal-gap": "6px",
-                        borderRadius: ".28571429rem",
-                        lineHeight: "0",
-                    } as any
-                }
+                className={style.banner_carousel_container}
                 modules={[Navigation, Pagination, Autoplay]}
                 autoplay={{ delay: 10000 }}
                 pagination={{ clickable: true }}
@@ -38,7 +28,7 @@ export const BannerCarousel: React.FC<ISelectedBannersInfoGroup> = ({
                         <Image
                             src={banner.img}
                             alt={banner.img}
-                            className={style.swiper_image}
+                            className={style.banner_carousel_image}
                         />
                     </SwiperSlide>
                 ))}
