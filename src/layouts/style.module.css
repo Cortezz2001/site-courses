@@ -1,3 +1,14 @@
 .container {
     height: 100vh;
 }
+
+.content_wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .content_wrapper {
+        padding-top: 25px;
+    }
+}
