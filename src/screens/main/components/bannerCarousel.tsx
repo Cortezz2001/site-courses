@@ -1,10 +1,11 @@
 "use client";
-import Image from "next/image";
+import { Image } from "@/UI/SUI";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import style from "../style.module.css";
 import { ISelectedBannersInfoGroup } from "@/service/bannersService/types";
 
 export const BannerCarousel: React.FC<ISelectedBannersInfoGroup> = ({
@@ -35,11 +36,9 @@ export const BannerCarousel: React.FC<ISelectedBannersInfoGroup> = ({
                 {bannersInfo.map((banner, index) => (
                     <SwiperSlide key={index}>
                         <Image
-                            width={1330}
-                            height={600}
                             src={banner.img}
                             alt={banner.img}
-                            style={{ objectFit: "cover" }}
+                            className={style.swiper_image}
                         />
                     </SwiperSlide>
                 ))}
