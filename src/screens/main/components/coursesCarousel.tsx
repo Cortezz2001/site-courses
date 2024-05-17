@@ -23,18 +23,16 @@ export const CoursesCarousel: React.FC<ICourseCardInfoGroup> = ({
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 }}
+                spaceBetween={20}
                 breakpoints={{
                     1200: {
                         slidesPerView: 4,
-                        spaceBetween: 20,
                     },
                     900: {
                         slidesPerView: 3,
-                        spaceBetween: 10,
                     },
                     700: {
                         slidesPerView: 2,
-                        spaceBetween: 20,
                     },
                 }}
             >
