@@ -28,6 +28,11 @@
     margin-right: -12px;
 }
 
+.action_block_wrapper {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
 @media only screen and (min-width: 1024px) and (max-width: 1181px) {
     .courses_carousel,
     .coaches_carousel {
@@ -43,5 +48,30 @@
     .courses_carousel,
     .coaches_carousel {
         padding-top: 0;
+    }
+
+    .action_block_wrapper {
+        margin-top: 20px !important;
+    }
+
+    .action_block_container {
+        position: relative !important;
+        display: block !important;
+    }
+
+    .action_block_left {
+        position: absolute !important;
+        z-index: 1 !important;
+        top: 10% !important;
+    }
+
+    .action_block_text {
+        font-size: 0.75em !important;
+        padding-inline: 3.25em !important;
+    }
+
+    .action_block_right {
+        width: auto !important;
+        box-shadow: none !important;
     }
 }

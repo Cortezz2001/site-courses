@@ -9,19 +9,20 @@ import {
     Icon,
 } from "@/UI/SUI";
 
+import style from "../style.module.css";
+
 const ActionBlock: React.FC = () => {
     const telegramLink = "https://t.me/+b8klQ4VDBX82Y2Iy";
 
     return (
-        <Grid
-            columns={2}
-            divided
-            style={{ marginTop: "30px", marginBottom: "30px" }}
-        >
-            <GridRow>
-                <GridColumn verticalAlign="middle">
+        <Grid className={style.action_block_wrapper} columns={2} divided>
+            <GridRow className={style.action_block_container}>
+                <GridColumn
+                    verticalAlign="middle"
+                    className={style.action_block_left}
+                >
                     <Container textAlign="center" style={{ fontSize: "large" }}>
-                        <p>
+                        <p className={style.action_block_text}>
                             Присоединяйся к нашему Telegram-каналу, чтобы
                             обсудить,
                             <br />
@@ -51,7 +52,7 @@ const ActionBlock: React.FC = () => {
                         </a>
                     </Container>
                 </GridColumn>
-                <GridColumn>
+                <GridColumn className={style.action_block_right}>
                     <Image rounded alt="" src="/programmer-stock-cropped.jpg" />
                 </GridColumn>
             </GridRow>
