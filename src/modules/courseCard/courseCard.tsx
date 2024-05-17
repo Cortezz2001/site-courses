@@ -40,7 +40,6 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
             link
             style={{
                 width: "auto",
-                maxWidth: "314.25px",
                 height: "100%",
                 webkitBoxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
                 mozBoxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
