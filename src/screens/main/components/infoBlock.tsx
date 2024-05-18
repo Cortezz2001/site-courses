@@ -1,17 +1,26 @@
 import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
+import style from "../style.module.css";
 
 const InfoBlock: React.FC = () => {
     return (
         <>
-            <Header as="h2" style={{ marginTop: "45px", marginBottom: "30px" }}>
+            <Header as="h2" className={style.info_block_top_heading}>
                 Практика на реальных примерах и задачах
             </Header>
             <Grid columns={2} divided>
                 <GridRow>
-                    <GridColumn>
-                        <Image rounded alt="" src="/programmer-stock.jpg" />
+                    <GridColumn className={style.info_block_top_left}>
+                        <Image
+                            rounded
+                            alt=""
+                            src="/programmer-stock.jpg"
+                            className={style.info_block_top_image}
+                        />
                     </GridColumn>
-                    <GridColumn verticalAlign="middle">
+                    <GridColumn
+                        verticalAlign="middle"
+                        className={style.info_block_top_right}
+                    >
                         <Container
                             textAlign="justified"
                             style={{ fontSize: "large" }}
@@ -45,13 +54,16 @@ const InfoBlock: React.FC = () => {
                 </GridRow>
             </Grid>
 
-            <Header as="h2" style={{ marginTop: "45px", marginBottom: "30px" }}>
+            <Header as="h2" className={style.info_block_bottom_heading}>
                 LIon IT-school: источник знаний для создания технологического
                 будущего
             </Header>
             <Grid columns={2} divided>
                 <GridRow>
-                    <GridColumn verticalAlign="middle">
+                    <GridColumn
+                        verticalAlign="middle"
+                        className={style.info_block_bottom_left}
+                    >
                         <Container
                             textAlign="justified"
                             style={{ fontSize: "large" }}
@@ -84,7 +96,7 @@ const InfoBlock: React.FC = () => {
                             </p>
                         </Container>
                     </GridColumn>
-                    <GridColumn>
+                    <GridColumn className={style.info_block_bottom_right}>
                         <Image rounded alt="" src="/programmers-stock-3.png" />
                     </GridColumn>
                 </GridRow>

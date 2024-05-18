@@ -34,6 +34,12 @@
     margin-bottom: 30px !important;
 }
 
+.info_block_top_heading,
+.info_block_bottom_heading {
+    margin-top: 45px !important;
+    margin-bottom: 30px !important;
+}
+
 @media only screen and (min-width: 1024px) and (max-width: 1181px) {
     .courses_carousel,
     .coaches_carousel,
@@ -75,6 +81,47 @@
 
     .action_block_right {
         width: auto !important;
+        box-shadow: none !important;
+    }
+
+    .info_block_top_heading,
+    .info_block_bottom_heading {
+        margin-top: 30px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .info_block_top_left,
+    .info_block_bottom_right {
+        position: relative;
+        width: 100% !important;
+    }
+
+    .info_block_top_left::after,
+    .info_block_bottom_right::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: calc(100% - 2rem);
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 0.3125em;
+    }
+
+    .info_block_top_image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .info_block_top_right,
+    .info_block_bottom_left {
+        position: absolute !important;
+        z-index: 1;
+        width: 100% !important;
+        padding-right: 3em !important;
+        padding-left: 3em !important;
+        color: white;
         box-shadow: none !important;
     }
 }
