@@ -10,7 +10,6 @@ import {
     DropdownMenu,
     DropdownItem,
     Button,
-    Icon,
 } from "@/UI/SUI";
 import { useState } from "react";
 import ProfileButton from "./components/profileButton/button";
@@ -19,7 +18,9 @@ import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
 import { SelectedCoursesInfoService } from "@/service/cartService/service";
 import React from "react";
 import LanguageDropdown from "./components/languageDropdown/dropdown";
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslations } from "next-intl";
+
+
 const Header: React.FC = () => {
     const [data, setData] = useState<ISelectedCoursesInfoGroup | null>(null);
     const [currency, setCurrency] = useState("KZT");
@@ -38,7 +39,7 @@ const Header: React.FC = () => {
     const handleCurrencyChange = (data: any) => {
         setCurrency(data.value as string);
     };
-    const { t } = useTranslation('common');
+    const t = useTranslations('Header');
     return (
         <Container
             name="header"
@@ -79,7 +80,7 @@ const Header: React.FC = () => {
                     </MenuItem>
                     <MenuItem position="right">+77051400124</MenuItem>
                     <MenuItem style={{ paddingRight: "10px" }}>
-                        <LanguageDropdown/>
+                        <LanguageDropdown />
                     </MenuItem>
                     <MenuItem style={{ paddingLeft: "10px" }}>
                         <Dropdown
@@ -109,8 +110,7 @@ const Header: React.FC = () => {
                             href="/intensives"
                             style={{
                                 color: "inherit",
-                            }}
-                        >
+                            }}>
                             {t('headerIntensives')}
                         </Link>
                     </MenuItem>

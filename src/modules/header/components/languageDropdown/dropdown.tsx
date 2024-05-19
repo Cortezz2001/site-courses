@@ -46,9 +46,14 @@ const LanguageDropdown = () => {
         setLanguageState(value as string);
         localStorage.setItem("language", JSON.stringify(value));
         document.cookie = "language=" + value
-        async () => await setLanguage(value as string)
-        router.refresh()
-        
+        localStorage.setItem("lang", value as string)
+        const currentURL = window.location.pathname;
+        if (value === "kk") {
+            router.push(currentURL + "?lang=kz")
+        }
+        else {
+            router.push(currentURL + "?lang=" + value)
+        }
     };
 
     return (

@@ -1,8 +1,8 @@
-const nextTranslate = require('next-translate-plugin');
-module.exports = nextTranslate({
-    images: {
-      domains: ['ik.imagekit.io'], // Replace with your domain
-    },
-    // reactStrictMode: true,
-
-  });
+const createNextIntlPlugin = require('next-intl/plugin');
+ 
+const withNextIntl = createNextIntlPlugin();
+ 
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+ 
+module.exports = withNextIntl(nextConfig);
