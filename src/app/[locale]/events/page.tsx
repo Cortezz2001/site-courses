@@ -20,9 +20,11 @@ export const metadata: Metadata = {
     ],
 };
 export default async function Home() {
-    const cookieStore = cookies()
-    const languageCookie = cookieStore.get("language");
-    const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;
+    const cookieStore = cookies();
+    const languageCookie = cookieStore.get("NEXT_LOCALE");
+    const language: LANGUAGES = languageCookie
+        ? (languageCookie.value as LANGUAGES)
+        : LANGUAGES.RU;
     const events_: IEventCardInfo[] = await EventsService.getEvents(language);
     return <Events eventsInfo={events_} />;
 }

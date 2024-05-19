@@ -13,10 +13,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Home({ params }: { params: { id: number } }) {
-    const cookieStore = cookies()
-    const languageCookie = cookieStore.get("language");
-    const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;
-    const eventInfo:IEventDetailPageInfo = await EventDetailPageService.getEvents(params.id, language);
+    const cookieStore = cookies();
+    const languageCookie = cookieStore.get("NEXT_LOCALE");
+    const language: LANGUAGES = languageCookie
+        ? (languageCookie.value as LANGUAGES)
+        : LANGUAGES.RU;
+    const eventInfo: IEventDetailPageInfo =
+        await EventDetailPageService.getEvents(params.id, language);
     metadata.title = eventInfo.title;
     metadata.description = eventInfo.desc;
     metadata.keywords = [eventInfo.title, eventInfo.format];

@@ -17,14 +17,13 @@ import CartButton from "./components/cartButton/button";
 import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
 import { SelectedCoursesInfoService } from "@/service/cartService/service";
 import React from "react";
-import LanguageDropdown from "./components/languageDropdown/dropdown";
 import { useTranslations } from "next-intl";
-
-
+import LocaleSwitcher from "./components/languageDropdown/localeSwitcher";
+import { useLocale } from "next-intl";
 const Header: React.FC = () => {
     const [data, setData] = useState<ISelectedCoursesInfoGroup | null>(null);
     const [currency, setCurrency] = useState("KZT");
-
+    const locale = useLocale();
     const currencyOptions = [
         { key: "KZT", text: "KZT", value: "KZT" },
         { key: "RUB", text: "RUB", value: "RUB" },
@@ -32,14 +31,15 @@ const Header: React.FC = () => {
     ];
 
     React.useEffect(() => {
-        SelectedCoursesInfoService.getSelectedCourses().then(res => setData(res))
-    }, [])
-
+        SelectedCoursesInfoService.getSelectedCourses().then((res) =>
+            setData(res)
+        );
+    }, []);
 
     const handleCurrencyChange = (data: any) => {
         setCurrency(data.value as string);
     };
-    const t = useTranslations('Header');
+    const t = useTranslations("Header");
     return (
         <Container
             name="header"
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
                     </MenuItem>
                     <MenuItem position="right">+77051400124</MenuItem>
                     <MenuItem style={{ paddingRight: "10px" }}>
-                        <LanguageDropdown />
+                        <LocaleSwitcher />
                     </MenuItem>
                     <MenuItem style={{ paddingLeft: "10px" }}>
                         <Dropdown
@@ -107,29 +107,34 @@ const Header: React.FC = () => {
                 <Container style={{ width: "1330px", margin: "auto" }}>
                     <MenuItem name="intensive" style={{ paddingLeft: "0" }}>
                         <Link
-                            href="/intensives"
+                            href={`/${locale}/intensives`}
                             style={{
                                 color: "inherit",
-                            }}>
-                            {t('headerIntensives')}
+                            }}
+                        >
+                            {t("intensives")}
                         </Link>
                     </MenuItem>
 
                     <MenuItem name="trainers">
                         <Link
-                            href="/coaches"
+                            href={`/${locale}/coaches`}
                             style={{
                                 color: "inherit",
                             }}
                         >
-                            {t('headerOurCoaches')}
+                            {t("ourCoaches")}
                         </Link>
                     </MenuItem>
 
-                    <Dropdown text="Обучающимся" pointing className="link item">
+                    <Dropdown
+                        text={t("forStudents")}
+                        pointing
+                        className="link item"
+                    >
                         <DropdownMenu>
                             <Link
-                                href="/courses"
+                                href={`/${locale}/courses`}
                                 style={{
                                     color: "inherit",
                                 }}
@@ -137,7 +142,7 @@ const Header: React.FC = () => {
                                 <DropdownItem>Выбор курса</DropdownItem>
                             </Link>
                             <Link
-                                href="/help"
+                                href={`/${locale}/help`}
                                 style={{
                                     color: "inherit",
                                 }}
@@ -150,7 +155,7 @@ const Header: React.FC = () => {
                     <Dropdown text="О нас" pointing className="link item">
                         <DropdownMenu>
                             <Link
-                                href="/events"
+                                href={`/${locale}/events`}
                                 style={{
                                     color: "inherit",
                                 }}
@@ -158,7 +163,7 @@ const Header: React.FC = () => {
                                 <DropdownItem>Анонсы</DropdownItem>
                             </Link>
                             <Link
-                                href="/about-school"
+                                href={`/${locale}/about-school`}
                                 style={{
                                     color: "inherit",
                                 }}
@@ -239,7 +244,9 @@ const Header: React.FC = () => {
                         />
                     </MenuItem>
                     <MenuItem style={{ paddingRight: "0" }}>
-                        <CartButton selectedCourses={data ? data.selectedCourses : []} />
+                        <CartButton
+                            selectedCourses={data ? data.selectedCourses : []}
+                        />
                     </MenuItem>
                 </Container>
             </Menu>
@@ -247,5 +254,3 @@ const Header: React.FC = () => {
     );
 };
 export default Header;
-
-

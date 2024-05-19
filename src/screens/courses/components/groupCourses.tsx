@@ -3,6 +3,7 @@ import { ICourseCardInfoGroup } from "@/service/coursesService/types";
 import { Button, Grid, GridColumn, GridRow } from "@/UI/SUI";
 import Link from "next/link";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 
 export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
     coursesInfo,
@@ -11,7 +12,7 @@ export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
     for (let i = 0; i < coursesInfo.length; i += 4) {
         groupedCourses.push(coursesInfo.slice(i, i + 4));
     }
-
+    const locale = useLocale();
     return (
         <>
             {groupedCourses.length === 0 ? (
@@ -22,7 +23,9 @@ export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
                         <GridRow>
                             {group.map((course) => (
                                 <GridColumn key={course.id}>
-                                    <Link href={`/courses/${course.id}`}>
+                                    <Link
+                                        href={`/${locale}/courses/${course.id}`}
+                                    >
                                         <CourseCard
                                             image={course.img}
                                             header={course.title}

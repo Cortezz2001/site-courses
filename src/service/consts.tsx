@@ -13,5 +13,5 @@ export const URLS = {
 export enum LANGUAGES {
     RU = "ru",
     EN = "en",
-    KZ = "kz"
+    KZ = "kk",
 }

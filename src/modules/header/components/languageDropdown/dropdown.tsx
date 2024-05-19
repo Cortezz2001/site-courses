@@ -1,36 +1,27 @@
 "use client";
 
-import {
-    Dropdown,
-    DropdownProps,
-} from "@/UI/SUI";
+import { Dropdown, DropdownProps } from "@/UI/SUI";
 import { LANGUAGES } from "@/service/consts";
 import { useRouter } from "next/navigation";
 import React, { useLayoutEffect, useState } from "react";
-import setLanguage from 'next-translate/setLanguage';
 const LanguageDropdown = () => {
-    const router = useRouter()
+    const router = useRouter();
     const [language, setLanguageState] = useState<string>(() => {
         const savedLanguage = JSON.parse(localStorage?.getItem("language")!);
         return savedLanguage !== null ? savedLanguage : "RU";
-
     });
     useLayoutEffect(() => {
         try {
             const savedLanguage = JSON.parse(localStorage.getItem("language")!);
             if (savedLanguage !== null) {
                 setLanguageState(savedLanguage);
-                document.cookie = "language=" + savedLanguage
-                async () => await setLanguage(savedLanguage)
+                document.cookie = "language=" + savedLanguage;
             } else {
                 localStorage.setItem("language", JSON.stringify(LANGUAGES.RU));
                 setLanguageState(LANGUAGES.RU);
-                document.cookie = "language=" + "ru"
-                async () => await setLanguage('ru')
+                document.cookie = "language=" + "ru";
             }
-        } catch (error) {
-
-        }
+        } catch (error) {}
     }, []);
 
     const languageOptions = [
@@ -45,15 +36,8 @@ const LanguageDropdown = () => {
     ) => {
         setLanguageState(value as string);
         localStorage.setItem("language", JSON.stringify(value));
-        document.cookie = "language=" + value
-        localStorage.setItem("lang", value as string)
-        const currentURL = window.location.pathname;
-        if (value === "kk") {
-            router.push(currentURL + "?lang=kz")
-        }
-        else {
-            router.push(currentURL + "?lang=" + value)
-        }
+        document.cookie = "language=" + value;
+        localStorage.setItem("lang", value as string);
     };
 
     return (

@@ -3,7 +3,8 @@
     "ru": "Russian",
     "kz": "Kazakh",
     "Header": {
-        "headerIntensives": "Летние интенсивы 2024",
-        "headerOurCoaches": "Наши тренеры"
+        "intensives": "Летние интенсивы 2024",
+        "ourCoaches": "Наши тренеры",
+        "forStudents": "Обучающимся"
     }
 }
