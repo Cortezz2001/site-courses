@@ -3,6 +3,7 @@ import { MessagesService } from "@/service/postMessageService/service";
 import { useState } from "react";
 import { Form, FormField, Input, Button, FormCheckbox } from "@/UI/SUI";
 import MessageModal from "./modal";
+import style from "../../style.module.css";
 
 const MessageForm: React.FC = () => {
     const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ const MessageForm: React.FC = () => {
 
     return (
         <>
-            <p style={{ color: "white" }}>
+            <p className={style.footer_form_heading}>
                 Оставьте почту, или останетесь без крутых писем от Lion
                 IT-School
             </p>

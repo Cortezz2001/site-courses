@@ -19,16 +19,14 @@ import {
 } from "@/UI/SUI";
 import MessageForm from "./components/emailForm/form";
 import React from "react";
+import style from "./style.module.css";
 export default function Footer() {
     return (
         <Container name="footer" fluid>
-            <Segment
-                vertical
-                style={{ padding: "5em 0", backgroundColor: "#007397" }}
-            >
+            <Segment vertical className={style.footer_container}>
                 <Container>
                     <Grid divided inverted stackable>
-                        <GridRow>
+                        <GridRow className={style.footer_top}>
                             <GridColumn width={4} textAlign="center">
                                 <Link href="/">
                                     <Image
@@ -104,7 +102,44 @@ export default function Footer() {
                             </GridColumn>
                             <GridColumn
                                 width={4}
+                                className={style.footer_nav_mobile}
+                            >
+                                <List
+                                    link
+                                    inverted
+                                    style={{ textAlign: "center" }}
+                                >
+                                    <ListItem>
+                                        <Link href={"/about-school"}>
+                                            О НАШЕЙ ШКОЛЕ
+                                        </Link>
+                                    </ListItem>
+
+                                    <ListItem>
+                                        <Link href={"/events"}>АНОНСЫ</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/help"}>
+                                            ВОПРОСЫ И ОТВЕТЫ
+                                        </Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/courses"}>КУРСЫ</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/coaches"}>ТРЕНЕРЫ</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/intensives"}>
+                                            ИНТЕНСИВЫ
+                                        </Link>
+                                    </ListItem>
+                                </List>
+                            </GridColumn>
+                            <GridColumn
+                                width={4}
                                 style={{ paddingLeft: "20px" }}
+                                className={style.footer_nav_desktop}
                             >
                                 <List
                                     link
@@ -130,6 +165,7 @@ export default function Footer() {
                             <GridColumn
                                 width={4}
                                 style={{ paddingLeft: "20px" }}
+                                className={style.footer_nav_desktop}
                             >
                                 <List
                                     link
@@ -149,46 +185,41 @@ export default function Footer() {
                                     </ListItem>
                                 </List>
                             </GridColumn>
-                            <GridColumn width={4}>
+                            <GridColumn width={4} className={style.footer_form}>
                                 <MessageForm />
                             </GridColumn>
                         </GridRow>
-                        <Divider inverted />
-                        <GridRow columns={3} textAlign="center">
-                            <GridColumn>
+                        <Divider inverted className={style.footer_divider} />
+                        <GridRow
+                            columns={3}
+                            textAlign="center"
+                            className={style.footer_bottom}
+                        >
+                            <GridColumn className={style.footer_bottom_left}>
                                 <Header
                                     inverted
                                     as={"p"}
-                                    style={{
-                                        fontSize: "14px",
-                                        fontWeight: "normal",
-                                    }}
+                                    className={`${style.footer_bottom_text} ${style.footer_bottom_copyright}`}
                                 >
                                     © LION IT-SCHOOL, 2023-2024
                                 </Header>
                             </GridColumn>
-                            <GridColumn>
+                            <GridColumn className={style.footer_bottom_center}>
                                 <Header
                                     inverted
                                     as={"a"}
                                     href="/"
-                                    style={{
-                                        fontSize: "14px",
-                                        fontWeight: "normal",
-                                    }}
+                                    className={style.footer_bottom_text}
                                 >
                                     Пользовательское соглашение
                                 </Header>
                             </GridColumn>
-                            <GridColumn>
+                            <GridColumn className={style.footer_bottom_right}>
                                 <Header
                                     inverted
                                     as={"a"}
                                     href="/"
-                                    style={{
-                                        fontSize: "14px",
-                                        fontWeight: "normal",
-                                    }}
+                                    className={style.footer_bottom_text}
                                 >
                                     Договор оферты
                                 </Header>
