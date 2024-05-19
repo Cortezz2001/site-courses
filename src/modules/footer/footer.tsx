@@ -24,7 +24,7 @@ export default function Footer() {
     return (
         <Container name="footer" fluid>
             <Segment vertical className={style.footer_container}>
-                <Container>
+                <Container className={style.footer_content_wrapper}>
                     <Grid divided inverted stackable>
                         <GridRow className={style.footer_top}>
                             <GridColumn width={4} textAlign="center">

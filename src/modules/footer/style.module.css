@@ -16,6 +16,12 @@
     font-weight: normal !important;
 }
 
+@media only screen and (min-width: 1200px) {
+    .footer_content_wrapper {
+        width: 1330px !important;
+    }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .footer_container {
         padding-top: 2.25em !important;

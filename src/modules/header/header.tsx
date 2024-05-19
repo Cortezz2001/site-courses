@@ -71,7 +71,7 @@ const Header: React.FC = () => {
                     backgroundColor: "#007397",
                 }}
             >
-                <Container>
+                <Container className={style.header_content_wrapper}>
                     <MenuItem
                         position="left"
                         name="logo"
