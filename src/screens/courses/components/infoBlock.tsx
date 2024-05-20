@@ -1,17 +1,26 @@
 import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
+import style from "../style.module.css";
 
 const InfoBlock: React.FC = () => {
     return (
         <>
-            <Header as="h2" style={{ marginBottom: "30px", marginTop: "30px" }}>
+            <Header as="h2" className={style.info_block_heading}>
                 Обучение программированию
             </Header>
             <Grid columns={2} divided>
                 <GridRow>
-                    <GridColumn>
-                        <Image rounded alt="" src="/programmers-stock.png" />
+                    <GridColumn className={style.info_block_left}>
+                        <Image
+                            rounded
+                            alt=""
+                            src="/programmers-stock.png"
+                            className={style.info_block_image}
+                        />
                     </GridColumn>
-                    <GridColumn verticalAlign="middle">
+                    <GridColumn
+                        verticalAlign="middle"
+                        className={style.info_block_right}
+                    >
                         <Container textAlign="justified">
                             <p>
                                 У нас, в школе программирования для взрослых
