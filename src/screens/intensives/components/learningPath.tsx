@@ -1,4 +1,5 @@
-import { Container, Grid, GridColumn, GridRow, Header } from "@/UI/SUI";
+import { Grid, GridColumn, GridRow, Header } from "@/UI/SUI";
+import style from "../style.module.css";
 
 const LearningPath = () => {
     return (
@@ -12,13 +13,7 @@ const LearningPath = () => {
                 stackable
                 style={{ marginLeft: "0", marginRight: "0" }}
             >
-                <GridRow
-                    style={{
-                        display: "flex",
-                        justifyContent: "start",
-                        gap: "21px",
-                    }}
-                >
+                <GridRow className={style.steps_container}>
                     <GridColumn
                         textAlign="center"
                         width={5}
@@ -26,8 +21,6 @@ const LearningPath = () => {
                             boxShadow: "1px 1px 20px 10px #e0e0e0",
                             borderRadius: "10px",
                             padding: "20px",
-                            margin: "10px",
-                            marginLeft: "0",
                         }}
                     >
                         <p>
@@ -42,7 +35,6 @@ const LearningPath = () => {
                             boxShadow: "1px 1px 20px 10px #e0e0e0",
                             borderRadius: "10px",
                             padding: "20px",
-                            margin: "10px",
                         }}
                     >
                         <p>
@@ -57,8 +49,6 @@ const LearningPath = () => {
                             boxShadow: "1px 1px 20px 10px #e0e0e0",
                             borderRadius: "10px",
                             padding: "20px",
-                            margin: "10px",
-                            marginRight: "0",
                         }}
                     >
                         <p>

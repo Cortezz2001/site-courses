@@ -1,0 +1,45 @@
+.banner {
+    position: relative;
+    padding-bottom: 30px !important;
+}
+
+.banner_image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.banner_text {
+    position: absolute;
+    top: calc(50% - 193px);
+    left: 5%;
+    width: 30% !important;
+    padding: 25px;
+    color: white;
+}
+
+.steps_container {
+    justify-content: space-between !important;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .banner::after {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: calc(100% - 2rem);
+        height: calc(100% - 58px);
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 0.3125em;
+    }
+
+    .banner_image {
+        height: 400px;
+    }
+
+    .banner_text {
+        z-index: 1;
+        width: 50% !important;
+    }
+}
