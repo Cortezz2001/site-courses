@@ -1,10 +1,8 @@
 import {
-    Container,
     Grid,
     GridColumn,
     GridRow,
     Header,
-    Icon,
     Image,
     List,
     ListContent,
@@ -17,6 +15,8 @@ import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
 import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
 import { IEventDetailPageInfo } from "@/service/eventDetailPageService/types";
+
+import style from "./style.module.css";
 
 interface IEventDetailPageProps {
     eventInfo: IEventDetailPageInfo;
@@ -102,10 +102,11 @@ export async function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                 <Header
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
+                                    className={style.event_date_title}
                                 >
-                                    Дата мероприятия:
+                                    Дата
                                 </Header>
-                                <p>
+                                <p className={style.event_schedule}>
                                     {" "}
                                     {eventInfo.startDate} {eventInfo.startTime}
                                 </p>
