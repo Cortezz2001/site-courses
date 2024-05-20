@@ -20,7 +20,12 @@ const AdvantagesBlock: React.FC = () => {
                             height: "100%",
                         }}
                     >
-                        <Image rounded alt="" src="/programmers-stock-2.png" />
+                        <Image
+                            rounded
+                            alt=""
+                            src="/programmers-stock-2.png"
+                            style={{ objectFit: "cover" }}
+                        />
                     </GridColumn>
                     <GridColumn verticalAlign="middle">
                         <Header as="h2">

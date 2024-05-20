@@ -43,7 +43,12 @@ const GoalsBlock: React.FC = () => {
                             height: "100%",
                         }}
                     >
-                        <Image rounded alt="" src="/back-logo-1.png" />
+                        <Image
+                            rounded
+                            alt=""
+                            src="/back-logo-1.png"
+                            style={{ objectFit: "cover" }}
+                        />
                     </GridColumn>
                 </GridRow>
             </Grid>
