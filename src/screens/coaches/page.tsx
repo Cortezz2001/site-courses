@@ -1,6 +1,6 @@
 import { Layout } from "@/layouts/layout";
-import { Container, Header } from "@/UI/SUI";
-import { GroupCoachesCards } from "./components/groupCoaches/groupCoaches";
+import { Header } from "@/UI/SUI";
+import { GroupCoachesCards } from "./components/groupCoaches";
 import { ICoachCardInfoGroup } from "@/service/coachesService/types";
 import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
 import { IBreadCrumb } from "@/components/breadcrumb/type";

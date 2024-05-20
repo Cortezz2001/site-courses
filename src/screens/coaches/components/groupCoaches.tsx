@@ -3,7 +3,7 @@ import { ICoachCardInfoGroup } from "@/service/coachesService/types";
 import { Grid, GridColumn, GridRow } from "@/UI/SUI";
 import Link from "next/link";
 
-import style from "../../style.module.css";
+import style from "../style.module.css";
 
 export const GroupCoachesCards: React.FC<ICoachCardInfoGroup> = ({
     coachesInfo,
