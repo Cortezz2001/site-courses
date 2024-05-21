@@ -225,7 +225,8 @@
           "p2": "To receive a refund of the mandatory Guarantee Deposit, the student must fulfill the following cumulative conditions:",
           "p3": "Signing the Contract for Training Services at 'Lion IT-school'",
           "p4": "Successful completion of the chosen course",
-          "p5": "In case of failure to fulfill the above conditions, the guarantee deposit is not refunded"
+          "p5": "In case of failure to fulfill the above conditions, the guarantee deposit is not refunded",
+          "p5-1": "the fee is non-refundable"
       },
       "Block3": {
           "title1": "Educational Technologies Used in Discipline Mastery",
