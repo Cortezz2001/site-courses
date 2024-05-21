@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
     const cookieStore = cookies()
-    const languageCookie = cookieStore.get("language");
+    const languageCookie = cookieStore.get("NEXT_LOCALE");
     const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;
     const courses_: ICourseCardInfo[] = await CoursesService.getCourses(language);
     return <Courses coursesInfo={courses_} />;

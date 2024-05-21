@@ -1,10 +1,12 @@
 import { Button, Icon, Popup } from "@/UI/SUI";
 import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
 import CartContent from "./cartContent";
+import { useTranslations } from "next-intl";
 
 const CartButton: React.FC<ISelectedCoursesInfoGroup> = ({
     selectedCourses,
 }) => {
+    const t = useTranslations("Header");
     return (
         <Popup
             trigger={
@@ -26,7 +28,7 @@ const CartButton: React.FC<ISelectedCoursesInfoGroup> = ({
                             padding: "10px",
                         }}
                     />
-                    Корзина
+                    {t('cart')}
                 </Button>
             }
             content={<CartContent selectedCourses={selectedCourses} />}

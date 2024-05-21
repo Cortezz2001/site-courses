@@ -12,6 +12,7 @@ import {
 } from "@/UI/SUI";
 import { useState } from "react";
 import MyAccordion from "./components/Accordion";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Help() {
     const [activeIndex, setActiveIndex] = useState(-1);
@@ -19,21 +20,22 @@ export default function Help() {
     const handleClick = (index: number) => {
         setActiveIndex(activeIndex === index ? -1 : index);
     };
-
+    const t = useTranslations();
+    const locale = useLocale();
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: "Главная",
+            content: t('Breadcrumb.main'),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "help",
-            content: "Вопросы и ответы",
+            content: t('Breadcrumb.questionsAndAnswers'),
             isLink: true,
             isActive: true,
-            url: "/help",
+            url: `/${locale}/help`,
         },
     ];
     return (
@@ -41,7 +43,7 @@ export default function Help() {
             <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h2" style={{ marginBottom: "30px" }}>
-                    Вопросы и ответы
+                    {t('QuestionsAndAnswersPage.title')}
                 </Header>
                 <MyAccordion
                     activeIndex={activeIndex}

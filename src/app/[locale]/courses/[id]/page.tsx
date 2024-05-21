@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default async function Home({ params }: { params: { id: number } }) {
     const cookieStore = cookies()
-    const languageCookie = cookieStore.get("language");
+    const languageCookie = cookieStore.get("NEXT_LOCALE");
     const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;
     const courseInfo:ICourseDetailPageInfo = await CourseDetailPageService.getCourses(params.id, language);
     metadata.title = courseInfo.title;

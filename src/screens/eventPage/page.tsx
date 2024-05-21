@@ -17,26 +17,29 @@ import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
 import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
 import { IEventDetailPageInfo } from "@/service/eventDetailPageService/types";
+import { useLocale, useTranslations } from "next-intl";
 
 interface IEventDetailPageProps {
     eventInfo: IEventDetailPageInfo;
 }
 
 export async function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
+    const t = useTranslations();
+    const locale = useLocale();
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: "Главная",
+            content: t('Breadcrumb.main'),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "Events",
-            content: "Анонсы",
+            content: t('Breadcrumb.events'),
             isLink: true,
             isActive: false,
-            url: "/events",
+            url: `/${locale}/events`,
         },
         {
             key: "EventPage",
@@ -83,7 +86,7 @@ export async function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    Описание
+                                    {t('EventDetailPage.desc')}
                                 </Header>
                                 <p> {eventInfo.desc}</p>
                             </Segment>
@@ -103,7 +106,7 @@ export async function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    Дата мероприятия:
+                                    {t('EventDetailPage.date')}
                                 </Header>
                                 <p>
                                     {" "}
@@ -129,7 +132,7 @@ export async function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    Ответственные тренеры:
+                                    {t('EventDetailPage.coaches')}
                                 </Header>
                                 {eventInfo.active_mentors.map(
                                     (active_mentor, index) => (

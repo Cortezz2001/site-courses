@@ -10,6 +10,7 @@ import { EventsCarousel } from "./components/eventsCarousel";
 import InfoBlock from "./components/infoBlock";
 import ActionBlock from "./components/actionBlock";
 import { Header } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 interface MainProps {
     coachesInfo: ICoachCardInfo[];
@@ -24,16 +25,17 @@ export const Main: React.FC<MainProps> = ({
     eventsInfo,
     bannersInfo,
 }) => {
+    const t = useTranslations("Main");
     return (
         <Layout>
             <>
                 <BannerCarousel bannersInfo={bannersInfo} />
-                <Header as="h2">Курсы</Header>
+                <Header as="h2">{t('coursesTitle')}</Header>
                 <CoursesCarousel coursesInfo={coursesInfo} />
-                <Header as="h2">Наши тренеры</Header>
+                <Header as="h2">{t('coachesTitle')}</Header>
                 <CoachesCarousel coachesInfo={coachesInfo} />
                 <ActionBlock />
-                <Header as="h2">Анонсы наших мероприятий</Header>
+                <Header as="h2">{t('eventsTitle')}</Header>
                 <EventsCarousel eventsInfo={eventsInfo} />
                 <InfoBlock />
             </>

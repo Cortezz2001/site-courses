@@ -1,10 +1,12 @@
 import { Container, Grid, GridColumn, GridRow, Header } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const LearningPath = () => {
+    const t = useTranslations("IntensivesPage");
     return (
         <>
             <Header as="h2" style={{ marginBottom: "30px" }}>
-                КАК ПРОХОДИТ ОБУЧЕНИЕ
+                {t('howToLearn')}
             </Header>
             <Grid
                 columns={3}
@@ -32,7 +34,7 @@ const LearningPath = () => {
                     >
                         <p>
                             <strong>01</strong> <br />
-                            Слушаете лекцию и выполняете задание
+                            {t('block1')}
                         </p>
                     </GridColumn>
                     <GridColumn
@@ -47,7 +49,7 @@ const LearningPath = () => {
                     >
                         <p>
                             <strong>02</strong> <br />
-                            Получаете советы от куратора и вносите правки
+                            {t('block2')}
                         </p>
                     </GridColumn>
                     <GridColumn
@@ -63,7 +65,7 @@ const LearningPath = () => {
                     >
                         <p>
                             <strong>03</strong> <br />
-                            Приобретаете знания и нарабатываете портфолио
+                            {t('block3')}
                         </p>
                     </GridColumn>
                 </GridRow>

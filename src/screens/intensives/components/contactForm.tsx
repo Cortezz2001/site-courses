@@ -12,9 +12,11 @@ import {
 } from "@/UI/SUI";
 import MessageModal from "@/modules/footer/components/emailForm/modal";
 import { MessagesService } from "@/service/postMessageService/service";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 const ContactForm = () => {
+    const t = useTranslations("IntensivesPage.Form");
     const options = [
         { key: "telegram", text: "Telegram", value: "telegram" },
         { key: "whatsapp", text: "WhatsApp", value: "whatsapp" },
@@ -89,12 +91,10 @@ const ContactForm = () => {
                         textAlign="center"
                         style={{ marginBottom: "30px" }}
                     >
-                        Помочь подобрать обучение?
+                        {t('title')}
                     </Header>
                     <p style={{ textAlign: "center" }}>
-                        Если у вас остались вопросы или хотите уточнить любую
-                        информацию, то можете заполнить форму и мы с вами
-                        свяжемся.
+                        {t('desc')}
                     </p>
                 </GridColumn>
                 <GridColumn>
@@ -103,8 +103,8 @@ const ContactForm = () => {
                             required
                             type="text"
                             control={Input}
-                            label="Имя"
-                            placeholder="Введите ваше имя..."
+                            label={t('nameLabel')}
+                            placeholder={t('namePlaceholder')}
                             value={name}
                             onChange={(
                                 e: React.ChangeEvent<HTMLInputElement>
@@ -114,8 +114,8 @@ const ContactForm = () => {
                             required
                             type="tel"
                             control={Input}
-                            label="Номер телефона"
-                            placeholder="Введите ваш номер телефона..."
+                            label={t('phoneLabel')}
+                            placeholder={t('phonePlaceholder')}
                             value={number}
                             onChange={(
                                 e: React.ChangeEvent<HTMLInputElement>
@@ -125,8 +125,8 @@ const ContactForm = () => {
                             required
                             type="email"
                             control={Input}
-                            label="Электронная почта"
-                            placeholder="Введите вашу электронную почту..."
+                            label={t('emailLabel')}
+                            placeholder={t('emailPlaceholder')}
                             value={email}
                             onChange={(
                                 e: React.ChangeEvent<HTMLInputElement>
@@ -136,9 +136,9 @@ const ContactForm = () => {
                             required
                             control={Select}
                             type="text"
-                            label="Предпочитаемый мессенджер"
+                            label={t('messengerLabel')}
                             options={options}
-                            placeholder="Выберите мессенджер..."
+                            placeholder={t('messengerPlaceholder')}
                             value={messenger}
                             onChange={(
                                 e: React.ChangeEvent<HTMLInputElement>,
@@ -150,7 +150,7 @@ const ContactForm = () => {
                             control={Input}
                             type="text"
                             label="@username"
-                            placeholder="Введите ваш username..."
+                            placeholder={t('usernamePlaceholder')}
                             value={messenger_username}
                             onChange={(
                                 e: React.ChangeEvent<HTMLInputElement>
@@ -158,7 +158,7 @@ const ContactForm = () => {
                         />
                         <FormField>
                             <Checkbox
-                                label="Нажимая на кнопку, я соглашаюсь на обработку персональных данных"
+                                label={t('checkbox')}
                                 checked={isChecked}
                                 onChange={(e, data) =>
                                     setIsChecked(data.checked || false)
@@ -173,7 +173,7 @@ const ContactForm = () => {
                             }}
                             fluid
                         >
-                            Отправить
+                            {t('send')}
                         </Button>
                     </Form>
                     {errorMessage && (

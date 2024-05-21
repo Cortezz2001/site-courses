@@ -7,8 +7,10 @@ import {
     Segment,
     Header,
 } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const SettingsPane: React.FC = () => {
+    const t = useTranslations("Profile.Settings");
     return (
         <>
             <Segment
@@ -17,23 +19,23 @@ const SettingsPane: React.FC = () => {
                     marginBottom: "30px",
                 }}
             >
-                <Header as="h3">Изменение настроек</Header>
+                <Header as="h3">{t('changeSettings')}</Header>
                 <Form>
                     <FormGroup unstackable widths={2}>
-                        <FormInput required label="Имя" placeholder="Имя" />
+                        <FormInput required label={t('nameLabel')} placeholder={t('namePlaceholder')} />
                         <FormInput
                             required
-                            label="Фамилия"
-                            placeholder="Фамилия"
+                            label={t('secondNameLabel')}
+                            placeholder={t('secondNamePlaceholder')}
                         />
                     </FormGroup>
                     <FormGroup widths={2}>
                         <FormInput
                             required
-                            label="Имя пользователя"
+                            label={t('usernameLabel')}
                             icon={<Icon name="user" />}
                             iconPosition="left"
-                            placeholder="Имя пользователя"
+                            placeholder={t('usernamePlaceholder')}
                         />
                         <FormInput
                             required
@@ -50,29 +52,29 @@ const SettingsPane: React.FC = () => {
                             color: "white",
                         }}
                     >
-                        Сохранить настройки
+                        {t('saveChanges')}
                     </Button>
                 </Form>
             </Segment>
             <Segment style={{ boxShadow: "0px 0px 5px 2px #e0e0e0" }}>
                 <Form>
-                    <Header as="h3">Смена пароля</Header>
+                    <Header as="h3">{t('passwordChange')}</Header>
                     <FormGroup widths={2}>
                         <FormInput
                             required
                             type="password"
                             icon={<Icon name="user secret" />}
                             iconPosition="left"
-                            label="Новый пароль"
-                            placeholder="Новый пароль"
+                            label={t('newPasswordLabel')}
+                            placeholder={t('newPasswordPlaceholder')}
                         />
                         <FormInput
                             required
                             type="password"
                             icon={<Icon name="user secret" />}
                             iconPosition="left"
-                            label="Повторите новый пароль"
-                            placeholder="Повторите новый пароль"
+                            label={t('repeatNewPasswordLabel')}
+                            placeholder={t('repeatNewPasswordPlaceholder')}
                         />
                     </FormGroup>
                     <Button
@@ -82,7 +84,7 @@ const SettingsPane: React.FC = () => {
                             color: "white",
                         }}
                     >
-                        Сохранить пароль
+                        {t('savePassword')}
                     </Button>
                 </Form>
             </Segment>

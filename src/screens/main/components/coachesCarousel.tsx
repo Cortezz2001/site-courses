@@ -8,10 +8,12 @@ import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useLocale } from "next-intl";
 
 export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
     coachesInfo,
 }) => {
+    const locale = useLocale();
     return (
         <>
             <Swiper
@@ -32,7 +34,7 @@ export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
             >
                 {coachesInfo.map((coach) => (
                     <SwiperSlide key={coach.id} style={{ height: "auto" }}>
-                        <Link href={`/coaches/${coach.id}`}>
+                        <Link href={`/${locale}/coaches/${coach.id}`}> 
                             <CoachCard
                                 image={coach.img}
                                 header={coach.name}

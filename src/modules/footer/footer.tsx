@@ -2,24 +2,22 @@ import Link from "next/link";
 import {
     Button,
     Container,
-    Form,
-    FormField,
     Grid,
     GridColumn,
     GridRow,
     Header,
-    Input,
     List,
     ListItem,
     Segment,
     Image,
-    Checkbox,
-    FormCheckbox,
     Divider,
 } from "@/UI/SUI";
 import MessageForm from "./components/emailForm/form";
 import React from "react";
+import { useLocale, useTranslations } from "next-intl";
 export default function Footer() {
+    const locale = useLocale();
+    const t = useTranslations("Footer");
     return (
         <Container name="footer" fluid>
             <Segment
@@ -99,7 +97,7 @@ export default function Footer() {
                                         color: "white",
                                     }}
                                 >
-                                    Казахстан, г.Павлодар, ул.Ломова 45
+                                    {t('address')}
                                 </p>
                             </GridColumn>
                             <GridColumn
@@ -112,17 +110,17 @@ export default function Footer() {
                                     style={{ textAlign: "center" }}
                                 >
                                     <ListItem>
-                                        <Link href={"/about-school"}>
-                                            О НАШЕЙ ШКОЛЕ
+                                        <Link href={`/${locale}//about-school`}>
+                                            {t('aboutOurSchool')}
                                         </Link>
                                     </ListItem>
 
                                     <ListItem>
-                                        <Link href={"/events"}>АНОНСЫ</Link>
+                                        <Link href={`/${locale}/events`}>{t('events')}</Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={"/help"}>
-                                            ВОПРОСЫ И ОТВЕТЫ
+                                        <Link href={`/${locale}/help`}>
+                                            {t('answersAndQuestions')}
                                         </Link>
                                     </ListItem>
                                 </List>
@@ -137,14 +135,14 @@ export default function Footer() {
                                     style={{ textAlign: "center" }}
                                 >
                                     <ListItem>
-                                        <Link href={"/courses"}>КУРСЫ</Link>
+                                        <Link href={`/${locale}/courses`}>{t('courses')}</Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={"/coaches"}>ТРЕНЕРЫ</Link>
+                                        <Link href={`/${locale}/coaches`}>{t('coaches')}</Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={"/intensives"}>
-                                            ИНТЕНСИВЫ
+                                        <Link href={`/${locale}/intensives`}>
+                                            {t('intensives')}
                                         </Link>
                                     </ListItem>
                                 </List>
@@ -177,7 +175,7 @@ export default function Footer() {
                                         fontWeight: "normal",
                                     }}
                                 >
-                                    Пользовательское соглашение
+                                    {t('termsOfUse')}
                                 </Header>
                             </GridColumn>
                             <GridColumn>
@@ -190,7 +188,7 @@ export default function Footer() {
                                         fontWeight: "normal",
                                     }}
                                 >
-                                    Договор оферты
+                                    {t('contractOffer')}
                                 </Header>
                             </GridColumn>
                         </GridRow>

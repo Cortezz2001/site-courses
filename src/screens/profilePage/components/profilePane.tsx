@@ -1,6 +1,7 @@
 "use client"
 import { Card, Button, Icon } from "@/UI/SUI";
 import { STATUS, UserService } from "@/service/authService/auth";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -8,7 +9,8 @@ import React from "react";
 
 const ProfilePane: React.FC = () => {
     const router = useRouter()
-
+    const locale = useLocale();
+    const t = useTranslations("Profile.Main");
     React.useLayoutEffect(() => {
         const token = localStorage.getItem("token")
 
@@ -17,17 +19,17 @@ const ProfilePane: React.FC = () => {
                 (res => {
                     if (res) {
                         console.log("succesfully")
-                        router.push("/profile")
+                        router.push(`/${locale}/profile`)
                     }
                     else {
                         localStorage.removeItem("token")
-                        router.push("/auth")
+                        router.push(`/${locale}/auth`)
                     }
                 })
             )
         }
         else {
-            router.push("/auth")
+            router.push(`/${locale}/auth`)
         }
     }, [])
 
@@ -38,7 +40,7 @@ const ProfilePane: React.FC = () => {
             const res = await UserService.userLogout(token)
             if (res.status === STATUS.OK) {
                 localStorage.removeItem("token")
-                router.push("/auth")
+                router.push(`/${locale}/auth`)
             }
         }
     }
@@ -52,15 +54,15 @@ const ProfilePane: React.FC = () => {
             onClick={ClickHandler}
         >
             <Icon name="sign-out" />
-            Выйти из аккаунта
+            {t('logout')}
         </Button>
     );
 
     return (
         <Card
             fluid
-            header="Пользователь"
-            meta={`Зарегестрирован ${new Date().toLocaleDateString()}`}
+            header={t('user')}
+            meta={t('reg') + ` ${new Date().toLocaleDateString()}`}
             extra={logoutButton}
             style={{ boxShadow: "none" }}
         />

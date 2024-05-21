@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
 import { UserService } from "@/service/authService/auth";
+import { useTranslations } from "next-intl";
 
 interface LostPasswordFormProps {
     onCancelClick: () => void;
@@ -9,6 +10,7 @@ interface LostPasswordFormProps {
 const LostPasswordForm: React.FC<LostPasswordFormProps> = ({
     onCancelClick,
 }) => {
+    const t = useTranslations("LostPassPage");
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
 
@@ -39,13 +41,13 @@ const LostPasswordForm: React.FC<LostPasswordFormProps> = ({
             }}
         >
             <Header as="h3" textAlign="center">
-                Восстановление пароля
+                {t('recovery')}
             </Header>
             <Form onSubmit={submitHandler}>
                 <FormField
                     required
                     label="Email"
-                    placeholder="Введите вашу почту"
+                    placeholder={t('emailPlaceholder')}
                     control={Input}
                     type="email"
                     value={email}
@@ -60,7 +62,7 @@ const LostPasswordForm: React.FC<LostPasswordFormProps> = ({
                     }}
                     loading={loading}
                 >
-                    Сбросить пароль
+                    {t('resetBtn')}
                 </Button>
                 <Container
                     style={{
@@ -70,12 +72,12 @@ const LostPasswordForm: React.FC<LostPasswordFormProps> = ({
                     }}
                 >
                     <p>
-                        Вспомнили пароль?{" "}
+                        {t('recall')}{" "}
                         <span
                             onClick={onCancelClick}
                             style={{ cursor: "pointer", color: "#007397" }}
                         >
-                            Войти
+                            {t('auth')}
                         </span>
                     </p>
                 </Container>

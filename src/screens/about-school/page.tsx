@@ -8,22 +8,25 @@ import DirectionsBlock from "./components/directionsBlock";
 import GoalsBlock from "./components/goalsBlock";
 import DirectorBlock from "./components/directorBlock";
 import CoachesDecsBlock from "./components/coachesDescBlock";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function AboutSchool() {
+    const t = useTranslations();
+    const locale = useLocale();
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: "Главная",
+            content: t('Breadcrumb.main'),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "about-school",
-            content: "О нашей школе",
+            content: t('Breadcrumb.aboutSchool'),
             isLink: true,
             isActive: true,
-            url: "/about-school",
+            url: `/${locale}/about-school`,
         },
     ];
     return (

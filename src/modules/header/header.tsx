@@ -139,7 +139,7 @@ const Header: React.FC = () => {
                                     color: "inherit",
                                 }}
                             >
-                                <DropdownItem>Выбор курса</DropdownItem>
+                                <DropdownItem>{t("courseSelection")}</DropdownItem>
                             </Link>
                             <Link
                                 href={`/${locale}/help`}
@@ -147,12 +147,12 @@ const Header: React.FC = () => {
                                     color: "inherit",
                                 }}
                             >
-                                <DropdownItem>Вопросы и ответы</DropdownItem>
+                                <DropdownItem>{t('questionsAndAnswers')}</DropdownItem>
                             </Link>
                         </DropdownMenu>
                     </Dropdown>
 
-                    <Dropdown text="О нас" pointing className="link item">
+                    <Dropdown text={t('aboutUs')} pointing className="link item">
                         <DropdownMenu>
                             <Link
                                 href={`/${locale}/events`}
@@ -160,7 +160,7 @@ const Header: React.FC = () => {
                                     color: "inherit",
                                 }}
                             >
-                                <DropdownItem>Анонсы</DropdownItem>
+                                <DropdownItem>{t('events')}</DropdownItem>
                             </Link>
                             <Link
                                 href={`/${locale}/about-school`}
@@ -168,7 +168,7 @@ const Header: React.FC = () => {
                                     color: "inherit",
                                 }}
                             >
-                                <DropdownItem>О нашей школе</DropdownItem>
+                                <DropdownItem>{t('aboutSchool')}</DropdownItem>
                             </Link>
                         </DropdownMenu>
                     </Dropdown>

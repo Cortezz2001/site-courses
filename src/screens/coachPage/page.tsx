@@ -20,26 +20,29 @@ import {
 } from "@/UI/SUI";
 
 import style from "./style.module.css";
+import { useTranslations, useLocale } from "next-intl";
 
 interface ICoachDetailPageProps {
     coachInfo: ICoachDetailPageInfo;
 }
 
 export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
+    const t = useTranslations();
+    const locale = useLocale();
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: "Главная",
+            content: t('Breadcrumb.main'),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "Coaches",
-            content: "Наши тренеры",
+            content: t('Breadcrumb.ourCoaches'),
             isLink: true,
             isActive: false,
-            url: "/coaches",
+            url: `/${locale}/coaches`,
         },
         {
             key: "CoachPage",
@@ -115,7 +118,7 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
                                         <Icon name="info circle" />
                                         <ListContent>
                                             <ListHeader>
-                                                Преподавательский стаж:
+                                                {t('CoachDetailPage.experience')}
                                             </ListHeader>
                                             <ListDescription>
                                                 {coachInfo.exp}
@@ -127,21 +130,21 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
                                     as="h3"
                                     style={{ marginBottom: "15px" }}
                                 >
-                                    Образование
+                                    {t('CoachDetailPage.education')}
                                 </Header>
                                 <p>{coachInfo.education}</p>
                                 <Header
                                     as="h3"
                                     style={{ marginBottom: "15px" }}
                                 >
-                                    Награды
+                                    {t('CoachDetailPage.awards')}
                                 </Header>
                                 <p>{coachInfo.desc}</p>
                             </Container>
                         </GridColumn>
                     </GridRow>
                 </Grid>
-                <Header as="h2">Преподаваемые дисциплины</Header>
+                <Header as="h2">{t('CoachDetailPage.disciplines')}</Header>
                 <Grid
                     columns={3}
                     stackable

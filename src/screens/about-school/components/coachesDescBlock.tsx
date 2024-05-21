@@ -1,6 +1,8 @@
 import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const CoachesDecsBlock: React.FC = () => {
+    const t = useTranslations("AboutSchoolPage.Block4");
     return (
         <>
             <Grid
@@ -16,15 +18,10 @@ const CoachesDecsBlock: React.FC = () => {
             >
                 <GridRow centered>
                     <Header as="h2">
-                        Наши преподаватели — профессионалы из разных сфер
+                        {t('title')}
                     </Header>
                     <p>
-                        В качестве преподавателей мы приглашаем специалистов,
-                        которые знают IT изнутри: владельцев бизнеса,
-                        руководителей, менеджеров, ученых и сотрудников
-                        университетов. Эти специалисты ведут лекции и семинары,
-                        отвечают на вопросы студентов, помогают с домашними
-                        заданиями и консультируют индивидуально.
+                        {t('p1')}
                     </p>
                 </GridRow>
             </Grid>

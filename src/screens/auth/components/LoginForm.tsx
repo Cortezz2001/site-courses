@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Form, FormField, Input, Button, Container, Header } from "@/UI/SUI";
 import { STATUS, UserService } from "@/service/authService/auth";
 import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
 interface LoginFormProps {
     onRegistrationClick: () => void;
@@ -14,6 +15,8 @@ const LoginForm: React.FC<LoginFormProps> = ({
     onRegistrationClick,
     onLostPasswordClick,
 }) => {
+    const t = useTranslations("AuthPage");
+    const locale = useLocale();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
@@ -34,7 +37,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
         if (res.status === STATUS.OK) {
             console.log("succesfully");
             localStorage.setItem("token", res.data.token);
-            router.push("/profile");
+            router.push(`/${locale}/profile`);
             setLoading(false);
         } else {
             for (let key in res.data) {
@@ -54,7 +57,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             }}
         >
             <Header as="h3" textAlign="center">
-                Вход
+                {t('authorization')}
             </Header>
             <Form onSubmit={submitHandler}>
                 <FormField
@@ -62,16 +65,16 @@ const LoginForm: React.FC<LoginFormProps> = ({
                     label="Email"
                     type="email"
                     control={Input}
-                    placeholder="Введите вашу почту"
+                    placeholder={t('emailPlaceholder')}
                     value={email}
                     onChange={handleEmailChange}
                 />
 
                 <FormField
                     required
-                    label="Пароль"
+                    label={t('password')}
                     control={Input}
-                    placeholder="Введите ваш пароль"
+                    placeholder={t('passwordPlaceholder')}
                     type="password"
                     value={password}
                     onChange={handlePasswordChange}
@@ -88,7 +91,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                         style={{ cursor: "pointer", color: "#007397" }}
                         onClick={onLostPasswordClick}
                     >
-                        Забыли пароль?
+                        {t('forgotPass')}
                     </a>
                 </Container>
                 {error && (
@@ -112,7 +115,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                     }}
                     loading={loading}
                 >
-                    Войти
+                    {t('authBtn')}
                 </Button>
                 <Container
                     style={{
@@ -122,12 +125,12 @@ const LoginForm: React.FC<LoginFormProps> = ({
                     }}
                 >
                     <p>
-                        У вас нет учетной записи?{" "}
+                        {t('dontHaveAccount')}{" "}
                         <span
                             onClick={onRegistrationClick}
                             style={{ cursor: "pointer", color: "#007397" }}
                         >
-                            Зарегистрироваться
+                            {t('registration')}
                         </span>
                     </p>
                 </Container>

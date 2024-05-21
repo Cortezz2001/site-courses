@@ -8,6 +8,7 @@ import { TabPane, Tab, MenuItem, Label, Icon } from "@/UI/SUI";
 import ProfilePane from "./components/profilePane";
 import OrdersPane from "./components/ordersPane";
 import SettingsPane from "./components/settingsPane";
+import { useLocale, useTranslations } from "next-intl";
 
 interface TabContent {
     menuItem: JSX.Element;
@@ -15,17 +16,19 @@ interface TabContent {
 }
 
 export const Profile = () => {
+    const t = useTranslations();
+    const locale = useLocale();
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: "Главная",
+            content: t('Breadcrumb.main'),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "Profile",
-            content: "Профиль",
+            content: t('Breadcrumb.profile'),
             isLink: true,
             isActive: true,
             url: "",
@@ -51,7 +54,7 @@ export const Profile = () => {
                             name="user circle outline"
                             style={{ margin: "0", color: "#007397" }}
                         />
-                        Мои данные
+                        {t('Profile.myData')}
                     </MenuItem>
                 ),
                 render: () => (
@@ -75,7 +78,7 @@ export const Profile = () => {
                             name="check circle outline"
                             style={{ margin: "0", color: "#007397" }}
                         />
-                        Заказы
+                        {t('Profile.orders')}
                     </MenuItem>
                 ),
                 render: () => (
@@ -99,7 +102,7 @@ export const Profile = () => {
                             name="setting"
                             style={{ margin: "0", color: "#007397" }}
                         />
-                        Настройки
+                        {t('Profile.settings')}
                     </MenuItem>
                 ),
                 render: () => (

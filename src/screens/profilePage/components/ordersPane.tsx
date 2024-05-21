@@ -8,6 +8,7 @@ import {
     Label,
     SemanticCOLORS,
 } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const tableData = [
     {
@@ -45,15 +46,16 @@ const tableData = [
 ];
 
 const OrdersPane: React.FC = () => {
+    const t = useTranslations("Profile.Orders");
     return (
         <Table striped>
             <TableHeader>
                 <TableRow>
-                    <TableHeaderCell>Название курса</TableHeaderCell>
-                    <TableHeaderCell>Дата заказа</TableHeaderCell>
-                    <TableHeaderCell>Статус</TableHeaderCell>
-                    <TableHeaderCell>Стоимость</TableHeaderCell>
-                    <TableHeaderCell>Гарантийный взнос</TableHeaderCell>
+                    <TableHeaderCell>{t('courseName')}</TableHeaderCell>
+                    <TableHeaderCell>{t('date')}</TableHeaderCell>
+                    <TableHeaderCell>{t('status')}</TableHeaderCell>
+                    <TableHeaderCell>{t('price')}</TableHeaderCell>
+                    <TableHeaderCell>{t('fee')}</TableHeaderCell>
                 </TableRow>
             </TableHeader>
 

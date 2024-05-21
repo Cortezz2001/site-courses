@@ -7,8 +7,10 @@ import {
     GridColumn,
     Icon,
 } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const AdvantagesBlock: React.FC = () => {
+    const t = useTranslations("AboutSchoolPage.Block2");
     return (
         <>
             <Grid columns={2} divided style={{ marginTop: "30px" }}>
@@ -24,29 +26,21 @@ const AdvantagesBlock: React.FC = () => {
                     </GridColumn>
                     <GridColumn verticalAlign="middle">
                         <Header as="h2">
-                            Преимущества обучения в «Lion IT-SCHOOL»
+                            {t('title')}
                         </Header>
                         <p>
-                            <strong>Практическое обучение:</strong>{" "}
-                            Сосредоточение на реальных проектах и развитие
-                            навыков от начального до продвинутого уровня
+                            <strong>{t('p1')}</strong>{" "}
+                            {t('p1-1')}
                         </p>
                         <p>
-                            <strong>Индивидуализированный подход:</strong>{" "}
-                            Адаптация учебного плана под уровень и потребности
-                            каждого студента.
+                            <strong>{t('p2')}</strong>{" "}
+                            {t('p2-1')}
                         </p>
                         <p>
-                            <strong>Сетевые возможности:</strong> Возможность
-                            создания связей с профессионалами в индустрии и
-                            потенциальными работодателями.
+                            <strong>{t('p3')}</strong> {t('p3-1')}
                         </p>
                         <p>
-                            <strong>Умения:</strong> IT-школа предоставляет
-                            уникальную возможность приобрести практические
-                            навыки в программировании, веб-разработке, мобильной
-                            разработке и других сферах IT, поддерживаемых
-                            квалифицированными преподавателями и индустрией.
+                            <strong>{t('p4')}</strong> {t('p4-1')}
                         </p>
                     </GridColumn>
                 </GridRow>

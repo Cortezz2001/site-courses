@@ -19,12 +19,8 @@ import {
     ListItem,
     Segment,
 } from "@/UI/SUI";
+import { useLocale, useTranslations } from "next-intl";
 
-const extra = (
-    <Button fluid style={{ backgroundColor: "#007397", color: "white" }}>
-        Записаться
-    </Button>
-);
 
 interface ICourseDetailPageProps {
     courseInfo: ICourseDetailPageInfo;
@@ -33,20 +29,28 @@ interface ICourseDetailPageProps {
 export async function CourseDetailsPage({
     courseInfo,
 }: ICourseDetailPageProps) {
+    const t = useTranslations();
+    const locale = useLocale();
+    const extra = (
+        <Button fluid style={{ backgroundColor: "#007397", color: "white" }}>
+            {t('CourseDetailPage.signUp')}
+        </Button>
+    );
+    
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: "Главная",
+            content: t('Breadcrumb.main'),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "Courses",
-            content: "Курсы",
+            content: t('Breadcrumb.courses'),
             isLink: true,
             isActive: false,
-            url: "/courses",
+            url: `/${locale}/courses`,
         },
         {
             key: "CoursePage",
@@ -91,8 +95,8 @@ export async function CourseDetailsPage({
                         >
                             <Card
                                 header={`${courseInfo.price} тг.`}
-                                meta={`Курс: ${courseInfo.format} обучение`}
-                                description={`Курс: ${courseInfo.timeline} недель`}
+                                meta={t('CourseDetailPage.format', { format: courseInfo.format })}
+                                description={t('CourseDetailPage.duration', { timeline: courseInfo.timeline })}
                                 extra={extra}
                                 fluid
                                 style={{
@@ -149,7 +153,7 @@ export async function CourseDetailsPage({
                                     as={"h2"}
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    Цель изучения дисциплины
+                                    {t('CourseDetailPage.goal')}
                                 </Header>
                                 <Container
                                     style={{
@@ -173,7 +177,7 @@ export async function CourseDetailsPage({
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
-                        Задачи курса
+                        {t('CourseDetailPage.tasks')}
                     </Header>
 
                     {courseInfo.challenges.map((challenge, index) => (
@@ -197,7 +201,7 @@ export async function CourseDetailsPage({
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
-                        В результате изучения курса
+                        {t('CourseDetailPage.results')}
                     </Header>
                     <Grid>
                         <GridRow>
@@ -206,7 +210,7 @@ export async function CourseDetailsPage({
                                     as="h3"
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    Должен знать:
+                                    {t('CourseDetailPage.mustKnow')}
                                 </Header>
                                 {courseInfo.knowhows.map((knowhow, index) => (
                                     <List
@@ -225,7 +229,7 @@ export async function CourseDetailsPage({
                                     as="h3"
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    Должен уметь:
+                                    {t('CourseDetailPage.mustBeAble')}
                                 </Header>
                                 {courseInfo.skills.map((skill, index) => (
                                     <List
@@ -252,7 +256,7 @@ export async function CourseDetailsPage({
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
-                        Результат обучения
+                        {t('CourseDetailPage.learnResults')}
                     </Header>
 
                     <p style={{ fontSize: "large" }}>{courseInfo.result}</p>
@@ -267,7 +271,7 @@ export async function CourseDetailsPage({
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
-                        Форма контроля
+                        {t('CourseDetailPage.formOfControl')}
                     </Header>
 
                     <p style={{ fontSize: "large" }}>{courseInfo.control}</p>
@@ -289,7 +293,7 @@ export async function CourseDetailsPage({
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    Критерии отбора студентов
+                                    {t('CourseDetailPage.Block1.title')}
                                 </Header>
                                 <List
                                     style={{
@@ -300,7 +304,7 @@ export async function CourseDetailsPage({
                                         <Icon name="check square outline" />
                                         <ListContent>
                                             <ListHeader>
-                                                Мотивационное письмо
+                                                {t('CourseDetailPage.Block1.p1')}
                                             </ListHeader>
                                         </ListContent>
                                     </ListItem>
@@ -308,7 +312,7 @@ export async function CourseDetailsPage({
                                         <Icon name="check square outline" />
                                         <ListContent>
                                             <ListHeader>
-                                                Тестирование на знание основ IT
+                                                {t('CourseDetailPage.Block1.p2')}
                                             </ListHeader>
                                         </ListContent>
                                     </ListItem>
@@ -316,15 +320,14 @@ export async function CourseDetailsPage({
                                         <Icon name="check square outline" />
                                         <ListContent>
                                             <ListHeader>
-                                                Тестирование на знание
-                                                английского языка
+                                                {t('CourseDetailPage.Block1.p3')}
                                             </ListHeader>
                                         </ListContent>
                                     </ListItem>
                                     <ListItem as="a">
                                         <Icon name="check square outline" />
                                         <ListContent>
-                                            <ListHeader>Интервью</ListHeader>
+                                            <ListHeader>{t('CourseDetailPage.Block1.p4')}</ListHeader>
                                         </ListContent>
                                     </ListItem>
                                 </List>
@@ -342,14 +345,14 @@ export async function CourseDetailsPage({
                                 }}
                             >
                                 <Header textAlign="center" as={"h2"}>
-                                    Особые условия
+                                    {t('CourseDetailPage.Block2.title')}
                                 </Header>
                                 <Header
                                     textAlign="center"
                                     as={"h3"}
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    Гарантийный взнос в размере 60000 тг.
+                                    {t('CourseDetailPage.Block2.p1')}
                                 </Header>
                                 <Container
                                     style={{
@@ -357,28 +360,24 @@ export async function CourseDetailsPage({
                                     }}
                                 >
                                     <p>
-                                        Для возврата обязательного Гарантийного
-                                        взноса, поступившему студенту необходимо
-                                        выполнение следующих совокупных условий:
+                                        {t('CourseDetailPage.Block2.p2')}
                                     </p>
                                     <List as="ol" style={{}}>
                                         <ListItem as="li">
-                                            Подписание Договора оказания услуг
-                                            по обучению в «Lion IT-school»
+                                            {t('CourseDetailPage.Block2.p3')}
                                         </ListItem>
                                         <ListItem as="li">
-                                            Успешное окончание выбранного курса
+                                            {t('CourseDetailPage.Block2.p4')}
                                         </ListItem>
                                     </List>
                                     <p>
-                                        В случае невыполнения вышеуказанных
-                                        условий, гарантийный{" "}
+                                        {t('CourseDetailPage.Block2.p5')}{" "}
                                         <span
                                             style={{
                                                 textDecoration: "underline",
                                             }}
                                         >
-                                            взнос не возвращается
+                                            {t('CourseDetailPage.Block2.p5-1')}
                                         </span>
                                     </p>
                                 </Container>
@@ -396,33 +395,19 @@ export async function CourseDetailsPage({
                     }}
                 >
                     <Header as="h3" style={{ marginBottom: "30px" }}>
-                        Образовательные технологии, применяемые при освоении
-                        дисциплины
+                        {t('CourseDetailPage.Block3.title1')}
                     </Header>
 
                     <p>
-                        При проведении учебных занятий предусматривается
-                        использование следующих образовательных технологий: -
-                        интерактивная лекция (проблемная лекция, дискуссионная
-                        лекция, лекция- конференция, лекция-консультация, лекция
-                        «Пресс-конференция», лекция
-                        «Вопросы-ответы-обсуждение»); - метод проектов
-                        (наработка и преобразование собственного опыта и
-                        компетентности)
+                        {t('CourseDetailPage.Block3.p1')}
                     </p>
 
                     <Header as="h3" style={{ marginBottom: "30px" }}>
-                        Адаптивные образовательные технологии (инклюзивное
-                        обучение)
+                        {t('CourseDetailPage.Block3.title2')}
                     </Header>
 
                     <p>
-                        Для успешного освоения дисциплины при обучении лиц с
-                        ограниченными возможностями здоровья могут применяться
-                        следующие адаптивные Образовательные технологии: -
-                        студентоцентрированное обучение, основанное на
-                        рефлексивном подходе к обучению со стороны преподавателя
-                        и обучающихся.
+                        {t('CourseDetailPage.Block3.p2')}
                     </p>
                 </Container>
                 <Container
@@ -435,7 +420,7 @@ export async function CourseDetailsPage({
                     }}
                 >
                     <Header as="h2" style={{ marginBottom: "30px" }}>
-                        Кому подойдет этот курс
+                        {t('CourseDetailPage.Block4.title')}
                     </Header>
 
                     <Grid columns={3} stackable>
@@ -446,20 +431,10 @@ export async function CourseDetailsPage({
                                         name="lightbulb outline"
                                         style={{ color: "#007397" }}
                                     />
-                                    Новичкам в программировании
+                                    {t('CourseDetailPage.Block4.subTitle1')}
                                 </Header>
                                 <p>
-                                    Для новичков в программировании, курс может
-                                    стать отличным стартовым пунктом. Он
-                                    предоставляет базовые знания и основные
-                                    концепции, которые необходимы для начала
-                                    изучения программирования. Это помогает
-                                    новичкам понять основные принципы
-                                    кодирования, структуры данных и алгоритмов,
-                                    что делает их более уверенными в своих
-                                    способностях и помогает им избежать
-                                    распространенных ошибок на ранних этапах
-                                    своего обучения.
+                                    {t('CourseDetailPage.Block4.p1')}
                                 </p>
                             </GridColumn>
                             <GridColumn verticalAlign="middle">
@@ -468,20 +443,10 @@ export async function CourseDetailsPage({
                                         name="rocket"
                                         style={{ color: "#007397" }}
                                     />
-                                    Начинающим разработчикам
+                                    {t('CourseDetailPage.Block4.subTitle2')}
                                 </Header>
                                 <p>
-                                    Начинающим разработчикам курс
-                                    программирования может предложить
-                                    дополнительные навыки и технологии, которые
-                                    могут быть важными для их карьерного роста.
-                                    Например, он может включать в себя обучение
-                                    работы с популярными фреймворками или
-                                    инструментами, которые широко используются в
-                                    отрасли. Это помогает начинающим
-                                    разработчикам расширить свой набор навыков и
-                                    быть более конкурентоспособными на рынке
-                                    труда.
+                                    {t('CourseDetailPage.Block4.p2')}
                                 </p>
                             </GridColumn>
                             <GridColumn verticalAlign="middle">
@@ -490,21 +455,10 @@ export async function CourseDetailsPage({
                                         name="code"
                                         style={{ color: "#007397" }}
                                     />
-                                    Опытным программистам
+                                    {t('CourseDetailPage.Block4.subTitle3')}
                                 </Header>
                                 <p>
-                                    Для опытных программистов курсы
-                                    программирования могут предложить
-                                    возможность изучения новых технологий или
-                                    обновления их существующих навыков. Быстро
-                                    развивающаяся природа сферы информационных
-                                    технологий требует от программистов
-                                    постоянного обновления знаний и умений.
-                                    Участие в курсе позволяет опытным
-                                    программистам оставаться в курсе последних
-                                    тенденций и инноваций в своей области, что
-                                    помогает им оставаться востребованными на
-                                    рынке труда и развиваться профессионально.
+                                    {t('CourseDetailPage.Block4.p3')}
                                 </p>
                             </GridColumn>
                         </GridRow>

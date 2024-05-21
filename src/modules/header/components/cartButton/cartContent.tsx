@@ -1,6 +1,7 @@
 import { Button, Grid, GridRow, Header, GridColumn, Container } from "@/UI/SUI";
 import { ISelectedCoursesInfoGroup } from "@/service/cartService/types";
 import CourseList from "./coursesList";
+import { useTranslations } from "next-intl";
 
 const CartContent: React.FC<ISelectedCoursesInfoGroup> = ({
     selectedCourses,
@@ -11,7 +12,7 @@ const CartContent: React.FC<ISelectedCoursesInfoGroup> = ({
               0
           )
         : 0;
-
+    const t = useTranslations("Cart");
     return (
         <Container
             style={{
@@ -22,14 +23,14 @@ const CartContent: React.FC<ISelectedCoursesInfoGroup> = ({
             }}
         >
             <Header as="h3" style={{ marginBottom: "25px" }}>
-                Выбранные курсы:
+                {t('selectedCourses')}
             </Header>
 
             {!selectedCourses ? (
                 <Grid>
                     <GridRow>
                         <GridColumn width={16} textAlign="center">
-                            <p>Корзина пуста </p>
+                            <p>{t('cartIsEmpty')} </p>
                         </GridColumn>
                     </GridRow>
                 </Grid>
@@ -51,7 +52,7 @@ const CartContent: React.FC<ISelectedCoursesInfoGroup> = ({
                     textAlign="left"
                     style={{ margin: "10px", marginLeft: "0" }}
                 >
-                    Сумма к оплате:
+                    {t('amoutToPay')}
                 </Header>
                 <Header
                     as="h4"
@@ -64,7 +65,7 @@ const CartContent: React.FC<ISelectedCoursesInfoGroup> = ({
             <Button
                 color="blue"
                 fluid
-                content="Перейти к оплате"
+                content={t('goToPay')}
                 style={{ backgroundColor: "#007397", color: "white" }}
             />
         </Container>

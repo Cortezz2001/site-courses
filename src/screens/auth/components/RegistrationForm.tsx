@@ -8,11 +8,10 @@ import {
     Button,
     Container,
     Header,
-    Message,
-    MessageContent,
 } from "@/UI/SUI";
 import { STATUS, UserService } from "@/service/authService/auth";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface RegistrationFormProps {
     onLoginClick: () => void;
@@ -21,6 +20,7 @@ interface RegistrationFormProps {
 const RegistrationForm: React.FC<RegistrationFormProps> = ({
     onLoginClick,
 }) => {
+    const t = useTranslations("RegistrationPage");
     const router = useRouter();
 
     const [firstname, setFirstname] = React.useState<string>("");
@@ -34,7 +34,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
     async function submitHandler() {
         setLoading(true);
         if (password !== confirmPassword) {
-            setError("Пароли не совпадают");
+            setError(t('mismatch'));
             setLoading(false);
             return;
         }
@@ -67,55 +67,55 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
             }}
         >
             <Header as="h3" textAlign="center">
-                Регистрация
+                {t('registration')}
             </Header>
             <Form onSubmit={submitHandler}>
                 <FormField
                     required
-                    label="Имя"
+                    label={t('nameLabel')}
                     type="text"
                     control={Input}
-                    placeholder="Введите ваше имя"
+                    placeholder={t('namePlaceholder')}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                         setFirstname(event.target.value);
                     }}
                 />
                 <FormField
                     required
-                    label="Фамилия"
+                    label={t('secondNameLabel')}
                     type="text"
                     control={Input}
-                    placeholder="Введите вашу фамилию"
+                    placeholder={t('secondNamePlaceholder')}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                         setLastname(event.target.value);
                     }}
                 />
                 <FormField
                     required
-                    label="Почта"
+                    label="Email"
                     type="email"
                     control={Input}
-                    placeholder="Введите вашу почту"
+                    placeholder={t('emailPlaceholder')}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                         setEmail(event.target.value);
                     }}
                 />
                 <FormField
                     required
-                    label="Пароль"
+                    label={t('passwordLabel')}
                     type="password"
                     control={Input}
-                    placeholder="Введите ваш пароль"
+                    placeholder={t('passwordPlaceholder')}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                         setPassword(event.target.value);
                     }}
                 />
                 <FormField
                     required
-                    label="Подтверждение пароля"
+                    label={t('confirmPassLabel')}
                     type="password"
                     control={Input}
-                    placeholder="Подтвердите ваш пароль"
+                    placeholder={t('confirmPassPlaceholder')}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                         setConfirmPassword(event.target.value);
                     }}
@@ -135,7 +135,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     }}
                     loading={loading}
                 >
-                    Зарегистрироваться
+                    {t('registrationBtn')}
                 </Button>
                 <Container
                     style={{
@@ -145,12 +145,12 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     }}
                 >
                     <p>
-                        Уже есть аккаунт?{" "}
+                        {t('haveAccount')}{" "}
                         <span
                             onClick={onLoginClick}
                             style={{ cursor: "pointer", color: "#007397" }}
                         >
-                            Войти
+                            {t('auth')}
                         </span>
                     </p>
                 </Container>

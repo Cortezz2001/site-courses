@@ -3,20 +3,22 @@ import { MessagesService } from "@/service/postMessageService/service";
 import { useState } from "react";
 import { Form, FormField, Input, Button, FormCheckbox } from "@/UI/SUI";
 import MessageModal from "./modal";
+import { useTranslations } from "next-intl";
 
 const MessageForm: React.FC = () => {
     const [email, setEmail] = useState("");
     const [isChecked, setIsChecked] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
+    const t = useTranslations("Footer");
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             if (!email) {
-                setErrorMessage("Пожалуйста, введите адрес электронной почты.");
+                setErrorMessage(t('emailError'));
             } else if (!isChecked) {
                 setErrorMessage(
-                    "Пожалуйста, подтвердите согласие с Политикой обработки персональных данных."
+                    t('checkboxError')
                 );
             } else {
                 await MessagesService.sendMessage({ email });
@@ -28,15 +30,14 @@ const MessageForm: React.FC = () => {
             }
         } catch (error) {
             console.error("Ошибка отправки", error);
-            setErrorMessage("Ошибка отправки. Попробуйте еще раз");
+            setErrorMessage(t('error'));
         }
     };
 
     return (
         <>
             <p style={{ color: "white" }}>
-                Оставьте почту, или останетесь без крутых писем от Lion
-                IT-School
+                {t('formTitle')}
             </p>
             <Form
                 inverted
@@ -54,10 +55,10 @@ const MessageForm: React.FC = () => {
                     }
                 />
                 <Button fluid inverted type="submit">
-                    Отправить
+                    {t('send')}
                 </Button>
                 <FormCheckbox
-                    label="Я согласен с Политикой обработки персональных данных"
+                    label={t('checkbox')}
                     style={{ marginTop: "10px", fontSize: "12px" }}
                     checked={isChecked}
                     onChange={(e, data) => setIsChecked(data.checked || false)}

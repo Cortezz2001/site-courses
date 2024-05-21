@@ -3,11 +3,12 @@ import { ICourseCardInfoGroup } from "@/service/coursesService/types";
 import { Button, Grid, GridColumn, GridRow } from "@/UI/SUI";
 import Link from "next/link";
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
     coursesInfo,
 }) => {
+    const t = useTranslations("CoursesPage");
     const groupedCourses = [];
     for (let i = 0; i < coursesInfo.length; i += 4) {
         groupedCourses.push(coursesInfo.slice(i, i + 4));
@@ -16,7 +17,7 @@ export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
     return (
         <>
             {groupedCourses.length === 0 ? (
-                <p>Результаты не найдены</p>
+                <p>{t('searchEmpty')}</p>
             ) : (
                 groupedCourses.map((group, index) => (
                     <Grid key={index} columns={4}>
