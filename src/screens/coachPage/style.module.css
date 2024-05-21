@@ -41,6 +41,12 @@
     gap: 15px !important;
 }
 
+@media only screen and (min-width: 1024px) and (max-width: 1181px) {
+    .coach_info_container {
+        gap: 10em;
+    }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .coach_profile {
         margin-left: 0 !important;
