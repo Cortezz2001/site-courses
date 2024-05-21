@@ -8,10 +8,11 @@ import {
     ButtonContent,
     Icon,
 } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const ActionBlock: React.FC = () => {
     const telegramLink = "https://t.me/+b8klQ4VDBX82Y2Iy";
-
+    const t = useTranslations("Main.Block1");
     return (
         <Grid
             columns={2}
@@ -22,12 +23,10 @@ const ActionBlock: React.FC = () => {
                 <GridColumn verticalAlign="middle">
                     <Container textAlign="center" style={{ fontSize: "large" }}>
                         <p>
-                            Присоединяйся к нашему Telegram-каналу, чтобы
-                            обсудить,
+                            {t('p1')}
                             <br />
-                            как начать программировать с нуля, получить новую
-                            профессию в IT
-                            <br />и завести новых друзей!
+                            {t('p1-1')}
+                            <br />{t('p1-2')}
                         </p>
                         <a
                             href={telegramLink}
@@ -42,7 +41,7 @@ const ActionBlock: React.FC = () => {
                                 }}
                             >
                                 <ButtonContent visible>
-                                    Ждём тебя!
+                                    {t('btn')}
                                 </ButtonContent>
                                 <ButtonContent hidden>
                                     <Icon name="telegram plane" />

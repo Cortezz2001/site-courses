@@ -1,6 +1,8 @@
 import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const GoalsBlock: React.FC = () => {
+    const t = useTranslations("AboutSchoolPage.Block1");
     return (
         <>
             <Grid columns={2} divided style={{ marginTop: "30px" }}>
@@ -12,7 +14,7 @@ const GoalsBlock: React.FC = () => {
                                 paddingLeft: "20px",
                             }}
                         >
-                            Цель проекта школы «Lion IT-SCHOOL»
+                            {t('title')}
                         </Header>
                         <ul
                             style={{
@@ -20,19 +22,15 @@ const GoalsBlock: React.FC = () => {
                             }}
                         >
                             <li>
-                                Создать курсы в рамках проекта школа
-                                IT-технологии
+                                {t('p1')}
                             </li>
-                            <li>Оказание услуг по обучению ИТ-специалистов</li>
-                            <li>Укрепление кадрового потенциала</li>
+                            <li>{t('p2')}</li>
+                            <li>{t('p3')}</li>
                             <li>
-                                Оказание услуг по консультированию в области
-                                цифровизации для взрослых и детей
+                                {t('p4')}
                             </li>
                             <li>
-                                Проведение тренингов, семинаров, практикумов
-                                после которых сотрудники более эффективно будут
-                                пользоваться ИТ-средствами
+                                {t('p5')}
                             </li>
                         </ul>
                     </GridColumn>

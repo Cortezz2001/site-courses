@@ -3,26 +3,30 @@ import { ICourseCardInfoGroup } from "@/service/coursesService/types";
 import { Button, Grid, GridColumn, GridRow } from "@/UI/SUI";
 import Link from "next/link";
 import Image from "next/image";
+import { useLocale, useTranslations } from "next-intl";
 
 export const GroupCoursesCards: React.FC<ICourseCardInfoGroup> = ({
     coursesInfo,
 }) => {
+    const t = useTranslations("CoursesPage");
     const groupedCourses = [];
     for (let i = 0; i < coursesInfo.length; i += 4) {
         groupedCourses.push(coursesInfo.slice(i, i + 4));
     }
-
+    const locale = useLocale();
     return (
         <>
             {groupedCourses.length === 0 ? (
-                <p>Результаты не найдены</p>
+                <p>{t('searchEmpty')}</p>
             ) : (
                 groupedCourses.map((group, index) => (
                     <Grid key={index} columns={4}>
                         <GridRow>
                             {group.map((course) => (
                                 <GridColumn key={course.id}>
-                                    <Link href={`/courses/${course.id}`}>
+                                    <Link
+                                        href={`/${locale}/courses/${course.id}`}
+                                    >
                                         <CourseCard
                                             image={course.img}
                                             header={course.title}

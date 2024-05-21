@@ -8,8 +8,10 @@ import {
     Icon,
     Divider,
 } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const DirectionsBlock: React.FC = () => {
+    const t = useTranslations("AboutSchoolPage.Block5");
     return (
         <>
             <Grid
@@ -36,20 +38,19 @@ const DirectionsBlock: React.FC = () => {
                             name="graduation cap"
                             style={{ color: "#007397" }}
                         />
-                        Направления курсов
+                        {t('title')}
                     </Header>
                 </GridRow>
                 <GridRow centered>
                     <GridColumn verticalAlign="middle">
                         <Header as="h3" textAlign="center">
                             <Icon name="laptop" style={{ color: "#007397" }} />
-                            Основы программирования
+                            {t('title1')}
                         </Header>
                         <p>
-                            Создание веб-сайтов с использованием HTML, CSS и
-                            JavaScript.
+                            {t('p1')}
                         </p>
-                        <p>Работа с фреймворками</p>
+                        <p>{t('p1-1')}</p>
                     </GridColumn>
                     <GridColumn verticalAlign="middle">
                         <Header as="h3" textAlign="center">
@@ -57,15 +58,13 @@ const DirectionsBlock: React.FC = () => {
                                 name="code branch"
                                 style={{ color: "#007397" }}
                             />
-                            Веб-разработка
+                            {t('title2')}
                         </Header>
                         <p>
-                            Изучение основных понятий и принципов
-                            программирования.
+                            {t('p2')}
                         </p>
                         <p>
-                            Настройка окружения разработки и освоение базовых
-                            языков программирования.
+                            {t('p2-1')}
                         </p>
                     </GridColumn>
                     <GridColumn verticalAlign="middle">
@@ -74,15 +73,13 @@ const DirectionsBlock: React.FC = () => {
                                 name="mobile alternate"
                                 style={{ color: "#007397" }}
                             />
-                            Мобильная разработка
+                            {t('title3')}
                         </Header>
                         <p>
-                            Программирование мобильных приложений для iOS и
-                            Android.
+                            {t('p3')}
                         </p>
                         <p>
-                            Использование инструментов, таких как Swift, Kotlin
-                            и др.
+                            {t('p3-1')}
                         </p>
                     </GridColumn>
                 </GridRow>
@@ -93,24 +90,22 @@ const DirectionsBlock: React.FC = () => {
                                 name="database"
                                 style={{ color: "#007397" }}
                             />
-                            Базы данных и анализ данных
+                            {t('title4')}
                         </Header>
-                        <p>Освоение работы с базами данных, SQL.</p>
+                        <p>{t('p4')}</p>
                         <p>
-                            Обучение анализу данных с использованием Python и
-                            инструментов Data Science.
+                            {t('p4-1')}
                         </p>
                     </GridColumn>
                     <GridColumn verticalAlign="middle">
                         <Header as="h3" textAlign="center">
                             <Icon name="wifi" style={{ color: "#007397" }} />
-                            Сетевые технологии
+                            {t('title5')}
                         </Header>
-                        <p>Инженер умных устройств.</p>
-                        <p>Обучение алгоритмам и структурам данных.</p>
+                        <p>{t('p5')}</p>
+                        <p>{t('p5-1')}</p>
                         <p>
-                            Разработка игр, искусственного интеллекта или
-                            блокчейн-приложений.
+                            {t('p5-2')}
                         </p>
                     </GridColumn>
                 </GridRow>

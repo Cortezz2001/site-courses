@@ -1,12 +1,16 @@
-import { API_URL, URLS } from "../consts";
+import { API_URL, LANGUAGES, URLS } from "../consts";
 import { ICourseDetailPageInfo } from "./types";
 
 export const CourseDetailPageService = {
-    async getCourses(): Promise<Array<ICourseDetailPageInfo>> {
-        const res = await fetch(API_URL + URLS.getCourses);
-        if (res.status !== 200) {
+    async getCourses(id: number, language: LANGUAGES): Promise<ICourseDetailPageInfo> {
+        const res = await fetch(`${API_URL + URLS.getCourses}${id}`, {
+            headers: {
+                'Accept-Language': language
+            }
+        });
+        if (!res.ok) {
             throw new Error("Failed to fetch data");
         }
-        return res.json() as Promise<Array<ICourseDetailPageInfo>>;
+        return res.json() as Promise<ICourseDetailPageInfo>;
     },
 };

@@ -7,6 +7,7 @@ import {
     Container,
     Icon,
 } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 interface MyAccordionProps {
     activeIndex: number;
@@ -17,6 +18,7 @@ export default function MyAccordion({
     activeIndex,
     handleClick,
 }: MyAccordionProps) {
+    const t = useTranslations("QuestionsAndAnswersPage");
     return (
         <>
             <Accordion
@@ -34,7 +36,7 @@ export default function MyAccordion({
                     }}
                     active
                 >
-                    Общая информация
+                    {t('blockTitle1')}
                 </AccordionTitle>
                 <AccordionTitle
                     active={activeIndex === 0}
@@ -42,22 +44,11 @@ export default function MyAccordion({
                     onClick={() => handleClick(0)}
                 >
                     <Icon name="dropdown" />
-                    Что такое LION IT-SCHOOL и почему нам можно доверять?
+                    {t('Block1.q1')}
                 </AccordionTitle>
                 <AccordionContent active={activeIndex === 0}>
                     <p>
-                        LION IT-SCHOOL - это современное учебное заведение,
-                        специализирующееся на обучении программированию и
-                        информационным технологиям. Наша цель - подготовить
-                        новое поколение конкурентоспособных специалистов в
-                        области IT. Для достижения этой цели мы не только
-                        передаем знания и навыки, но также развиваем вкус и
-                        способность к нестандартному мышлению. Наши тренеры -
-                        опытные практики в области IT, которые пристально следят
-                        за потребностями студентов и внимательно относятся к
-                        образовательным процессам. Перед началом обучения мы
-                        заключаем договор публичной оферты и гарантируем
-                        качество предоставляемых услуг.
+                        {t('Block1.a1')}
                     </p>
                 </AccordionContent>
 
@@ -67,22 +58,11 @@ export default function MyAccordion({
                     onClick={() => handleClick(1)}
                 >
                     <Icon name="dropdown" />
-                    Кто преподает в LION IT-SCHOOL и какой у них опыт?
+                    {t('Block1.q2')}
                 </AccordionTitle>
                 <AccordionContent active={activeIndex === 1}>
                     <p>
-                        В LION IT-SCHOOL все тренеры, ведущие обучение, обладают
-                        высшим образованием в области программирования и имеют
-                        обширный опыт работы в известных компаниях. Они являются
-                        опытными разработчиками программного обеспечения,
-                        специалистами по разработке приложений и веб-сайтов, а
-                        также экспертами в различных областях программирования.
-                        Кроме того, они регулярно повышают свою квалификацию,
-                        участвуя в дополнительных образовательных программах, и
-                        часто сами являются студентами курсов. Это не только
-                        помогает им совершенствовать свои навыки, но и позволяет
-                        получить уникальный опыт, ознакомившись с программой и
-                        процессом обучения изнутри.
+                        {t('Block1.a2')}
                     </p>
                 </AccordionContent>
 
@@ -92,46 +72,32 @@ export default function MyAccordion({
                     onClick={() => handleClick(2)}
                 >
                     <Icon name="dropdown" />
-                    Меня возьмут на работу после ваших курсов?
+                    {t('Block1.q3')}
                 </AccordionTitle>
                 <AccordionContent active={activeIndex === 2}>
                     <p>
-                        В LION IT-SCHOOL мы стремимся обеспечить наших студентов
-                        всем необходимым для успешного трудоустройства после
-                        окончания курсов. Возможность получения работы зависит
-                        от вас и вашей готовности к учебе, самосовершенствованию
-                        и развитию навыков.
+                        {t('Block1.a3')}
                     </p>
-                    <p>Мы предоставляем следующую поддержку:</p>
+                    <p>{t('Block1.a3-1')}</p>
                     <ul style={{ paddingLeft: "20px" }}>
                         <li>
-                            Строим программы обучения, которые учитывают
-                            современные тенденции в области программирования.
+                            {t('Block1.a3-2')}
                         </li>
                         <li>
-                            Приглашаем представителей компаний и студий на
-                            защиту итоговых работ студентов.
+                            {t('Block1.a3-3')}
                         </li>
                         <li>
-                            Помогаем студентам создать качественное портфолио,
-                            которое будет привлекательным для потенциальных
-                            работодателей.
+                            {t('Block1.a3-4')}
                         </li>
                         <li>
-                            Регулярно публикуем вакансии от наших партнеров в
-                            нашем студенческом чате.
+                            {t('Block1.a3-5')}
                         </li>
                         <li>
-                            Приглашаем представителей индустрии информационных
-                            технологий на лекции, в том числе и на тему поиска
-                            работы в современном мире.
+                            {t('Block1.a3-6')}
                         </li>
                     </ul>
                     <p style={{ paddingTop: "14px" }}>
-                        Однако, мы также подчеркиваем, что успешное
-                        трудоустройство зависит от вашего собственного усердия,
-                        стремления к успеху и активного участия в наших
-                        программах обучения.
+                        {t('Block1.a3-7')}
                     </p>
                 </AccordionContent>
                 <AccordionTitle
@@ -140,12 +106,11 @@ export default function MyAccordion({
                     onClick={() => handleClick(3)}
                 >
                     <Icon name="dropdown" />
-                    Как приобрести подарочный сертификат?
+                    {t('Block1.q4')}
                 </AccordionTitle>
                 <AccordionContent active={activeIndex === 3}>
                     <p>
-                        Обратиться к менеджерам отдела продаж по телефону или
-                        написать нам на сайте или в любом удобном мессенджере.
+                        {t('Block1.a4')}
                     </p>
                 </AccordionContent>
             </Accordion>
@@ -166,21 +131,18 @@ export default function MyAccordion({
                     }}
                     active
                 >
-                    Вопросы по обучению
+                    {t('blockTitle2')}
                 </AccordionTitle>
                 <AccordionTitle
                     active={activeIndex === 4}
                     index={4}
                     onClick={() => handleClick(4)}
                 >
-                    <Icon name="dropdown" />С какого возраста можно начать
-                    обучение в LION IT-SCHOOL?
+                    <Icon name="dropdown" />{t('Block2.q1')}
                 </AccordionTitle>
                 <AccordionContent active={activeIndex === 4}>
                     <p>
-                        Средний возраст студента LION IT-SCHOOL — от 17 до 30+
-                        лет. Но были случаи, когда у нас учились студенты
-                        моложе.
+                        {t('Block2.a1')}
                     </p>
                 </AccordionContent>
                 <AccordionTitle
@@ -189,14 +151,11 @@ export default function MyAccordion({
                     onClick={() => handleClick(5)}
                 >
                     <Icon name="dropdown" />
-                    Какие курсы подойдут для новичка?
+                    {t('Block2.q2')}
                 </AccordionTitle>
                 <AccordionContent active={activeIndex === 5}>
                     <p>
-                        Все экспресс-курсы, все курсы уровня Basic. Если вам
-                        нужна дополнительная консультация, пишите нашим
-                        менеджерам, и они помогут подобрать курс в соответствии
-                        с вашими навыками.
+                        {t('Block2.a2')}
                     </p>
                 </AccordionContent>
                 <AccordionTitle
@@ -205,16 +164,11 @@ export default function MyAccordion({
                     onClick={() => handleClick(6)}
                 >
                     <Icon name="dropdown" />
-                    Что я получаю после курса? Каков результат обучения?
+                    {t('Block2.q3')}
                 </AccordionTitle>
                 <AccordionContent active={activeIndex === 6}>
                     <p>
-                        Результат каждого семестра, независимо от уровня, —
-                        оформленные проекты для вашего портфолио. В конце
-                        каждого семестра студент получает сертификат о
-                        прохождении курса и скидку на последующее обучение в
-                        LION IT-SCHOOL на любом курсе. А еще — много
-                        дополнительных материалов для самостоятельного изучения.
+                        {t('Block2.a3')}
                     </p>
                 </AccordionContent>
                 <AccordionTitle
@@ -223,10 +177,10 @@ export default function MyAccordion({
                     onClick={() => handleClick(7)}
                 >
                     <Icon name="dropdown" />
-                    Можно ли брать индивидуальные занятия с тренером?
+                    {t('Block2.q4')}
                 </AccordionTitle>
                 <AccordionContent active={activeIndex === 7}>
-                    <p>Да, напишите нам, и мы согласуем для вас расписание.</p>
+                    <p>{t('Block2.a4')}</p>
                 </AccordionContent>
                 <AccordionTitle
                     active={activeIndex === 8}
@@ -234,14 +188,11 @@ export default function MyAccordion({
                     onClick={() => handleClick(8)}
                 >
                     <Icon name="dropdown" />
-                    Онлайн-курс короче, чем офлайн-курс. Это как-то сказывается
-                    на программе?
+                    {t('Block2.q5')}
                 </AccordionTitle>
                 <AccordionContent active={activeIndex === 8}>
                     <p>
-                        Можете быть уверены: программа онлайн-курса практически
-                        ничем не отличается от офлайн-формата — она такая же
-                        насыщенная, информативная и полезная.
+                        {t('Block2.a5')}
                     </p>
                 </AccordionContent>
             </Accordion>

@@ -1,6 +1,8 @@
 import { Container, Grid, GridColumn, GridRow, Image } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const ImageBlock = () => {
+    const t = useTranslations("IntensivesPage");
     return (
         <>
             <Grid divided style={{ paddingBottom: "30px" }}>
@@ -27,21 +29,15 @@ const ImageBlock = () => {
                                 width: "30%",
                             }}
                         >
-                            <h2>НАЧНИТЕ КАРЬЕРУ ПРОГРАММИСТА</h2>
-                            <p>С 5 по 10 августа 2024</p>
+                            <h2>{t('imageTitle')}</h2>
+                            <p>{t('imageP1')}</p>
                             <p>
-                                Это 6 дней офлайн и онлайн практики, насыщенная
-                                программа, концентрация на одной теме и готовый
-                                проект в конце
+                                {t('imageP2')}
                             </p>
                             <p>
-                                А еще — возможность попробовать понравившийся
-                                курс и записаться на обучение, а также получить
-                                скидку на покупку любого курса длительностью 5,5
-                                месяцев (мы дарим скидку после прохождения
-                                интенсива в размере стоимости интенсива)
+                                {t('imageP3')}
                             </p>
-                            <p>Количество мест ограничено!</p>
+                            <p>{t('imageP4')}</p>
                         </Container>
                     </GridColumn>
                 </GridRow>

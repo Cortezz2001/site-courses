@@ -1,6 +1,8 @@
 import { Grid, GridColumn, GridRow } from "@/UI/SUI";
 import { EventCard } from "@/modules/eventCard/eventCard";
 import { IEventCardInfoGroup } from "@/service/eventsService/types";
+import { useLocale } from "next-intl";
+import Link from "next/link";
 
 export const GroupEventsCards: React.FC<IEventCardInfoGroup> = ({
     eventsInfo,
@@ -9,7 +11,7 @@ export const GroupEventsCards: React.FC<IEventCardInfoGroup> = ({
     for (let i = 0; i < eventsInfo.length; i += 4) {
         groupedEvents.push(eventsInfo.slice(i, i + 4));
     }
-
+    const locale = useLocale();
     return (
         <>
             {groupedEvents.map((group, index) => (
@@ -17,13 +19,17 @@ export const GroupEventsCards: React.FC<IEventCardInfoGroup> = ({
                     <GridRow>
                         {group.map((event) => (
                             <GridColumn key={event.id}>
-                                <EventCard
-                                    image={event.img}
-                                    header={event.title}
-                                    description={
-                                        event.startDate + ", " + event.startTime
-                                    }
-                                />
+                                <Link href={`/${locale}/events/${event.id}`}>
+                                    <EventCard
+                                        image={event.img}
+                                        header={event.title}
+                                        description={
+                                            event.startDate +
+                                            ", " +
+                                            event.startTime
+                                        }
+                                    />
+                                </Link>
                             </GridColumn>
                         ))}
                     </GridRow>

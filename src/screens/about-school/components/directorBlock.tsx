@@ -1,6 +1,8 @@
 import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 const DirectorBlock: React.FC = () => {
+    const t = useTranslations("AboutSchoolPage.Block3");
     return (
         <>
             <Grid columns={2} divided style={{ marginTop: "30px" }}>
@@ -12,20 +14,14 @@ const DirectorBlock: React.FC = () => {
                                 paddingLeft: "20px",
                             }}
                         >
-                            <Header as="h2">Директор «Lion IT-SCHOOL»</Header>
-                            <p>Бакалавр по специальности «Информатика»; </p>
+                            <Header as="h2">{t('title')}</Header>
+                            <p>{t('p1')} </p>
                             <p>
                                 {" "}
-                                Магистр технических наук по специальности
-                                «Вычислительная техника и программное
-                                обеспечение»;{" "}
+                                {t('p2')}{" "}
                             </p>
                             <p>
-                                <strong>Сферы деятельности:</strong> стаж
-                                научно-педагогической деятельности 14 лет, автор
-                                курсов по ИКТ, сетевым технологиям, менеджер
-                                международных проектов Erasmus + в области ИТ,
-                                образования, робототехнических систем.
+                                <strong>{t('p3')}</strong> {t('p3-1')}
                             </p>
                         </Container>
                     </GridColumn>

@@ -1,0 +1,322 @@
+{
+  "Header": {
+    "intensives": "Summer Intensives 2024",
+    "ourCoaches": "Our trainers",
+    "forStudents": "For students",
+    "courseSelection": "Course selection",
+    "questionsAndAnswers": "Questions and answers",
+    "events": "Announcements",
+    "aboutSchool": "About our school",
+    "account": "Account",
+    "aboutUs": "About us",
+    "cart": "Cart"
+  },
+  "Cart": {
+    "selectedCourses": "Selected courses:",
+    "cartIsEmpty": "Cart is empty",
+    "amoutToPay": "Amount to pay:",
+    "goToPay": "Go to pay"
+  },
+  "Footer": {
+    "address": "Kazakhstan, Pavlodar, Lomova St. 45",
+    "aboutOurSchool": "ABOUT OUR SCHOOL",
+    "answersAndQuestions": "QUESTIONS AND ANSWERS",
+    "courses": "COURSES",
+    "events": "EVENTS",
+    "coaches": "COACHES",
+    "intensives": "INTENSIVES",
+    "termsOfUse": "Terms of Use",
+    "contractOffer": "Contract Offer",
+    "formTitle": "Leave your email, or you'll miss out on cool emails from Lion IT-School",
+    "checkbox": "I agree with the Personal Data Processing Policy",
+    "send": "Send",
+    "emailError": "Please enter your email address.",
+    "checkboxError": "Please confirm your agreement with the Personal Data Processing Policy.",
+    "error": "Sending error. Please try again"
+  },
+  "Modal": {
+    "sendSuccessfully": "Message sent successfully"
+  },
+  "IntensivesPage": {
+    "title": "Summer Intensives",
+    "imageTitle": "START A PROGRAMMING CAREER",
+    "imageP1": "From August 5 to 10, 2024",
+    "imageP2": "This is 6 days of offline and online practice, an intense program, focus on one topic, and a finished project at the end",
+    "imageP3": "Also, the opportunity to try out a course you like and sign up for training, as well as get a discount on any 5.5-month course (we give a discount after completing the intensive equal to the cost of the intensive)",
+    "imageP4": "Limited spots available!",
+    "howToLearn": "HOW LEARNING TAKES PLACE",
+    "block1": "Listen to the lecture and complete the assignment",
+    "block2": "Get advice from the curator and make corrections",
+    "block3": "Gain knowledge and build a portfolio",
+    "Form": {
+      "title": "Need help choosing a course?",
+      "desc": "If you have any questions or want to clarify any information, you can fill out the form and we will contact you.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Enter your name...",
+      "phoneLabel": "Phone number",
+      "phonePlaceholder": "Enter your phone number...",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Enter your email...",
+      "messengerLabel": "Preferred messenger",
+      "messengerPlaceholder": "Choose a messenger...",
+      "usernamePlaceholder": "Enter your username...",
+      "checkbox": "By clicking the button, I agree to the processing of personal data",
+      "send": "Send"
+    }
+  },
+  "Breadcrumb": {
+    "main": "Home",
+    "intensives": "Summer Intensives",
+    "ourCoaches": "Our Coaches",
+    "courses": "Courses",
+    "questionsAndAnswers": "Questions and Answers",
+    "events": "Events",
+    "aboutSchool": "About our School",
+    "profile": "Profile"
+  },
+  "CoachesPage": {
+    "title": "Coaches"
+  },
+  "CoursesPage": {
+    "title": "Courses",
+    "searchPlaceholder": "Search...",
+    "searchEmpty": "No results found",
+    "programmingLearn": "Learning Programming",
+    "p1": "At our adult programming school, LION IT-SCHOOL, we take things seriously: here you can learn programming from scratch, master an IT profession, find a favorite hobby, meet like-minded people, and, most importantly, fulfill your dream of becoming a developer.",
+    "p2": "We support creativity and freedom of thought—our coaches are ready to support the boldest ideas and help bring them to life.",
+    "p3": "You can study both offline and choose online courses—they are available in individual and group formats. Classes are held at a convenient time: usually on weekends and in the evenings—so you can combine them with work or study.",
+    "p4": "To make course selection easier, we offer various learning formats: individual and group classes both offline and online. We strive to make the learning process as flexible and convenient as possible for our students. We look forward to seeing you at LION IT-SCHOOL!"
+  },
+  "QuestionsAndAnswersPage": {
+    "title": "Questions and Answers",
+    "blockTitle1": "General Information",
+    "Block1": {
+      "q1": "What is LION IT-SCHOOL and why can we trust it?",
+      "a1": "LION IT-SCHOOL is a modern educational institution specializing in programming and information technology education. Our goal is to prepare a new generation of competitive IT professionals. To achieve this goal, we not only impart knowledge and skills but also develop taste and the ability for unconventional thinking. Our coaches are experienced practitioners in the field of IT, who closely monitor the needs of students and pay careful attention to educational processes. Before starting education, we conclude a public offer agreement and guarantee the quality of the services provided.",
+      "q2": "Who teaches at LION IT-SCHOOL and what experience do they have?",
+      "a2": "At LION IT-SCHOOL, all trainers conducting training have higher education in programming and extensive experience working in well-known companies. They are experienced software developers, application and website development specialists, as well as experts in various programming areas. Moreover, they regularly upgrade their qualifications by participating in additional educational programs and often themselves are students of courses. This not only helps them improve their skills but also allows them to gain unique experience by familiarizing themselves with the program and the learning process from the inside.",
+      "q3": "Will I get a job after your courses?",
+      "a3": "At LION IT-SCHOOL, we strive to provide our students with everything they need for successful employment after completing the courses. The possibility of employment depends on you and your readiness for study, self-improvement, and skill development.",
+      "a3-1": "We provide the following support:",
+      "a3-2": "Building training programs that take into account modern trends in programming.",
+      "a3-3": "Inviting representatives of companies and studios to defend students' final projects.",
+      "a3-4": "Helping students create a quality portfolio that will be attractive to potential employers.",
+      "a3-5": "Regularly publishing vacancies from our partners in our student chat.",
+      "a3-6": "Inviting representatives of the IT industry to lectures, including on the topic of job search in the modern world.",
+      "a3-7": "However, we also emphasize that successful employment depends on your own diligence, desire for success, and active participation in our training programs.",
+      "q4": "How can I purchase a gift certificate?",
+      "a4": "Contact sales department managers by phone or write to us on the website or in any convenient messenger."
+    },
+    "Block2": {
+      "q1": "From what age can I start studying at LION IT-SCHOOL?",
+      "a1": "The average age of a LION IT-SCHOOL student is from 17 to 30+. But there have been cases where younger students have studied with us.",
+      "q2": "Which courses are suitable for beginners?",
+      "a2": "All express courses, all Basic level courses. If you need additional consultation, write to our managers, and they will help you choose a course according to your skills.",
+      "q3": "What do I get after the course? What is the result of learning?",
+      "a3": "The result of each semester, regardless of the level, is completed projects for your portfolio. At the end of each semester, the student receives a certificate of course completion and a discount on further training at LION IT-SCHOOL on any course. Additionally, there are many additional materials for self-study.",
+      "q4": "Can I take individual lessons with a coach?",
+      "a4": "Yes, write to us, and we will arrange a schedule for you.",
+      "q5": "The online course is shorter than the offline course. Does this affect the program in any way?",
+      "a5": "You can be sure: the program of the online course is almost no different from the offline format—it is just as intense, informative, and useful."
+    },
+    "blockTitle2": "Education-related Questions"
+  },
+  "EventsPage": {
+    "title": "Events"
+  },
+  "AboutSchoolPage": {
+    "Block1": {
+      "title": "The goal of the 'Lion IT-SCHOOL' project",
+      "p1": "To create courses within the IT technology school project",
+      "p2": "Providing services for training IT specialists",
+      "p3": "Strengthening human resource capacity",
+      "p4": "Providing consulting services in the field of digitization for adults and children",
+      "p5": "Conducting trainings, seminars, workshops after which employees will more effectively use IT tools"
+    },
+    "Block2": {
+      "title": "Advantages of studying at 'Lion IT-SCHOOL'",
+      "p1": "Practical training:",
+      "p1-1": "Focus on real projects and development of skills from beginner to advanced level",
+      "p2": "Individualized approach:",
+      "p2-1": "Adaptation of the curriculum to the level and needs of each student.",
+      "p3": "Networking opportunities:",
+      "p3-1": "Ability to establish connections with professionals in the industry and potential employers.",
+      "p4": "Skills:",
+      "p4-1": "The IT school provides a unique opportunity to acquire practical skills in programming, web development, mobile development, and other IT areas supported by qualified teachers and the industry."
+    },
+    "Block3": {
+      "title": "Director of 'Lion IT-SCHOOL'",
+      "p1": "Bachelor of Science in Computer Science;",
+      "p2": "Master of Science in Computer Engineering and Software;",
+      "p3": "Areas of activity:",
+      "p3-1": "14 years of experience in scientific and pedagogical activities, author of ICT courses, network technologies, manager of Erasmus + international projects in IT, education, robotics."
+    },
+    "Block4": {
+      "title": "Our Teachers - Professionals from Different Fields",
+      "p1": "As teachers, we invite specialists who know IT inside out: business owners, managers, scientists, and university staff. These experts conduct lectures and seminars, answer students' questions, help with homework, and provide individual consultations."
+    },
+    "Block5": {
+      "title": "Course Directions",
+      "title1": "Fundamentals of Programming",
+      "p1": "Creating websites using HTML, CSS, and JavaScript.",
+      "p1-1": "Working with frameworks",
+      "title2": "Web Development",
+      "p2": "Studying the basic concepts and principles of programming.",
+      "p2-1": "Setting up development environments and mastering basic programming languages.",
+      "title3": "Mobile Development",
+      "p3": "Programming mobile applications for iOS and Android.",
+      "p3-1": "Using tools such as Swift, Kotlin, and others.",
+      "title4": "Databases and Data Analysis",
+      "p4": "Mastering working with databases, SQL.",
+      "p4-1": "Learning data analysis using Python and Data Science tools.",
+      "title5": "Network Technologies",
+      "p5": "Smart device engineer.",
+      "p5-1": "Learning algorithms and data structures.",
+      "p5-2": "Game development, artificial intelligence, or blockchain applications."
+    }
+  },
+  "Main": {
+    "coursesTitle": "Courses",
+    "coachesTitle": "Our Coaches",
+    "eventsTitle": "Announcements of Our Events",
+    "Block1": {
+      "p1": "Join our Telegram channel to discuss,",
+      "p1-1": "how to start programming from scratch, get a new profession in IT,",
+      "p1-2": "and make new friends!",
+      "btn": "We are waiting for you!"
+    },
+    "Block2": {
+      "title1": "Practice on Real Examples and Tasks",
+      "title2": "Lion IT-school: A Source of Knowledge for Creating a Technological Future",
+      "p1": "At LION IT-SCHOOL, anyone can start from scratch and master programming, get a new profession in IT, find a new hobby, make new friends, and most importantly, realize their dream and become a professional developer.",
+      "p1-1": "We value a creative approach and freedom of thought. Our mentors are ready to support the most ambitious ideas and help implement them.",
+      "p1-2": "Classes are held at a convenient time for you - usually on weekends and in the evenings, to combine them with work or study.",
+      "p1-3": "We offer various formats (online and offline) to make the learning process as flexible and convenient as possible. Join us at LION IT-SCHOOL, we are waiting for you!",
+      "p2": "Lion IT - school offers a wide range of courses in information technology, covering areas such as programming, web development, mobile development, databases, data analysis, cybersecurity, artificial intelligence, cloud technologies, and the Internet of Things. Students can expect practical training, personalized learning approach, and networking opportunities with industry professionals.",
+      "p2-1": "In addition to courses, various events are held at the IT school, such as workshops, hackathons, career days, online conferences, public lectures, participation in exhibitions and conferences, educational tournaments, partnership with IT companies, and sports and creative IT events. This dynamic educational space contributes to the development of students, their professional growth, and inspires new creative achievements in the field of information technology."
+    }
+  },
+  "EventDetailPage": {
+    "desc": "Description",
+    "date": "Event Date:",
+    "coaches": "Coaches:"
+  },
+  "CourseDetailPage": {
+      "signUp": "Sign Up",
+      "format": "Course: {format} format",
+      "duration": "Course: {timeline} weeks",
+      "goal": "Learning Goals",
+      "tasks": "Course Tasks",
+      "results": "Upon Course Completion",
+      "mustKnow": "Must Know:",
+      "mustBeAble": "Must Be Able to:",
+      "learnResults": "Learning Outcomes",
+      "formOfControl": "Form of Assessment",
+      "Block1": {
+          "title": "Student Selection Criteria",
+          "p1": "Motivational Letter",
+          "p2": "IT Fundamentals Test",
+          "p3": "English Proficiency Test",
+          "p4": "Interview"
+      },
+      "Block2": {
+          "title": "Special Conditions",
+          "p1": "Guarantee Deposit of 60000 KZT.",
+          "p2": "To receive a refund of the mandatory Guarantee Deposit, the student must fulfill the following cumulative conditions:",
+          "p3": "Signing the Contract for Training Services at 'Lion IT-school'",
+          "p4": "Successful completion of the chosen course",
+          "p5": "In case of failure to fulfill the above conditions, the guarantee deposit is not refunded",
+          "p5-1": "the fee is non-refundable"
+      },
+      "Block3": {
+          "title1": "Educational Technologies Used in Discipline Mastery",
+          "p1": "During classes, the following educational technologies are used: - interactive lecture (problem lecture, discussion lecture, conference lecture, consultation lecture, 'Press Conference' lecture, 'Question-Answer-Discussion' lecture); - project method (development and transformation of one's own experience and competence)",
+          "title2": "Adaptive Educational Technologies (Inclusive Education)",
+          "p2": "To successfully master the discipline in teaching people with disabilities, the following adaptive educational technologies can be used: - student-centered learning based on a reflective approach to learning from the teacher and students."
+      },
+      "Block4": {
+          "title": "Who This Course Is For",
+          "subTitle1": "Beginners in Programming",
+          "p1": "For beginners in programming, the course can be an excellent starting point. It provides basic knowledge and fundamental concepts necessary to start learning programming. This helps beginners understand the basic principles of coding, data structures, and algorithms, making them more confident in their abilities and helping them avoid common mistakes in the early stages of their learning.",
+          "subTitle2": "Aspiring Developers",
+          "p2": "For aspiring developers, a programming course can offer additional skills and technologies that may be crucial for their career advancement. For example, it may include training on popular frameworks or tools widely used in the industry. This helps aspiring developers expand their skill set and be more competitive in the job market.",
+          "subTitle3": "Experienced Programmers",
+          "p3": "For experienced programmers, programming courses can offer an opportunity to learn new technologies or update their existing skills. The rapidly evolving nature of the IT field requires programmers to constantly update their knowledge and skills. Participating in a course allows experienced programmers to stay abreast of the latest trends and innovations in their field, helping them remain in demand in the job market and continue to grow professionally."
+      }
+  },
+  "CoachDetailPage": {
+      "experience": "Teaching Experience:",
+      "education": "Education",
+      "awards": "Awards",
+      "disciplines": "Taught Disciplines"
+  },
+  "AuthPage": {
+      "authorization": "Authorization",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "forgotPass": "Forgot Password?",
+      "authBtn": "Log In",
+      "dontHaveAccount": "Don't have an account?",
+      "registration": "Register"
+  },
+  "RegistrationPage": {
+      "registration": "Registration",
+      "nameLabel": "Name",
+      "namePlaceholder": "Enter your name",
+      "secondNameLabel": "Surname",
+      "secondNamePlaceholder": "Enter your surname",
+      "emailPlaceholder": "Enter your email",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "confirmPassLabel": "Confirm Password",
+      "confirmPassPlaceholder": "Confirm your password",
+      "registrationBtn": "Register",
+      "haveAccount": "Already have an account?",
+      "auth": "Log In",
+      "mismatch": "Passwords do not match"
+  },
+  "LostPassPage": {
+    "recovery": "Password Recovery",
+    "emailPlaceholder": "Enter your email",
+    "resetBtn": "Reset Password",
+    "recall": "Remembered your password?",
+    "auth": "Log In"
+  },
+  "Profile": {
+      "Main": {
+          "logout": "Log Out",
+          "user": "User",
+          "reg": "Registered:"
+      },
+      "Orders": {
+          "courseName": "Course Name",
+          "date": "Order Date",
+          "status": "Status",
+          "price": "Price",
+          "fee": "Guarantee Fee"
+      },
+      "Settings": {
+          "changeSettings": "Change Settings",
+          "nameLabel": "Name",
+          "namePlaceholder": "Name",
+          "secondNameLabel": "Surname",
+          "secondNamePlaceholder": "Surname",
+          "usernameLabel": "Username",
+          "usernamePlaceholder": "Username",
+          "saveChanges": "Save Settings",
+          "passwordChange": "Change Password",
+          "newPasswordLabel": "New Password",
+          "newPasswordPlaceholder": "New Password",
+          "repeatNewPasswordLabel": "Repeat New Password",
+          "repeatNewPasswordPlaceholder": "Repeat New Password",
+          "savePassword": "Save Password"
+      },
+      "myData": "My Data",
+      "orders": "Orders",
+      "settings": "Settings"
+  }
+
+}
+
+

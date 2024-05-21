@@ -5,30 +5,34 @@ import { Container, Header } from "@/UI/SUI";
 import ImageBlock from "./components/imageBlock";
 import LearningPath from "./components/learningPath";
 import ContactForm from "./components/contactForm";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Intensives() {
+    const t = useTranslations();
+    const locale = useLocale();
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: "Главная",
+            content: t('Breadcrumb.main'),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "intensives",
-            content: "Летние интенсивы",
+            content: t('Breadcrumb.intensives'),
             isLink: true,
             isActive: true,
-            url: "/intensives",
+            url: `/${locale}/intensives`,
         },
     ];
+
     return (
         <Layout>
             <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Header as="h1" style={{ marginBottom: "30px" }}>
-                    Летние интенсивы
+                    {t('IntensivesPage.title')}
                 </Header>
                 <ImageBlock />
                 <LearningPath />

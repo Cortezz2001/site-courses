@@ -1,6 +1,9 @@
 import { Events } from "@/screens/events/page";
+import { LANGUAGES } from "@/service/consts";
 import { EventsService } from "@/service/eventsService/service";
+import { IEventCardInfo } from "@/service/eventsService/types";
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import "semantic-ui-css/semantic.min.css";
 
 export const metadata: Metadata = {
@@ -17,6 +20,11 @@ export const metadata: Metadata = {
     ],
 };
 export default async function Home() {
-    const events_ = await EventsService.getEvents();
+    const cookieStore = cookies();
+    const languageCookie = cookieStore.get("NEXT_LOCALE");
+    const language: LANGUAGES = languageCookie
+        ? (languageCookie.value as LANGUAGES)
+        : LANGUAGES.RU;
+    const events_: IEventCardInfo[] = await EventsService.getEvents(language);
     return <Events eventsInfo={events_} />;
 }

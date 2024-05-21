@@ -1,5 +1,12 @@
-module.exports = {
+const createNextIntlPlugin = require('next-intl/plugin');
+ 
+const withNextIntl = createNextIntlPlugin();
+ 
+/** @type {import('next').NextConfig} */
+const nextConfig = {
     images: {
-      domains: ['ik.imagekit.io'], // Replace with your domain
-    },
-  };
+        domains: ['ik.imagekit.io'],
+      },
+};
+ 
+module.exports = withNextIntl(nextConfig);

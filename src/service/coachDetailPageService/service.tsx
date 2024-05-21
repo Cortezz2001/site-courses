@@ -1,13 +1,16 @@
-import { API_URL, URLS } from "../consts";
+import { API_URL, LANGUAGES, URLS } from "../consts";
 import { ICoachDetailPageInfo } from "./types";
 
 export const CoachDetailPageService = {
-    async getCoaches(): Promise<Array<ICoachDetailPageInfo>> {
-        //await new Promise((resolve) => setTimeout(resolve, 15000));
-        const res = await fetch(API_URL + URLS.getCoaches);
-        if (res.status !== 200) {
+    async getCoaches(id: number, language: LANGUAGES): Promise<ICoachDetailPageInfo> {
+        const res = await fetch(`${API_URL + URLS.getCoaches}${id}`, {
+            headers: {
+                'Accept-Language': language
+            }
+        });
+        if (!res.ok) {
             throw new Error("Failed to fetch data");
         }
-        return res.json() as Promise<Array<ICoachDetailPageInfo>>;
+        return res.json() as Promise<ICoachDetailPageInfo>;
     },
 };
