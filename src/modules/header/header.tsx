@@ -59,6 +59,8 @@ const Header: React.FC = () => {
                 position: "sticky",
                 top: "0",
                 zIndex: "1000",
+                marginRight: "-1rem !important",
+                marginLeft: "0 !important",
             }}
         >
             <Menu
@@ -73,24 +75,50 @@ const Header: React.FC = () => {
             >
                 <Container className={style.header_content_wrapper}>
                     <MenuItem
-                        position="left"
                         name="logo"
                         style={{
                             paddingLeft: "0px",
+                            paddingRight: "0px",
                             paddingTop: "10px",
                             paddingBottom: "10px",
+                            marginRight: "auto",
                         }}
                     >
-                        <Link href="/">
-                            <Image
-                                src="/logo_with_title.png"
-                                size="small"
-                                alt=""
+                        <Link className={style.page_header_logo_image} href="/">
+                            <picture>
+                                <source
+                                    media="(max-width: 767px)"
+                                    srcSet="/logo.png"
+                                />
+                                <Image
+                                    src="/logo_with_title.png"
+                                    size="small"
+                                    alt="Lion-IT School"
+                                />
+                            </picture>
+                        </Link>
+                    </MenuItem>
+                    <MenuItem className={style.page_header_support_mobile}>
+                        <Link
+                            href="tel:+77051400124"
+                            className={style.page_header_support}
+                        >
+                            <Button
+                                icon="phone"
+                                className={style.page_header_support_button}
                             />
                         </Link>
                     </MenuItem>
-                    <MenuItem position="right">+77051400124</MenuItem>
-                    <MenuItem style={{ paddingRight: "10px" }}>
+                    <MenuItem
+                        position="right"
+                        className={style.page_header_support_desktop}
+                    >
+                        <Link href="tel:+77051400124">+77051400124</Link>
+                    </MenuItem>
+                    <MenuItem
+                        style={{ paddingRight: "10px" }}
+                        className={style.page_header_locale}
+                    >
                         <Dropdown
                             style={{
                                 border: "1px solid #ccc",
@@ -106,7 +134,10 @@ const Header: React.FC = () => {
                             onChange={handleLanguageChange}
                         />
                     </MenuItem>
-                    <MenuItem style={{ paddingLeft: "10px" }}>
+                    <MenuItem
+                        style={{ paddingLeft: "10px" }}
+                        className={style.page_header_currency}
+                    >
                         <Dropdown
                             style={{
                                 border: "1px solid #ccc",
