@@ -2,24 +2,41 @@ import { CourseDetailsPage } from "@/screens/coursePage/page";
 import { LANGUAGES } from "@/service/consts";
 import { CourseDetailPageService } from "@/service/courseDetailPageService/service";
 import { ICourseDetailPageInfo } from "@/service/courseDetailPageService/types";
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 import { cookies } from "next/headers";
 import "semantic-ui-css/semantic.min.css";
 
-export const metadata: Metadata = {
-    title: "",
-    description: "",
-    keywords: [],
+type Props = {
+  params: { id: number }
 };
 
-export default async function Home({ params }: { params: { id: number } }) {
-    const cookieStore = cookies()
-    const languageCookie = cookieStore.get("NEXT_LOCALE");
-    const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;
-    const courseInfo:ICourseDetailPageInfo = await CourseDetailPageService.getCourses(params.id, language);
-    metadata.title = courseInfo.title;
-    metadata.description = courseInfo.desc;
-    metadata.keywords = [courseInfo.title, courseInfo.format];
+export default async function Home({ params }: Props) {
+  const cookieStore = cookies();
+  const languageCookie = cookieStore.get("NEXT_LOCALE");
+  const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;
+  const courseInfo: ICourseDetailPageInfo = await CourseDetailPageService.getCourses(params.id, language);
 
-    return <CourseDetailsPage courseInfo={courseInfo} />;
+  return <CourseDetailsPage courseInfo={courseInfo} />;
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const cookieStore = cookies();
+  const languageCookie = cookieStore.get("NEXT_LOCALE");
+  const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;
+  const courseInfo: ICourseDetailPageInfo = await CourseDetailPageService.getCourses(params.id, language);
+
+  return {
+    title: courseInfo.title,
+    description: courseInfo.desc,
+    openGraph: {
+      title: courseInfo.title,
+      description: courseInfo.desc,
+      type: 'article',
+      url: ``,
+      images: courseInfo.format ? [courseInfo.format] : [],
+    },
+  };
 }
