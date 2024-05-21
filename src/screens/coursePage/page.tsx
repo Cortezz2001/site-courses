@@ -26,7 +26,7 @@ interface ICourseDetailPageProps {
     courseInfo: ICourseDetailPageInfo;
 }
 
-export async function CourseDetailsPage({
+export function CourseDetailsPage({
     courseInfo,
 }: ICourseDetailPageProps) {
     const t = useTranslations();

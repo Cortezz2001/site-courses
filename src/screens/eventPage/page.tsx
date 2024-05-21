@@ -23,7 +23,7 @@ interface IEventDetailPageProps {
     eventInfo: IEventDetailPageInfo;
 }
 
-export async function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
+export function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
     const t = useTranslations();
     const locale = useLocale();
     const BreadcrumbProps: Array<IBreadCrumb> = [

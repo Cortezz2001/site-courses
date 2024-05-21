@@ -26,7 +26,7 @@ interface ICoachDetailPageProps {
     coachInfo: ICoachDetailPageInfo;
 }
 
-export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
+export function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
     const t = useTranslations();
     const locale = useLocale();
     const BreadcrumbProps: Array<IBreadCrumb> = [
