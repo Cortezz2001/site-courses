@@ -1,13 +1,4 @@
-import {
-    Container,
-    Header,
-    Grid,
-    Image,
-    GridRow,
-    GridColumn,
-    Icon,
-    Divider,
-} from "@/UI/SUI";
+import { Header, Grid, GridRow, GridColumn, Icon } from "@/UI/SUI";
 
 const DirectionsBlock: React.FC = () => {
     return (
@@ -40,8 +31,8 @@ const DirectionsBlock: React.FC = () => {
                     </Header>
                 </GridRow>
                 <GridRow centered>
-                    <GridColumn verticalAlign="middle">
-                        <Header as="h3" textAlign="center">
+                    <GridColumn textAlign="center">
+                        <Header as="h3">
                             <Icon name="laptop" style={{ color: "#007397" }} />
                             Основы программирования
                         </Header>
@@ -51,8 +42,8 @@ const DirectionsBlock: React.FC = () => {
                         </p>
                         <p>Работа с фреймворками</p>
                     </GridColumn>
-                    <GridColumn verticalAlign="middle">
-                        <Header as="h3" textAlign="center">
+                    <GridColumn textAlign="center">
+                        <Header as="h3">
                             <Icon
                                 name="code branch"
                                 style={{ color: "#007397" }}
@@ -68,8 +59,8 @@ const DirectionsBlock: React.FC = () => {
                             языков программирования.
                         </p>
                     </GridColumn>
-                    <GridColumn verticalAlign="middle">
-                        <Header as="h3" textAlign="center">
+                    <GridColumn textAlign="center">
+                        <Header as="h3">
                             <Icon
                                 name="mobile alternate"
                                 style={{ color: "#007397" }}
@@ -87,8 +78,8 @@ const DirectionsBlock: React.FC = () => {
                     </GridColumn>
                 </GridRow>
                 <GridRow centered style={{ marginTop: "10px" }}>
-                    <GridColumn verticalAlign="middle">
-                        <Header as="h3" textAlign="center">
+                    <GridColumn textAlign="center">
+                        <Header as="h3">
                             <Icon
                                 name="database"
                                 style={{ color: "#007397" }}
@@ -101,8 +92,8 @@ const DirectionsBlock: React.FC = () => {
                             инструментов Data Science.
                         </p>
                     </GridColumn>
-                    <GridColumn verticalAlign="middle">
-                        <Header as="h3" textAlign="center">
+                    <GridColumn textAlign="center">
+                        <Header as="h3">
                             <Icon name="wifi" style={{ color: "#007397" }} />
                             Сетевые технологии
                         </Header>

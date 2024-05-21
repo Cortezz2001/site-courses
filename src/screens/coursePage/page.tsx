@@ -81,14 +81,7 @@ export async function CourseDetailsPage({
                                 {courseInfo.desc}
                             </p>
                         </GridColumn>
-                        <GridColumn
-                            width={6}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                height: "100%",
-                            }}
-                        >
+                        <GridColumn width={6}>
                             <Card
                                 header={`${courseInfo.price} тг.`}
                                 meta={`Курс: ${courseInfo.format} обучение`}
@@ -440,8 +433,8 @@ export async function CourseDetailsPage({
 
                     <Grid columns={3} stackable>
                         <GridRow centered>
-                            <GridColumn verticalAlign="middle">
-                                <Header as="h3" textAlign="center">
+                            <GridColumn textAlign="center">
+                                <Header as="h3">
                                     <Icon
                                         name="lightbulb outline"
                                         style={{ color: "#007397" }}
@@ -462,8 +455,8 @@ export async function CourseDetailsPage({
                                     своего обучения.
                                 </p>
                             </GridColumn>
-                            <GridColumn verticalAlign="middle">
-                                <Header as="h3" textAlign="center">
+                            <GridColumn textAlign="center">
+                                <Header as="h3">
                                     <Icon
                                         name="rocket"
                                         style={{ color: "#007397" }}
@@ -484,8 +477,8 @@ export async function CourseDetailsPage({
                                     труда.
                                 </p>
                             </GridColumn>
-                            <GridColumn verticalAlign="middle">
-                                <Header as="h3" textAlign="center">
+                            <GridColumn textAlign="center">
+                                <Header as="h3">
                                     <Icon
                                         name="code"
                                         style={{ color: "#007397" }}
