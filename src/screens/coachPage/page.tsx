@@ -3,7 +3,6 @@ import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
 import { ICoachDetailPageInfo } from "@/service/coachDetailPageService/types";
 import {
-    Container,
     Grid,
     GridColumn,
     GridRow,
@@ -16,7 +15,6 @@ import {
     ListDescription,
     ListHeader,
     ListItem,
-    Segment,
 } from "@/UI/SUI";
 
 import style from "./style.module.css";
@@ -53,91 +51,60 @@ export async function CoachDetailsPage({ coachInfo }: ICoachDetailPageProps) {
         <Layout>
             <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
-                <Grid columns={2} divided style={{ marginTop: "14px" }}>
-                    <GridRow
-                        style={{ width: "auto !important", paddingTop: "0" }}
-                    >
+                <Grid columns={2} divided className={style.coach_profile}>
+                    <GridRow className={style.coach_info_container}>
                         <GridColumn
                             width={5}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                            }}
+                            className={style.coach_image_container}
                         >
-                            <Segment
-                                style={{
-                                    padding: "0",
-                                    marginTop: "30px",
-                                }}
-                            >
-                                <Label
-                                    className={style.ribbon}
-                                    ribbon
-                                    style={{
-                                        position: "absolute",
-                                        zIndex: "1",
-                                        top: "-15px",
-                                        left: "-15px",
-                                        color: "white",
-                                    }}
-                                >
-                                    {coachInfo.role}
-                                </Label>
-                                <Image
-                                    rounded
-                                    alt={coachInfo.name}
-                                    src={coachInfo.img}
-                                    style={{
-                                        width: "400px",
-                                        height: "600px",
-                                        objectFit: "cover",
-                                        filter: "drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px)",
-                                    }}
-                                />
-                            </Segment>
+                            <Label className={style.ribbon} ribbon>
+                                {coachInfo.role}
+                            </Label>
+                            <Image
+                                rounded
+                                alt={coachInfo.name}
+                                src={coachInfo.img}
+                                className={style.coach_image}
+                            />
                         </GridColumn>
-                        <GridColumn
-                            verticalAlign="middle"
-                            width={11}
-                            style={{ paddingLeft: "30px" }}
-                        >
-                            <Container
-                                style={{
-                                    paddingRight: "30px",
-                                }}
-                            >
-                                <Header as="h2">{coachInfo.name}</Header>
-                                <p style={{ fontSize: "large" }}>
-                                    {coachInfo.role} «Lion IT-SCHOOL»
-                                </p>
-                                <List>
-                                    <ListItem>
-                                        <Icon name="info circle" />
-                                        <ListContent>
-                                            <ListHeader>
-                                                Преподавательский стаж:
-                                            </ListHeader>
-                                            <ListDescription>
-                                                {coachInfo.exp}
-                                            </ListDescription>
-                                        </ListContent>
-                                    </ListItem>
-                                </List>
-                                <Header
-                                    as="h3"
-                                    style={{ marginBottom: "15px" }}
-                                >
-                                    Образование
-                                </Header>
-                                <p>{coachInfo.education}</p>
-                                <Header
-                                    as="h3"
-                                    style={{ marginBottom: "15px" }}
-                                >
-                                    Награды
-                                </Header>
-                                <p>{coachInfo.desc}</p>
-                            </Container>
+                        <GridColumn className={style.coach_summary}>
+                            <Header as="h2">{coachInfo.name}</Header>
+                            <p style={{ fontSize: "large" }}>
+                                {coachInfo.role} «Lion IT-SCHOOL»
+                            </p>
+                            <List>
+                                <ListItem>
+                                    <Icon name="info circle" />
+                                    <ListContent>
+                                        <ListHeader>
+                                            Преподавательский стаж:
+                                        </ListHeader>
+                                        <ListDescription>
+                                            {coachInfo.exp}
+                                        </ListDescription>
+                                    </ListContent>
+                                </ListItem>
+                            </List>
+                            <div className={style.coach_skills}>
+                                <div className={style.coach_skill_education}>
+                                    <Header
+                                        as="h3"
+                                        style={{ marginBottom: "15px" }}
+                                    >
+                                        Образование
+                                    </Header>
+                                    <p>{coachInfo.education}</p>
+                                </div>
+                                <div className={style.coach_skill_awards}>
+                                    <Header
+                                        as="h3"
+                                        style={{ marginBottom: "15px" }}
+                                    >
+                                        Награды
+                                    </Header>
+                                    <p>{coachInfo.desc}</p>
+                                </div>
+                            </div>
                         </GridColumn>
                     </GridRow>
                 </Grid>
