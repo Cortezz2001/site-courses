@@ -1,7 +1,11 @@
 import AboutSchool from "@/screens/about-school/page";
 import { Metadata } from "next";
+import { unstable_setRequestLocale } from "next-intl/server";
 import "semantic-ui-css/semantic.min.css";
-
+type Props = {
+    params: {locale: string};
+  };
+  
 export const metadata: Metadata = {
     title: "О нашей школе - Lion IT School",
     description:
@@ -17,6 +21,7 @@ export const metadata: Metadata = {
         "обучение",
     ],
 };
-export default function Home() {
+export default function Home({params: {locale}}: Props) {
+    unstable_setRequestLocale(locale);
     return <AboutSchool />;
 }

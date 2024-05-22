@@ -8,6 +8,7 @@ import { ICourseCardInfo } from "@/service/coursesService/types";
 import { EventsService } from "@/service/eventsService/service";
 import { IEventCardInfo } from "@/service/eventsService/types";
 import { Metadata } from "next";
+import { unstable_setRequestLocale } from "next-intl/server";
 import { cookies } from "next/headers";
 import "semantic-ui-css/semantic.min.css";
 
@@ -24,7 +25,13 @@ export const metadata: Metadata = {
         "IT",
     ],
 };
-export default async function Home() {
+
+type Props = {
+    params: {locale: string};
+  };
+  
+export default async function Home({params: {locale}}: Props) {
+    unstable_setRequestLocale(locale);
     const cookieStore = cookies()
     const languageCookie = cookieStore.get("NEXT_LOCALE");
     const language: LANGUAGES = languageCookie ? languageCookie.value as LANGUAGES : LANGUAGES.RU;

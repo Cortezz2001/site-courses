@@ -202,79 +202,79 @@
     "coaches": "Coaches:"
   },
   "CourseDetailPage": {
-      "signUp": "Sign Up",
-      "format": "Course: {format} format",
-      "duration": "Course: {timeline} weeks",
-      "goal": "Learning Goals",
-      "tasks": "Course Tasks",
-      "results": "Upon Course Completion",
-      "mustKnow": "Must Know:",
-      "mustBeAble": "Must Be Able to:",
-      "learnResults": "Learning Outcomes",
-      "formOfControl": "Form of Assessment",
-      "Block1": {
-          "title": "Student Selection Criteria",
-          "p1": "Motivational Letter",
-          "p2": "IT Fundamentals Test",
-          "p3": "English Proficiency Test",
-          "p4": "Interview"
-      },
-      "Block2": {
-          "title": "Special Conditions",
-          "p1": "Guarantee Deposit of 60000 KZT.",
-          "p2": "To receive a refund of the mandatory Guarantee Deposit, the student must fulfill the following cumulative conditions:",
-          "p3": "Signing the Contract for Training Services at 'Lion IT-school'",
-          "p4": "Successful completion of the chosen course",
-          "p5": "In case of failure to fulfill the above conditions, the guarantee deposit is not refunded",
-          "p5-1": "the fee is non-refundable"
-      },
-      "Block3": {
-          "title1": "Educational Technologies Used in Discipline Mastery",
-          "p1": "During classes, the following educational technologies are used: - interactive lecture (problem lecture, discussion lecture, conference lecture, consultation lecture, 'Press Conference' lecture, 'Question-Answer-Discussion' lecture); - project method (development and transformation of one's own experience and competence)",
-          "title2": "Adaptive Educational Technologies (Inclusive Education)",
-          "p2": "To successfully master the discipline in teaching people with disabilities, the following adaptive educational technologies can be used: - student-centered learning based on a reflective approach to learning from the teacher and students."
-      },
-      "Block4": {
-          "title": "Who This Course Is For",
-          "subTitle1": "Beginners in Programming",
-          "p1": "For beginners in programming, the course can be an excellent starting point. It provides basic knowledge and fundamental concepts necessary to start learning programming. This helps beginners understand the basic principles of coding, data structures, and algorithms, making them more confident in their abilities and helping them avoid common mistakes in the early stages of their learning.",
-          "subTitle2": "Aspiring Developers",
-          "p2": "For aspiring developers, a programming course can offer additional skills and technologies that may be crucial for their career advancement. For example, it may include training on popular frameworks or tools widely used in the industry. This helps aspiring developers expand their skill set and be more competitive in the job market.",
-          "subTitle3": "Experienced Programmers",
-          "p3": "For experienced programmers, programming courses can offer an opportunity to learn new technologies or update their existing skills. The rapidly evolving nature of the IT field requires programmers to constantly update their knowledge and skills. Participating in a course allows experienced programmers to stay abreast of the latest trends and innovations in their field, helping them remain in demand in the job market and continue to grow professionally."
-      }
+    "signUp": "Sign Up",
+    "format": "Course: {format} format",
+    "duration": "Course: {timeline} weeks",
+    "goal": "Learning Goals",
+    "tasks": "Course Tasks",
+    "results": "Upon Course Completion",
+    "mustKnow": "Must Know:",
+    "mustBeAble": "Must Be Able to:",
+    "learnResults": "Learning Outcomes",
+    "formOfControl": "Form of Assessment",
+    "Block1": {
+      "title": "Student Selection Criteria",
+      "p1": "Motivational Letter",
+      "p2": "IT Fundamentals Test",
+      "p3": "English Proficiency Test",
+      "p4": "Interview"
+    },
+    "Block2": {
+      "title": "Special Conditions",
+      "p1": "Guarantee Deposit of 60000 KZT.",
+      "p2": "To receive a refund of the mandatory Guarantee Deposit, the student must fulfill the following cumulative conditions:",
+      "p3": "Signing the Contract for Training Services at 'Lion IT-school'",
+      "p4": "Successful completion of the chosen course",
+      "p5": "In case of failure to fulfill the above conditions, the guarantee deposit is not refunded",
+      "p5-1": "the fee is non-refundable"
+    },
+    "Block3": {
+      "title1": "Educational Technologies Used in Discipline Mastery",
+      "p1": "During classes, the following educational technologies are used: - interactive lecture (problem lecture, discussion lecture, conference lecture, consultation lecture, 'Press Conference' lecture, 'Question-Answer-Discussion' lecture); - project method (development and transformation of one's own experience and competence)",
+      "title2": "Adaptive Educational Technologies (Inclusive Education)",
+      "p2": "To successfully master the discipline in teaching people with disabilities, the following adaptive educational technologies can be used: - student-centered learning based on a reflective approach to learning from the teacher and students."
+    },
+    "Block4": {
+      "title": "Who This Course Is For",
+      "subTitle1": "Beginners in Programming",
+      "p1": "For beginners in programming, the course can be an excellent starting point. It provides basic knowledge and fundamental concepts necessary to start learning programming. This helps beginners understand the basic principles of coding, data structures, and algorithms, making them more confident in their abilities and helping them avoid common mistakes in the early stages of their learning.",
+      "subTitle2": "Aspiring Developers",
+      "p2": "For aspiring developers, a programming course can offer additional skills and technologies that may be crucial for their career advancement. For example, it may include training on popular frameworks or tools widely used in the industry. This helps aspiring developers expand their skill set and be more competitive in the job market.",
+      "subTitle3": "Experienced Programmers",
+      "p3": "For experienced programmers, programming courses can offer an opportunity to learn new technologies or update their existing skills. The rapidly evolving nature of the IT field requires programmers to constantly update their knowledge and skills. Participating in a course allows experienced programmers to stay abreast of the latest trends and innovations in their field, helping them remain in demand in the job market and continue to grow professionally."
+    }
   },
   "CoachDetailPage": {
-      "experience": "Teaching Experience:",
-      "education": "Education",
-      "awards": "Awards",
-      "disciplines": "Taught Disciplines"
+    "experience": "Teaching Experience:",
+    "education": "Education",
+    "awards": "Awards",
+    "disciplines": "Taught Disciplines"
   },
   "AuthPage": {
-      "authorization": "Authorization",
-      "emailPlaceholder": "Enter your email",
-      "password": "Password",
-      "passwordPlaceholder": "Enter your password",
-      "forgotPass": "Forgot Password?",
-      "authBtn": "Log In",
-      "dontHaveAccount": "Don't have an account?",
-      "registration": "Register"
+    "authorization": "Authorization",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPass": "Forgot Password?",
+    "authBtn": "Log In",
+    "dontHaveAccount": "Don't have an account?",
+    "registration": "Register"
   },
   "RegistrationPage": {
-      "registration": "Registration",
-      "nameLabel": "Name",
-      "namePlaceholder": "Enter your name",
-      "secondNameLabel": "Surname",
-      "secondNamePlaceholder": "Enter your surname",
-      "emailPlaceholder": "Enter your email",
-      "passwordLabel": "Password",
-      "passwordPlaceholder": "Enter your password",
-      "confirmPassLabel": "Confirm Password",
-      "confirmPassPlaceholder": "Confirm your password",
-      "registrationBtn": "Register",
-      "haveAccount": "Already have an account?",
-      "auth": "Log In",
-      "mismatch": "Passwords do not match"
+    "registration": "Registration",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "secondNameLabel": "Surname",
+    "secondNamePlaceholder": "Enter your surname",
+    "emailPlaceholder": "Enter your email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassLabel": "Confirm Password",
+    "confirmPassPlaceholder": "Confirm your password",
+    "registrationBtn": "Register",
+    "haveAccount": "Already have an account?",
+    "auth": "Log In",
+    "mismatch": "Passwords do not match"
   },
   "LostPassPage": {
     "recovery": "Password Recovery",
@@ -284,39 +284,40 @@
     "auth": "Log In"
   },
   "Profile": {
-      "Main": {
-          "logout": "Log Out",
-          "user": "User",
-          "reg": "Registered:"
-      },
-      "Orders": {
-          "courseName": "Course Name",
-          "date": "Order Date",
-          "status": "Status",
-          "price": "Price",
-          "fee": "Guarantee Fee"
-      },
-      "Settings": {
-          "changeSettings": "Change Settings",
-          "nameLabel": "Name",
-          "namePlaceholder": "Name",
-          "secondNameLabel": "Surname",
-          "secondNamePlaceholder": "Surname",
-          "usernameLabel": "Username",
-          "usernamePlaceholder": "Username",
-          "saveChanges": "Save Settings",
-          "passwordChange": "Change Password",
-          "newPasswordLabel": "New Password",
-          "newPasswordPlaceholder": "New Password",
-          "repeatNewPasswordLabel": "Repeat New Password",
-          "repeatNewPasswordPlaceholder": "Repeat New Password",
-          "savePassword": "Save Password"
-      },
-      "myData": "My Data",
-      "orders": "Orders",
-      "settings": "Settings"
+    "Main": {
+      "logout": "Log Out",
+      "user": "User",
+      "reg": "Registered:"
+    },
+    "Orders": {
+      "courseName": "Course Name",
+      "date": "Order Date",
+      "status": "Status",
+      "price": "Price",
+      "fee": "Guarantee Fee"
+    },
+    "Settings": {
+      "changeSettings": "Change Settings",
+      "nameLabel": "Name",
+      "namePlaceholder": "Name",
+      "secondNameLabel": "Surname",
+      "secondNamePlaceholder": "Surname",
+      "usernameLabel": "Username",
+      "usernamePlaceholder": "Username",
+      "saveChanges": "Save Settings",
+      "passwordChange": "Change Password",
+      "newPasswordLabel": "New Password",
+      "newPasswordPlaceholder": "New Password",
+      "repeatNewPasswordLabel": "Repeat New Password",
+      "repeatNewPasswordPlaceholder": "Repeat New Password",
+      "savePassword": "Save Password"
+    },
+    "myData": "My Data",
+    "orders": "Orders",
+    "settings": "Settings"
+  },
+  "layoutTitle": "Layout",
+  "NotFoundPage": {
+    "description": "Error"
   }
-
 }
-
-
