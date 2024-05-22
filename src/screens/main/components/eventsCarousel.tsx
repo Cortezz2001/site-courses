@@ -10,6 +10,8 @@ import "swiper/css/pagination";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 
+import style from "../style.module.css";
+
 export const EventsCarousel: React.FC<IEventCardInfoGroup> = ({
     eventsInfo,
 }) => {
@@ -17,19 +19,23 @@ export const EventsCarousel: React.FC<IEventCardInfoGroup> = ({
     return (
         <>
             <Swiper
-                style={{
-                    paddingTop: "20px",
-                    paddingLeft: "5px",
-                    paddingBottom: "20px",
-                    marginLeft: "-5px",
-                    marginRight: "-5px",
-                }}
+                className={style.events_carousel}
                 spaceBetween={20}
-                slidesPerView={4}
                 modules={[Navigation]}
                 navigation={{
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
+                }}
+                breakpoints={{
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                    900: {
+                        slidesPerView: 3,
+                    },
+                    700: {
+                        slidesPerView: 2,
+                    },
                 }}
             >
                 {eventsInfo.map((event) => (
@@ -50,14 +56,14 @@ export const EventsCarousel: React.FC<IEventCardInfoGroup> = ({
                     className="swiper-button-prev"
                     style={{
                         color: "white",
-                        filter: "drop-shadow(0px 0px 5px 2px #007397)",
+                        left: "1.5em",
                     }}
                 ></div>
                 <div
                     className="swiper-button-next"
                     style={{
                         color: "white",
-                        filter: "drop-shadow(0px 0px 5px 2px #007397)",
+                        right: "1.5em",
                     }}
                 ></div>
                 <div className="swiper-pagination"></div>

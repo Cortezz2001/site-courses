@@ -1,0 +1,13 @@
+.event_date_title::after {
+    content: " мероприятия:";
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .event_date_title::after {
+        content: ":";
+    }
+
+    .event_schedule {
+        font-size: 16px;
+    }
+}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Form, FormField, Input, Button, FormCheckbox } from "@/UI/SUI";
 import MessageModal from "./modal";
 import { useTranslations } from "next-intl";
+import style from "../../style.module.css";
 
 const MessageForm: React.FC = () => {
     const [email, setEmail] = useState("");
@@ -15,11 +16,9 @@ const MessageForm: React.FC = () => {
         e.preventDefault();
         try {
             if (!email) {
-                setErrorMessage(t('emailError'));
+                setErrorMessage(t("emailError"));
             } else if (!isChecked) {
-                setErrorMessage(
-                    t('checkboxError')
-                );
+                setErrorMessage(t("checkboxError"));
             } else {
                 await MessagesService.sendMessage({ email });
                 console.log("Сообщение отправлено");
@@ -30,15 +29,13 @@ const MessageForm: React.FC = () => {
             }
         } catch (error) {
             console.error("Ошибка отправки", error);
-            setErrorMessage(t('error'));
+            setErrorMessage(t("error"));
         }
     };
 
     return (
         <>
-            <p style={{ color: "white" }}>
-                {t('formTitle')}
-            </p>
+            <p className={style.footer_form_heading}>{t("formTitle")}</p>
             <Form
                 inverted
                 style={{ width: "fit-content" }}
@@ -55,10 +52,10 @@ const MessageForm: React.FC = () => {
                     }
                 />
                 <Button fluid inverted type="submit">
-                    {t('send')}
+                    {t("send")}
                 </Button>
                 <FormCheckbox
-                    label={t('checkbox')}
+                    label={t("checkbox")}
                     style={{ marginTop: "10px", fontSize: "12px" }}
                     checked={isChecked}
                     onChange={(e, data) => setIsChecked(data.checked || false)}

@@ -12,15 +12,7 @@ export const Layout: React.FC<ILayoutProps> = ({ children }) => {
     return (
         <div className={style.container}>
             <Header />
-            <Container
-                style={{
-                    paddingTop: "50px",
-                    paddingBottom: "50px",
-                    width: "1330px",
-                }}
-            >
-                {children}
-            </Container>
+            <Container className={style.content_wrapper}>{children}</Container>
             <Footer />
         </div>
     );

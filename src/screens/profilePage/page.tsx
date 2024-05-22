@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
 import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
-import { TabPane, Tab, MenuItem, Label, Icon } from "@/UI/SUI";
+import { TabPane, Tab, MenuItem, Icon } from "@/UI/SUI";
 import ProfilePane from "./components/profilePane";
 import OrdersPane from "./components/ordersPane";
 import SettingsPane from "./components/settingsPane";
@@ -36,6 +36,7 @@ export const Profile = () => {
     ];
 
     const [tabContent, setTabContent] = useState<TabContent[]>([]);
+    const [isVertical, setIsVertical] = useState(true);
 
     useEffect(() => {
         setTabContent([
@@ -48,6 +49,7 @@ export const Profile = () => {
                             alignItems: "center",
                             justifyContent: "start",
                             gap: "1em",
+                            flexShrink: "2",
                         }}
                     >
                         <Icon
@@ -96,6 +98,7 @@ export const Profile = () => {
                             alignItems: "center",
                             justifyContent: "start",
                             gap: "1em",
+                            flexGrow: "1",
                         }}
                     >
                         <Icon
@@ -114,12 +117,29 @@ export const Profile = () => {
         ]);
     }, []);
 
+    useEffect(() => {
+        const handleResize = (): void => {
+            if (window.innerWidth < 767) {
+                setIsVertical(false);
+            } else {
+                setIsVertical(true);
+            }
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <Layout>
             <>
                 <BreadcrumbComponent sections={BreadcrumbProps} />
                 <Tab
-                    menu={{ fluid: true, vertical: true }}
+                    menu={{ fluid: true, vertical: isVertical }}
                     menuPosition="left"
                     panes={tabContent}
                     style={{ marginTop: "30px" }}

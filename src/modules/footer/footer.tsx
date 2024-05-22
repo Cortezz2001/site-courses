@@ -15,18 +15,16 @@ import {
 import MessageForm from "./components/emailForm/form";
 import React from "react";
 import { useLocale, useTranslations } from "next-intl";
+import style from "./style.module.css";
 export default function Footer() {
     const locale = useLocale();
     const t = useTranslations("Footer");
     return (
         <Container name="footer" fluid>
-            <Segment
-                vertical
-                style={{ padding: "5em 0", backgroundColor: "#007397" }}
-            >
-                <Container style={{ width: "1330px", margin: "auto" }}>
+            <Segment vertical className={style.footer_container}>
+                <Container className={style.footer_content_wrapper}>
                     <Grid divided inverted stackable>
-                        <GridRow>
+                        <GridRow className={style.footer_top}>
                             <GridColumn width={4} textAlign="center">
                                 <Link href="/">
                                     <Image
@@ -97,12 +95,49 @@ export default function Footer() {
                                         color: "white",
                                     }}
                                 >
-                                    {t('address')}
+                                    {t("address")}
                                 </p>
                             </GridColumn>
                             <GridColumn
                                 width={4}
+                                className={style.footer_nav_mobile}
+                            >
+                                <List
+                                    link
+                                    inverted
+                                    style={{ textAlign: "center" }}
+                                >
+                                    <ListItem>
+                                        <Link href={"/about-school"}>
+                                            О НАШЕЙ ШКОЛЕ
+                                        </Link>
+                                    </ListItem>
+
+                                    <ListItem>
+                                        <Link href={"/events"}>АНОНСЫ</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/help"}>
+                                            ВОПРОСЫ И ОТВЕТЫ
+                                        </Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/courses"}>КУРСЫ</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/coaches"}>ТРЕНЕРЫ</Link>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Link href={"/intensives"}>
+                                            ИНТЕНСИВЫ
+                                        </Link>
+                                    </ListItem>
+                                </List>
+                            </GridColumn>
+                            <GridColumn
+                                width={4}
                                 style={{ paddingLeft: "20px" }}
+                                className={style.footer_nav_desktop}
                             >
                                 <List
                                     link
@@ -111,16 +146,18 @@ export default function Footer() {
                                 >
                                     <ListItem>
                                         <Link href={`/${locale}//about-school`}>
-                                            {t('aboutOurSchool')}
+                                            {t("aboutOurSchool")}
                                         </Link>
                                     </ListItem>
 
                                     <ListItem>
-                                        <Link href={`/${locale}/events`}>{t('events')}</Link>
+                                        <Link href={`/${locale}/events`}>
+                                            {t("events")}
+                                        </Link>
                                     </ListItem>
                                     <ListItem>
                                         <Link href={`/${locale}/help`}>
-                                            {t('answersAndQuestions')}
+                                            {t("answersAndQuestions")}
                                         </Link>
                                     </ListItem>
                                 </List>
@@ -128,6 +165,7 @@ export default function Footer() {
                             <GridColumn
                                 width={4}
                                 style={{ paddingLeft: "20px" }}
+                                className={style.footer_nav_desktop}
                             >
                                 <List
                                     link
@@ -135,60 +173,59 @@ export default function Footer() {
                                     style={{ textAlign: "center" }}
                                 >
                                     <ListItem>
-                                        <Link href={`/${locale}/courses`}>{t('courses')}</Link>
+                                        <Link href={`/${locale}/courses`}>
+                                            {t("courses")}
+                                        </Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={`/${locale}/coaches`}>{t('coaches')}</Link>
+                                        <Link href={`/${locale}/coaches`}>
+                                            {t("coaches")}
+                                        </Link>
                                     </ListItem>
                                     <ListItem>
                                         <Link href={`/${locale}/intensives`}>
-                                            {t('intensives')}
+                                            {t("intensives")}
                                         </Link>
                                     </ListItem>
                                 </List>
                             </GridColumn>
-                            <GridColumn width={4}>
+                            <GridColumn width={4} className={style.footer_form}>
                                 <MessageForm />
                             </GridColumn>
                         </GridRow>
-                        <Divider inverted />
-                        <GridRow columns={3} textAlign="center">
-                            <GridColumn>
+                        <Divider inverted className={style.footer_divider} />
+                        <GridRow
+                            columns={3}
+                            textAlign="center"
+                            className={style.footer_bottom}
+                        >
+                            <GridColumn className={style.footer_bottom_left}>
                                 <Header
                                     inverted
                                     as={"p"}
-                                    style={{
-                                        fontSize: "14px",
-                                        fontWeight: "normal",
-                                    }}
+                                    className={`${style.footer_bottom_text} ${style.footer_bottom_copyright}`}
                                 >
                                     © LION IT-SCHOOL, 2023-2024
                                 </Header>
                             </GridColumn>
-                            <GridColumn>
+                            <GridColumn className={style.footer_bottom_center}>
                                 <Header
                                     inverted
                                     as={"a"}
                                     href="/"
-                                    style={{
-                                        fontSize: "14px",
-                                        fontWeight: "normal",
-                                    }}
+                                    className={style.footer_bottom_text}
                                 >
-                                    {t('termsOfUse')}
+                                    {t("termsOfUse")}
                                 </Header>
                             </GridColumn>
-                            <GridColumn>
+                            <GridColumn className={style.footer_bottom_right}>
                                 <Header
                                     inverted
                                     as={"a"}
                                     href="/"
-                                    style={{
-                                        fontSize: "14px",
-                                        fontWeight: "normal",
-                                    }}
+                                    className={style.footer_bottom_text}
                                 >
-                                    {t('contractOffer')}
+                                    {t("contractOffer")}
                                 </Header>
                             </GridColumn>
                         </GridRow>

@@ -20,6 +20,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import LocaleSwitcher from "./components/languageDropdown/localeSwitcher";
 import { useLocale } from "next-intl";
+import style from "./style.module.css";
 const Header: React.FC = () => {
     const [data, setData] = useState<ISelectedCoursesInfoGroup | null>(null);
     const [currency, setCurrency] = useState("KZT");
@@ -48,6 +49,8 @@ const Header: React.FC = () => {
                 position: "sticky",
                 top: "0",
                 zIndex: "1000",
+                marginRight: "0 !important",
+                marginLeft: "0 !important",
             }}
         >
             <Menu
@@ -58,31 +61,62 @@ const Header: React.FC = () => {
                 style={{
                     borderRadius: 0,
                     backgroundColor: "#007397",
+                    margin: "0 !important",
+                    width: "auto",
                 }}
             >
-                <Container style={{ width: "1330px", margin: "auto" }}>
+                <Container className={style.header_content_wrapper}>
                     <MenuItem
-                        position="left"
                         name="logo"
                         style={{
                             paddingLeft: "0px",
+                            paddingRight: "0px",
                             paddingTop: "10px",
                             paddingBottom: "10px",
+                            marginRight: "auto",
                         }}
                     >
-                        <Link href="/">
-                            <Image
-                                src="/logo_with_title.png"
-                                size="small"
-                                alt=""
+                        <Link className={style.page_header_logo_image} href="/">
+                            <picture>
+                                <source
+                                    media="(max-width: 767px)"
+                                    srcSet="/logo.png"
+                                />
+                                <Image
+                                    src="/logo_with_title.png"
+                                    size="small"
+                                    alt="Lion-IT School"
+                                />
+                            </picture>
+                        </Link>
+                    </MenuItem>
+                    <MenuItem className={style.page_header_support_mobile}>
+                        <Link
+                            href="tel:+77051400124"
+                            className={style.page_header_support}
+                        >
+                            <Button
+                                icon="phone"
+                                className={style.page_header_support_button}
                             />
                         </Link>
                     </MenuItem>
-                    <MenuItem position="right">+77051400124</MenuItem>
-                    <MenuItem style={{ paddingRight: "10px" }}>
+                    <MenuItem
+                        position="right"
+                        className={style.page_header_support_desktop}
+                    >
+                        <Link href="tel:+77051400124">+77051400124</Link>
+                    </MenuItem>
+                    <MenuItem
+                        style={{ paddingRight: "10px" }}
+                        className={style.page_header_locale}
+                    >
                         <LocaleSwitcher />
                     </MenuItem>
-                    <MenuItem style={{ paddingLeft: "10px" }}>
+                    <MenuItem
+                        style={{ paddingLeft: "10px" }}
+                        className={style.page_header_currency}
+                    >
                         <Dropdown
                             style={{
                                 border: "1px solid #ccc",
@@ -103,9 +137,89 @@ const Header: React.FC = () => {
                     </MenuItem>
                 </Container>
             </Menu>
-            <Menu name="navbar" attached="bottom" borderless>
-                <Container style={{ width: "1330px", margin: "auto" }}>
-                    <MenuItem name="intensive" style={{ paddingLeft: "0" }}>
+            <Menu
+                name="navbar"
+                attached="bottom"
+                borderless
+                style={{
+                    margin: "0 !important",
+                    width: "auto",
+                }}
+            >
+                <Container className={style.navbar_container}>
+                    <Dropdown icon="sidebar" className={style.navbar_mobile}>
+                        <DropdownMenu>
+                            <DropdownItem name="intensive">
+                                <Link
+                                    href="/intensives"
+                                    style={{
+                                        color: "inherit",
+                                    }}
+                                >
+                                    Летние интенсивы 2024
+                                </Link>
+                            </DropdownItem>
+                            <DropdownItem name="trainers">
+                                <Link
+                                    href="/coaches"
+                                    style={{
+                                        color: "inherit",
+                                    }}
+                                >
+                                    Наши тренеры
+                                </Link>
+                            </DropdownItem>
+                            <Dropdown text="Обучающимся" className="link item">
+                                <DropdownMenu>
+                                    <Link
+                                        href="/courses"
+                                        style={{
+                                            color: "inherit",
+                                        }}
+                                    >
+                                        <DropdownItem>Выбор курса</DropdownItem>
+                                    </Link>
+                                    <Link
+                                        href="/help"
+                                        style={{
+                                            color: "inherit",
+                                        }}
+                                    >
+                                        <DropdownItem>
+                                            Вопросы и ответы
+                                        </DropdownItem>
+                                    </Link>
+                                </DropdownMenu>
+                            </Dropdown>
+                            <Dropdown text="О нас" className="link item">
+                                <DropdownMenu>
+                                    <Link
+                                        href="/events"
+                                        style={{
+                                            color: "inherit",
+                                        }}
+                                    >
+                                        <DropdownItem>Анонсы</DropdownItem>
+                                    </Link>
+                                    <Link
+                                        href="/about-school"
+                                        style={{
+                                            color: "inherit",
+                                        }}
+                                    >
+                                        <DropdownItem>
+                                            О нашей школе
+                                        </DropdownItem>
+                                    </Link>
+                                </DropdownMenu>
+                            </Dropdown>
+                        </DropdownMenu>
+                    </Dropdown>
+                    <MenuItem
+                        name="intensive"
+                        className={style.navbar_item_desktop}
+                        style={{ paddingLeft: "0" }}
+                    >
                         <Link
                             href={`/${locale}/intensives`}
                             style={{
@@ -116,7 +230,10 @@ const Header: React.FC = () => {
                         </Link>
                     </MenuItem>
 
-                    <MenuItem name="trainers">
+                    <MenuItem
+                        name="trainers"
+                        className={style.navbar_item_desktop}
+                    >
                         <Link
                             href={`/${locale}/coaches`}
                             style={{
@@ -129,8 +246,8 @@ const Header: React.FC = () => {
 
                     <Dropdown
                         text={t("forStudents")}
+                        className={`${style.navbar_item_desktop} link item`}
                         pointing
-                        className="link item"
                     >
                         <DropdownMenu>
                             <Link
@@ -139,7 +256,9 @@ const Header: React.FC = () => {
                                     color: "inherit",
                                 }}
                             >
-                                <DropdownItem>{t("courseSelection")}</DropdownItem>
+                                <DropdownItem>
+                                    {t("courseSelection")}
+                                </DropdownItem>
                             </Link>
                             <Link
                                 href={`/${locale}/help`}
@@ -147,12 +266,18 @@ const Header: React.FC = () => {
                                     color: "inherit",
                                 }}
                             >
-                                <DropdownItem>{t('questionsAndAnswers')}</DropdownItem>
+                                <DropdownItem>
+                                    {t("questionsAndAnswers")}
+                                </DropdownItem>
                             </Link>
                         </DropdownMenu>
                     </Dropdown>
 
-                    <Dropdown text={t('aboutUs')} pointing className="link item">
+                    <Dropdown
+                        text={t("aboutUs")}
+                        className={`${style.navbar_item_desktop} link item`}
+                        pointing
+                    >
                         <DropdownMenu>
                             <Link
                                 href={`/${locale}/events`}
@@ -160,7 +285,7 @@ const Header: React.FC = () => {
                                     color: "inherit",
                                 }}
                             >
-                                <DropdownItem>{t('events')}</DropdownItem>
+                                <DropdownItem>{t("events")}</DropdownItem>
                             </Link>
                             <Link
                                 href={`/${locale}/about-school`}
@@ -168,12 +293,15 @@ const Header: React.FC = () => {
                                     color: "inherit",
                                 }}
                             >
-                                <DropdownItem>{t('aboutSchool')}</DropdownItem>
+                                <DropdownItem>{t("aboutSchool")}</DropdownItem>
                             </Link>
                         </DropdownMenu>
                     </Dropdown>
 
-                    <MenuItem position="right">
+                    <MenuItem
+                        position="right"
+                        className={style.bottom_navbar_menu_item}
+                    >
                         <Button
                             style={{
                                 padding: "8px",
@@ -187,7 +315,7 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem className={style.bottom_navbar_menu_item}>
                         <Button
                             style={{
                                 padding: "8px",
@@ -201,7 +329,7 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem className={style.bottom_navbar_menu_item}>
                         <Button
                             style={{
                                 padding: "8px",
@@ -215,7 +343,7 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem className={style.bottom_navbar_menu_item}>
                         <Button
                             style={{
                                 padding: "8px",
@@ -229,13 +357,14 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem className={style.bottom_navbar_menu_item}>
                         <Button
                             style={{
                                 padding: "8px",
                                 margin: "-12px",
                                 backgroundColor: "#007397",
                             }}
+                            className={style.page_header_cart_button}
                             color="black"
                             circular
                             icon="mail"
@@ -243,7 +372,10 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem style={{ paddingRight: "0" }}>
+                    <MenuItem
+                        style={{ paddingRight: "0" }}
+                        className={style.bottom_navbar_menu_item}
+                    >
                         <CartButton
                             selectedCourses={data ? data.selectedCourses : []}
                         />

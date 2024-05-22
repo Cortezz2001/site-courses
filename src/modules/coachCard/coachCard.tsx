@@ -7,6 +7,8 @@ import {
     CardProps,
 } from "@/UI/SUI";
 
+import style from "./style.module.css";
+
 interface CardPropsCoach extends CardProps {
     image: React.ReactNode;
     header: string;
@@ -26,32 +28,38 @@ export const CoachCard: React.FC<CardPropsCoach> = ({
                 mozBoxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
                 boxShadow: "0px 5px 10px 2px rgba(34, 60, 80, 0.2)",
                 width: "auto",
-                maxWidth: "314.25px",
                 height: "100%",
             }}
+            className={style.card_content_wrapper}
         >
             <Image
                 src={image}
-                alt=""
-                width={500}
-                height={500}
+                alt={image}
                 quality={100}
                 style={{
-                    height: "400px",
+                    width: "100%",
+                    height: "380px",
+                    maxHeight: "400px",
                     objectFit: "cover",
                     objectPosition: "top",
                 }}
+                className={style.card_image}
             />
             <CardContent
                 style={{
-                    padding: "15px",
-                    display: "grid",
-                    gridTemplateColumns: "1fr",
-                    gridTemplateRows: "1fr 5px 20px",
-                    gridGap: "6px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
                 }}
             >
-                <CardHeader>{header}</CardHeader>
+                <CardHeader
+                    style={{
+                        flexGrow: "1",
+                        minHeight: "46px",
+                    }}
+                >
+                    {header}
+                </CardHeader>
                 <CardDescription>{description}</CardDescription>
             </CardContent>
         </Card>

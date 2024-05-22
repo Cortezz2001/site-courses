@@ -10,6 +10,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useLocale } from "next-intl";
 
+import style from "../style.module.css";
+
 export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
     coachesInfo,
 }) => {
@@ -17,24 +19,31 @@ export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
     return (
         <>
             <Swiper
-                style={{
-                    paddingTop: "20px",
-                    paddingLeft: "5px",
-                    paddingBottom: "20px",
-                    marginLeft: "-5px",
-                    marginRight: "-5px",
-                }}
-                spaceBetween={20}
-                slidesPerView={4}
+                className={style.coaches_carousel}
                 modules={[Navigation]}
                 navigation={{
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 }}
+                spaceBetween={20}
+                breakpoints={{
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                    900: {
+                        slidesPerView: 3,
+                    },
+                    700: {
+                        slidesPerView: 3,
+                    },
+                    400: {
+                        slidesPerView: 2,
+                    },
+                }}
             >
                 {coachesInfo.map((coach) => (
-                    <SwiperSlide key={coach.id} style={{ height: "auto" }}>
-                        <Link href={`/${locale}/coaches/${coach.id}`}> 
+                    <SwiperSlide key={coach.id} className={style.coaches_slide}>
+                        <Link href={`/${locale}/coaches/${coach.id}`}>
                             <CoachCard
                                 image={coach.img}
                                 header={coach.name}
@@ -46,13 +55,18 @@ export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
 
                 <div
                     className="swiper-button-prev"
-                    style={{ color: "#007397" }}
+                    style={{
+                        color: "#007397",
+                        left: "1.5em",
+                    }}
                 ></div>
                 <div
                     className="swiper-button-next"
-                    style={{ color: "#007397" }}
+                    style={{
+                        color: "#007397",
+                        right: "1.5em",
+                    }}
                 ></div>
-                <div className="swiper-pagination"></div>
             </Swiper>
         </>
     );

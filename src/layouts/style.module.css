@@ -1,6 +1,26 @@
 .container {
     height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 100px;
+}
+
+.content_wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .content_wrapper {
+        width: 1330px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .content_wrapper {
+        padding-top: 25px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .content_wrapper {
+        padding-top: 14px;
+    }
 }

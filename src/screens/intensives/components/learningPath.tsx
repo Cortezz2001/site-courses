@@ -1,12 +1,13 @@
-import { Container, Grid, GridColumn, GridRow, Header } from "@/UI/SUI";
+import { Grid, GridColumn, GridRow, Header } from "@/UI/SUI";
 import { useTranslations } from "next-intl";
+import style from "../style.module.css";
 
 const LearningPath = () => {
     const t = useTranslations("IntensivesPage");
     return (
         <>
             <Header as="h2" style={{ marginBottom: "30px" }}>
-                {t('howToLearn')}
+                {t("howToLearn")}
             </Header>
             <Grid
                 columns={3}
@@ -14,13 +15,7 @@ const LearningPath = () => {
                 stackable
                 style={{ marginLeft: "0", marginRight: "0" }}
             >
-                <GridRow
-                    style={{
-                        display: "flex",
-                        justifyContent: "start",
-                        gap: "21px",
-                    }}
-                >
+                <GridRow className={style.steps_container}>
                     <GridColumn
                         textAlign="center"
                         width={5}
@@ -28,13 +23,11 @@ const LearningPath = () => {
                             boxShadow: "1px 1px 20px 10px #e0e0e0",
                             borderRadius: "10px",
                             padding: "20px",
-                            margin: "10px",
-                            marginLeft: "0",
                         }}
                     >
                         <p>
                             <strong>01</strong> <br />
-                            {t('block1')}
+                            {t("block1")}
                         </p>
                     </GridColumn>
                     <GridColumn
@@ -44,12 +37,11 @@ const LearningPath = () => {
                             boxShadow: "1px 1px 20px 10px #e0e0e0",
                             borderRadius: "10px",
                             padding: "20px",
-                            margin: "10px",
                         }}
                     >
                         <p>
                             <strong>02</strong> <br />
-                            {t('block2')}
+                            {t("block2")}
                         </p>
                     </GridColumn>
                     <GridColumn
@@ -59,13 +51,11 @@ const LearningPath = () => {
                             boxShadow: "1px 1px 20px 10px #e0e0e0",
                             borderRadius: "10px",
                             padding: "20px",
-                            margin: "10px",
-                            marginRight: "0",
                         }}
                     >
                         <p>
                             <strong>03</strong> <br />
-                            {t('block3')}
+                            {t("block3")}
                         </p>
                     </GridColumn>
                 </GridRow>

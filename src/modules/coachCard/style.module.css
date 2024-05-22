@@ -1,0 +1,11 @@
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .card_image {
+        height: 380px !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .card_image {
+        height: 250px !important;
+    }
+}

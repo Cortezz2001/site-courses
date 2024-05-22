@@ -1,3 +1,193 @@
 .container {
     font-size: 100%;
 }
+
+.banner_carousel_container {
+    --swiper-pagination-color: white;
+    --swiper-pagination-bullet-inactive-color: white;
+    --swiper-pagination-bullet-inactive-opacity: 0.35;
+    --swiper-pagination-bullet-size: 16px;
+    --swiper-pagination-bullet-horizontal-gap: 6px;
+    border-radius: 0.28571429rem;
+    line-height: 0;
+}
+
+.banner_carousel_image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.courses_carousel,
+.coaches_carousel,
+.events_carousel {
+    padding-top: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 20px;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.action_block_wrapper {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.info_block_top_heading,
+.info_block_bottom_heading {
+    margin-top: 45px !important;
+    margin-bottom: 30px !important;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1181px) {
+    .courses_carousel,
+    .coaches_carousel,
+    .events_carousel {
+        padding-top: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .banner_carousel_image {
+        height: 440px;
+    }
+
+    .courses_carousel,
+    .coaches_carousel,
+    .events_carousel {
+        padding-top: 0;
+    }
+
+    .action_block_wrapper {
+        margin-top: 20px !important;
+    }
+
+    .action_block_container {
+        position: relative !important;
+        display: block !important;
+    }
+
+    .action_block_left {
+        position: absolute !important;
+        z-index: 1 !important;
+        top: 10% !important;
+    }
+
+    .action_block_text {
+        font-size: 0.75em !important;
+        padding-inline: 3.25em !important;
+    }
+
+    .action_block_right {
+        width: auto !important;
+        box-shadow: none !important;
+    }
+
+    .info_block_top_heading,
+    .info_block_bottom_heading {
+        margin-top: 30px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .info_block_top_left,
+    .info_block_bottom_right {
+        position: relative;
+        width: 100% !important;
+    }
+
+    .info_block_top_left::after,
+    .info_block_bottom_right::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: calc(100% - 2rem);
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 0.3125em;
+    }
+
+    .info_block_top_image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .info_block_top_right,
+    .info_block_bottom_left {
+        position: absolute !important;
+        z-index: 1;
+        width: 100% !important;
+        padding-right: 3em !important;
+        padding-left: 3em !important;
+        color: white;
+        box-shadow: none !important;
+    }
+
+    .info_block_bottom_right {
+        box-shadow: none !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .banner_carousel_image {
+        height: 300px;
+    }
+
+    .courses_carousel,
+    .coaches_carousel,
+    .events_carousel {
+        padding-top: 0;
+    }
+
+    .coaches_slide {
+        height: 392px !important;
+    }
+
+    .action_block_wrapper {
+        margin-top: 20px !important;
+    }
+
+    .action_block_container {
+        flex-direction: column-reverse !important;
+        gap: 1em;
+    }
+
+    .action_block_right {
+        width: auto !important;
+        box-shadow: none !important;
+    }
+
+    .action_block_left {
+        width: auto !important;
+    }
+
+    .info_block_top_heading,
+    .info_block_bottom_heading {
+        margin-top: 30px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .info_block_top_left,
+    .info_block_bottom_right {
+        width: 100% !important;
+    }
+
+    .info_block_top_right,
+    .info_block_bottom_left {
+        width: 100% !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .info_block_top_container,
+    .info_block_bottom_container {
+        gap: 1em;
+    }
+
+    .info_block_bottom_container {
+        flex-direction: column-reverse !important;
+    }
+}

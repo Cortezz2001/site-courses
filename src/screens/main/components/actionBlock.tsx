@@ -10,23 +10,25 @@ import {
 } from "@/UI/SUI";
 import { useTranslations } from "next-intl";
 
+import style from "../style.module.css";
+
 const ActionBlock: React.FC = () => {
     const telegramLink = "https://t.me/+b8klQ4VDBX82Y2Iy";
     const t = useTranslations("Main.Block1");
     return (
-        <Grid
-            columns={2}
-            divided
-            style={{ marginTop: "30px", marginBottom: "30px" }}
-        >
-            <GridRow>
-                <GridColumn verticalAlign="middle">
+        <Grid className={style.action_block_wrapper} columns={2} divided>
+            <GridRow className={style.action_block_container}>
+                <GridColumn
+                    verticalAlign="middle"
+                    className={style.action_block_left}
+                >
                     <Container textAlign="center" style={{ fontSize: "large" }}>
-                        <p>
-                            {t('p1')}
+                        <p className={style.action_block_text}>
+                            {t("p1")}
                             <br />
-                            {t('p1-1')}
-                            <br />{t('p1-2')}
+                            {t("p1-1")}
+                            <br />
+                            {t("p1-2")}
                         </p>
                         <a
                             href={telegramLink}
@@ -41,7 +43,7 @@ const ActionBlock: React.FC = () => {
                                 }}
                             >
                                 <ButtonContent visible>
-                                    {t('btn')}
+                                    {t("btn")}
                                 </ButtonContent>
                                 <ButtonContent hidden>
                                     <Icon name="telegram plane" />
@@ -50,7 +52,7 @@ const ActionBlock: React.FC = () => {
                         </a>
                     </Container>
                 </GridColumn>
-                <GridColumn>
+                <GridColumn className={style.action_block_right}>
                     <Image rounded alt="" src="/programmer-stock-cropped.jpg" />
                 </GridColumn>
             </GridRow>

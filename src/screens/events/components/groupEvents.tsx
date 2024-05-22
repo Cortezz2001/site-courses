@@ -4,37 +4,31 @@ import { IEventCardInfoGroup } from "@/service/eventsService/types";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 
+import style from "../style.module.css";
+
 export const GroupEventsCards: React.FC<IEventCardInfoGroup> = ({
     eventsInfo,
 }) => {
-    const groupedEvents = [];
-    for (let i = 0; i < eventsInfo.length; i += 4) {
-        groupedEvents.push(eventsInfo.slice(i, i + 4));
-    }
     const locale = useLocale();
     return (
         <>
-            {groupedEvents.map((group, index) => (
-                <Grid key={index} columns={4}>
-                    <GridRow>
-                        {group.map((event) => (
-                            <GridColumn key={event.id}>
-                                <Link href={`/${locale}/events/${event.id}`}>
-                                    <EventCard
-                                        image={event.img}
-                                        header={event.title}
-                                        description={
-                                            event.startDate +
-                                            ", " +
-                                            event.startTime
-                                        }
-                                    />
-                                </Link>
-                            </GridColumn>
-                        ))}
-                    </GridRow>
-                </Grid>
-            ))}
+            <Grid doubling columns={4}>
+                <GridRow className={style.card_container}>
+                    {eventsInfo.map((event) => (
+                        <GridColumn key={event.id}>
+                            <Link href={`/${locale}/events/${event.id}`}>
+                                <EventCard
+                                    image={event.img}
+                                    header={event.title}
+                                    description={
+                                        event.startDate + ", " + event.startTime
+                                    }
+                                />
+                            </Link>
+                        </GridColumn>
+                    ))}
+                </GridRow>
+            </Grid>
         </>
     );
 };

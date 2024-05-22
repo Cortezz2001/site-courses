@@ -1,35 +1,30 @@
 "use client";
 
-import {
-    Button,
-} from "@/UI/SUI";
+import { Button } from "@/UI/SUI";
+import { useLocale } from "next-intl";
+import ButtonMarker from "./marker";
 import { UserService } from "@/service/authService/auth";
-import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 const ProfileButton = () => {
-    const router = useRouter()
+    const router = useRouter();
     const locale = useLocale();
     async function AuthCheck() {
-        const token = localStorage.getItem("token")
+        const token = localStorage.getItem("token");
 
         if (token) {
-            const res = await UserService.userAuthCheck(token)
+            const res = await UserService.userAuthCheck(token);
             if (res) {
-                router.push(`/${locale}/profile`)
+                router.push(`/${locale}/profile`);
+            } else {
+                localStorage.removeItem("token");
+                router.push(`/${locale}/auth`);
             }
-            else {
-                localStorage.removeItem("token")
-                router.push(`/${locale}/auth`)
-            }
+        } else {
+            router.push(`/${locale}/auth`);
         }
-        else {
-            router.push(`/${locale}/auth`)
-        }
-
     }
-    const t = useTranslations("Header");
     return (
         <Button
             style={{
@@ -40,9 +35,11 @@ const ProfileButton = () => {
                 backgroundColor: "white",
                 color: "#007397",
             }}
-            onClick={() => { AuthCheck() }}
+            onClick={() => {
+                AuthCheck();
+            }}
         >
-            {t('account')}
+            <ButtonMarker />
         </Button>
     );
 };

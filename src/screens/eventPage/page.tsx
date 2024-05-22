@@ -1,10 +1,8 @@
 import {
-    Container,
     Grid,
     GridColumn,
     GridRow,
     Header,
-    Icon,
     Image,
     List,
     ListContent,
@@ -19,6 +17,8 @@ import { Layout } from "@/layouts/layout";
 import { IEventDetailPageInfo } from "@/service/eventDetailPageService/types";
 import { useLocale, useTranslations } from "next-intl";
 
+import style from "./style.module.css";
+
 interface IEventDetailPageProps {
     eventInfo: IEventDetailPageInfo;
 }
@@ -29,14 +29,14 @@ export function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: t('Breadcrumb.main'),
+            content: t("Breadcrumb.main"),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "Events",
-            content: t('Breadcrumb.events'),
+            content: t("Breadcrumb.events"),
             isLink: true,
             isActive: false,
             url: `/${locale}/events`,
@@ -86,7 +86,7 @@ export function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    {t('EventDetailPage.desc')}
+                                    {t("EventDetailPage.desc")}
                                 </Header>
                                 <p> {eventInfo.desc}</p>
                             </Segment>
@@ -105,10 +105,11 @@ export function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                 <Header
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
+                                    className={style.event_date_title}
                                 >
-                                    {t('EventDetailPage.date')}
+                                    {t("EventDetailPage.date")}
                                 </Header>
-                                <p>
+                                <p className={style.event_schedule}>
                                     {" "}
                                     {eventInfo.startDate} {eventInfo.startTime}
                                 </p>
@@ -132,7 +133,7 @@ export function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    {t('EventDetailPage.coaches')}
+                                    {t("EventDetailPage.coaches")}
                                 </Header>
                                 {eventInfo.active_mentors.map(
                                     (active_mentor, index) => (

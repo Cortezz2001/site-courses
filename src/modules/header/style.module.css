@@ -6,3 +6,124 @@
 .ui.dropdown .menu .item .text {
     color: white;
 }
+
+.navbar_mobile {
+    display: none !important;
+}
+
+.profile_button_icon {
+    display: none !important;
+}
+
+.page_header_support_mobile {
+    display: none !important;
+}
+
+@media only screen and (min-width: 1200px) {
+    .header_content_wrapper,
+    .navbar_container {
+        width: 1330px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar_container {
+        align-items: center !important;
+    }
+
+    .navbar_mobile {
+        display: block !important;
+        color: #007397;
+    }
+
+    .navbar_mobile::after {
+        content: "Меню сайта";
+        color: initial;
+    }
+
+    .navbar_item_desktop {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .header_content_wrapper {
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+    }
+
+    .page_header_logo_image {
+        width: 50px;
+        height: 50px;
+        filter: drop-shadow(0 0 1px white);
+    }
+
+    .page_header_support_desktop {
+        display: none !important;
+    }
+
+    .page_header_support_mobile {
+        display: flex !important;
+    }
+
+    .page_header_currency {
+        display: none !important;
+    }
+
+    .page_header_locale {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .page_header_support {
+        display: grid;
+        place-items: center;
+    }
+
+    .page_header_support_button {
+        color: white !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
+
+    .navbar_mobile {
+        display: block !important;
+        color: #007397;
+    }
+
+    .navbar_item_desktop {
+        display: none !important;
+    }
+
+    .navbar_container {
+        align-items: center !important;
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+    }
+}
+
+@media only screen and (max-width: 413px) {
+    .profile_button_text {
+        display: none !important;
+    }
+
+    .profile_button_icon {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bottom_navbar_menu_item {
+        padding-left: 0 !important;
+    }
+
+    .bottom_navbar_menu_item {
+        margin-left: 12px !important;
+    }
+
+    .bottom_navbar_menu_item:last-child {
+        margin-left: -12px !important;
+    }
+}

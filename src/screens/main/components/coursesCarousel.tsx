@@ -10,6 +10,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useLocale } from "next-intl";
 
+import style from "../style.module.css";
+
 export const CoursesCarousel: React.FC<ICourseCardInfoGroup> = ({
     coursesInfo,
 }) => {
@@ -17,19 +19,23 @@ export const CoursesCarousel: React.FC<ICourseCardInfoGroup> = ({
     return (
         <>
             <Swiper
-                style={{
-                    paddingTop: "20px",
-                    paddingLeft: "5px",
-                    paddingBottom: "20px",
-                    marginLeft: "-5px",
-                    marginRight: "-5px",
-                }}
-                spaceBetween={20}
-                slidesPerView={4}
+                className={style.courses_carousel}
                 modules={[Navigation]}
                 navigation={{
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
+                }}
+                spaceBetween={20}
+                breakpoints={{
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                    900: {
+                        slidesPerView: 3,
+                    },
+                    700: {
+                        slidesPerView: 2,
+                    },
                 }}
             >
                 {coursesInfo.map((course) => (
@@ -53,18 +59,17 @@ export const CoursesCarousel: React.FC<ICourseCardInfoGroup> = ({
                 <div
                     className="swiper-button-prev"
                     style={{
-                        color: "white",
-                        filter: "drop-shadow(0px 0px 5px 2px #007397)",
+                        color: "#007397",
+                        left: "1.5em",
                     }}
                 ></div>
                 <div
                     className="swiper-button-next"
                     style={{
-                        color: "white",
-                        filter: "drop-shadow(0px 0px 5px 2px #007397)",
+                        color: "#007397",
+                        right: "1.5em",
                     }}
                 ></div>
-                <div className="swiper-pagination"></div>
             </Swiper>
         </>
     );
