@@ -1,5 +1,5 @@
-export const API_URL = "http://127.0.0.1:8000";
-
+// export const API_URL = "http://127.0.0.1:8000";
+export const API_URL = "https://lionitschool.pythonanywhere.com";
 export const URLS = {
     // getCoaches: "/6af77e409a3a84f42524",
     // getCourses: "/9892bdea58cfc91d16fc",
