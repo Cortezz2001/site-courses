@@ -8,7 +8,7 @@ const InfoBlock: React.FC = () => {
                 Обучение программированию
             </Header>
             <Grid columns={2} divided>
-                <GridRow>
+                <GridRow className={style.info_block_container}>
                     <GridColumn className={style.info_block_left}>
                         <Image
                             rounded

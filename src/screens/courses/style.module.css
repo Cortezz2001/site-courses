@@ -49,3 +49,23 @@
         box-shadow: none !important;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    .card_container {
+        row-gap: 0;
+    }
+
+    .info_block_container {
+        gap: 1em;
+    }
+
+    .info_block_left,
+    .info_block_right {
+        width: 100% !important;
+    }
+
+    .info_block_right {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+}
