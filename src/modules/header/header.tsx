@@ -59,7 +59,7 @@ const Header: React.FC = () => {
                 position: "sticky",
                 top: "0",
                 zIndex: "1000",
-                marginRight: "-1rem !important",
+                marginRight: "0 !important",
                 marginLeft: "0 !important",
             }}
         >
@@ -71,6 +71,8 @@ const Header: React.FC = () => {
                 style={{
                     borderRadius: 0,
                     backgroundColor: "#007397",
+                    margin: "0 !important",
+                    width: "auto",
                 }}
             >
                 <Container className={style.header_content_wrapper}>
@@ -158,7 +160,16 @@ const Header: React.FC = () => {
                     </MenuItem>
                 </Container>
             </Menu>
-            <Menu name="navbar" attached="bottom" borderless stackable>
+            <Menu
+                name="navbar"
+                attached="bottom"
+                borderless
+                stackable
+                style={{
+                    margin: "0 !important",
+                    width: "auto",
+                }}
+            >
                 <Container className={style.navbar_container}>
                     <Dropdown icon="sidebar" className={style.navbar_mobile}>
                         <DropdownMenu>
