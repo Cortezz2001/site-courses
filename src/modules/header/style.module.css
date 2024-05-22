@@ -36,10 +36,10 @@
         color: #007397;
     }
 
-    .navbar_mobile::after {
+    /* .navbar_mobile::after {
         content: "Меню сайта";
         color: initial;
-    }
+    } */
 
     .navbar_item_desktop {
         display: none !important;

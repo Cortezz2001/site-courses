@@ -108,28 +108,28 @@ export default function Footer() {
                                     style={{ textAlign: "center" }}
                                 >
                                     <ListItem>
-                                        <Link href={"/about-school"}>
-                                            О НАШЕЙ ШКОЛЕ
+                                        <Link href={`/${locale}/about-school`}>
+                                            {t("aboutOurSchool")}
                                         </Link>
                                     </ListItem>
 
                                     <ListItem>
-                                        <Link href={"/events"}>АНОНСЫ</Link>
+                                        <Link href={`/${locale}/events`}>{t("events")}</Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={"/help"}>
-                                            ВОПРОСЫ И ОТВЕТЫ
+                                        <Link href={`/${locale}/help`}>
+                                            {t("answersAndQuestions")}
                                         </Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={"/courses"}>КУРСЫ</Link>
+                                        <Link href={`/${locale}/courses`}>{t("courses")}</Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={"/coaches"}>ТРЕНЕРЫ</Link>
+                                        <Link href={`/${locale}/coaches`}>{t("coaches")}</Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={"/intensives"}>
-                                            ИНТЕНСИВЫ
+                                        <Link href={`/${locale}/intensives`}>
+                                            {t("intensives")}
                                         </Link>
                                     </ListItem>
                                 </List>
@@ -145,7 +145,7 @@ export default function Footer() {
                                     style={{ textAlign: "center" }}
                                 >
                                     <ListItem>
-                                        <Link href={`/${locale}//about-school`}>
+                                        <Link href={`/${locale}/about-school`}>
                                             {t("aboutOurSchool")}
                                         </Link>
                                     </ListItem>

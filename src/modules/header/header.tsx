@@ -151,64 +151,64 @@ const Header: React.FC = () => {
                         <DropdownMenu>
                             <DropdownItem name="intensive">
                                 <Link
-                                    href="/intensives"
+                                    href={`/${locale}/intensives`}
                                     style={{
                                         color: "inherit",
                                     }}
                                 >
-                                    Летние интенсивы 2024
+                                    {t("intensives")}
                                 </Link>
                             </DropdownItem>
                             <DropdownItem name="trainers">
                                 <Link
-                                    href="/coaches"
+                                    href={`/${locale}/coaches`}
                                     style={{
                                         color: "inherit",
                                     }}
                                 >
-                                    Наши тренеры
+                                    {t("ourCoaches")}
                                 </Link>
                             </DropdownItem>
-                            <Dropdown text="Обучающимся" className="link item">
+                            <Dropdown text={t("forStudents")} className="link item">
                                 <DropdownMenu>
                                     <Link
-                                        href="/courses"
+                                        href={`/${locale}/courses`}
                                         style={{
                                             color: "inherit",
                                         }}
                                     >
-                                        <DropdownItem>Выбор курса</DropdownItem>
+                                        <DropdownItem>{t("courseSelection")}</DropdownItem>
                                     </Link>
                                     <Link
-                                        href="/help"
+                                        href={`/${locale}/help`}
                                         style={{
                                             color: "inherit",
                                         }}
                                     >
                                         <DropdownItem>
-                                            Вопросы и ответы
+                                            {t("questionsAndAnswers")}
                                         </DropdownItem>
                                     </Link>
                                 </DropdownMenu>
                             </Dropdown>
-                            <Dropdown text="О нас" className="link item">
+                            <Dropdown text={t("aboutUs")} className="link item">
                                 <DropdownMenu>
                                     <Link
-                                        href="/events"
+                                        href={`/${locale}/events`}
                                         style={{
                                             color: "inherit",
                                         }}
                                     >
-                                        <DropdownItem>Анонсы</DropdownItem>
+                                        <DropdownItem>{t("events")}</DropdownItem>
                                     </Link>
                                     <Link
-                                        href="/about-school"
+                                        href={`/${locale}/about-school`}
                                         style={{
                                             color: "inherit",
                                         }}
                                     >
                                         <DropdownItem>
-                                            О нашей школе
+                                            {t("aboutSchool")}
                                         </DropdownItem>
                                     </Link>
                                 </DropdownMenu>
