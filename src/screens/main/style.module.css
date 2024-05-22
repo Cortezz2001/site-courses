@@ -152,4 +152,32 @@
     .action_block_left {
         width: auto !important;
     }
+
+    .info_block_top_heading,
+    .info_block_bottom_heading {
+        margin-top: 30px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .info_block_top_left,
+    .info_block_bottom_right {
+        width: 100% !important;
+    }
+
+    .info_block_top_right,
+    .info_block_bottom_left {
+        width: 100% !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .info_block_top_container,
+    .info_block_bottom_container {
+        gap: 1em;
+    }
+
+    .info_block_bottom_container {
+        flex-direction: column-reverse !important;
+    }
 }
