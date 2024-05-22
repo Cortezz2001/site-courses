@@ -135,6 +135,12 @@
         height: 300px;
     }
 
+    .courses_carousel,
+    .coaches_carousel,
+    .events_carousel {
+        padding-top: 0;
+    }
+
     .action_block_wrapper {
         margin-top: 20px !important;
     }
