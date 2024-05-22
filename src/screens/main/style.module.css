@@ -141,6 +141,10 @@
         padding-top: 0;
     }
 
+    .coaches_slide {
+        height: 392px !important;
+    }
+
     .action_block_wrapper {
         margin-top: 20px !important;
     }

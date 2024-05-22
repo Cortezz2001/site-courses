@@ -34,10 +34,13 @@ export const CoachesCarousel: React.FC<ICoachCardInfoGroup> = ({
                     700: {
                         slidesPerView: 3,
                     },
+                    400: {
+                        slidesPerView: 2,
+                    },
                 }}
             >
                 {coachesInfo.map((coach) => (
-                    <SwiperSlide key={coach.id} style={{ height: "auto" }}>
+                    <SwiperSlide key={coach.id} className={style.coaches_slide}>
                         <Link href={`/coaches/${coach.id}`}>
                             <CoachCard
                                 image={coach.img}

@@ -38,6 +38,7 @@ export const CoachCard: React.FC<CardPropsCoach> = ({
                 quality={100}
                 style={{
                     width: "100%",
+                    height: "380px",
                     maxHeight: "400px",
                     objectFit: "cover",
                     objectPosition: "top",
@@ -46,14 +47,19 @@ export const CoachCard: React.FC<CardPropsCoach> = ({
             />
             <CardContent
                 style={{
-                    padding: "15px",
-                    display: "grid",
-                    gridTemplateColumns: "1fr",
-                    gridTemplateRows: "1fr 5px 20px",
-                    gridGap: "6px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
                 }}
             >
-                <CardHeader>{header}</CardHeader>
+                <CardHeader
+                    style={{
+                        flexGrow: "1",
+                        minHeight: "46px",
+                    }}
+                >
+                    {header}
+                </CardHeader>
                 <CardDescription>{description}</CardDescription>
             </CardContent>
         </Card>
