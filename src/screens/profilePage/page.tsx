@@ -46,6 +46,7 @@ export const Profile = () => {
                             alignItems: "center",
                             justifyContent: "start",
                             gap: "1em",
+                            flexShrink: "2",
                         }}
                     >
                         <Icon
