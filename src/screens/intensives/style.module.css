@@ -43,3 +43,24 @@
         width: 50% !important;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    .banner::after {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: calc(100% - 2rem);
+        height: calc(100% - 58px);
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 0.3125em;
+    }
+
+    .banner_image {
+        height: 380px;
+    }
+
+    .banner_text {
+        z-index: 1;
+    }
+}
