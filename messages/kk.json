@@ -319,6 +319,11 @@
   "layoutTitle": "Шаблон",
   "NotFoundPage": {
     "description": "Қате"
+  },
+  "CourseCard": {
+    "moreDetails": "Толығырақ",    
+    "price": "Бағасы",
+    "program": "Бағдарлама:"
   }
 
 

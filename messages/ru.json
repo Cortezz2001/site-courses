@@ -319,6 +319,10 @@
   "layoutTitle": "Шаблон",
   "NotFoundPage": {
     "description": "Ошибка"
+  },
+  "CourseCard": {
+    "moreDetails": "Подробнее",
+    "price": "Цена",
+    "program": "Программа:"
   }
-
 }

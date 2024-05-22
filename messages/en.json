@@ -319,5 +319,10 @@
   "layoutTitle": "Layout",
   "NotFoundPage": {
     "description": "Error"
+  },
+  "CourseCard": {
+    "moreDetails": "More details",    
+    "price": "Price",
+    "program": "Program:"
   }
 }

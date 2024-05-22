@@ -9,6 +9,7 @@ import {
     CardMeta,
     Header,
 } from "@/UI/SUI";
+import { useTranslations } from "next-intl";
 
 interface CardPropsCourse extends CardProps {
     image: React.ReactNode;
@@ -17,17 +18,7 @@ interface CardPropsCourse extends CardProps {
     extra?: React.ReactNode;
 }
 
-const extra = (
-    <Button
-        style={{
-            backgroundColor: "#007397",
-            color: "white",
-            width: "-webkit-fill-available",
-        }}
-    >
-        Подробнее
-    </Button>
-);
+
 
 export const CourseCard: React.FC<CardPropsCourse> = ({
     image,
@@ -35,6 +26,19 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
     description,
     program,
 }) => {
+    const t = useTranslations("CourseCard");
+
+    const extra = (
+        <Button
+            style={{
+                backgroundColor: "#007397",
+                color: "white",
+                width: "-webkit-fill-available",
+            }}
+        >
+            {t('moreDetails')}
+        </Button>
+    );
     return (
         <Card
             link
@@ -70,13 +74,13 @@ export const CourseCard: React.FC<CardPropsCourse> = ({
             >
                 <CardHeader>{header}</CardHeader>
                 <CardMeta>
-                    {program?.length > 0 && <span>{program}</span>}
+                    {program?.length > 0 && <span>{t('program')} {program}</span>}
                 </CardMeta>
                 <CardDescription
                     style={{ fontweight: "bold", marginBottom: "15px" }}
                 >
                     <Header sub style={{ margin: "0" }}>
-                        Цена
+                        {t('price')}
                     </Header>
                     <span>{description}</span>
                 </CardDescription>
