@@ -317,7 +317,10 @@ const Header: React.FC = () => {
                         </DropdownMenu>
                     </Dropdown>
 
-                    <MenuItem position="right">
+                    <MenuItem
+                        position="right"
+                        className={style.bottom_navbar_menu_item}
+                    >
                         <Button
                             style={{
                                 padding: "8px",
@@ -331,7 +334,7 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem className={style.bottom_navbar_menu_item}>
                         <Button
                             style={{
                                 padding: "8px",
@@ -345,7 +348,7 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem className={style.bottom_navbar_menu_item}>
                         <Button
                             style={{
                                 padding: "8px",
@@ -359,7 +362,7 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem className={style.bottom_navbar_menu_item}>
                         <Button
                             style={{
                                 padding: "8px",
@@ -373,7 +376,7 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem className={style.bottom_navbar_menu_item}>
                         <Button
                             style={{
                                 padding: "8px",
@@ -388,7 +391,10 @@ const Header: React.FC = () => {
                             target="_blank"
                         />
                     </MenuItem>
-                    <MenuItem style={{ paddingRight: "0" }}>
+                    <MenuItem
+                        style={{ paddingRight: "0" }}
+                        className={style.bottom_navbar_menu_item}
+                    >
                         <CartButton
                             selectedCourses={data ? data.selectedCourses : []}
                         />

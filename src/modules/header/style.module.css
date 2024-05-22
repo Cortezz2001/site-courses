@@ -114,4 +114,16 @@
         justify-content: center;
         text-align: center;
     }
+
+    .bottom_navbar_menu_item {
+        padding-left: 0 !important;
+    }
+
+    .bottom_navbar_menu_item {
+        margin-left: 12px !important;
+    }
+
+    .bottom_navbar_menu_item:last-child {
+        margin-left: -12px !important;
+    }
 }
