@@ -5,6 +5,16 @@
     object-fit: cover;
 }
 
+.ceo_container {
+    justify-content: center !important;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .ceo_image {
+        flex-grow: 1;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .hero_banner {
         height: auto;
@@ -30,5 +40,15 @@
 
     .advantages_image {
         height: auto !important;
+    }
+
+    .ceo_details {
+        width: 60% !important;
+    }
+
+    .ceo_image {
+        align-items: flex-start;
+        flex-grow: 1;
+        padding: 0;
     }
 }
