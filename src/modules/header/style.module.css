@@ -91,4 +91,10 @@
     .navbar_item_desktop {
         display: none !important;
     }
+
+    .navbar_container {
+        align-items: center !important;
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+    }
 }

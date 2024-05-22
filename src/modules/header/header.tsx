@@ -164,7 +164,6 @@ const Header: React.FC = () => {
                 name="navbar"
                 attached="bottom"
                 borderless
-                stackable
                 style={{
                     margin: "0 !important",
                     width: "auto",
