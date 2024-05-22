@@ -9,4 +9,13 @@
     .hero_banner {
         height: auto;
     }
+
+    .goals_image {
+        display: none !important;
+    }
+
+    .goals_text {
+        width: 100% !important;
+        padding-left: 0 !important;
+    }
 }

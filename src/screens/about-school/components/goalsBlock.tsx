@@ -1,11 +1,15 @@
-import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
+import { Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
+import style from "../style.module.css";
 
 const GoalsBlock: React.FC = () => {
     return (
         <>
             <Grid columns={2} divided style={{ marginTop: "30px" }}>
                 <GridRow>
-                    <GridColumn verticalAlign="middle">
+                    <GridColumn
+                        verticalAlign="middle"
+                        className={style.goals_text}
+                    >
                         <Header
                             as="h2"
                             style={{
@@ -42,6 +46,7 @@ const GoalsBlock: React.FC = () => {
                             justifyContent: "center",
                             height: "100%",
                         }}
+                        className={style.goals_image}
                     >
                         <Image
                             rounded
