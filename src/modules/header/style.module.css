@@ -11,6 +11,10 @@
     display: none !important;
 }
 
+.profile_button_icon {
+    display: none !important;
+}
+
 .page_header_support_mobile {
     display: none !important;
 }
@@ -96,5 +100,18 @@
         align-items: center !important;
         padding-left: 1em !important;
         padding-right: 1em !important;
+    }
+}
+
+@media only screen and (max-width: 413px) {
+    .profile_button_text {
+        display: none !important;
+    }
+
+    .profile_button_icon {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }

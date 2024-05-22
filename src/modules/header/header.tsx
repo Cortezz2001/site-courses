@@ -380,6 +380,7 @@ const Header: React.FC = () => {
                                 margin: "-12px",
                                 backgroundColor: "#007397",
                             }}
+                            className={style.page_header_cart_button}
                             color="black"
                             circular
                             icon="mail"

@@ -1,32 +1,28 @@
 "use client";
 
-import {
-    Button,
-} from "@/UI/SUI";
+import { Button } from "@/UI/SUI";
+import ButtonMarker from "./marker";
 import { UserService } from "@/service/authService/auth";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 const ProfileButton = () => {
-    const router = useRouter()
+    const router = useRouter();
 
     async function AuthCheck() {
-        const token = localStorage.getItem("token")
+        const token = localStorage.getItem("token");
 
         if (token) {
-            const res = await UserService.userAuthCheck(token)
+            const res = await UserService.userAuthCheck(token);
             if (res) {
-                router.push("/profile")
+                router.push("/profile");
+            } else {
+                localStorage.removeItem("token");
+                router.push("/auth");
             }
-            else {
-                localStorage.removeItem("token")
-                router.push("/auth")
-            }
+        } else {
+            router.push("/auth");
         }
-        else {
-            router.push("/auth")
-        }
-
     }
 
     return (
@@ -39,9 +35,11 @@ const ProfileButton = () => {
                 backgroundColor: "white",
                 color: "#007397",
             }}
-            onClick={() => { AuthCheck() }}
+            onClick={() => {
+                AuthCheck();
+            }}
         >
-            Личный кабинет
+            <ButtonMarker />
         </Button>
     );
 };
