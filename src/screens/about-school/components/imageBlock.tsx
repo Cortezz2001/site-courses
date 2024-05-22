@@ -1,4 +1,5 @@
-import { Container, Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
+import { Image } from "@/UI/SUI";
+import style from "../style.module.css";
 
 const ImageBlock: React.FC = () => {
     return (
@@ -7,12 +8,7 @@ const ImageBlock: React.FC = () => {
                 rounded
                 alt=""
                 src="/it-school-stock.jpg"
-                style={{
-                    objectFit: "cover",
-                    marginTop: "30px",
-                    width: "100%",
-                    height: "400px",
-                }}
+                className={style.hero_banner}
             />
         </>
     );
