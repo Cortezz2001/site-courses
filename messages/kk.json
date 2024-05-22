@@ -315,6 +315,11 @@
       "myData": "Менің деректерім",
       "orders": "Тапсырыстар",
       "settings": "Параметрлер"
+  },
+  "layoutTitle": "Шаблон",
+  "NotFoundPage": {
+    "description": "Қате"
   }
+
 
 }

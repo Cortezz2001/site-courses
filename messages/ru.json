@@ -315,5 +315,10 @@
     "myData": "Мои данные",
     "orders": "Заказы",
     "settings": "Настройки"
+  },
+  "layoutTitle": "Шаблон",
+  "NotFoundPage": {
+    "description": "Ошибка"
   }
+
 }
