@@ -18,4 +18,17 @@
         width: 100% !important;
         padding-left: 0 !important;
     }
+
+    .advantages_container {
+        gap: 1em;
+    }
+
+    .advantages_image,
+    .advantages_text {
+        width: 100% !important;
+    }
+
+    .advantages_image {
+        height: auto !important;
+    }
 }

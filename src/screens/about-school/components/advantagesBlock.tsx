@@ -1,24 +1,18 @@
-import {
-    Container,
-    Header,
-    Grid,
-    Image,
-    GridRow,
-    GridColumn,
-    Icon,
-} from "@/UI/SUI";
+import { Header, Grid, Image, GridRow, GridColumn } from "@/UI/SUI";
+import style from "../style.module.css";
 
 const AdvantagesBlock: React.FC = () => {
     return (
         <>
             <Grid columns={2} divided style={{ marginTop: "30px" }}>
-                <GridRow>
+                <GridRow className={style.advantages_container}>
                     <GridColumn
                         style={{
                             display: "flex",
                             justifyContent: "center",
                             height: "100%",
                         }}
+                        className={style.advantages_image}
                     >
                         <Image
                             rounded
@@ -27,7 +21,10 @@ const AdvantagesBlock: React.FC = () => {
                             style={{ objectFit: "cover" }}
                         />
                     </GridColumn>
-                    <GridColumn verticalAlign="middle">
+                    <GridColumn
+                        verticalAlign="middle"
+                        className={style.advantages_text}
+                    >
                         <Header as="h2">
                             Преимущества обучения в «Lion IT-SCHOOL»
                         </Header>
