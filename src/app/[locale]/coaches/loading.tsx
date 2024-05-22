@@ -6,8 +6,12 @@ import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
 import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
 import { useTranslations } from "next-intl";
-
-export default function Loading() {
+import { unstable_setRequestLocale } from "next-intl/server";
+type Props = {
+    params: {locale: string};
+  };
+export default function Loading({params: {locale}}: Props) {
+    unstable_setRequestLocale(locale);
     const t = useTranslations("Breadcrumb");
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
