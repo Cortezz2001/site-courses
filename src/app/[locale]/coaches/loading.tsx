@@ -1,30 +1,25 @@
 import {
     Container,
-    Header,
-    Grid,
-    GridRow,
-    GridColumn,
-    Segment,
     Loader,
-    Dimmer,
 } from "@/UI/SUI";
 import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
 import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
-import CoachCardSkeleton from "@/UI/skeletons/coachCardSkeleton";
+import { useTranslations } from "next-intl";
 
 export default function Loading() {
+    const t = useTranslations("Breadcrumb");
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: "Главная",
+            content: t('main'),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "Coaches",
-            content: "Наши тренеры",
+            content: t('ourCoaches'),
             isLink: true,
             isActive: true,
             url: "/coaches",
@@ -47,29 +42,6 @@ export default function Loading() {
                 </Container>
             </>
         </Layout>
-        // <Layout>
-        //     <>
-        //         <BreadcrumbComponent sections={BreadcrumbProps} />
-        //         <Header as="h1" style={{ marginBottom: "30px" }}>
-        //             Тренеры
-        //         </Header>
-        //         <Grid columns={4}>
-        //             <GridRow>
-        //                 {[...Array(4)].map((_, index) => (
-        //                     <GridColumn key={index}>
-        //                         <CoachCardSkeleton />
-        //                     </GridColumn>
-        //                 ))}
-        //             </GridRow>
-        //             <GridRow>
-        //                 {[...Array(4)].map((_, index) => (
-        //                     <GridColumn key={index}>
-        //                         <CoachCardSkeleton />
-        //                     </GridColumn>
-        //                 ))}
-        //             </GridRow>
-        //         </Grid>
-        //     </>
-        // </Layout>
+
     );
 }

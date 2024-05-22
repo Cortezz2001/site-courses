@@ -1,21 +1,22 @@
-import { Container, Header, Grid, GridRow, GridColumn, Loader } from "@/UI/SUI";
+import { Container, Loader } from "@/UI/SUI";
 import { BreadcrumbComponent } from "@/components/breadcrumb/breadcrumb";
 import { IBreadCrumb } from "@/components/breadcrumb/type";
 import { Layout } from "@/layouts/layout";
-import CourseCardSkeleton from "@/UI/skeletons/courseCardSkeleton";
+import { useTranslations } from "next-intl";
 
 export default function Loading() {
+    const t = useTranslations("Breadcrumb");
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: "Главная",
+            content: t('main'),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "Courses",
-            content: "Курсы",
+            content: t('courses'),
             isLink: true,
             isActive: true,
             url: "/courses",
@@ -38,29 +39,5 @@ export default function Loading() {
                 </Container>
             </>
         </Layout>
-        // <Layout>
-        //     <>
-        //         <BreadcrumbComponent sections={BreadcrumbProps} />
-        //         <Header as="h1" style={{ marginBottom: "30px" }}>
-        //             Курсы
-        //         </Header>
-        //         <Grid columns={4}>
-        //             <GridRow>
-        //                 {[...Array(4)].map((_, index) => (
-        //                     <GridColumn key={index}>
-        //                         <CourseCardSkeleton />
-        //                     </GridColumn>
-        //                 ))}
-        //             </GridRow>
-        //             <GridRow>
-        //                 {[...Array(4)].map((_, index) => (
-        //                     <GridColumn key={index}>
-        //                         <CourseCardSkeleton />
-        //                     </GridColumn>
-        //                 ))}
-        //             </GridRow>
-        //         </Grid>
-        //     </>
-        // </Layout>
     );
 }
