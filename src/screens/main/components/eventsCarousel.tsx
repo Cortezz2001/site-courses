@@ -19,7 +19,6 @@ export const EventsCarousel: React.FC<IEventCardInfoGroup> = ({
             <Swiper
                 className={style.events_carousel}
                 spaceBetween={20}
-                slidesPerView={4}
                 modules={[Navigation]}
                 navigation={{
                     nextEl: ".swiper-button-next",
