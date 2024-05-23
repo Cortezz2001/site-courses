@@ -19,6 +19,7 @@ export default function LanguageSwitcher() {
     const [isPending, startTransition] = useTransition();
     const handleLanguageChange = (event: any, data: any) => {
         const newLocale = data.value;
+        document.cookie = `NEXT_LOCALE=${newLocale}; path=/`;
         startTransition(() => {
             const pathSegments = pathname.split("/").filter(Boolean);
             if (locales.includes(pathSegments[0])) {
