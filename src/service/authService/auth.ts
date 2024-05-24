@@ -1,3 +1,5 @@
+import { API_URL } from "../consts";
+
 const FormData = require("form-data");
 
 export enum STATUS {
@@ -17,8 +19,7 @@ async function responseHandler(response: Response): Promise<IResponseHandler> {
     };
 }
 
-// export const AUTH_API_URL = "http://127.0.0.1:8000/api/v1/auth/";
-export const AUTH_API_URL = "https://lionitschool.pythonanywhere.com/api/v1/auth/";
+export const AUTH_API_URL = API_URL + "/api/v1/auth/";
 export const UserService = {
     async userRegistration(
         email: string,
