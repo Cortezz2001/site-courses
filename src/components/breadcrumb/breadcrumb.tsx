@@ -1,12 +1,9 @@
 "use client";
 import React from "react";
-import {
-    Breadcrumb,
-    BreadcrumbDivider,
-    BreadcrumbSection,
-    Container,
-} from "@/UI/SUI";
+import { Breadcrumb, BreadcrumbDivider, BreadcrumbSection } from "@/UI/SUI";
 import { IBreadCrumb } from "./type";
+
+import style from "./style.module.css";
 
 interface BreadcrumbProps {
     sections: Array<IBreadCrumb>;
@@ -16,7 +13,7 @@ export const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
     sections,
 }) => {
     return (
-        <Breadcrumb style={{ display: "flex", flexDirection: "row" }}>
+        <Breadcrumb className={style.breadcrumb_container}>
             {sections.map((section, index) => (
                 <React.Fragment key={index}>
                     <BreadcrumbSection
