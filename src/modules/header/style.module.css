@@ -11,8 +11,6 @@
     padding: 0 !important;
     border: 0 !important;
     box-shadow: none !important;
-    margin-right: -1rem !important;
-    margin-left: -1rem !important;
 }
 
 .navbar_mobile {
@@ -50,6 +48,11 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .header_container {
+        margin-right: -1rem !important;
+        margin-left: -1rem !important;
+    }
+
     .header_content_wrapper {
         padding-left: 1em !important;
         padding-right: 1em !important;
