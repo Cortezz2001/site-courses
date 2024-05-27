@@ -7,6 +7,14 @@
     color: white;
 }
 
+.header_container {
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    margin-right: -1rem !important;
+    margin-left: -1rem !important;
+}
+
 .navbar_mobile {
     display: none !important;
 }
@@ -35,11 +43,6 @@
         display: block !important;
         color: #007397;
     }
-
-    /* .navbar_mobile::after {
-        content: "Меню сайта";
-        color: initial;
-    } */
 
     .navbar_item_desktop {
         display: none !important;
