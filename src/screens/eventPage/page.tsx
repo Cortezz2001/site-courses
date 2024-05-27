@@ -62,16 +62,11 @@ export function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                     src={eventInfo.img}
                     alt="course image"
                     centered
-                    style={{
-                        objectFit: "cover",
-                        width: "100%",
-                        height: "600px",
-                        margin: "30px auto",
-                    }}
+                    className={style.event_image}
                 />
                 <Grid>
-                    <GridRow>
-                        <GridColumn width={12}>
+                    <GridRow className={style.event_intro_container}>
+                        <GridColumn className={style.event_intro_details}>
                             <Segment
                                 raised
                                 style={{
@@ -91,7 +86,7 @@ export function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                 <p> {eventInfo.desc}</p>
                             </Segment>
                         </GridColumn>
-                        <GridColumn width={4}>
+                        <GridColumn className={style.event_intro_date}>
                             <Segment
                                 raised
                                 style={{
@@ -105,11 +100,10 @@ export function EventDetailsPage({ eventInfo }: IEventDetailPageProps) {
                                 <Header
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
-                                    className={style.event_date_title}
                                 >
                                     {t("EventDetailPage.date")}
                                 </Header>
-                                <p className={style.event_schedule}>
+                                <p>
                                     {" "}
                                     {eventInfo.startDate} {eventInfo.startTime}
                                 </p>

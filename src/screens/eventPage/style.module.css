@@ -1,13 +1,40 @@
-.event_date_title::after {
-    content: " мероприятия:";
+.event_image {
+    width: 100%;
+    height: 600px;
+    margin: 30px auto;
+    object-fit: cover;
+}
+
+.event_intro_details {
+    flex-grow: 1;
+}
+
+.event_intro_date {
+    flex-basis: 25%;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .event_date_title::after {
-        content: ":";
+    .event_intro_date {
+        flex-basis: 34%;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .event_image {
+        height: 300px;
     }
 
-    .event_schedule {
-        font-size: 16px;
+    .event_intro_container {
+        flex-direction: column !important;
+        gap: 2em !important;
+    }
+
+    .event_intro_date {
+        flex-basis: unset;
+    }
+
+    .event_intro_details,
+    .event_intro_date {
+        width: auto !important;
     }
 }
