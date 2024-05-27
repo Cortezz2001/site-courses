@@ -1,0 +1,87 @@
+.course_image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.course_intro {
+    margin-top: 30px !important;
+}
+
+.course_intro_text,
+.course_details_list,
+.course_details_goals,
+.course_results_knowledge,
+.course_results_skills,
+.course_specs_billing,
+.course_specs_list {
+    flex-grow: 1 !important;
+}
+
+.course_intro_price {
+    flex-basis: 37.5%;
+}
+
+.course_info_container {
+    padding: 30px !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    box-shadow: 1px 1px 20px 10px #e0e0e0 !important;
+}
+
+.course_specs_billing_details {
+    padding-left: 10px !important;
+}
+
+@media only screen and (max-width: 430px) {
+    .course_image {
+        width: auto;
+        height: 300px;
+    }
+
+    .course_intro {
+        margin-top: 0 !important;
+    }
+
+    .course_intro_container {
+        flex-direction: column-reverse !important;
+        gap: 2em !important;
+    }
+
+    .course_intro_price,
+    .course_intro_text,
+    .course_details_list,
+    .course_details_goals,
+    .course_results_knowledge,
+    .course_results_skills,
+    .course_specs_billing,
+    .course_specs_list {
+        width: auto !important;
+    }
+
+    .course_details_container,
+    .course_specs_container {
+        flex-direction: column !important;
+        gap: 2em !important;
+    }
+
+    .course_results_container {
+        flex-direction: column !important;
+        gap: 2em !important;
+    }
+
+    .course_intro_price {
+        flex-basis: unset;
+    }
+
+    .course_info_container {
+        margin-right: -1rem !important;
+        margin-left: -1rem !important;
+    }
+
+    .course_specs_billing_details {
+        padding-left: 0 !important;
+    }
+}

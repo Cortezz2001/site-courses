@@ -21,33 +21,32 @@ import {
 } from "@/UI/SUI";
 import { useLocale, useTranslations } from "next-intl";
 
+import style from "./style.module.css";
 
 interface ICourseDetailPageProps {
     courseInfo: ICourseDetailPageInfo;
 }
 
-export function CourseDetailsPage({
-    courseInfo,
-}: ICourseDetailPageProps) {
+export function CourseDetailsPage({ courseInfo }: ICourseDetailPageProps) {
     const t = useTranslations();
     const locale = useLocale();
     const extra = (
         <Button fluid style={{ backgroundColor: "#007397", color: "white" }}>
-            {t('CourseDetailPage.signUp')}
+            {t("CourseDetailPage.signUp")}
         </Button>
     );
-    
+
     const BreadcrumbProps: Array<IBreadCrumb> = [
         {
             key: "Home",
-            content: t('Breadcrumb.main'),
+            content: t("Breadcrumb.main"),
             isLink: true,
             isActive: false,
             url: "/",
         },
         {
             key: "Courses",
-            content: t('Breadcrumb.courses'),
+            content: t("Breadcrumb.courses"),
             isLink: true,
             isActive: false,
             url: `/${locale}/courses`,
@@ -72,24 +71,27 @@ export function CourseDetailsPage({
                     src={courseInfo.img}
                     alt="course image"
                     centered
-                    style={{
-                        objectFit: "cover",
-                        width: "100%",
-                        height: "600px",
-                    }}
+                    className={style.course_image}
                 />
-                <Grid style={{ marginTop: "30px" }}>
-                    <GridRow>
-                        <GridColumn width={10} verticalAlign="middle">
+                <Grid className={style.course_intro}>
+                    <GridRow className={style.course_intro_container}>
+                        <GridColumn
+                            verticalAlign="middle"
+                            className={style.course_intro_text}
+                        >
                             <p style={{ fontSize: "large" }}>
                                 {courseInfo.desc}
                             </p>
                         </GridColumn>
-                        <GridColumn width={6}>
+                        <GridColumn className={style.course_intro_price}>
                             <Card
                                 header={`${courseInfo.price} тг.`}
-                                meta={t('CourseDetailPage.format', { format: courseInfo.format })}
-                                description={t('CourseDetailPage.duration', { timeline: courseInfo.timeline })}
+                                meta={t("CourseDetailPage.format", {
+                                    format: courseInfo.format,
+                                })}
+                                description={t("CourseDetailPage.duration", {
+                                    timeline: courseInfo.timeline,
+                                })}
                                 extra={extra}
                                 fluid
                                 style={{
@@ -102,8 +104,8 @@ export function CourseDetailsPage({
                     </GridRow>
                 </Grid>
                 <Grid>
-                    <GridRow>
-                        <GridColumn width={8}>
+                    <GridRow className={style.course_details_container}>
+                        <GridColumn className={style.course_details_list}>
                             <Segment
                                 raised
                                 style={{
@@ -131,7 +133,7 @@ export function CourseDetailsPage({
                                 ))}
                             </Segment>
                         </GridColumn>
-                        <GridColumn width={8}>
+                        <GridColumn className={style.course_details_goals}>
                             <Segment
                                 raised
                                 style={{
@@ -146,7 +148,7 @@ export function CourseDetailsPage({
                                     as={"h2"}
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    {t('CourseDetailPage.goal')}
+                                    {t("CourseDetailPage.goal")}
                                 </Header>
                                 <Container
                                     style={{
@@ -160,118 +162,105 @@ export function CourseDetailsPage({
                         </GridColumn>
                     </GridRow>
                 </Grid>
-                <Container
-                    style={{
-                        boxShadow: "1px 1px 20px 10px #e0e0e0",
-                        borderRadius: "10px",
-                        padding: "30px",
-                        margin: "30px ",
-                        width: "auto",
-                    }}
-                >
-                    <Header as="h2" style={{ marginBottom: "30px" }}>
-                        {t('CourseDetailPage.tasks')}
-                    </Header>
+                <Container>
+                    <Segment className={style.course_info_container}>
+                        <Header as="h2" style={{ marginBottom: "30px" }}>
+                            {t("CourseDetailPage.tasks")}
+                        </Header>
 
-                    {courseInfo.challenges.map((challenge, index) => (
-                        <List
-                            key={index}
-                            as="ul"
-                            style={{ fontSize: "large", textAlign: "justify" }}
-                        >
-                            <ListItem as="li">{challenge.text}</ListItem>
-                        </List>
-                    ))}
+                        {courseInfo.challenges.map((challenge, index) => (
+                            <List
+                                key={index}
+                                as="ul"
+                                style={{
+                                    fontSize: "large",
+                                    textAlign: "justify",
+                                }}
+                            >
+                                <ListItem as="li">{challenge.text}</ListItem>
+                            </List>
+                        ))}
+                    </Segment>
                 </Container>
 
-                <Container
-                    style={{
-                        boxShadow: "1px 1px 20px 10px #e0e0e0",
-                        borderRadius: "10px",
-                        padding: "30px",
-                        margin: "auto",
-                        width: "auto",
-                    }}
-                >
-                    <Header as="h2" style={{ marginBottom: "30px" }}>
-                        {t('CourseDetailPage.results')}
-                    </Header>
-                    <Grid>
-                        <GridRow>
-                            <GridColumn width={8}>
-                                <Header
-                                    as="h3"
-                                    style={{ marginBottom: "30px" }}
+                <Container>
+                    <Segment className={style.course_info_container}>
+                        <Header as="h2" style={{ marginBottom: "30px" }}>
+                            {t("CourseDetailPage.results")}
+                        </Header>
+                        <Grid>
+                            <GridRow className={style.course_results_container}>
+                                <GridColumn
+                                    className={style.course_results_knowledge}
                                 >
-                                    {t('CourseDetailPage.mustKnow')}
-                                </Header>
-                                {courseInfo.knowhows.map((knowhow, index) => (
-                                    <List
-                                        key={index}
-                                        as="ul"
-                                        style={{ fontSize: "large" }}
+                                    <Header
+                                        as="h3"
+                                        style={{ marginBottom: "30px" }}
                                     >
-                                        <ListItem as="li">
-                                            {knowhow.text}
-                                        </ListItem>
-                                    </List>
-                                ))}
-                            </GridColumn>
-                            <GridColumn width={8}>
-                                <Header
-                                    as="h3"
-                                    style={{ marginBottom: "30px" }}
+                                        {t("CourseDetailPage.mustKnow")}
+                                    </Header>
+                                    {courseInfo.knowhows.map(
+                                        (knowhow, index) => (
+                                            <List
+                                                key={index}
+                                                as="ul"
+                                                style={{ fontSize: "large" }}
+                                            >
+                                                <ListItem as="li">
+                                                    {knowhow.text}
+                                                </ListItem>
+                                            </List>
+                                        )
+                                    )}
+                                </GridColumn>
+                                <GridColumn
+                                    className={style.course_results_skills}
                                 >
-                                    {t('CourseDetailPage.mustBeAble')}
-                                </Header>
-                                {courseInfo.skills.map((skill, index) => (
-                                    <List
-                                        key={index}
-                                        as="ul"
-                                        style={{ fontSize: "large" }}
+                                    <Header
+                                        as="h3"
+                                        style={{ marginBottom: "30px" }}
                                     >
-                                        <ListItem as="li">
-                                            {skill.text}
-                                        </ListItem>
-                                    </List>
-                                ))}
-                            </GridColumn>
-                        </GridRow>
-                    </Grid>
+                                        {t("CourseDetailPage.mustBeAble")}
+                                    </Header>
+                                    {courseInfo.skills.map((skill, index) => (
+                                        <List
+                                            key={index}
+                                            as="ul"
+                                            style={{ fontSize: "large" }}
+                                        >
+                                            <ListItem as="li">
+                                                {skill.text}
+                                            </ListItem>
+                                        </List>
+                                    ))}
+                                </GridColumn>
+                            </GridRow>
+                        </Grid>
+                    </Segment>
                 </Container>
-                <Container
-                    style={{
-                        boxShadow: "1px 1px 20px 10px #e0e0e0",
-                        borderRadius: "10px",
-                        padding: "30px",
-                        margin: "30px auto",
-                        width: "auto",
-                    }}
-                >
-                    <Header as="h2" style={{ marginBottom: "30px" }}>
-                        {t('CourseDetailPage.learnResults')}
-                    </Header>
+                <Container>
+                    <Segment className={style.course_info_container}>
+                        <Header as="h2" style={{ marginBottom: "30px" }}>
+                            {t("CourseDetailPage.learnResults")}
+                        </Header>
 
-                    <p style={{ fontSize: "large" }}>{courseInfo.result}</p>
+                        <p style={{ fontSize: "large" }}>{courseInfo.result}</p>
+                    </Segment>
                 </Container>
-                <Container
-                    style={{
-                        boxShadow: "1px 1px 20px 10px #e0e0e0",
-                        borderRadius: "10px",
-                        padding: "30px",
-                        margin: "30px auto",
-                        width: "auto",
-                    }}
-                >
-                    <Header as="h2" style={{ marginBottom: "30px" }}>
-                        {t('CourseDetailPage.formOfControl')}
-                    </Header>
+                <Container>
+                    <Segment className={style.course_info_container}>
+                        <Header as="h2" style={{ marginBottom: "30px" }}>
+                            {t("CourseDetailPage.formOfControl")}
+                        </Header>
 
-                    <p style={{ fontSize: "large" }}>{courseInfo.control}</p>
+                        <p style={{ fontSize: "large" }}>
+                            {courseInfo.control}
+                        </p>
+                    </Segment>
                 </Container>
                 <Grid>
-                    <GridRow>
-                        <GridColumn width={8}>
+                    <GridRow className={style.course_specs_container}>
+                        <GridColumn className={style.course_specs_list}>
                             <Segment
                                 raised
                                 style={{
@@ -286,7 +275,7 @@ export function CourseDetailsPage({
                                     as="h2"
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    {t('CourseDetailPage.Block1.title')}
+                                    {t("CourseDetailPage.Block1.title")}
                                 </Header>
                                 <List
                                     style={{
@@ -297,7 +286,9 @@ export function CourseDetailsPage({
                                         <Icon name="check square outline" />
                                         <ListContent>
                                             <ListHeader>
-                                                {t('CourseDetailPage.Block1.p1')}
+                                                {t(
+                                                    "CourseDetailPage.Block1.p1"
+                                                )}
                                             </ListHeader>
                                         </ListContent>
                                     </ListItem>
@@ -305,7 +296,9 @@ export function CourseDetailsPage({
                                         <Icon name="check square outline" />
                                         <ListContent>
                                             <ListHeader>
-                                                {t('CourseDetailPage.Block1.p2')}
+                                                {t(
+                                                    "CourseDetailPage.Block1.p2"
+                                                )}
                                             </ListHeader>
                                         </ListContent>
                                     </ListItem>
@@ -313,20 +306,26 @@ export function CourseDetailsPage({
                                         <Icon name="check square outline" />
                                         <ListContent>
                                             <ListHeader>
-                                                {t('CourseDetailPage.Block1.p3')}
+                                                {t(
+                                                    "CourseDetailPage.Block1.p3"
+                                                )}
                                             </ListHeader>
                                         </ListContent>
                                     </ListItem>
                                     <ListItem as="a">
                                         <Icon name="check square outline" />
                                         <ListContent>
-                                            <ListHeader>{t('CourseDetailPage.Block1.p4')}</ListHeader>
+                                            <ListHeader>
+                                                {t(
+                                                    "CourseDetailPage.Block1.p4"
+                                                )}
+                                            </ListHeader>
                                         </ListContent>
                                     </ListItem>
                                 </List>
                             </Segment>
                         </GridColumn>
-                        <GridColumn width={8}>
+                        <GridColumn className={style.course_specs_billing}>
                             <Segment
                                 raised
                                 style={{
@@ -338,39 +337,37 @@ export function CourseDetailsPage({
                                 }}
                             >
                                 <Header textAlign="center" as={"h2"}>
-                                    {t('CourseDetailPage.Block2.title')}
+                                    {t("CourseDetailPage.Block2.title")}
                                 </Header>
                                 <Header
                                     textAlign="center"
                                     as={"h3"}
                                     style={{ marginBottom: "30px" }}
                                 >
-                                    {t('CourseDetailPage.Block2.p1')}
+                                    {t("CourseDetailPage.Block2.p1")}
                                 </Header>
                                 <Container
-                                    style={{
-                                        paddingLeft: "10px",
-                                    }}
+                                    className={
+                                        style.course_specs_billing_details
+                                    }
                                 >
-                                    <p>
-                                        {t('CourseDetailPage.Block2.p2')}
-                                    </p>
+                                    <p>{t("CourseDetailPage.Block2.p2")}</p>
                                     <List as="ol" style={{}}>
                                         <ListItem as="li">
-                                            {t('CourseDetailPage.Block2.p3')}
+                                            {t("CourseDetailPage.Block2.p3")}
                                         </ListItem>
                                         <ListItem as="li">
-                                            {t('CourseDetailPage.Block2.p4')}
+                                            {t("CourseDetailPage.Block2.p4")}
                                         </ListItem>
                                     </List>
                                     <p>
-                                        {t('CourseDetailPage.Block2.p5')}{" "}
+                                        {t("CourseDetailPage.Block2.p5")}{" "}
                                         <span
                                             style={{
                                                 textDecoration: "underline",
                                             }}
                                         >
-                                            {t('CourseDetailPage.Block2.p5-1')}
+                                            {t("CourseDetailPage.Block2.p5-1")}
                                         </span>
                                     </p>
                                 </Container>
@@ -378,84 +375,62 @@ export function CourseDetailsPage({
                         </GridColumn>
                     </GridRow>
                 </Grid>
-                <Container
-                    style={{
-                        boxShadow: "1px 1px 20px 10px #e0e0e0",
-                        borderRadius: "10px",
-                        padding: "30px",
-                        margin: "30px auto",
-                        width: "auto",
-                    }}
-                >
-                    <Header as="h3" style={{ marginBottom: "30px" }}>
-                        {t('CourseDetailPage.Block3.title1')}
-                    </Header>
+                <Container>
+                    <Segment className={style.course_info_container}>
+                        <Header as="h3" style={{ marginBottom: "30px" }}>
+                            {t("CourseDetailPage.Block3.title1")}
+                        </Header>
 
-                    <p>
-                        {t('CourseDetailPage.Block3.p1')}
-                    </p>
+                        <p>{t("CourseDetailPage.Block3.p1")}</p>
 
-                    <Header as="h3" style={{ marginBottom: "30px" }}>
-                        {t('CourseDetailPage.Block3.title2')}
-                    </Header>
+                        <Header as="h3" style={{ marginBottom: "30px" }}>
+                            {t("CourseDetailPage.Block3.title2")}
+                        </Header>
 
-                    <p>
-                        {t('CourseDetailPage.Block3.p2')}
-                    </p>
+                        <p>{t("CourseDetailPage.Block3.p2")}</p>
+                    </Segment>
                 </Container>
-                <Container
-                    style={{
-                        boxShadow: "1px 1px 20px 10px #e0e0e0",
-                        borderRadius: "10px",
-                        padding: "30px",
-                        margin: "30px auto",
-                        width: "auto",
-                    }}
-                >
-                    <Header as="h2" style={{ marginBottom: "30px" }}>
-                        {t('CourseDetailPage.Block4.title')}
-                    </Header>
+                <Container>
+                    <Segment className={style.course_info_container}>
+                        <Header as="h2" style={{ marginBottom: "30px" }}>
+                            {t("CourseDetailPage.Block4.title")}
+                        </Header>
 
-                    <Grid columns={3} stackable>
-                        <GridRow centered>
-                            <GridColumn textAlign="center">
-                                <Header as="h3">
-                                    <Icon
-                                        name="lightbulb outline"
-                                        style={{ color: "#007397" }}
-                                    />
-                                    {t('CourseDetailPage.Block4.subTitle1')}
-                                </Header>
-                                <p>
-                                    {t('CourseDetailPage.Block4.p1')}
-                                </p>
-                            </GridColumn>
-                            <GridColumn textAlign="center">
-                                <Header as="h3">
-                                    <Icon
-                                        name="rocket"
-                                        style={{ color: "#007397" }}
-                                    />
-                                    {t('CourseDetailPage.Block4.subTitle2')}
-                                </Header>
-                                <p>
-                                    {t('CourseDetailPage.Block4.p2')}
-                                </p>
-                            </GridColumn>
-                            <GridColumn textAlign="center">
-                                <Header as="h3">
-                                    <Icon
-                                        name="code"
-                                        style={{ color: "#007397" }}
-                                    />
-                                    {t('CourseDetailPage.Block4.subTitle3')}
-                                </Header>
-                                <p>
-                                    {t('CourseDetailPage.Block4.p3')}
-                                </p>
-                            </GridColumn>
-                        </GridRow>
-                    </Grid>
+                        <Grid columns={3} stackable>
+                            <GridRow centered>
+                                <GridColumn textAlign="center">
+                                    <Header as="h3">
+                                        <Icon
+                                            name="lightbulb outline"
+                                            style={{ color: "#007397" }}
+                                        />
+                                        {t("CourseDetailPage.Block4.subTitle1")}
+                                    </Header>
+                                    <p>{t("CourseDetailPage.Block4.p1")}</p>
+                                </GridColumn>
+                                <GridColumn textAlign="center">
+                                    <Header as="h3">
+                                        <Icon
+                                            name="rocket"
+                                            style={{ color: "#007397" }}
+                                        />
+                                        {t("CourseDetailPage.Block4.subTitle2")}
+                                    </Header>
+                                    <p>{t("CourseDetailPage.Block4.p2")}</p>
+                                </GridColumn>
+                                <GridColumn textAlign="center">
+                                    <Header as="h3">
+                                        <Icon
+                                            name="code"
+                                            style={{ color: "#007397" }}
+                                        />
+                                        {t("CourseDetailPage.Block4.subTitle3")}
+                                    </Header>
+                                    <p>{t("CourseDetailPage.Block4.p3")}</p>
+                                </GridColumn>
+                            </GridRow>
+                        </Grid>
+                    </Segment>
                 </Container>
             </>
         </Layout>
