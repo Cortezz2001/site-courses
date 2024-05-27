@@ -82,3 +82,28 @@
         margin-right: 240px !important;
     }
 }
+
+@media only screen and (max-width: 430px) {
+    .ribbon {
+        left: 5px !important;
+        padding-left: 1.2rem !important;
+    }
+
+    .coach_info_container {
+        gap: 1em;
+    }
+
+    .coach_image_container {
+        flex-grow: 1;
+    }
+
+    .coach_image {
+        min-width: auto !important;
+    }
+
+    .coach_summary {
+        width: auto !important;
+        padding-left: 1rem !important;
+        box-shadow: none !important;
+    }
+}
