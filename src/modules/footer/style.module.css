@@ -7,6 +7,10 @@
     display: none !important;
 }
 
+.footer_mail_button {
+    display: none !important;
+}
+
 .footer_form_heading {
     color: white;
 }
@@ -131,5 +135,11 @@
 
     .footer_divider {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    .footer_mail_button {
+        display: initial !important;
     }
 }

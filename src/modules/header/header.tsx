@@ -375,7 +375,9 @@ const Header: React.FC = () => {
                                 target="_blank"
                             />
                         </MenuItem>
-                        <MenuItem className={style.bottom_navbar_menu_item}>
+                        <MenuItem
+                            className={`${style.bottom_navbar_menu_item} ${style.header_mail_button}`}
+                        >
                             <Button
                                 style={{
                                     padding: "8px",

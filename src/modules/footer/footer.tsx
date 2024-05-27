@@ -88,6 +88,14 @@ export default function Footer() {
                                     href=""
                                     target="_blank"
                                 ></Button>
+                                <Button
+                                    circular
+                                    inverted
+                                    icon="mail"
+                                    href="mailto:lion.hub@mail.ru"
+                                    target="_blank"
+                                    className={style.footer_mail_button}
+                                ></Button>
                                 <p
                                     style={{
                                         textAlign: "center",
@@ -114,7 +122,9 @@ export default function Footer() {
                                     </ListItem>
 
                                     <ListItem>
-                                        <Link href={`/${locale}/events`}>{t("events")}</Link>
+                                        <Link href={`/${locale}/events`}>
+                                            {t("events")}
+                                        </Link>
                                     </ListItem>
                                     <ListItem>
                                         <Link href={`/${locale}/help`}>
@@ -122,10 +132,14 @@ export default function Footer() {
                                         </Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={`/${locale}/courses`}>{t("courses")}</Link>
+                                        <Link href={`/${locale}/courses`}>
+                                            {t("courses")}
+                                        </Link>
                                     </ListItem>
                                     <ListItem>
-                                        <Link href={`/${locale}/coaches`}>{t("coaches")}</Link>
+                                        <Link href={`/${locale}/coaches`}>
+                                            {t("coaches")}
+                                        </Link>
                                     </ListItem>
                                     <ListItem>
                                         <Link href={`/${locale}/intensives`}>

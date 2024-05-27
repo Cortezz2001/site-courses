@@ -120,13 +120,16 @@
 
     .bottom_navbar_menu_item {
         padding-left: 0 !important;
-    }
-
-    .bottom_navbar_menu_item {
         margin-left: 12px !important;
     }
 
     .bottom_navbar_menu_item:last-child {
         margin-left: -12px !important;
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    .header_mail_button {
+        display: none !important;
     }
 }
