@@ -1,0 +1,5 @@
+@media only screen and (max-width: 374px) {
+    .event_date {
+        font-size: smaller;
+    }
+}

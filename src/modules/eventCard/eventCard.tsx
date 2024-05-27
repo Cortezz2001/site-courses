@@ -1,14 +1,13 @@
 import {
     Card,
-    Button,
     CardProps,
     Image,
     CardContent,
     CardHeader,
     CardDescription,
-    CardMeta,
-    Header,
 } from "@/UI/SUI";
+
+import style from "./style.module.css";
 
 interface CardPropsEvent extends CardProps {
     image: React.ReactNode;
@@ -54,10 +53,10 @@ export const EventCard: React.FC<CardPropsEvent> = ({
                     gridGap: "6px",
                 }}
             >
-                <CardHeader>{header}</CardHeader>
-                <CardDescription
-                    style={{ fontweight: "bold", marginBottom: "15px" }}
-                >
+                <CardHeader style={{ wordBreak: "break-word" }}>
+                    {header}
+                </CardHeader>
+                <CardDescription className={style.event_date}>
                     {description}
                 </CardDescription>
             </CardContent>
