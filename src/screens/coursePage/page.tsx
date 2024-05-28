@@ -162,7 +162,7 @@ export function CourseDetailsPage({ courseInfo }: ICourseDetailPageProps) {
                         </GridColumn>
                     </GridRow>
                 </Grid>
-                <Container>
+                <Container className={style.course_container}>
                     <Segment className={style.course_info_container}>
                         <Header as="h2" style={{ marginBottom: "30px" }}>
                             {t("CourseDetailPage.tasks")}
@@ -183,7 +183,7 @@ export function CourseDetailsPage({ courseInfo }: ICourseDetailPageProps) {
                     </Segment>
                 </Container>
 
-                <Container>
+                <Container className={style.course_container}>
                     <Segment className={style.course_info_container}>
                         <Header as="h2" style={{ marginBottom: "30px" }}>
                             {t("CourseDetailPage.results")}
@@ -238,7 +238,7 @@ export function CourseDetailsPage({ courseInfo }: ICourseDetailPageProps) {
                         </Grid>
                     </Segment>
                 </Container>
-                <Container>
+                <Container className={style.course_container}>
                     <Segment className={style.course_info_container}>
                         <Header as="h2" style={{ marginBottom: "30px" }}>
                             {t("CourseDetailPage.learnResults")}
@@ -247,7 +247,7 @@ export function CourseDetailsPage({ courseInfo }: ICourseDetailPageProps) {
                         <p style={{ fontSize: "large" }}>{courseInfo.result}</p>
                     </Segment>
                 </Container>
-                <Container>
+                <Container className={style.course_container}>
                     <Segment className={style.course_info_container}>
                         <Header as="h2" style={{ marginBottom: "30px" }}>
                             {t("CourseDetailPage.formOfControl")}
@@ -375,7 +375,7 @@ export function CourseDetailsPage({ courseInfo }: ICourseDetailPageProps) {
                         </GridColumn>
                     </GridRow>
                 </Grid>
-                <Container>
+                <Container className={style.course_container}>
                     <Segment className={style.course_info_container}>
                         <Header as="h3" style={{ marginBottom: "30px" }}>
                             {t("CourseDetailPage.Block3.title1")}
@@ -390,7 +390,7 @@ export function CourseDetailsPage({ courseInfo }: ICourseDetailPageProps) {
                         <p>{t("CourseDetailPage.Block3.p2")}</p>
                     </Segment>
                 </Container>
-                <Container>
+                <Container className={style.course_container}>
                     <Segment className={style.course_info_container}>
                         <Header as="h2" style={{ marginBottom: "30px" }}>
                             {t("CourseDetailPage.Block4.title")}

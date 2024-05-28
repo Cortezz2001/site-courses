@@ -35,6 +35,12 @@
     padding-left: 10px !important;
 }
 
+@media only screen and (min-width: 1200px) {
+    .course_container {
+        min-width: 1330px !important;
+    }
+}
+
 @media only screen and (max-width: 430px) {
     .course_image {
         width: auto;
